@@ -1,8 +1,8 @@
-#root {
-  max-width: 1280px;
+.container {
+  max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  text-align: left;
 }
 
 .logo {
@@ -39,4 +39,29 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+a {
+  color: #0056b3;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+p, li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+ul {
+  padding-left: 1.5rem;
 }

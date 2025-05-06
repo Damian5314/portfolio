@@ -1,15 +1,21 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Link, Outlet } from 'react-router-dom';
+import './App.css';
 
 function App() {
   return (
     <div className="container">
-      <h1>Welkom op mijn portfolio</h1>
-      <p>Ik ben Damian, een enthousiaste developer uit Nederland.</p>
+      <nav>
+        <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none', padding: 0 }}>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">Over mij</Link></li>
+          <li><Link to="/projects">Projecten</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
+        </ul>
+      </nav>
+      <hr />
+      <Outlet />
     </div>
   );
 }
 
-export default App
+export default App;
