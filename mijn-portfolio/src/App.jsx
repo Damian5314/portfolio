@@ -4,11 +4,13 @@ import './App.css';
 function App() {
   return (
     <div className="container">
-      <nav>
-        <ul style={{ display: 'flex', gap: '1rem', listStyle: 'none', padding: 0 }}>
-          <li><Link to="/">Home</Link></li>
+      <nav className="navbar">
+        <div className="logo">
+          <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>Damian Willemse</Link>
+        </div>
+        <ul className="nav-links">
+          <li><Link to="/projects">Werk</Link></li>
           <li><Link to="/about">Over mij</Link></li>
-          <li><Link to="/projects">Projecten</Link></li>
           <li><Link to="/contact">Contact</Link></li>
         </ul>
       </nav>
