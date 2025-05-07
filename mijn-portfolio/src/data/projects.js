@@ -3,8 +3,8 @@ const projects = [
       slug: "QR logistics",
       title: "QR logistics",
       image: "/images/QR logistics.png",
-      description: "Een app die gebruikers helpt hun planten te verzorgen.",
-      tag: "Persoonlijk project",
+      description: "Een logistieke webapplicatie waarmee bedrijven hun orders, zendingen en voorraad eenvoudig kunnen beheren via QR-scans. Ontwikkeld met aandacht voor gebruiksgemak, inzicht en procesoptimalisatie.",
+      tag: "Schoolproject",
       gallery: [
         "/images/QRlogisticst1.png",
         "/images/QRlogistics2.png",
@@ -15,8 +15,8 @@ const projects = [
       slug: "voetbal-app",
       title: "Voetbal-app",
       image: "/images/voetbalapp.png",
-      description: "Voorspel wedstrijden en verdien coins.",
-      tag: "Schoolproject",
+      description: "Een sociale voetbal-app waarin gebruikers wedstrijden kunnen voorspellen, vrienden kunnen volgen en coins verdienen voor correcte voorspellingen. Coins zijn in te wisselen voor profiel-aanpassingen of cosmetische items.",
+      tag: "Persoonlijk project",
       gallery: [
         "/images/voetbal1.png",
         "/images/voetbal2.png"
@@ -26,8 +26,8 @@ const projects = [
         slug: "TableTech",
         title: "TableTech",
         image: "/images/TableTech.png",
-        description: "Voorspel wedstrijden en verdien coins.",
-        tag: "Schoolproject",
+        description: "Een alles-in-één dashboard voor horecazaken, waarmee personeel menu’s kan beheren, feedback kan ontvangen, voorraden bijhouden en klanttevredenheid verhogen via digitale bestel- en contactmomenten.",
+        tag: "Persoonlijk project",
         gallery: [
           "/images/TableTech1.png",
           "/images/TableTech2.png"
