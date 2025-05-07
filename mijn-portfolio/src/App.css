@@ -155,3 +155,47 @@ ul {
   font-size: 0.9rem;
   color: #aaa;
 }
+
+.projects-page {
+  padding: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  background: #f0f0f0;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-info {
+  padding: 1rem;
+}
+
+.project-info h2 {
+  margin: 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.project-info p {
+  font-size: 1rem;
+  color: #555;
+}
+
