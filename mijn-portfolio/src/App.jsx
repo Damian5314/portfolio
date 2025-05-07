@@ -4,21 +4,23 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="container">
-      <nav className="navbar">
-        <div className="logo">
-          <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>Damian Willemse</Link>
-        </div>
-        <ul className="nav-links">
-          <li><Link to="/projects">Werk</Link></li>
-          <li><Link to="/about">Over mij</Link></li>
-          <li><Link to="/contact">Contact</Link></li>
-        </ul>
-      </nav>
-      <hr />
-      <Outlet />
+    <>
+      <div className="container">
+        <nav className="navbar">
+          <div className="logo">
+            <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>Damian Willemse</Link>
+          </div>
+          <ul className="nav-links">
+            <li><Link to="/projects">Werk</Link></li>
+            <li><Link to="/about">Over mij</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+          </ul>
+        </nav>
+        <hr />
+        <Outlet />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 
