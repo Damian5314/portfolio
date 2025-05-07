@@ -19,8 +19,10 @@ const projects = [
       description: "Een sociale voetbal-app waarin gebruikers wedstrijden kunnen voorspellen, vrienden kunnen volgen en coins verdienen voor correcte voorspellingen. Coins zijn in te wisselen voor profiel-aanpassingen of cosmetische items.",
       tag: "Persoonlijk project",
       gallery: [
-        //"/images/voetbal1.png",
-        //"/images/voetbal2.png"
+        `${import.meta.env.BASE_URL}voetbal1.jpeg`,
+        `${import.meta.env.BASE_URL}voetbal2.jpeg`,
+        `${import.meta.env.BASE_URL}voetbal3.jpeg`,
+        `${import.meta.env.BASE_URL}voetbal4.jpeg`
       ]
     },
     {
