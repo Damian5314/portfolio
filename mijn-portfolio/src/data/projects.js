@@ -32,8 +32,13 @@ const projects = [
         description: "Een alles-in-één dashboard voor horecazaken, waarmee personeel menu’s kan beheren, feedback kan ontvangen, voorraden bijhouden en klanttevredenheid verhogen via digitale bestel- en contactmomenten.",
         tag: "Persoonlijk project",
         gallery: [
-          //"/images/TableTech1.png",
-          //"/images/TableTech2.png"
+          `${import.meta.env.BASE_URL}TableTech1.jpeg`,
+          `${import.meta.env.BASE_URL}TableTech2.jpeg`,
+          `${import.meta.env.BASE_URL}TableTech3.jpeg`,
+          `${import.meta.env.BASE_URL}TableTech4.jpeg`,
+          `${import.meta.env.BASE_URL}TableTech5.jpeg`,
+          `${import.meta.env.BASE_URL}TableTech6.jpeg`,
+          `${import.meta.env.BASE_URL}TableTech7.jpeg`
         ]
       }
   ];
