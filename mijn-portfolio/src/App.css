@@ -199,3 +199,34 @@ ul {
   color: #555;
 }
 
+
+.project-detail {
+  padding: 2rem;
+}
+
+.project-detail .main-image {
+  width: 100%;
+  max-width: 800px;
+  display: block;
+  margin: 2rem auto;
+}
+
+.project-detail .meta p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.gallery img {
+  width: 200px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
