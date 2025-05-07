@@ -5,8 +5,7 @@ import Footer from './components/Footer';
 function App() {
   return (
     <>
-      <div className="container">
-        <nav className="navbar">
+      <nav className="navbar">
           <div className="logo">
             <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>Damian Willemse</Link>
           </div>
@@ -15,7 +14,8 @@ function App() {
             <li><Link to="/about">Over mij</Link></li>
             <li><Link to="/contact">Contact</Link></li>
           </ul>
-        </nav>
+      </nav>
+      <div className="container">
         <hr />
         <Outlet />
       </div>
