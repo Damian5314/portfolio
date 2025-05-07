@@ -34,11 +34,11 @@ const projects = [
         gallery: [
           `${import.meta.env.BASE_URL}TableTech1.jpeg`,
           `${import.meta.env.BASE_URL}TableTech2.jpeg`,
-          `${import.meta.env.BASE_URL}TableTech3.jpeg`,
-          `${import.meta.env.BASE_URL}TableTech4.jpeg`,
-          `${import.meta.env.BASE_URL}TableTech5.jpeg`,
-          `${import.meta.env.BASE_URL}TableTech6.jpeg`,
-          `${import.meta.env.BASE_URL}TableTech7.jpeg`
+          `${import.meta.env.BASE_URL}TableTech3.png`,
+          `${import.meta.env.BASE_URL}TableTech4.png`,
+          `${import.meta.env.BASE_URL}TableTech5.png`,
+          `${import.meta.env.BASE_URL}TableTech6.png`,
+          `${import.meta.env.BASE_URL}TableTech7.png`
         ]
       }
   ];
