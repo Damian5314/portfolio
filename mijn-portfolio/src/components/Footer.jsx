@@ -6,7 +6,7 @@ function Footer() {
           <a href="mailto:damianwillmse@gmail.com" className="footer-button">
             Let’s talk ↗
           </a>
-          <p className="footer-copyright">© Damian Willemse{new Date().getFullYear()}</p>
+          <p className="footer-copyright">© Damian Willemse {new Date().getFullYear()}</p>
         </div>
   
         <div className="footer-right">
