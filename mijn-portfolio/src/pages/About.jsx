@@ -3,6 +3,15 @@ import './About.css';
 function About() {
   return (
     <div className="container">
+        {/* Persoonlijke informatie */}
+        <div className="about-box">
+          <p className="small-title">Persoonlijk</p>
+          <h2 className="section-title">Over mij</h2>
+          <p>
+            Ik ben een enthousiaste softwareontwikkelaar met een passie voor technologie, design en het bouwen van slimme oplossingen.
+            In mijn vrije tijd verzamel ik vinylplaten, bouw ik aan persoonlijke projecten, en verdiep ik mij in alles wat met innovatie en ondernemerschap te maken heeft.
+          </p>
+        </div>
       <div className="row">
         {/* Vaardigheden */}
         <div className="col-lg-4 d-flex flex-column vaardigheden-container">
