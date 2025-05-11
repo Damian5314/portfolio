@@ -10,7 +10,7 @@ function App() {
             <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>Damian Willemse</Link>
           </div>
           <ul className="nav-links">
-            <li><Link to="/home">Home</Link></li>
+            <li><Link to="/">Home</Link></li>
             <li><Link to="/projects">Werk</Link></li>
             <li><Link to="/about">Over mij</Link></li>
             <li><Link to="/contact">Contact</Link></li>
