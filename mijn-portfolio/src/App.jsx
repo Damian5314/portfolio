@@ -1,21 +1,12 @@
-import { Link, Outlet } from 'react-router-dom';
-import './App.css';
+import { Outlet } from 'react-router-dom';
+import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import './App.css';
 
 function App() {
   return (
     <>
-      <nav className="navbar">
-          <div className="logo">
-            <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>Damian Willemse</Link>
-          </div>
-          <ul className="nav-links">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/projects">Werk</Link></li>
-            <li><Link to="/about">Over mij</Link></li>
-            <li><Link to="/contact">Contact</Link></li>
-          </ul>
-      </nav>
+      <Navbar />
       <div className="container">
         <hr />
         <Outlet />
