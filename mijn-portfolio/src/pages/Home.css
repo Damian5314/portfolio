@@ -1,0 +1,32 @@
+.home-container {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .profile-image {
+    width: 200px;
+    height: auto;
+    border-radius: 12px;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .intro-text {
+    max-width: 600px;
+  }
+
+  @media (max-width: 768px) {
+    .home-container {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .intro-text {
+      max-width: 100%;
+    }
+  }
+  
