@@ -13,9 +13,9 @@ function Footer() {
           <div className="footer-links">
             <ul>
               <li><a href="/portfolio/">Home</a></li>
-              <li><a href="/portfolio/projects">Werk</a></li>
-              <li><a href="/portfolio/about">Over mij</a></li>
-              <li><a href="/portfolio/contact">Contact</a></li>
+              <li><a href="/projects">Werk</a></li>
+              <li><a href="/about">Over mij</a></li>
+              <li><a href="/contact">Contact</a></li>
             </ul>
   
             <ul>
