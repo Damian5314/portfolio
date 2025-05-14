@@ -8,7 +8,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>Damian Willemse</Link>
+        <Link to="//" style={{ textDecoration: 'none', color: 'black' }}>
+          Damian Willemse
+        </Link>
       </div>
 
       <button
@@ -20,7 +22,7 @@ function Navbar() {
       </button>
 
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        <li><Link to="/" onClick={() => setMenuOpen(false)}>Home</Link></li>
+        <li><Link to="//" onClick={() => setMenuOpen(false)}>Home</Link></li>
         <li><Link to="/projects" onClick={() => setMenuOpen(false)}>Werk</Link></li>
         <li><Link to="/about" onClick={() => setMenuOpen(false)}>Over mij</Link></li>
         <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
