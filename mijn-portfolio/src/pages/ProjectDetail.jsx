@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
-import projects from "../data/projects"; // zie volgende stap
+import projects from "../data/projects";
+import './Project.css';
 
 function ProjectDetail() {
   const { slug } = useParams();

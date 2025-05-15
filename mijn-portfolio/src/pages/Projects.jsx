@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import projects from "../data/projects";
+import './Project.css';
 
 function Projects() {
   return (
