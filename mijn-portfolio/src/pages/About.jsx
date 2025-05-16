@@ -84,7 +84,7 @@ function About() {
           <div className="scholen-container">
             {[
               ["Hogeschool Rotterdam", "Informatica (HBO)", "2023 - heden"],
-              ["Montfort College Rotterdam", "HBO", "2016 - 2023"],
+              ["Montfort College Rotterdam", "HAVO", "2016 - 2023"],
             ].map(([school, edu, year], i) => (
               <div className="d-flex flex-column school-item" key={i}>
                 <h6>{school}</h6>

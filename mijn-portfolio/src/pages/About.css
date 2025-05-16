@@ -1,23 +1,27 @@
+/* Algemene container styling behouden */
 .container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 2rem;
 }
 
+/* Row styling behouden, maar mogelijk aanpassen voor de layout */
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1.5rem; /* Iets kleinere gap voor een compacter effect */
 }
 
+/* Algemene styling voor de kolommen aanpassen */
 .col-lg-4 {
   flex: 1 1 300px;
-  background: #f9f9f9;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  background: #fff; /* Witte achtergrond zoals in de tweede afbeelding */
+  border-radius: 8px; /* Afgeronde hoeken */
+  padding: 1.2rem; /* Iets minder padding voor een compacter effect */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Subtiele schaduw */
 }
 
+/* Tag styling behouden */
 .tag p {
   font-size: 0.85rem;
   color: #999;
@@ -26,73 +30,97 @@
   letter-spacing: 0.05em;
 }
 
+/* Titel styling behouden */
 .title {
-  font-size: 1.5rem;
+  font-size: 1.3rem; /* Iets kleinere titel */
   margin-bottom: 1rem;
   font-weight: bold;
   color: #333;
 }
 
-h5 {
-  font-size: 1.1rem;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
+/* --- STYLING VOOR VAARDIGHEDEN --- */
+.vaardigheden-container .werkgebied-container h5,
+.vaardigheden-container .talen-container h5 {
+  font-size: 1rem; /* Iets kleinere subtitel */
+  margin-top: 0.8rem;
+  margin-bottom: 0.3rem;
   font-weight: 600;
   color: #555;
 }
 
-.about-item,
-.skill-item,
-.taal-item,
-.job-item,
-.school-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.6rem;
+.vaardigheden-container .skill-item,
+.vaardigheden-container .taal-item {
+  display: inline-block; /* Naast elkaar weergeven */
+  background-color: #e9ecef; /* Lichte achtergrondkleur voor de tags */
+  color: #495057;
+  padding: 0.4rem 0.7rem;
+  border-radius: 6px;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
 }
 
-.skill-item i,
-.taal-item i {
-  color: green;
+.vaardigheden-container .skill-item i {
+  display: none; /* Verberg de checkmark iconen voor een strakkere stijl */
 }
 
-.job-item h6,
-.school-item h6 {
-  margin: 0;
+.vaardigheden-container .taal-item .country-flag-image-container {
+  display: none; /* Verberg de vlag afbeeldingen voor een strakkere stijl */
+}
+
+/* --- STYLING VOOR WERK ERVARING & OPLEIDING --- */
+.werkervaring-container .jobs-container .job-item,
+.opleiding-container .scholen-container .school-item {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee; /* Voeg een subtiele scheidingslijn toe */
+}
+
+.werkervaring-container .jobs-container .job-item:last-child,
+.opleiding-container .scholen-container .school-item:last-child {
+  border-bottom: none; /* Verwijder de scheidingslijn bij het laatste item */
+}
+
+.werkervaring-container .jobs-container h6,
+.opleiding-container .scholen-container h6 {
   font-size: 1rem;
   font-weight: bold;
   color: #222;
+  margin-bottom: 0.2rem;
 }
 
-.job-function,
-.school-edu-name {
+.werkervaring-container .jobs-container .job-function,
+.opleiding-container .scholen-container .school-edu-name {
+  font-size: 0.95rem;
+  color: #555;
   font-weight: 500;
+  margin-bottom: 0.2rem;
 }
 
-.job-period,
-.school-year {
-  font-size: 0.9rem;
-  color: #666;
-}   
+.werkervaring-container .jobs-container .job-period,
+.opleiding-container .scholen-container .school-year {
+  font-size: 0.85rem;
+  color: #777;
+}
 
+/* --- STYLING VOOR DE ABOUT BOX BEHOUDEN --- */
 .about-box {
   background-color: #f9f9f9;
-  padding: 2rem;
-  border-radius: 1rem;
+  padding: 1.5rem; /* Iets minder padding */
+  border-radius: 0.8rem; /* Iets minder afgerond */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem; /* Iets minder marge */
 }
 
 .about-box .small-title {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   text-transform: uppercase;
   color: #888;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
 
 .about-box .section-title {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
