@@ -71,14 +71,14 @@
 /* --- STYLING VOOR WERK ERVARING & OPLEIDING --- */
 .werkervaring-container .jobs-container .job-item,
 .opleiding-container .scholen-container .school-item {
-  margin-bottom: 1rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #eee; /* Voeg een subtiele scheidingslijn toe */
+  margin-bottom: 0.8rem; /* Iets minder marge onder elk item */
+  padding-bottom: 0.8rem; /* Iets minder padding onder elk item */
+  border-bottom: 1px solid #eee;
 }
 
 .werkervaring-container .jobs-container .job-item:last-child,
 .opleiding-container .scholen-container .school-item:last-child {
-  border-bottom: none; /* Verwijder de scheidingslijn bij het laatste item */
+  border-bottom: none;
 }
 
 .werkervaring-container .jobs-container h6,
@@ -86,7 +86,7 @@
   font-size: 1rem;
   font-weight: bold;
   color: #222;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.1rem; /* Minder marge onder de titel */
 }
 
 .werkervaring-container .jobs-container .job-function,
@@ -94,13 +94,14 @@
   font-size: 0.95rem;
   color: #555;
   font-weight: 500;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.1rem; /* Minder marge onder de functie/opleiding */
 }
 
 .werkervaring-container .jobs-container .job-period,
 .opleiding-container .scholen-container .school-year {
   font-size: 0.85rem;
   color: #777;
+  margin-bottom: 0; /* Verwijder de marge onder de periode/jaar */
 }
 
 /* --- STYLING VOOR DE ABOUT BOX BEHOUDEN --- */
