@@ -5,6 +5,7 @@ const projects = [
       //image: `${import.meta.env.BASE_URL}QRLogistics1.jpeg`,
       description: "Een logistieke webapplicatie waarmee bedrijven hun orders, zendingen en voorraad eenvoudig kunnen beheren via QR-scans. Ontwikkeld met aandacht voor gebruiksgemak, inzicht en procesoptimalisatie.",
       tag: "Schoolproject",
+      techstack: "Frontend: React Native met TypeScript en Tailwind CSS (NativeWind) Backend: C# met het .NET-framework",
       gallery: [
         `${import.meta.env.BASE_URL}QRLogistics1.jpeg`,
         `${import.meta.env.BASE_URL}QRLogistics2.jpeg`,
@@ -18,6 +19,7 @@ const projects = [
       //image: "/images/voetbalapp.png",
       description: "Een sociale voetbal-app waarin gebruikers wedstrijden kunnen voorspellen, vrienden kunnen volgen en coins verdienen voor correcte voorspellingen. Coins zijn in te wisselen voor profiel-aanpassingen of cosmetische items.",
       tag: "Persoonlijk project",
+      techstack: "Frontend: React Native met JavaScript Backend: Geen backend code aanwezig voor nu",
       gallery: [
         `${import.meta.env.BASE_URL}voetbal1.jpeg`,
         `${import.meta.env.BASE_URL}voetbal2.jpeg`,
@@ -31,6 +33,7 @@ const projects = [
         //image: "/images/TableTech.png",
         description: "Een alles-in-één dashboard voor horecazaken, waarmee personeel menu’s kan beheren, feedback kan ontvangen, voorraden bijhouden en klanttevredenheid verhogen via digitale bestel- en contactmomenten.",
         tag: "Persoonlijk project",
+        techstack: "",
         gallery: [
           `${import.meta.env.BASE_URL}TableTech1.jpeg`,
           `${import.meta.env.BASE_URL}TableTech2.jpeg`,
