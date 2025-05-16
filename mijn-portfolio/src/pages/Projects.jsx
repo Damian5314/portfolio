@@ -16,6 +16,7 @@ function Projects() {
               <small>{project.tag}</small>
               <h2>{project.title}</h2>
               <p>{project.description}</p>
+              <small className="view-project">Bekijk project →</small>
             </div>
           </Link>
         ))}

@@ -10,11 +10,15 @@
   }
   
   .project-card {
-    background: #f0f0f0;
-    border-radius: 8px;
+    background: #fff; /* Witte achtergrond */
+    border-radius: 8px; /* Afgeronde hoeken */
     overflow: hidden;
     transition: transform 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05); /* Subtiele schaduw */
+    text-decoration: none;
+    color: #1a1a1a; /* Donkere tekstkleur */
+    display: flex; /* Gebruik flexbox voor de layout van de inhoud */
+    flex-direction: column; /* Stapel de inhoud verticaal */
   }
   
   .project-card:hover {
@@ -23,25 +27,42 @@
   
   .project-card img {
     width: 100%;
-    height: auto;
+    height: 180px;
+    object-fit: cover;
     display: block;
   }
   
   .project-info {
-    padding: 1rem;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
   }
+
+  .project-info small {
+    color: #555; /* Grijze kleur voor de tag */
+    margin-bottom: 0.3rem;
+  }  
   
   .project-info h2 {
-    margin: 0.5rem 0;
-    font-size: 1.25rem;
+    margin: 0.5rem 0 0.8rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #1a1a1a;
   }
   
   .project-info p {
     font-size: 1rem;
     color: #555;
+    margin-bottom: 1rem;
   }
-  
-  
+
+  .project-info .view-project {
+    color: #007bff; /* Blauwe kleur voor de "Bekijk project" tekst */
+    font-weight: bold;
+    margin-top: auto; /* Duw de "Bekijk project" tekst naar de onderkant */
+  }
+
   .project-detail {
     padding: 2rem;
   }
