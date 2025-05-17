@@ -47,12 +47,12 @@ const projects = [
       {
         slug: "TableTech Website",
         title: "TableTech Website",
-        //image: "/images/TableTech.png",
+        image: `${import.meta.env.BASE_URL}TableTechWeb1.png`,
         description: "De officiële website van TableTech waarmee horecaondernemers kennismaken met het platform. De site legt de voordelen uit, bevat call-to-actions en is geoptimaliseerd voor SEO en conversie.",
         tag: "Persoonlijk project",
         techstack: "",
         gallery: [
-          //`${import.meta.env.BASE_URL}TableTech1.jpeg`,
+          `${import.meta.env.BASE_URL}TableTechWeb1.png`,
           //`${import.meta.env.BASE_URL}TableTech2.jpeg`,
           //`${import.meta.env.BASE_URL}TableTech3.png`,
           //`${import.meta.env.BASE_URL}TableTech4.png`,
@@ -64,12 +64,12 @@ const projects = [
       {
         slug: "willes-rijschool",
         title: "Willes Rijschool Website",
-        image: "/images/willesrijschool-cover.png",
+        image: `${import.meta.env.BASE_URL}willes1.png`,
         description: "Een moderne en overzichtelijke website voor Willes Rijschool waarmee bezoekers eenvoudig informatie kunnen vinden over rijlessen, tarieven en contactgegevens. De site is ontworpen met gebruiksvriendelijkheid, vertrouwen en conversie in gedachten.",
         tag: "Klantproject",
         techstack: "HTML, CSS, JavaScript, responsive design",
         gallery: [
-          //`${import.meta.env.BASE_URL}willes1.png`,
+          `${import.meta.env.BASE_URL}willes1.png`,
           //`${import.meta.env.BASE_URL}willes2.png`,
           //`${import.meta.env.BASE_URL}willes3.png`
         ]
@@ -77,12 +77,12 @@ const projects = [
       {
         slug: "cabo-feira",
         title: "CaboFeira",
-        image: "/images/cabo-feira-cover.png", // optioneel thumbnail
+        image: `${import.meta.env.BASE_URL}CaboFeira1.png`,
         description: "CaboFeira is een online marktplaats speciaal ontwikkeld voor de Kaapverdische gemeenschap. Op deze gebruiksvriendelijke website kunnen mensen eenvoudig tweedehands spullen verkopen of zoeken naar producten.",
         tag: "Klantproject",
         techstack: "HTML, CSS, JavaScript, responsive design",
         gallery: [
-          //`${import.meta.env.BASE_URL}cabo1.png`,
+          `${import.meta.env.BASE_URL}CaboFeira1.png`,
           //`${import.meta.env.BASE_URL}cabo2.png`,
           //`${import.meta.env.BASE_URL}cabo3.png`
         ]
