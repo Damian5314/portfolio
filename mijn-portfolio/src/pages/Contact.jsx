@@ -70,7 +70,7 @@ const Contact = () => {
         <div className="contact-info">
           <h2 className="contact-subtitle">Get in touch</h2>
           <p className="contact-text">
-            Interested in working together? Fill out the form and I'll get back to you as soon as possible.
+            Wil je contact opnemen met mij?
           </p>
 
           <div className="contact-details">
