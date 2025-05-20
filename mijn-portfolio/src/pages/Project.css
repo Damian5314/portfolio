@@ -40,7 +40,7 @@
   }
 
   .project-info small {
-    color: #555; /* Grijze kleur voor de tag */
+    color: #242424; /* Grijze kleur voor de tag */
     margin-bottom: 0.3rem;
   }  
   
@@ -53,7 +53,7 @@
   
   .project-info p {
     font-size: 1rem;
-    color: #555;
+    color: #1f1f1f;
     margin-bottom: 1rem;
   }
 
