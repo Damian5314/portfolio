@@ -24,7 +24,7 @@
 /* Tag styling behouden */
 .tag p {
   font-size: 0.85rem;
-  color: #999;
+  color: #272727;
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -35,7 +35,7 @@
   font-size: 1.3rem; /* Iets kleinere titel */
   margin-bottom: 1rem;
   font-weight: bold;
-  color: #333;
+  color: #000000;
 }
 
 /* --- STYLING VOOR VAARDIGHEDEN --- */
@@ -45,14 +45,14 @@
   margin-top: 0.8rem;
   margin-bottom: 0.3rem;
   font-weight: 600;
-  color: #555;
+  color: #0f0f0f;
 }
 
 .vaardigheden-container .skill-item,
 .vaardigheden-container .taal-item {
   display: inline-block; /* Naast elkaar weergeven */
   background-color: #E4E0D7; /* Lichte achtergrondkleur voor de tags */
-  color: #495057;
+  color: #1c1d1f;
   padding: 0.4rem 0.7rem;
   border-radius: 6px;
   margin-right: 0.5rem;
@@ -85,14 +85,14 @@
 .opleiding-container .scholen-container h6 {
   font-size: 1rem;
   font-weight: bold;
-  color: #222;
+  color: #000000;
   margin-bottom: 0.1rem; /* Minder marge onder de titel */
 }
 
 .werkervaring-container .jobs-container .job-function,
 .opleiding-container .scholen-container .school-edu-name {
   font-size: 0.95rem;
-  color: #555;
+  color: #000000;
   font-weight: 500;
   margin-bottom: 0.1rem; /* Minder marge onder de functie/opleiding */
 }
@@ -100,7 +100,7 @@
 .werkervaring-container .jobs-container .job-period,
 .opleiding-container .scholen-container .school-year {
   font-size: 0.85rem;
-  color: #777;
+  color: #000000;
   margin-bottom: 0; /* Verwijder de marge onder de periode/jaar */
 }
 
@@ -116,7 +116,7 @@
 .about-box .small-title {
   font-size: 0.7rem;
   text-transform: uppercase;
-  color: #888;
+  color: #181818;
   margin-bottom: 0.3rem;
 }
 
