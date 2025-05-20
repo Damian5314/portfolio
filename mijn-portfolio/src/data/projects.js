@@ -2,7 +2,7 @@ const projects = [
     {
       slug: "QR logistics",
       title: "QR logistics",
-      //image: `${import.meta.env.BASE_URL}QRLogistics1.jpeg`,
+      image: `${import.meta.env.BASE_URL}QRLogistics1.jpeg`,
       description: "Een logistieke webapplicatie waarmee bedrijven hun orders, zendingen en voorraad eenvoudig kunnen beheren via QR-scans. Ontwikkeld met aandacht voor gebruiksgemak, inzicht en procesoptimalisatie.",
       tag: "Schoolproject",
       techstack: "Frontend: React Native met TypeScript en Tailwind CSS (NativeWind) Backend: C# met het .NET-framework",
@@ -16,7 +16,7 @@ const projects = [
     {
       slug: "voetbal-app",
       title: "Voetbal-app",
-      //image: "/images/voetbalapp.png",
+      image: `${import.meta.env.BASE_URL}voetbal1.jpeg`,
       description: "Een sociale voetbal-app waarin gebruikers wedstrijden kunnen voorspellen, vrienden kunnen volgen en coins verdienen voor correcte voorspellingen. Coins zijn in te wisselen voor profiel-aanpassingen of cosmetische items.",
       tag: "Persoonlijk project",
       techstack: "Frontend: React Native met JavaScript Backend: Geen backend code aanwezig voor nu",
@@ -30,7 +30,7 @@ const projects = [
     {
         slug: "TableTech",
         title: "TableTech",
-        //image: "/images/TableTech.png",
+        image: `${import.meta.env.BASE_URL}TableTech1.jpeg`,
         description: "Een alles-in-één dashboard voor horecazaken, waarmee personeel menu’s kan beheren, feedback kan ontvangen, voorraden bijhouden en klanttevredenheid verhogen via digitale bestel- en contactmomenten.",
         tag: "Persoonlijk project",
         techstack: "",
@@ -53,7 +53,7 @@ const projects = [
         techstack: "",
         gallery: [
           `${import.meta.env.BASE_URL}TableTechWeb1.png`,
-          //`${import.meta.env.BASE_URL}TableTech2.jpeg`,
+          `${import.meta.env.BASE_URL}TableTechWeb2.png`,
           //`${import.meta.env.BASE_URL}TableTech3.png`,
           //`${import.meta.env.BASE_URL}TableTech4.png`,
           //`${import.meta.env.BASE_URL}TableTech5.png`,
