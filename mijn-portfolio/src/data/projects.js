@@ -70,8 +70,8 @@ const projects = [
         techstack: "HTML, CSS, JavaScript, responsive design",
         gallery: [
           `${import.meta.env.BASE_URL}willes1.png`,
-          //`${import.meta.env.BASE_URL}willes2.png`,
-          //`${import.meta.env.BASE_URL}willes3.png`
+          `${import.meta.env.BASE_URL}willes2.png`,
+          `${import.meta.env.BASE_URL}willes3.png`
         ]
       },
       {

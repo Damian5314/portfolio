@@ -19,7 +19,7 @@ const ProjectDetail = () => {
         const projectData = allProjects.find((p) => p.slug === slug)
 
         // Get two other projects for the "Other Projects" section
-        const filteredProjects = allProjects.filter((p) => p.slug !== slug).slice(0, 2)
+        const filteredProjects = allProjects.filter((p) => p.slug !== slug).slice(0, 3)
 
         setProject(projectData)
         setOtherProjects(filteredProjects)
