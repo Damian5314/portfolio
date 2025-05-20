@@ -18,11 +18,12 @@ const projects = [
     {
       slug: "voetbal-app",
       title: "Voetbal-app",
-      image: `${import.meta.env.BASE_URL}voetbal1.jpeg`,
+      image: `${import.meta.env.BASE_URL}voetbalbanner.png`,
       description: "Een sociale voetbal-app waarin gebruikers wedstrijden kunnen voorspellen, vrienden kunnen volgen en coins verdienen voor correcte voorspellingen. Coins zijn in te wisselen voor profiel-aanpassingen of cosmetische items.",
       tag: "Persoonlijk project",
       techstack: "Frontend: React Native met JavaScript Backend: Geen backend code aanwezig voor nu",
       gallery: [
+        `${import.meta.env.BASE_URL}voetbalbanner.png`,        
         `${import.meta.env.BASE_URL}voetbal1.jpeg`,
         `${import.meta.env.BASE_URL}voetbal2.jpeg`,
         `${import.meta.env.BASE_URL}voetbal3.jpeg`,
