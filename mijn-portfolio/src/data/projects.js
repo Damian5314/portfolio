@@ -2,7 +2,7 @@ const projects = [
     {
       slug: "QR logistics",
       title: "QR logistics",
-      image: `${import.meta.env.BASE_URL}QRLogistics1.jpeg`,
+      image: `${import.meta.env.BASE_URL}QRLogistics5.png`,
       description: "Een logistieke webapplicatie waarmee bedrijven hun orders, zendingen en voorraad eenvoudig kunnen beheren via QR-scans. Ontwikkeld met aandacht voor gebruiksgemak, inzicht en procesoptimalisatie.",
       tag: "Schoolproject",
       techstack: "Frontend: React Native met TypeScript en Tailwind CSS (NativeWind) Backend: C# met het .NET-framework",
@@ -10,7 +10,9 @@ const projects = [
         `${import.meta.env.BASE_URL}QRLogistics1.jpeg`,
         `${import.meta.env.BASE_URL}QRLogistics2.jpeg`,
         `${import.meta.env.BASE_URL}QRLogistics3.jpeg`,
-        `${import.meta.env.BASE_URL}QRLogistics4.jpeg`
+        `${import.meta.env.BASE_URL}QRLogistics4.jpeg`,
+        `${import.meta.env.BASE_URL}QRLogistics5.png`,
+        `${import.meta.env.BASE_URL}QRLogistics6.png`,
       ]
     },
     {
