@@ -32,7 +32,7 @@ const projects = [
     {
         slug: "TableTech",
         title: "TableTech",
-        image: `${import.meta.env.BASE_URL}TableTech1.jpeg`,
+        image: `${import.meta.env.BASE_URL}TableTech4.png`,
         description: "Een alles-in-één dashboard voor horecazaken, waarmee personeel menu’s kan beheren, feedback kan ontvangen, voorraden bijhouden en klanttevredenheid verhogen via digitale bestel- en contactmomenten.",
         tag: "Persoonlijk project",
         techstack: "",
