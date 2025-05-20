@@ -15,7 +15,7 @@
 /* Algemene styling voor de kolommen aanpassen */
 .col-lg-4 {
   flex: 1 1 300px;
-  background: #fff; /* Witte achtergrond zoals in de tweede afbeelding */
+  background: #CBC0AD; /* Witte achtergrond zoals in de tweede afbeelding */
   border-radius: 8px; /* Afgeronde hoeken */
   padding: 1.2rem; /* Iets minder padding voor een compacter effect */
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05); /* Subtiele schaduw */
@@ -51,7 +51,7 @@
 .vaardigheden-container .skill-item,
 .vaardigheden-container .taal-item {
   display: inline-block; /* Naast elkaar weergeven */
-  background-color: #e9ecef; /* Lichte achtergrondkleur voor de tags */
+  background-color: #E4E0D7; /* Lichte achtergrondkleur voor de tags */
   color: #495057;
   padding: 0.4rem 0.7rem;
   border-radius: 6px;
@@ -106,7 +106,7 @@
 
 /* --- STYLING VOOR DE ABOUT BOX BEHOUDEN --- */
 .about-box {
-  background-color: #f9f9f9;
+  background-color: #CBC0AD;
   padding: 1.5rem; /* Iets minder padding */
   border-radius: 0.8rem; /* Iets minder afgerond */
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
