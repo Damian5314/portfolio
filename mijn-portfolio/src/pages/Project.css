@@ -92,5 +92,29 @@
     border-radius: 8px;
     object-fit: cover;
   }
+  .filter-buttons {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .filter-buttons button {
+    padding: 0.5rem 1rem;
+    border: none;
+    background-color: var(--color-onyx);
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .filter-buttons button:hover {
+    background-color: var(--color-berkeley-blue);
+  }
+  
+  .filter-buttons button.active {
+    background-color: var(--color-picton-blue);
+  }
   
   
