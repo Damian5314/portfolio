@@ -105,9 +105,9 @@ const projects = [
         slug: "2D Battle Game",
         title: "2D Battle Game",
         image: `${import.meta.env.BASE_URL}PokemonHackathon3.png`, 
-        description: "Tijdens een GitHub Copilot Hackathon ontwikkelde ik samen met mijn team een eenvoudige Pokémon-achtige game. In deze browsergame verplaats je je karakter over een speelveld, kun je wilde Pokémon tegenkomen en ga je gevechten aan via een turn-based battle-systeem. Het doel was om met behulp van AI-assistentie (GitHub Copilot) binnen enkele uren een werkende game te bouwen.",
+        description: "Tijdens een GitHub Copilot Hackathon op 21 mei 2025, georganiseerd door Xebia in Hilversum, ontwikkelde ik samen met mijn team een eenvoudige Pokémon-achtige game. In deze browsergame verplaats je je karakter over een speelveld, kun je wilde Pokémon tegenkomen en ga je gevechten aan via een turn-based battle-systeem. Het doel was om met behulp van AI-assistentie (GitHub Copilot) binnen enkele uren een werkende game te bouwen.",
         tag: "Evenement project",
-        techstack: "HTML, Javascript",
+        techstack: "HTML, Javascript, GitHub Copilot",
         gallery: [
           `${import.meta.env.BASE_URL}PokemonHackathon1.png`,
           `${import.meta.env.BASE_URL}PokemonHackathon2.png`,
