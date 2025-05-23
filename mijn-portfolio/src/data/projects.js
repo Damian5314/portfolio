@@ -89,6 +89,30 @@ const projects = [
           //`${import.meta.env.BASE_URL}cabo2.png`,
           //`${import.meta.env.BASE_URL}cabo3.png`
         ]
+      },
+      {
+        slug: "Space Monkey",
+        title: "Space Monkey",
+        image: `${import.meta.env.BASE_URL}SpaceMonkey1.png`, 
+        description: "Space Monkey is een interactieve terminal-game geschreven in Python waarin je speelt als Jararis, een hyperintelligente aap op een missie om de mensheid te redden. De game combineert avontuur, humor en puzzels met een verhalende ervaring waarin keuzes daadwerkelijk impact hebben. Van het crashen op een mysterieuze planeet tot ontsnappen uit een alien-basis en terugkeren naar Rotterdam Zuid – alles is mogelijk. De speler wordt uitgedaagd met raadsels, multiple choice-situaties en zelfs een potje galgje, allemaal met een flinke dosis satire.",
+        tag: "Schoolproject",
+        techstack: "Python",
+        gallery: [
+          `${import.meta.env.BASE_URL}SpaceMonkey1.png`,
+        ]
+      },
+      {
+        slug: "2D Battle Game",
+        title: "2D Battle Game",
+        image: `${import.meta.env.BASE_URL}PokemonHackathon3.png`, 
+        description: "Tijdens een GitHub Copilot Hackathon ontwikkelde ik samen met mijn team een eenvoudige Pokémon-achtige game. In deze browsergame verplaats je je karakter over een speelveld, kun je wilde Pokémon tegenkomen en ga je gevechten aan via een turn-based battle-systeem. Het doel was om met behulp van AI-assistentie (GitHub Copilot) binnen enkele uren een werkende game te bouwen.",
+        tag: "Evenement project",
+        techstack: "HTML, Javascript",
+        gallery: [
+          `${import.meta.env.BASE_URL}PokemonHackathon1.png`,
+          `${import.meta.env.BASE_URL}PokemonHackathon2.png`,
+          `${import.meta.env.BASE_URL}PokemonHackathon3.png`
+        ]
       }
       
   ];
