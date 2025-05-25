@@ -6,6 +6,7 @@
   background: #CBC0AD;
   padding: 1rem 2rem;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -34,6 +35,35 @@
   color: black;
 }
 
+/* Language switcher */
+.lang-switcher {
+  display: none;
+}
+
+.lang-switcher-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.lang-switcher-vertical button {
+  padding: 0.3rem 1.2rem;
+  border: none;
+  background: #f5f5f5;
+  color: #222;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin: 0;
+}
+
+.lang-switcher-vertical button.active {
+  background: #007bff;
+  color: #fff;
+}
+
 /* Responsive gedrag */
 @media (max-width: 768px) {
   .hamburger {
@@ -56,4 +86,25 @@
   .nav-links.open {
     display: flex !important;
   }
+
+  .lang-switcher {
+    margin: 1rem auto 0 auto;
+    justify-content: center;
+  }
+
+  .lang-switcher-vertical {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+}
+
+/* Center the lang-switcher in the navbar */
+.navbar {
+  position: relative;
+}
+.lang-switcher {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 1.2rem;
 }

@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react"
 import { useParams, Link } from "react-router-dom"
 import "./ProjectDetail.css"
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../data/translations';
 
 const ProjectDetail = () => {
   const { slug } = useParams()
@@ -10,6 +12,8 @@ const ProjectDetail = () => {
   const [loading, setLoading] = useState(true)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [otherProjects, setOtherProjects] = useState([])
+  const { language } = useLanguage()
+  const t = translations[language]
 
   useEffect(() => {
     // Import the projects data
@@ -46,7 +50,7 @@ const ProjectDetail = () => {
   if (loading) {
     return (
       <div className="project-detail-container">
-        <div className="loading">Loading...</div>
+        <div className="loading">{language === 'nl' ? 'Laden...' : 'Loading...'}</div>
       </div>
     )
   }
@@ -54,18 +58,13 @@ const ProjectDetail = () => {
   if (!project) {
     return (
       <div className="project-detail-container">
-        <div className="not-found">
-          <h1>Project not found</h1>
-          <Link to="/projects" className="back-link">
-            ← Back to projects
-          </Link>
-        </div>
+        <div className="loading">{language === 'nl' ? 'Project niet gevonden.' : 'Project not found.'}</div>
       </div>
     )
   }
 
   return (
-    <div className="project-detail-container">
+    <div className="project-detail">
       <Link to="/projects" className="back-link">
         ← Back to projects
       </Link>
@@ -113,13 +112,13 @@ const ProjectDetail = () => {
       </div>
 
       <div className="project-description">
-        <h2>Project Description</h2>
+        <h2>{t.projectDescription}</h2>
         <p>{project.description}</p>
       </div>
 
       {otherProjects.length > 0 && (
         <div className="other-projects">
-          <h2>Other Projects</h2>
+          <h2>{t.otherProjects}</h2>
           <div className="projects-grid">
             {otherProjects.map((otherProject, index) => (
               <Link key={index} to={`/projects/${otherProject.slug}`} className="project-card">
@@ -138,7 +137,7 @@ const ProjectDetail = () => {
                     ? otherProject.description.substring(0, 120) + "..."
                     : otherProject.description}
                 </p>
-                <span className="view-project">View Project →</span>
+                <span className="view-project">{t.viewProject} →</span>
               </Link>
             ))}
           </div>

@@ -1,6 +1,10 @@
 import './Home.css';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../data/translations';
 
 function Home() {
+  const { language } = useLanguage();
+  const t = translations[language];
   return (
     <div className="home-container">
       <img
@@ -9,10 +13,8 @@ function Home() {
         className="profile-image"
       />
       <div className="intro-text">
-        <h1>Welkom!</h1>
-        <p>
-          Dit is mijn persoonlijke portfolio. Hier deel ik mijn werk, skills en projecten waar ik trots op ben.
-        </p>
+        <h1>{t.welcome}</h1>
+        <p>{t.intro}</p>
       </div>
     </div>
   );

@@ -1,7 +1,11 @@
 import { useState } from "react"
 import "./Contact.css"
+import { useLanguage } from "../context/LanguageContext"
+import translations from "../data/translations"
 
 const Contact = () => {
+  const { language } = useLanguage()
+  const t = translations[language]
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -46,12 +50,13 @@ const Contact = () => {
       return
     }
 
-    // In a real application, you would send the form data to your backend
-    // For this example, we'll just simulate a successful submission
     setFormStatus({
       submitted: true,
       error: false,
-      message: "Your message has been sent successfully!",
+      message:
+        language === "nl"
+          ? "Je bericht is succesvol verzonden!"
+          : "Your message has been sent successfully!",
     })
 
     // Reset form
@@ -64,13 +69,15 @@ const Contact = () => {
 
   return (
     <main className="contact-page">
-      <h1 className="contact-title">Contact</h1>
+      <h1 className="contact-title">{t.contact}</h1>
 
       <div className="contact-container">
         <div className="contact-info">
-          <h2 className="contact-subtitle">Get in touch</h2>
+          <h2 className="contact-subtitle">{t.getInTouch}</h2>
           <p className="contact-text">
-            Wil je contact opnemen met mij?
+            {language === "nl"
+              ? "Wil je contact opnemen met mij?"
+              : "Would you like to get in touch with me?"}
           </p>
 
           <div className="contact-details">
@@ -86,13 +93,25 @@ const Contact = () => {
           </div>
 
           <div className="contact-social">
-            <h3 className="social-title">Follow me</h3>
+            <h3 className="social-title">
+              {language === "nl" ? "Volg mij" : "Follow me"}
+            </h3>
             <div className="social-links">
-              <a href="https://www.linkedin.com/in/damianwillemse/" target="_blank" rel="noopener noreferrer" className="social-link">
-                LinkedIn
+              <a
+                href="https://www.linkedin.com/in/damianwillemse/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                {t.linkedin}
               </a>
-              <a href="https://github.com/Damian5314" target="_blank" rel="noopener noreferrer" className="social-link">
-                GitHub
+              <a
+                href="https://github.com/Damian5314"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-link"
+              >
+                {t.github}
               </a>
             </div>
           </div>
@@ -101,22 +120,26 @@ const Contact = () => {
         <div className="contact-form-container">
           {formStatus.submitted ? (
             <div className="form-success">
-              <h2>Thank you!</h2>
+              <h2>{t.thankYou}</h2>
               <p>{formStatus.message}</p>
               <button
                 className="reset-button"
-                onClick={() => setFormStatus({ submitted: false, error: false, message: "" })}
+                onClick={() =>
+                  setFormStatus({ submitted: false, error: false, message: "" })
+                }
               >
-                Send another message
+                {t.sendAnother}
               </button>
             </div>
           ) : (
             <form className="contact-form" onSubmit={handleSubmit}>
-              {formStatus.error && <div className="form-error">{formStatus.message}</div>}
+              {formStatus.error && (
+                <div className="form-error">{formStatus.message}</div>
+              )}
 
               <div className="form-group">
                 <label htmlFor="name" className="form-label">
-                  Name
+                  {t.name}
                 </label>
                 <input
                   type="text"
@@ -125,13 +148,15 @@ const Contact = () => {
                   className="form-input"
                   value={formData.name}
                   onChange={handleChange}
-                  placeholder="Your name"
+                  placeholder={
+                    language === "nl" ? "Je naam" : "Your name"
+                  }
                 />
               </div>
 
               <div className="form-group">
                 <label htmlFor="email" className="form-label">
-                  Email
+                  {t.email}
                 </label>
                 <input
                   type="email"
@@ -140,13 +165,15 @@ const Contact = () => {
                   className="form-input"
                   value={formData.email}
                   onChange={handleChange}
-                  placeholder="Your email"
+                  placeholder={
+                    language === "nl" ? "Je e-mail" : "Your email"
+                  }
                 />
               </div>
 
               <div className="form-group">
                 <label htmlFor="message" className="form-label">
-                  Message
+                  {t.message}
                 </label>
                 <textarea
                   id="message"
@@ -154,13 +181,15 @@ const Contact = () => {
                   className="form-textarea"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Your message"
+                  placeholder={
+                    language === "nl" ? "Je bericht" : "Your message"
+                  }
                   rows={6}
                 ></textarea>
               </div>
 
               <button type="submit" className="submit-button">
-                Send Message
+                {t.sendMessage}
               </button>
             </form>
           )}

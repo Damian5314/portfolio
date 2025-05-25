@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../data/translations';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const { language, switchLanguage } = useLanguage();
+
+  const t = translations[language];
 
   return (
     <nav className="navbar">
@@ -22,10 +27,28 @@ function Navbar() {
       </button>
 
       <ul className={`nav-links ${menuOpen ? 'open' : ''}`}>
-        <li><Link to="//" onClick={() => setMenuOpen(false)}>Home</Link></li>
-        <li><Link to="/projects" onClick={() => setMenuOpen(false)}>Werk</Link></li>
-        <li><Link to="/about" onClick={() => setMenuOpen(false)}>Over mij</Link></li>
-        <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
+        <li><Link to="//" onClick={() => setMenuOpen(false)}>{t.home || 'Home'}</Link></li>
+        <li><Link to="/projects" onClick={() => setMenuOpen(false)}>{t.myWork || 'Werk'}</Link></li>
+        <li><Link to="/about" onClick={() => setMenuOpen(false)}>{t.about || 'Over mij'}</Link></li>
+        <li><Link to="/contact" onClick={() => setMenuOpen(false)}>{t.contact || 'Contact'}</Link></li>
+        <li>
+          <div className="lang-switcher-vertical">
+            <button
+              onClick={() => switchLanguage('nl')}
+              className={language === 'nl' ? 'active' : ''}
+              aria-label="Switch to Dutch"
+            >
+              NL
+            </button>
+            <button
+              onClick={() => switchLanguage('en')}
+              className={language === 'en' ? 'active' : ''}
+              aria-label="Switch to English"
+            >
+              EN
+            </button>
+          </div>
+        </li>
       </ul>
     </nav>
   );

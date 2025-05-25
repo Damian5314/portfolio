@@ -1,36 +1,33 @@
 import './About.css';
+import { useLanguage } from '../context/LanguageContext';
+import translations from '../data/translations';
 
 function About() {
+  const { language } = useLanguage();
+  const t = translations[language];
   return (
     <div className="container">
         {/* Persoonlijke informatie */}
         <div className="about-box">
-          <p className="small-title">Persoonlijk</p>
-          <h2 className="section-title">Over mij</h2>
+          <p className="small-title">{language === 'nl' ? 'Persoonlijk' : 'Personal'}</p>
+          <h2 className="section-title">{t.about}</h2>
           <p>
-            Ik ben een enthousiaste softwareontwikkelaar met een passie voor technologie, design en het bouwen van slimme oplossingen.
-            In mijn vrije tijd verzamel ik vinylplaten, bouw ik aan persoonlijke projecten, en verdiep ik mij in alles wat met innovatie en ondernemerschap te maken heeft.
+            {language === 'nl'
+              ? 'Ik ben een enthousiaste softwareontwikkelaar met een passie voor technologie, design en het bouwen van slimme oplossingen. In mijn vrije tijd verzamel ik vinylplaten, bouw ik aan persoonlijke projecten, en verdiep ik mij in alles wat met innovatie en ondernemerschap te maken heeft.'
+              : 'I am an enthusiastic software developer with a passion for technology, design, and building smart solutions. In my free time, I collect vinyl records, work on personal projects, and immerse myself in everything related to innovation and entrepreneurship.'}
           </p>
         </div>
       <div className="row">
         {/* Vaardigheden */}
         <div className="col-lg-4 d-flex flex-column vaardigheden-container">
           <div className="tag">
-            <p>Skills</p>
+            <p>{t.vaardigheden}</p>
           </div>
-          <h2 className="title">Vaardigheden</h2>
+          <h2 className="title">{t.vaardigheden}</h2>
 
           <div className="werkgebied-container">
-            <h5 className="titel-werkgebied">Werkgebied</h5>
-            {[
-              "HTML",
-              "CSS",
-              "JavaScript",
-              "Python",
-              "TypeScript",
-              "React",
-              "C#"
-            ].map((skill, i) => (
+            <h5 className="titel-werkgebied">{language === 'nl' ? 'Werkgebied' : 'Expertise'}</h5>
+            {['HTML', 'CSS', 'JavaScript', 'Python', 'TypeScript', 'React', 'C#'].map((skill, i) => (
               <div className="d-flex skill-item" key={i}>
                 <i className="fa-solid fa-circle-check"></i>
                 <p>{skill}</p>
@@ -39,14 +36,14 @@ function About() {
           </div>
 
           <div className="talen-container">
-            <h5 className="titel-talen">Talen</h5>
-            {[
-              "Nederlands (moedertaal)",
-              "Engels (professionele vaardigheid)",
-            ].map((language, i) => (
+            <h5 className="titel-talen">{t.talen}</h5>
+            { [
+              language === 'nl' ? 'Nederlands (moedertaal)' : 'Dutch (native)',
+              language === 'nl' ? 'Engels (professionele vaardigheid)' : 'English (professional proficiency)'
+            ].map((languageText, i) => (
               <div className="d-flex taal-item" key={i}>
                 <div className="country-flag-image-container"></div>
-                <p>{language}</p>
+                <p>{languageText}</p>
               </div>
             ))}
           </div>
@@ -55,15 +52,15 @@ function About() {
         {/* Werkervaring */}
         <div className="col-lg-4 d-flex flex-column werkervaring-container">
           <div className="tag">
-            <p>Functies</p>
+            <p>{t.functies}</p>
           </div>
-          <h2 className="title">Werkervaring</h2>
+          <h2 className="title">{t.werkervaring}</h2>
 
           <div className="jobs-container">
-            {[
-              ["21South", "Service Desk", "Okt. 2024 - heden"],
-              ["Mediamarkt", "Logistiek medewerker", "jul. 2021 - okt. 2024"],
-              ["Dirk", "Vakkenvuller", "jul. 2019 - jul. 2021"],
+            { [
+              ["21South", language === 'nl' ? "Service Desk" : "Service Desk", "Okt. 2024 - heden"],
+              ["Mediamarkt", language === 'nl' ? "Logistiek medewerker" : "Logistics employee", "jul. 2021 - okt. 2024"],
+              ["Dirk", language === 'nl' ? "Vakkenvuller" : "Stock clerk", "jul. 2019 - jul. 2021"]
             ].map(([company, role, period], i) => (
               <div className="d-flex flex-column job-item" key={i}>
                 <h6>{company}</h6>
@@ -77,14 +74,14 @@ function About() {
         {/* Opleiding */}
         <div className="col-lg-4 d-flex flex-column opleiding-container">
           <div className="tag">
-            <p>Educatie</p>
+            <p>{t.educatie}</p>
           </div>
-          <h2 className="title">Opleiding</h2>
+          <h2 className="title">{t.opleiding}</h2>
 
           <div className="scholen-container">
-            {[
-              ["Hogeschool Rotterdam", "Informatica (HBO)", "2023 - heden"],
-              ["Montfort College Rotterdam", "HAVO", "2016 - 2023"],
+            { [
+              [language === 'nl' ? "Hogeschool Rotterdam" : "Rotterdam University of Applied Sciences", language === 'nl' ? "Informatica (HBO)" : "Computer Science (BSc)", "2023 - heden"],
+              [language === 'nl' ? "Montfort College Rotterdam" : "Montfort College Rotterdam", language === 'nl' ? "HAVO" : "Pre-university education (HAVO)", "2016 - 2023"]
             ].map(([school, edu, year], i) => (
               <div className="d-flex flex-column school-item" key={i}>
                 <h6>{school}</h6>
