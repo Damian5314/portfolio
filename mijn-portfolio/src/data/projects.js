@@ -113,8 +113,20 @@ const projects = [
           `${import.meta.env.BASE_URL}PokemonHackathon2.png`,
           `${import.meta.env.BASE_URL}PokemonHackathon3.png`
         ]
+      },
+      {
+        slug: "brick-breaker",
+        title: "Brick Breaker",
+        image: `${import.meta.env.BASE_URL}brick1.png`,
+        description: "Brick Breaker is een moderne versie van het klassieke arcadespel, gemaakt in Lua met de LÖVE 2D-engine. De game bevat upgrades, meerdere ballen, verschillende soorten blokken en een kleurrijke interface. Gebouwd als solo-project met focus op het leren van gamedevelopment.",
+        tag: "Persoonlijk project",
+        techstack: "Lua, LÖVE 2D",
+        gallery: [
+          `${import.meta.env.BASE_URL}brick1.png`,
+          `${import.meta.env.BASE_URL}brick2.png`,
+          `${import.meta.env.BASE_URL}brick3.png`,
+        ]
       }
-      
   ];
   
   export default projects;
