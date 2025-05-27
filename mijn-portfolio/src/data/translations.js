@@ -2,7 +2,7 @@ const translations = {
   nl: {
     welcome: 'Welkom!',
     intro: 'Dit is mijn persoonlijke portfolio. Hier deel ik mijn werk, skills en projecten waar ik trots op ben.',
-    myWork: 'Mijn werk',
+    myWork: 'Projecten',
     projectsProud: 'Projecten waar ik trots op ben.',
     home: 'Home',
     about: 'Over mij',
@@ -30,7 +30,7 @@ const translations = {
   en: {
     welcome: 'Welcome!',
     intro: 'This is my personal portfolio. Here I share my work, skills, and projects I am proud of.',
-    myWork: 'My Work',
+    myWork: 'Projects',
     projectsProud: 'Projects I am proud of.',
     home: 'Home',
     about: 'About',
