@@ -91,6 +91,37 @@ function About() {
             ))}
           </div>
         </div>
+
+        {/* certificaten & diploma's */}
+        <div className="col-lg-4 d-flex flex-column opleiding-container">
+          <div className="tag">
+            <p>{language === 'nl' ? 'Certificaten & Diploma\'s' : 'Certificates & Diplomas'}</p>
+          </div>
+          <h2 className="title">{language === 'nl' ? '  Certificaten & Diploma\'s' : 'Certificates & Diplomas'}</h2>
+
+          <div className="scholen-container">
+            { [
+              [
+                language === 'nl' ? 'Propedeuse Bachelor Informatica' : 'Propaedeutic Diploma Computer Science',
+                language === 'nl' ? 'Hogeschool Rotterdam' : 'Rotterdam University of Applied Sciences',
+                language === 'nl' ? 'Afgegeven op jul. 2024' : 'Issued Jul 2024',
+              ],
+              [
+                'B2 First - Score 171',
+                'Cambridge English',
+                language === 'nl' ? 'Afgegeven op dec. 2019' : 'Issued Dec 2019',
+              ]
+            ].map(([title, org, date, img], i) => (
+              <div className="d-flex flex-row align-items-center school-item" key={i}>
+                <div className="d-flex flex-column">
+                  <h6 style={{marginBottom:0}}>{title}</h6>
+                  <p className="school-edu-name" style={{marginBottom:0}}>{org}</p>
+                  <p className="school-year" style={{fontSize:'0.95em', color:'#888'}}>{date}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
