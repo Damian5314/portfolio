@@ -79,6 +79,16 @@
     background-color: #CBC0AD; /* Lichte achtergrondkleur voor het formulier */
     padding: 1.5rem;
     border-radius: 0.5rem;
+    display: flex; /* Voeg flexbox toe om de inhoud uit te lijnen */
+    flex-direction: column; /* Zorg ervoor dat de inhoud gestapeld is */
+    justify-content: center; /* Centreer de inhoud verticaal */
+    align-items: center; /* Centreer de inhoud horizontaal */
+    width: 100%; /* Make container take full width */
+  }
+  
+  .contact-form {
+    width: 100%; /* Make form take full width of container */
+    max-width: 500px; /* Set a max-width for better readability */
   }
   
   .contact-form h2 {
@@ -89,6 +99,7 @@
   
   .form-group {
     margin-bottom: 1.5rem;
+    width: 100%; /* Ensure form groups take full width */
   }
   
   .form-label {
