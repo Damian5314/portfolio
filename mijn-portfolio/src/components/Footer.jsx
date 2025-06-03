@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import './Footer.css';
 import { useLanguage } from '../context/LanguageContext';
 import translations from '../data/translations';
+import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
 function Footer() {
     const { language } = useLanguage();
@@ -26,8 +27,18 @@ function Footer() {
             </ul>
   
             <ul>
-              <li><a href="https://www.linkedin.com/in/damianwillemse/" target="_blank" rel="noreferrer">{t.linkedin || 'Linkedin ↗'}</a></li>
-              <li><a href="https://github.com/Damian5314" target="_blank" rel="noreferrer">{t.github || 'Github ↗'}</a></li>
+              <li>
+                <a href="https://www.linkedin.com/in/damianwillemse/" target="_blank" rel="noreferrer">
+                  <FaLinkedin style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                  {t.linkedin || 'Linkedin ↗'}
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/Damian5314" target="_blank" rel="noreferrer">
+                  <FaGithub style={{ marginRight: '8px', verticalAlign: 'middle' }} />
+                  {t.github || 'Github ↗'}
+                </a>
+              </li>
             </ul>
           </div>
         </div>
