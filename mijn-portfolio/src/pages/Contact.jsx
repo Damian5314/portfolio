@@ -2,6 +2,7 @@ import { useState } from "react"
 import "./Contact.css"
 import { useLanguage } from "../context/LanguageContext"
 import translations from "../data/translations"
+import { FaLinkedin, FaGithub } from "react-icons/fa"
 
 const Contact = () => {
   const { language } = useLanguage()
@@ -103,6 +104,12 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="social-link"
               >
+                <FaLinkedin
+                  style={{
+                    marginRight: "8px",
+                    verticalAlign: "middle",
+                  }}
+                />
                 {t.linkedin}
               </a>
               <a
@@ -111,6 +118,12 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="social-link"
               >
+                <FaGithub
+                  style={{
+                    marginRight: "8px",
+                    verticalAlign: "middle",
+                  }}
+                />
                 {t.github}
               </a>
             </div>
