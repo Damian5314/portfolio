@@ -1,12 +1,20 @@
-# React + Vite
+# Portfolio App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple portfolio built with React, Vite and Tailwind CSS. The router is configured using `BrowserRouter` with `basename="/portfolio"` so the app can be hosted in a subdirectory such as GitHub Pages.
 
-Currently, two official plugins are available:
+## Installation
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```bash
+npm install
+```
 
-## Expanding the ESLint configuration
+## Available Scripts
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `npm run dev` - start the development server
+- `npm run build` - create a production build in `dist`
+- `npm run preview` - preview the production build
+- `npm run deploy` - deploy the `dist` folder to GitHub Pages
+
+## Deployment
+
+After building the project, run `npm run deploy` to publish the contents of `dist` to the `gh-pages` branch. The app is served from the `/portfolio` path on your GitHub Pages site.
