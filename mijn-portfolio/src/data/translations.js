@@ -1,6 +1,6 @@
 const translations = {
   nl: {
-    welcome: 'Welkom!',
+    welcome: 'Full-Stack Developer',
     intro: 'Dit is mijn persoonlijke portfolio. Hier deel ik mijn werk, skills en projecten waar ik trots op ben.',
     myWork: 'Projecten',
     projectsProud: 'Projecten waar ik trots op ben.',

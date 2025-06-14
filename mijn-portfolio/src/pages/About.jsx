@@ -13,8 +13,8 @@ function About() {
           <h2 className="section-title">{t.about}</h2>
           <p>
             {language === 'nl'
-              ? 'Ik ben een enthousiaste softwareontwikkelaar met een passie voor technologie, design en het bouwen van slimme oplossingen. In mijn vrije tijd verzamel ik vinylplaten, bouw ik aan persoonlijke projecten, en verdiep ik mij in alles wat met innovatie en ondernemerschap te maken heeft.'
-              : 'I am an enthusiastic software developer with a passion for technology, design, and building smart solutions. In my free time, I collect vinyl records, work on personal projects, and immerse myself in everything related to innovation and entrepreneurship.'}
+              ? 'Ik ben een enthousiaste softwareontwikkelaar met een passie voor technologie, design en het bouwen van slimme oplossingen. In mijn vrije tijd bouw ik aan persoonlijke projecten, en verdiep ik mij in alles wat met innovatie en ondernemerschap te maken heeft.'
+              : 'I am an enthusiastic software developer with a passion for technology, design, and building smart solutions. In my free time I work on personal projects, and immerse myself in everything related to innovation and entrepreneurship.'}
           </p>
         </div>
       <div className="row">
