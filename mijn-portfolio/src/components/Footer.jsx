@@ -20,7 +20,7 @@ function Footer() {
         <div className="footer-right">
           <div className="footer-links">
             <ul>
-              <li><Link to="/portfolio/">{t.home || 'Home'}</Link></li>
+              <li><Link to="//">{t.home || 'Home'}</Link></li>
               <li><Link to="/projects">{t.myWork || 'Werk'}</Link></li>
               <li><Link to="/about">{t.about || 'Over mij'}</Link></li>
               <li><Link to="/contact">{t.contact || 'Contact'}</Link></li>
