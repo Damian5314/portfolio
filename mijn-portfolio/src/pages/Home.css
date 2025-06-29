@@ -29,4 +29,34 @@
       max-width: 100%;
     }
   }
+  .home-buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .home-button {
+    background-color: #000;
+    color: white;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s;
+  }
+  
+  .home-button:hover {
+    background-color: #333;
+  }
+  
+  .home-button.secondary {
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #000;
+  }
+  
+  .home-button.secondary:hover {
+    background-color: #ddd;
+  }
+  
   

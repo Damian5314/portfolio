@@ -15,6 +15,10 @@ function Home() {
       <div className="intro-text">
         <h1>{t.welcome}</h1>
         <p>{t.intro}</p>
+        <div className="home-buttons">
+          <a href="projects" className="home-button">{t.viewProjects}</a>
+          <a href="contact" className="home-button secondary">{t.contactMe}</a>
+        </div>
       </div>
     </div>
   );

@@ -25,6 +25,8 @@ const translations = {
     werkervaring: 'Werkervaring',
     educatie: 'Educatie',
     opleiding: 'Opleiding',
+    viewProjects: 'Bekijk projecten',
+    contactMe: 'Neem contact op',
     // ...add more keys as needed
   },
   en: {
@@ -53,6 +55,8 @@ const translations = {
     werkervaring: 'Work Experience',
     educatie: 'Education',
     opleiding: 'Education',
+    viewProjects: 'View Projects',
+    contactMe: 'Contact Me',
     // ...add more keys as needed
   }
 };
