@@ -58,7 +58,7 @@ function About() {
 
           <div className="jobs-container">
             { [
-              ["21South", language === 'nl' ? "Service Desk" : "Service Desk", "Okt. 2024 - heden"],
+              ["21South", language === 'nl' ? "Junior Support Engineer" : "Junior Support Engineer", "Okt. 2024 - heden"],
               ["Mediamarkt", language === 'nl' ? "Logistiek medewerker" : "Logistics employee", "jul. 2021 - okt. 2024"],
               ["Dirk", language === 'nl' ? "Vakkenvuller" : "Stock clerk", "jul. 2019 - jul. 2021"]
             ].map(([company, role, period], i) => (
