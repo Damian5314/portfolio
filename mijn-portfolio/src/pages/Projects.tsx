@@ -6,9 +6,10 @@ import { ExternalLink } from 'lucide-react';
 
 interface ProjectsProps {
   language: 'nl' | 'en';
+  onProjectSelect?: (projectId: string) => void;
 }
 
-const Projects: React.FC<ProjectsProps> = ({ language }) => {
+const Projects: React.FC<ProjectsProps> = ({ language, onProjectSelect }) => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const translations = {
@@ -46,70 +47,64 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
 
   const projects = [
     {
-      id: 1,
+      id: '1',
       title: 'E-commerce Platform',
       description: language === 'nl' 
         ? 'Moderne webshop met React en Python backend, inclusief betaalsysteem en voorraadbeheer.'
         : 'Modern web shop with React and Python backend, including payment system and inventory management.',
       category: 'client',
       technologies: ['React', 'Python', 'PostgreSQL'],
-      image: '/placeholder.svg',
-      link: '#',
+      image: '/api/placeholder/400/300',
     },
     {
-      id: 2,
+      id: '2',
       title: 'Portfolio Website',
       description: language === 'nl'
         ? 'Responsieve portfolio website gebouwd met React en TypeScript voor een creatieve professional.'
         : 'Responsive portfolio website built with React and TypeScript for a creative professional.',
       category: 'personal',
       technologies: ['React', 'TypeScript', 'Tailwind'],
-      image: '/placeholder.svg',
-      link: '#',
+      image: '/api/placeholder/400/300',
     },
     {
-      id: 3,
+      id: '3',
       title: 'Event Management System',
       description: language === 'nl'
         ? 'Uitgebreid systeem voor het beheren van evenementen, registraties en betalingen.'
         : 'Comprehensive system for managing events, registrations and payments.',
       category: 'event',
       technologies: ['C#', 'React', 'SQL Server'],
-      image: '/placeholder.svg',
-      link: '#',
+      image: '/api/placeholder/400/300',
     },
     {
-      id: 4,
+      id: '4',
       title: 'Learning Management System',
       description: language === 'nl'
         ? 'LMS voor de hogeschool met cursusmateriaal, opdrachten en voortgangstracking.'
         : 'LMS for the university with course materials, assignments and progress tracking.',
       category: 'school',
       technologies: ['React', 'Node.js', 'MongoDB'],
-      image: '/placeholder.svg',
-      link: '#',
+      image: '/api/placeholder/400/300',
     },
     {
-      id: 5,
+      id: '5',
       title: 'Task Management App',
       description: language === 'nl'
         ? 'Productiviteitsapp voor teams met realtime samenwerking en projectbeheer.'
         : 'Productivity app for teams with real-time collaboration and project management.',
       category: 'personal',
       technologies: ['React', 'Firebase', 'TypeScript'],
-      image: '/placeholder.svg',
-      link: '#',
+      image: '/api/placeholder/400/300',
     },
     {
-      id: 6,
+      id: '6',
       title: 'Restaurant Booking System',
       description: language === 'nl'
         ? 'Online reserveringssysteem voor restaurants met tafelbeheer en klantcommunicatie.'
         : 'Online reservation system for restaurants with table management and customer communication.',
       category: 'client',
       technologies: ['React', 'Python', 'PostgreSQL'],
-      image: '/placeholder.svg',
-      link: '#',
+      image: '/api/placeholder/400/300',
     },
   ];
 
@@ -124,6 +119,15 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
   const filteredProjects = activeFilter === 'all' 
     ? projects 
     : projects.filter(project => project.category === activeFilter);
+
+  const handleProjectClick = (projectId: string) => {
+    if (onProjectSelect) {
+      onProjectSelect(projectId);
+    } else {
+      // Fallback: navigate using window.location
+      window.location.href = `/projects/${projectId}`;
+    }
+  };
 
   return (
     <div className="min-h-screen bg-background">
@@ -183,11 +187,15 @@ const Projects: React.FC<ProjectsProps> = ({ language }) => {
                       </Badge>
                     ))}
                   </div>
-                  <Button variant="ghost" className="w-full group/button" asChild>
-                    <a href={project.link} className="flex items-center justify-center gap-2">
+                  <Button 
+                    variant="ghost" 
+                    className="w-full group/button"
+                    onClick={() => handleProjectClick(project.id)}
+                  >
+                    <span className="flex items-center justify-center gap-2">
                       {t.viewProject}
                       <ExternalLink className="h-4 w-4 group-hover/button:translate-x-1 transition-transform" />
-                    </a>
+                    </span>
                   </Button>
                 </CardContent>
               </Card>

@@ -6,7 +6,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
-import Projects from "./pages/Projects";
+import ProjectsApp from './pages/ProjectsApp';  // ← Alleen ProjectsApp importeren
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -30,7 +30,8 @@ const App = () => {
             <Navigation language={language} onLanguageChange={handleLanguageChange} />
             <Routes>
               <Route path="/" element={<Home language={language} />} />
-              <Route path="/projects" element={<Projects language={language} />} />
+              <Route path="/projects" element={<ProjectsApp language={language} />} />
+              <Route path="/projects/:id" element={<ProjectsApp language={language} />} />
               <Route path="/about" element={<About language={language} />} />
               <Route path="/contact" element={<Contact language={language} />} />
               <Route path="*" element={<NotFound />} />
