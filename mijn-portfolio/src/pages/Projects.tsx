@@ -48,63 +48,93 @@ const Projects: React.FC<ProjectsProps> = ({ language, onProjectSelect }) => {
   const projects = [
     {
       id: '1',
-      title: 'E-commerce Platform',
+      title: 'QR Logistics',
       description: language === 'nl' 
-        ? 'Moderne webshop met React en Python backend, inclusief betaalsysteem en voorraadbeheer.'
-        : 'Modern web shop with React and Python backend, including payment system and inventory management.',
-      category: 'client',
-      technologies: ['React', 'Python', 'PostgreSQL'],
-      image: '/api/placeholder/400/300',
+        ? 'Een logistieke webapplicatie waarmee bedrijven hun orders, zendingen en voorraad eenvoudig kunnen beheren via QR-scans. Ontwikkeld met aandacht voor gebruiksgemak, inzicht en procesoptimalisatie.'
+        : 'A logistics web application that allows companies to easily manage their orders, shipments and inventory through QR scans. Developed with attention to ease of use, insight and process optimization.',
+      category: 'school',
+      technologies: ['React Native', 'TypeScript', 'C#', '.NET'],
+      image: `${import.meta.env.BASE_URL}QRLogistics5.png`,
     },
     {
       id: '2',
-      title: 'Portfolio Website',
-      description: language === 'nl'
-        ? 'Responsieve portfolio website gebouwd met React en TypeScript voor een creatieve professional.'
-        : 'Responsive portfolio website built with React and TypeScript for a creative professional.',
+      title: 'Voetbal-app',
+      description: language === 'nl' 
+        ? 'Een sociale voetbal-app waarin gebruikers wedstrijden kunnen voorspellen, vrienden kunnen volgen en coins verdienen voor correcte voorspellingen.'
+        : 'A social football app where users can predict matches, follow friends and earn coins for correct predictions.',
       category: 'personal',
-      technologies: ['React', 'TypeScript', 'Tailwind'],
-      image: '/api/placeholder/400/300',
+      technologies: ['React Native', 'JavaScript'],
+      image: `${import.meta.env.BASE_URL}voetbalbanner.png`
     },
     {
       id: '3',
-      title: 'Event Management System',
-      description: language === 'nl'
-        ? 'Uitgebreid systeem voor het beheren van evenementen, registraties en betalingen.'
-        : 'Comprehensive system for managing events, registrations and payments.',
-      category: 'event',
-      technologies: ['C#', 'React', 'SQL Server'],
-      image: '/api/placeholder/400/300',
+      title: 'TableTech',
+      description: language === 'nl' 
+        ? 'Een alles-in-één dashboard voor horecazaken, waarmee personeel menu\'s kan beheren, feedback kan ontvangen en voorraden bijhouden.'
+        : 'An all-in-one dashboard for hospitality businesses, allowing staff to manage menus, receive feedback and track inventory.',
+      category: 'personal',
+      technologies: ['React', 'Node.js', 'MongoDB'],
+      image: `${import.meta.env.BASE_URL}TableTech4.png`,
     },
     {
       id: '4',
-      title: 'Learning Management System',
-      description: language === 'nl'
-        ? 'LMS voor de hogeschool met cursusmateriaal, opdrachten en voortgangstracking.'
-        : 'LMS for the university with course materials, assignments and progress tracking.',
-      category: 'school',
-      technologies: ['React', 'Node.js', 'MongoDB'],
-      image: '/api/placeholder/400/300',
+      title: 'TableTech Website',
+      description: language === 'nl' 
+        ? 'De officiële website van TableTech waarmee horecaondernemers kennismaken met het platform. Geoptimaliseerd voor SEO en conversie.'
+        : 'The official TableTech website where hospitality entrepreneurs get acquainted with the platform. Optimized for SEO and conversion.',
+      category: 'personal',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: `${import.meta.env.BASE_URL}TableTechWeb1.png`,
     },
     {
       id: '5',
-      title: 'Task Management App',
-      description: language === 'nl'
-        ? 'Productiviteitsapp voor teams met realtime samenwerking en projectbeheer.'
-        : 'Productivity app for teams with real-time collaboration and project management.',
-      category: 'personal',
-      technologies: ['React', 'Firebase', 'TypeScript'],
-      image: '/api/placeholder/400/300',
+      title: 'Willes Rijschool Website',
+      description: language === 'nl' 
+        ? 'Een moderne en overzichtelijke website voor Willes Rijschool waarmee bezoekers informatie kunnen vinden over rijlessen en tarieven.'
+        : 'A modern and clear website for Willes Driving School where visitors can find information about driving lessons and rates.',
+      category: 'client',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: `${import.meta.env.BASE_URL}willes1.png`,
     },
     {
       id: '6',
-      title: 'Restaurant Booking System',
-      description: language === 'nl'
-        ? 'Online reserveringssysteem voor restaurants met tafelbeheer en klantcommunicatie.'
-        : 'Online reservation system for restaurants with table management and customer communication.',
+      title: 'CaboFeira',
+      description: language === 'nl' 
+        ? 'CaboFeira is een online marktplaats speciaal ontwikkeld voor de Kaapverdische gemeenschap om tweedehands spullen te verkopen.'
+        : 'CaboFeira is an online marketplace specially developed for the Cape Verdean community to sell second-hand items.',
       category: 'client',
-      technologies: ['React', 'Python', 'PostgreSQL'],
-      image: '/api/placeholder/400/300',
+      technologies: ['HTML', 'CSS', 'JavaScript'],
+      image: `${import.meta.env.BASE_URL}CaboFeira1.png`,
+    },
+    {
+      id: '7',
+      title: 'Space Monkey',
+      description: language === 'nl' 
+        ? 'Space Monkey is een interactieve terminal-game waarin je speelt als Jararis, een hyperintelligente aap op een missie om de mensheid te redden.'
+        : 'Space Monkey is an interactive terminal game where you play as Jararis, a hyper-intelligent monkey on a mission to save humanity.',
+      category: 'school',
+      technologies: ['Python'],
+      image: `${import.meta.env.BASE_URL}SpaceMonkey1.png`,
+    },
+    {
+      id: '8',
+      title: '2D Battle Game',
+      description: language === 'nl' 
+        ? 'Een Pokémon-achtige browsergame ontwikkeld tijdens een GitHub Copilot Hackathon met turn-based battle-systeem.'
+        : 'A Pokémon-like browser game developed during a GitHub Copilot Hackathon with turn-based battle system.',
+      category: 'event',
+      technologies: ['HTML', 'JavaScript', 'GitHub Copilot'],
+      image: `${import.meta.env.BASE_URL}PokemonHackathon3.png`,
+    },
+    {
+      id: '9',
+      title: 'Brick Breaker',
+      description: language === 'nl' 
+        ? 'Brick Breaker is een moderne versie van het klassieke arcadespel, gemaakt in Lua met de LÖVE 2D-engine.'
+        : 'Brick Breaker is a modern version of the classic arcade game, made in Lua with the LÖVE 2D engine.',
+      category: 'personal',
+      technologies: ['Lua', 'LÖVE 2D'],
+      image: `${import.meta.env.BASE_URL}brick1.png`,
     },
   ];
 
