@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
-import damianPortrait from '@/assets/damian-portrait.jpg';
+import damianPortrait from '@/assets/DamianWillemse.jpeg';
 
 interface HomeProps {
   language: 'nl' | 'en';
