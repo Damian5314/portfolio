@@ -155,7 +155,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <a 
-                    href="https://linkedin.com/in/damian-willemse" 
+                    href="https://linkedin.com/in/damianwillemse" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center space-x-4 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
@@ -170,7 +170,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                   </a>
 
                   <a 
-                    href="https://github.com/damian-willemse" 
+                    href="https://github.com/damian5314" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="flex items-center space-x-4 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
