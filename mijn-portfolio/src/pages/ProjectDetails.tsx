@@ -57,411 +57,636 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
   // Uitgebreide project data
   const projectData: Record<string, any> = {
     '1': {
-      title: 'E-commerce Platform',
-      subtitle: language === 'nl' ? 'Moderne webshop oplossing' : 'Modern webshop solution',
-      category: 'client',
-      description: language === 'nl' 
-        ? 'Een volledig uitgeruste e-commerce platform gebouwd voor een lokale retailer. Het platform bevat een gebruiksvriendelijke interface, robuust betaalsysteem, en geavanceerd voorraadbeheer.'
-        : 'A fully-featured e-commerce platform built for a local retailer. The platform includes a user-friendly interface, robust payment system, and advanced inventory management.',
-      longDescription: language === 'nl'
-        ? 'Dit project was een uitgebreide opdracht om een bestaande fysieke winkel te digitaliseren. We hebben gewerkt met een team van 4 developers om een schaalbare oplossing te bouwen die zowel B2C als B2B functionaliteiten ondersteunt. Het platform verwerkt nu dagelijks honderden bestellingen en heeft de omzet van de klant met 300% doen stijgen.'
-        : 'This project was an extensive assignment to digitalize an existing physical store. We worked with a team of 4 developers to build a scalable solution that supports both B2C and B2B functionalities. The platform now processes hundreds of orders daily and has increased the client\'s revenue by 300%.',
-      technologies: ['React', 'Python', 'PostgreSQL', 'Stripe API', 'Docker', 'AWS'],
-      duration: '6 maanden',
-      teamSize: '4 developers',
-      myRole: language === 'nl' ? 'Frontend Lead Developer' : 'Frontend Lead Developer',
-      features: language === 'nl' ? [
-        'Responsief design voor alle apparaten',
-        'Geavanceerd zoek- en filtersysteem',
-        'Geïntegreerd betaalsysteem (Stripe)',
-        'Realtime voorraadbeheer',
-        'Admin dashboard voor orders en analytics',
-        'Automatische email notificaties',
-        'Multi-taal ondersteuning',
-        'SEO geoptimaliseerd'
-      ] : [
-        'Responsive design for all devices',
-        'Advanced search and filter system',
-        'Integrated payment system (Stripe)',
-        'Real-time inventory management',
-        'Admin dashboard for orders and analytics',
-        'Automatic email notifications',
-        'Multi-language support',
-        'SEO optimized'
-      ],
-      challenges: language === 'nl' ? [
-        'Complexe integratie met bestaand ERP systeem',
-        'Performance optimalisatie voor grote productcatalogi',
-        'Implementatie van realtime updates'
-      ] : [
-        'Complex integration with existing ERP system',
-        'Performance optimization for large product catalogs',
-        'Implementation of real-time updates'
-      ],
-      solutions: language === 'nl' ? [
-        'Custom API gateway voor ERP communicatie',
-        'Implementatie van virtualisatie en lazy loading',
-        'WebSocket verbindingen voor realtime functionaliteit'
-      ] : [
-        'Custom API gateway for ERP communication',
-        'Implementation of virtualization and lazy loading',
-        'WebSocket connections for real-time functionality'
-      ],
-      results: language === 'nl' ? [
-        '300% stijging in online omzet',
-        '50% reductie in handmatige orderverwerking',
-        '95% klanttevredenheid score'
-      ] : [
-        '300% increase in online revenue',
-        '50% reduction in manual order processing',
-        '95% customer satisfaction score'
-      ],
-      images: [
-        '/api/placeholder/800/600',
-        '/api/placeholder/800/600',
-        '/api/placeholder/800/600',
-        '/api/placeholder/800/600'
-      ],
-      liveUrl: 'https://example.com',
-      githubUrl: 'https://github.com/example'
-    },
-    '2': {
-      title: 'Portfolio Website',
-      subtitle: language === 'nl' ? 'Creatieve portfolio oplossing' : 'Creative portfolio solution',
-      category: 'personal',
-      description: language === 'nl'
-        ? 'Responsieve portfolio website gebouwd met React en TypeScript voor een creatieve professional.'
-        : 'Responsive portfolio website built with React and TypeScript for a creative professional.',
-      longDescription: language === 'nl'
-        ? 'Een op maat gemaakte portfolio website voor een grafisch ontwerper die zijn werk wilde presenteren in een stijlvolle en interactieve manier. De website bevat animaties, een lightbox gallerij en een contactformulier.'
-        : 'A custom portfolio website for a graphic designer who wanted to showcase his work in a stylish and interactive way. The website includes animations, a lightbox gallery and a contact form.',
-      technologies: ['React', 'TypeScript', 'Tailwind', 'Framer Motion', 'Netlify'],
-      duration: '3 maanden',
-      teamSize: '2 developers',
-      myRole: language === 'nl' ? 'Full Stack Developer' : 'Full Stack Developer',
-      features: language === 'nl' ? [
-        'Geanimeerde landing pagina',
-        'Interactieve project gallerij',
-        'Responsive design',
-        'Contact formulier met validatie',
-        'Blog sectie met CMS',
-        'SEO geoptimaliseerd'
-      ] : [
-        'Animated landing page',
-        'Interactive project gallery',
-        'Responsive design',
-        'Contact form with validation',
-        'Blog section with CMS',
-        'SEO optimized'
-      ],
-      challenges: language === 'nl' ? [
-        'Performance van complexe animaties',
-        'Cross-browser compatibiliteit',
-        'Afbeelding optimalisatie'
-      ] : [
-        'Performance of complex animations',
-        'Cross-browser compatibility',
-        'Image optimization'
-      ],
-      solutions: language === 'nl' ? [
-        'Lazy loading en code splitting',
-        'Progressive enhancement strategie',
-        'WebP formaat met fallbacks'
-      ] : [
-        'Lazy loading and code splitting',
-        'Progressive enhancement strategy',
-        'WebP format with fallbacks'
-      ],
-      results: language === 'nl' ? [
-        '150% meer klant aanvragen',
-        '90+ lighthouse score',
-        '40% langere sessie duur'
-      ] : [
-        '150% more client inquiries',
-        '90+ lighthouse score',
-        '40% longer session duration'
-      ],
-      images: [
-        '/api/placeholder/800/600',
-        '/api/placeholder/800/600',
-        '/api/placeholder/800/600'
-      ],
-      liveUrl: 'https://portfolio-example.com',
-      githubUrl: 'https://github.com/portfolio-example'
-    },
-    '3': {
-      title: 'Event Management System',
-      subtitle: language === 'nl' ? 'Complete evenementen oplossing' : 'Complete events solution',
-      category: 'event',
-      description: language === 'nl'
-        ? 'Uitgebreid systeem voor het beheren van evenementen, registraties en betalingen.'
-        : 'Comprehensive system for managing events, registrations and payments.',
-      longDescription: language === 'nl'
-        ? 'Een volledig event management platform voor een grote organisatie die jaarlijks 50+ evenementen organiseert. Het systeem automatiseert het gehele proces van eventcreatie tot nabeschouwing.'
-        : 'A complete event management platform for a large organization that organizes 50+ events annually. The system automates the entire process from event creation to follow-up.',
-      technologies: ['C#', 'React', 'SQL Server', 'Azure', 'SignalR'],
-      duration: '8 maanden',
-      teamSize: '6 developers',
-      myRole: language === 'nl' ? 'Backend Developer' : 'Backend Developer',
-      features: language === 'nl' ? [
-        'Event creatie en beheer',
-        'Online registratie systeem',
-        'Geïntegreerde betalingen',
-        'QR-code check-in systeem',
-        'Realtime attendance tracking',
-        'Automated email campaigns',
-        'Rapportage dashboard',
-        'Multi-tenant architectuur'
-      ] : [
-        'Event creation and management',
-        'Online registration system',
-        'Integrated payments',
-        'QR-code check-in system',
-        'Real-time attendance tracking',
-        'Automated email campaigns',
-        'Reporting dashboard',
-        'Multi-tenant architecture'
-      ],
-      challenges: language === 'nl' ? [
-        'Schaalbare architectuur voor duizenden gebruikers',
-        'Realtime synchronisatie',
-        'Complexe business logic'
-      ] : [
-        'Scalable architecture for thousands of users',
-        'Real-time synchronization',
-        'Complex business logic'
-      ],
-      solutions: language === 'nl' ? [
-        'Microservices architectuur',
-        'SignalR voor realtime updates',
-        'CQRS pattern implementatie'
-      ] : [
-        'Microservices architecture',
-        'SignalR for real-time updates',
-        'CQRS pattern implementation'
-      ],
-      results: language === 'nl' ? [
-        '80% reductie in administratieve tijd',
-        '99.9% uptime tijdens events',
-        '25.000+ registraties verwerkt'
-      ] : [
-        '80% reduction in administrative time',
-        '99.9% uptime during events',
-        '25,000+ registrations processed'
-      ],
-      images: [
-        '/api/placeholder/800/600',
-        '/api/placeholder/800/600',
-        '/api/placeholder/800/600'
-      ],
-      liveUrl: 'https://events-example.com',
-      githubUrl: 'https://github.com/events-example'
-    },
-    '4': {
-      title: 'Learning Management System',
-      subtitle: language === 'nl' ? 'Educatieve platform oplossing' : 'Educational platform solution',
+      title: 'QR Logistics',
+      subtitle: language === 'nl' ? 'Logistieke management oplossing' : 'Logistics management solution',
       category: 'school',
-      description: language === 'nl'
-        ? 'LMS voor de hogeschool met cursusmateriaal, opdrachten en voortgangstracking.'
-        : 'LMS for the university with course materials, assignments and progress tracking.',
+      description: language === 'nl' 
+        ? 'Een logistieke webapplicatie waarmee bedrijven hun orders, zendingen en voorraad eenvoudig kunnen beheren via QR-scans. Ontwikkeld met aandacht voor gebruiksgemak, inzicht en procesoptimalisatie.'
+        : 'A logistics web application that allows companies to easily manage their orders, shipments and inventory through QR scans. Developed with attention to ease of use, insight and process optimization.',
       longDescription: language === 'nl'
-        ? 'Een modern learning management systeem ontwikkeld voor onze hogeschool om de online leerervaring te verbeteren. Het platform ondersteunt verschillende leerformaten en biedt uitgebreide analytics.'
-        : 'A modern learning management system developed for our university to improve the online learning experience. The platform supports various learning formats and provides comprehensive analytics.',
-      technologies: ['React', 'Node.js', 'MongoDB', 'WebRTC', 'Socket.io'],
-      duration: '12 maanden',
-      teamSize: '8 students',
-      myRole: language === 'nl' ? 'Frontend Team Lead' : 'Frontend Team Lead',
+        ? 'Dit schoolproject was gericht op het digitaliseren van logistieke processen binnen bedrijven. Door gebruik te maken van QR-codes kunnen medewerkers snel en accuraat voorraad scannen, orders verwerken en zendingen bijhouden. De applicatie combineert een intuïtieve mobile interface met een robuuste backend voor realtime data synchronisatie.'
+        : 'This school project was focused on digitalizing logistics processes within companies. By using QR codes, employees can quickly and accurately scan inventory, process orders and track shipments. The application combines an intuitive mobile interface with a robust backend for real-time data synchronization.',
+      technologies: ['React Native', 'TypeScript', 'Tailwind CSS', 'NativeWind', 'C#', '.NET Framework'],
+      duration: language === 'nl' ? '4 maanden' : '4 months',
+      teamSize: language === 'nl' ? '5 studenten' : '5 students',
+      myRole: language === 'nl' ? 'Frontend Developer & UI/UX Designer' : 'Frontend Developer & UI/UX Designer',
       features: language === 'nl' ? [
-        'Cursus beheer systeem',
-        'Video conferencing integratie',
-        'Opdracht inlevering systeem',
-        'Automatische beoordeling',
-        'Progress tracking',
-        'Discussion forums',
-        'Mobile responsive design',
-        'Offline content access'
+        'QR-code scanning voor voorraad beheer',
+        'Order tracking en management',
+        'Zending status updates',
+        'Realtime voorraad overzicht',
+        'Mobiele applicatie voor warehouse medewerkers',
+        'Dashboard voor managers en supervisors',
+        'Geïntegreerde rapportage tools',
+        'Multi-user ondersteuning met rollen'
       ] : [
-        'Course management system',
-        'Video conferencing integration',
-        'Assignment submission system',
-        'Automatic grading',
-        'Progress tracking',
-        'Discussion forums',
-        'Mobile responsive design',
-        'Offline content access'
+        'QR-code scanning for inventory management',
+        'Order tracking and management',
+        'Shipment status updates',
+        'Real-time inventory overview',
+        'Mobile application for warehouse employees',
+        'Dashboard for managers and supervisors',
+        'Integrated reporting tools',
+        'Multi-user support with roles'
       ],
       challenges: language === 'nl' ? [
-        'Grote teams coördineren',
-        'Video streaming optimalisatie',
-        'Offline functionaliteit'
+        'Realtime synchronisatie tussen mobile app en backend',
+        'QR-code generatie en scanning optimalisatie',
+        'Complexe voorraad management logica',
+        'Cross-platform compatibility voor mobile app'
       ] : [
-        'Coordinating large teams',
-        'Video streaming optimization',
-        'Offline functionality'
+        'Real-time synchronization between mobile app and backend',
+        'QR-code generation and scanning optimization',
+        'Complex inventory management logic',
+        'Cross-platform compatibility for mobile app'
       ],
       solutions: language === 'nl' ? [
-        'Agile methodologie met scrums',
-        'CDN implementatie voor video\'s',
-        'Service workers voor caching'
+        'SignalR implementatie voor realtime updates',
+        'Optimized QR-code library integratie',
+        'Gestructureerde database design met constraints',
+        'React Native voor cross-platform development'
       ] : [
-        'Agile methodology with scrums',
-        'CDN implementation for videos',
-        'Service workers for caching'
+        'SignalR implementation for real-time updates',
+        'Optimized QR-code library integration',
+        'Structured database design with constraints',
+        'React Native for cross-platform development'
       ],
       results: language === 'nl' ? [
-        '2.000+ studenten gebruiken het systeem',
-        '40% verbetering in engagement',
-        'Beste project van het jaar award'
+        '70% sneller voorraad beheer proces',
+        '95% accuratesse in order tracking',
+        'Hoogste beoordeling van het semester',
+        'Positieve feedback van industry experts'
       ] : [
-        '2,000+ students using the system',
-        '40% improvement in engagement',
-        'Best project of the year award'
+        '70% faster inventory management process',
+        '95% accuracy in order tracking',
+        'Highest grade of the semester',
+        'Positive feedback from industry experts'
       ],
       images: [
-        '/api/placeholder/800/600',
-        '/api/placeholder/800/600',
-        '/api/placeholder/800/600'
+        `${import.meta.env.BASE_URL}QRLogistics1.jpeg`,
+        `${import.meta.env.BASE_URL}QRLogistics2.jpeg`,
+        `${import.meta.env.BASE_URL}QRLogistics3.jpeg`,
+        `${import.meta.env.BASE_URL}QRLogistics4.jpeg`,
+        `${import.meta.env.BASE_URL}QRLogistics5.png`,
+        `${import.meta.env.BASE_URL}QRLogistics6.png`,
       ],
-      liveUrl: 'https://lms-example.edu',
-      githubUrl: 'https://github.com/lms-example'
+      liveUrl: '#', // Vervang met echte URL indien beschikbaar
+      githubUrl: 'https://github.com/Motje3/QR-Scanner-Tracking'
     },
-    '5': {
-      title: 'Task Management App',
-      subtitle: language === 'nl' ? 'Productiviteits platform' : 'Productivity platform',
+
+    '2': {
+      title: 'Voetbal-app',
+      subtitle: language === 'nl' ? 'Sociale voetbal voorspelling app' : 'Social football prediction app',
       category: 'personal',
-      description: language === 'nl'
-        ? 'Productiviteitsapp voor teams met realtime samenwerking en projectbeheer.'
-        : 'Productivity app for teams with real-time collaboration and project management.',
+      description: language === 'nl' 
+        ? 'Een sociale voetbal-app waarin gebruikers wedstrijden kunnen voorspellen, vrienden kunnen volgen en coins verdienen voor correcte voorspellingen.'
+        : 'A social football app where users can predict matches, follow friends and earn coins for correct predictions.',
       longDescription: language === 'nl'
-        ? 'Een persoonlijk project om mijn vaardigheden in realtime applicaties te ontwikkelen. De app combineert task management met team collaboration features en is gebouwd met moderne web technologieën.'
-        : 'A personal project to develop my skills in real-time applications. The app combines task management with team collaboration features and is built with modern web technologies.',
-      technologies: ['React', 'Firebase', 'TypeScript', 'Material-UI', 'PWA'],
-      duration: '4 maanden',
-      teamSize: '1 developer (zelf)',
-      myRole: language === 'nl' ? 'Solo Developer' : 'Solo Developer',
+        ? 'Deze persoonlijke app project combineert mijn passie voor voetbal met mobile development. Gebruikers kunnen wedstrijden voorspellen, vrienden uitdagen en coins verdienen die ingewisseld kunnen worden voor cosmetische items en profiel-aanpassingen.'
+        : 'This personal app project combines my passion for football with mobile development. Users can predict matches, challenge friends and earn coins that can be exchanged for cosmetic items and profile customizations.',
+      technologies: ['React Native', 'JavaScript', 'Firebase', 'Expo'],
+      duration: language === 'nl' ? '3 maanden' : '3 months',
+      teamSize: language === 'nl' ? '1 developer (zelf)' : '1 developer (solo)',
+      myRole: language === 'nl' ? 'Solo Developer & Designer' : 'Solo Developer & Designer',
       features: language === 'nl' ? [
-        'Kanban board interface',
-        'Realtime collaboration',
-        'Team workspaces',
-        'Time tracking',
-        'File attachments',
-        'Push notifications',
-        'Dark/light theme',
-        'Progressive Web App'
+        'Wedstrijd voorspellingen systeem',
+        'Vrienden volgen en uitdagen',
+        'Coins verdienen systeem',
+        'Cosmetische items shop',
+        'Profiel customization',
+        'Leaderboards en rankings',
+        'Live match updates',
+        'Push notificaties'
       ] : [
-        'Kanban board interface',
-        'Real-time collaboration',
-        'Team workspaces',
-        'Time tracking',
-        'File attachments',
-        'Push notifications',
-        'Dark/light theme',
-        'Progressive Web App'
+        'Match prediction system',
+        'Follow and challenge friends',
+        'Coin earning system',
+        'Cosmetic items shop',
+        'Profile customization',
+        'Leaderboards and rankings',
+        'Live match updates',
+        'Push notifications'
       ],
       challenges: language === 'nl' ? [
-        'Realtime data synchronisatie',
-        'State management complexiteit',
-        'PWA implementatie'
+        'Live voetbal data integratie',
+        'Coins economie balancing',
+        'Social features implementatie'
       ] : [
-        'Real-time data synchronization',
-        'State management complexity',
-        'PWA implementation'
+        'Live football data integration',
+        'Coin economy balancing',
+        'Social features implementation'
       ],
       solutions: language === 'nl' ? [
-        'Firebase Firestore voor realtime sync',
-        'Redux Toolkit voor state management',
-        'Workbox voor PWA features'
+        'Externe API voor voetbal data',
+        'Uitgebalanceerd reward systeem',
+        'Firebase voor realtime social features'
       ] : [
-        'Firebase Firestore for real-time sync',
-        'Redux Toolkit for state management',
-        'Workbox for PWA features'
+        'External API for football data',
+        'Balanced reward system',
+        'Firebase for real-time social features'
       ],
       results: language === 'nl' ? [
-        '500+ active gebruikers',
-        '4.8/5 app store rating',
-        'Featured in Firebase showcase'
+        'Eerste complete mobile app project',
+        'Leerde Firebase integratie',
+        'Positieve feedback van testers'
       ] : [
-        '500+ active users',
-        '4.8/5 app store rating',
-        'Featured in Firebase showcase'
+        'First complete mobile app project',
+        'Learned Firebase integration',
+        'Positive feedback from testers'
       ],
       images: [
-        '/api/placeholder/800/600',
-        '/api/placeholder/800/600',
-        '/api/placeholder/800/600'
+        `${import.meta.env.BASE_URL}voetbalbanner.png`,        
+        `${import.meta.env.BASE_URL}voetbal1.jpeg`,
+        `${import.meta.env.BASE_URL}voetbal2.jpeg`,
+        `${import.meta.env.BASE_URL}voetbal3.jpeg`,
+        `${import.meta.env.BASE_URL}voetbal4.jpeg`
       ],
-      liveUrl: 'https://taskapp-example.com',
-      githubUrl: 'https://github.com/taskapp-example'
+      liveUrl: '#',
+      githubUrl: '#'
     },
-    '6': {
-      title: 'Restaurant Booking System',
-      subtitle: language === 'nl' ? 'Horeca reserveringssysteem' : 'Restaurant reservation system',
-      category: 'client',
-      description: language === 'nl'
-        ? 'Online reserveringssysteem voor restaurants met tafelbeheer en klantcommunicatie.'
-        : 'Online reservation system for restaurants with table management and customer communication.',
-      longDescription: language === 'nl'
-        ? 'Een volledig restaurantreserveringssysteem voor een keten van 5 restaurants. Het systeem beheert reserveringen, tafelbezetting en klantrelaties, en integreert met bestaande POS systemen.'
-        : 'A complete restaurant reservation system for a chain of 5 restaurants. The system manages reservations, table occupancy and customer relations, and integrates with existing POS systems.',
-      technologies: ['React', 'Python', 'PostgreSQL', 'Redis', 'Twilio'],
-      duration: '5 maanden',
-      teamSize: '3 developers',
-      myRole: language === 'nl' ? 'Full Stack Developer' : 'Full Stack Developer',
-      features: language === 'nl' ? [
-        'Online reservering interface',
-        'Tafel layout beheer',
-        'Wachtlijst systeem',
-        'SMS & Email notificaties',
-        'Klant database',
-        'Reservering analytics',
-        'Multi-restaurant support',
-        'POS systeem integratie'
-      ] : [
-        'Online reservation interface',
-        'Table layout management',
-        'Waitlist system',
-        'SMS & Email notifications',
-        'Customer database',
-        'Reservation analytics',
-        'Multi-restaurant support',
-        'POS system integration'
-      ],
-      challenges: language === 'nl' ? [
-        'Complexe tafel allocatie algoritmes',
-        'Hoge beschikbaarheid vereisten',
-        'Legacy systeem integratie'
-      ] : [
-        'Complex table allocation algorithms',
-        'High availability requirements',
-        'Legacy system integration'
-      ],
-      solutions: language === 'nl' ? [
-        'Optimalisatie algoritmes voor tafeltoewijzing',
-        'Redis voor caching en sessions',
-        'REST API voor externe integraties'
-      ] : [
-        'Optimization algorithms for table assignment',
-        'Redis for caching and sessions',
-        'REST API for external integrations'
-      ],
-      results: language === 'nl' ? [
-        '60% meer online reserveringen',
-        '30% reductie in no-shows',
-        '95% klant tevredenheid'
-      ] : [
-        '60% more online reservations',
-        '30% reduction in no-shows',
-        '95% customer satisfaction'
-      ],
-      images: [
-        '/api/placeholder/800/600',
-        '/api/placeholder/800/600',
-        '/api/placeholder/800/600'
-      ],
-      liveUrl: 'https://restaurant-booking.com',
-      githubUrl: 'https://github.com/restaurant-booking'
-    }
-  };
+
+    '3': {
+    title: 'TableTech',
+    subtitle: language === 'nl' ? 'Horeca management platform' : 'Hospitality management platform',
+    category: 'personal',
+    description: language === 'nl' 
+      ? 'Een alles-in-één dashboard voor horecazaken, waarmee personeel menu\'s kan beheren, feedback kan ontvangen, voorraden bijhouden en klanttevredenheid verhogen.'
+      : 'An all-in-one dashboard for hospitality businesses, allowing staff to manage menus, receive feedback, track inventory and increase customer satisfaction.',
+    longDescription: language === 'nl'
+      ? 'TableTech is een ambitieus project gericht op het digitaliseren van horecaprocessen. Het platform biedt restauranthouders een complete oplossing voor menu-beheer, voorraadcontrole en klantinteractie via digitale bestelmogelijkheden.'
+      : 'TableTech is an ambitious project aimed at digitalizing hospitality processes. The platform offers restaurant owners a complete solution for menu management, inventory control and customer interaction through digital ordering options.',
+    technologies: ['React', 'Node.js', 'NeonDB', 'Express.js', 'TypeScript'],
+    duration: language === 'nl' ? '6 maanden' : '6 months',
+    teamSize: language === 'nl' ? '4 developers' : '4 developers',
+    myRole: language === 'nl' ? 'Full Stack Developer & Product Owner' : 'Full Stack Developer & Product Owner',
+    features: language === 'nl' ? [
+      'Menu beheer systeem',
+      'Digitale bestelmogelijkheden',
+      'Feedback en review systeem',
+      'Voorraad tracking',
+      'Analytics dashboard',
+      'Multi-restaurant ondersteuning',
+      'Staff management tools',
+      'Klant loyalty programma'
+    ] : [
+      'Menu management system',
+      'Digital ordering capabilities',
+      'Feedback and review system',
+      'Inventory tracking',
+      'Analytics dashboard',
+      'Multi-restaurant support',
+      'Staff management tools',
+      'Customer loyalty program'
+    ],
+    challenges: language === 'nl' ? [
+      'Complexe restaurant workflows modelleren',
+      'Realtime order synchronisatie',
+      'Scalable database architectuur'
+    ] : [
+      'Modeling complex restaurant workflows',
+      'Real-time order synchronization',
+      'Scalable database architecture'
+    ],
+    solutions: language === 'nl' ? [
+      'Modulaire microservices architectuur',
+      'WebSocket implementatie voor realtime updates',
+      'MongoDB voor flexibele data opslag'
+    ] : [
+      'Modular microservices architecture',
+      'WebSocket implementation for real-time updates',
+      'MongoDB for flexible data storage'
+    ],
+    results: language === 'nl' ? [
+      'Volledig werkend MVP ontwikkeld',
+      'Interesse van lokale restaurants',
+      'Basis voor vervolgprojecten'
+    ] : [
+      'Fully working MVP developed',
+      'Interest from local restaurants',
+      'Foundation for follow-up projects'
+    ],
+    images: [
+      `${import.meta.env.BASE_URL}TableTech1.jpeg`,
+      `${import.meta.env.BASE_URL}TableTech2.jpeg`,
+      `${import.meta.env.BASE_URL}TableTech3.png`,
+      `${import.meta.env.BASE_URL}TableTech4.png`,
+      `${import.meta.env.BASE_URL}TableTech5.png`,
+      `${import.meta.env.BASE_URL}TableTech6.png`,
+      `${import.meta.env.BASE_URL}TableTech7.png`
+    ],
+    liveUrl: '#',
+    githubUrl: 'https://github.com/Table-Tech/TableTech-app'
+  },
+
+  '4': {
+    title: 'TableTech Website',
+    subtitle: language === 'nl' ? 'Marketing en landing pagina' : 'Marketing and landing page',
+    category: 'personal',
+    description: language === 'nl' 
+      ? 'De officiële website van TableTech waarmee horecaondernemers kennismaken met het platform. De site legt de voordelen uit en is geoptimaliseerd voor SEO en conversie.'
+      : 'The official TableTech website where hospitality entrepreneurs get acquainted with the platform. The site explains the benefits and is optimized for SEO and conversion.',
+    longDescription: language === 'nl'
+      ? 'Als aanvulling op het TableTech platform ontwikkelde ik een professionele marketing website om potentiële klanten te werven. De site focust op het overbrengen van de kernwaarden en het stimuleren van conversies via strategisch geplaatste call-to-actions.'
+      : 'As a complement to the TableTech platform, I developed a professional marketing website to attract potential customers. The site focuses on conveying core values and stimulating conversions through strategically placed call-to-actions.',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'SASS', 'Responsive Design'],
+    duration: language === 'nl' ? '6 maanden' : '6 months',
+    teamSize: language === 'nl' ? '4 developers' : '4 developers',
+    myRole: language === 'nl' ? 'Frontend Developer & UX Designer' : 'Frontend Developer & UX Designer',
+    features: language === 'nl' ? [
+      'Responsieve landing pagina',
+      'SEO geoptimaliseerde content',
+      'Call-to-action strategieën',
+      'Contact formulieren',
+      'Feature showcase secties',
+      'Testimonials integratie',
+      'Newsletter signup',
+      'Performance optimalisatie'
+    ] : [
+      'Responsive landing page',
+      'SEO optimized content',
+      'Call-to-action strategies',
+      'Contact forms',
+      'Feature showcase sections',
+      'Testimonials integration',
+      'Newsletter signup',
+      'Performance optimization'
+    ],
+    challenges: language === 'nl' ? [
+      'Conversie optimalisatie',
+      'SEO implementatie',
+      'Cross-browser compatibility'
+    ] : [
+      'Conversion optimization',
+      'SEO implementation',
+      'Cross-browser compatibility'
+    ],
+    solutions: language === 'nl' ? [
+      'A/B testing voor CTA plaatsing',
+      'Semantic HTML en meta tags',
+      'Progressive enhancement principes'
+    ] : [
+      'A/B testing for CTA placement',
+      'Semantic HTML and meta tags',
+      'Progressive enhancement principles'
+    ],
+    results: language === 'nl' ? [
+      'Hoge conversion rate achieved',
+      'Goede SEO rankings',
+      'Professionele brand presentatie'
+    ] : [
+      'High conversion rate achieved',
+      'Good SEO rankings',
+      'Professional brand presentation'
+    ],
+    images: [
+      `${import.meta.env.BASE_URL}TableTechWeb1.png`,
+      `${import.meta.env.BASE_URL}TableTechWeb2.png`,
+    ],
+    liveUrl: 'https://tabletech.nl/',
+    githubUrl: 'https://github.com/Table-Tech/TableTech-website'
+  },
+
+  '5': {
+    title: 'Willes Rijschool Website',
+    subtitle: language === 'nl' ? 'Rijschool website ontwikkeling' : 'Driving school website development',
+    category: 'client',
+    description: language === 'nl' 
+      ? 'Een moderne en overzichtelijke website voor Willes Rijschool waarmee bezoekers eenvoudig informatie kunnen vinden over rijlessen, tarieven en contactgegevens.'
+      : 'A modern and clear website for Willes Driving School where visitors can easily find information about driving lessons, rates and contact details.',
+    longDescription: language === 'nl'
+      ? 'Voor Willes Rijschool ontwikkelde ik een professionele website die vertrouwen uitstraalt en potentiële leerlingen informeert over de diensten. De site is geoptimaliseerd voor lokale SEO en conversie van bezoekers naar klanten.'
+      : 'For Willes Driving School I developed a professional website that radiates trust and informs potential students about the services. The site is optimized for local SEO and conversion of visitors to customers.',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'Responsive Design', 'SEO'],
+    duration: language === 'nl' ? '3 weken' : '3 weeks',
+    teamSize: language === 'nl' ? '1 developer (zelf)' : '1 developer (solo)',
+    myRole: language === 'nl' ? 'Frontend Developer & Designer' : 'Frontend Developer & Designer',
+    features: language === 'nl' ? [
+      'Responsive website design',
+      'Service overzicht pagina\'s',
+      'Tarieven en pakketten',
+      'Contact formulier',
+      'Google Maps integratie',
+      'Mobiel-geoptimaliseerde navigatie',
+      'Call-to-action buttons',
+      'SEO-vriendelijke structuur'
+    ] : [
+      'Responsive website design',
+      'Service overview pages',
+      'Rates and packages',
+      'Contact form',
+      'Google Maps integration',
+      'Mobile-optimized navigation',
+      'Call-to-action buttons',
+      'SEO-friendly structure'
+    ],
+    challenges: language === 'nl' ? [
+      'Vertrouwen opbouwen via design',
+      'Lokale SEO optimalisatie',
+      'Gebruiksvriendelijke informatie presentatie'
+    ] : [
+      'Building trust through design',
+      'Local SEO optimization',
+      'User-friendly information presentation'
+    ],
+    solutions: language === 'nl' ? [
+      'Professionele kleurenschema en typography',
+      'Lokale keywords en schema markup',
+      'Intuïtieve informatie architectuur'
+    ] : [
+      'Professional color scheme and typography',
+      'Local keywords and schema markup',
+      'Intuitive information architecture'
+    ],
+    results: language === 'nl' ? [
+      'Tevreden klant met meer online aanmeldingen',
+      'Verbeterde online zichtbaarheid',
+      'Professionele online presentatie'
+    ] : [
+      'Satisfied client with more online registrations',
+      'Improved online visibility',
+      'Professional online presentation'
+    ],
+    images: [
+      `${import.meta.env.BASE_URL}willes1.png`,
+      `${import.meta.env.BASE_URL}willes2.png`,
+      `${import.meta.env.BASE_URL}willes3.png`
+    ],
+    liveUrl: 'https://willesrijschool.nl/',
+    githubUrl: 'https://github.com/Damian5314/v0-remake-willesrijschool'
+  },
+
+  '6': {
+    title: 'CaboFeira',
+    subtitle: language === 'nl' ? 'Kaapverdische marktplaats' : 'Cape Verdean marketplace',
+    category: 'client',
+    description: language === 'nl' 
+      ? 'CaboFeira is een online marktplaats speciaal ontwikkeld voor de Kaapverdische gemeenschap om tweedehands spullen te verkopen of producten te zoeken.'
+      : 'CaboFeira is an online marketplace specially developed for the Cape Verdean community to sell second-hand items or search for products.',
+    longDescription: language === 'nl'
+      ? 'CaboFeira werd ontwikkeld als een niche marktplaats voor de Kaapverdische gemeenschap. Het platform biedt een vertrouwde omgeving waar mensen uit deze gemeenschap veilig kunnen handelen in tweedehands goederen.'
+      : 'CaboFeira was developed as a niche marketplace for the Cape Verdean community. The platform provides a trusted environment where people from this community can safely trade in second-hand goods.',
+    technologies: ['HTML5', 'CSS3', 'JavaScript', 'PHP', 'MySQL'],
+    duration: language === 'nl' ? '6 weken' : '6 weeks',
+    teamSize: language === 'nl' ? '1 developer (zelf)' : '1 developer (solo)',
+    myRole: language === 'nl' ? 'Full Stack Developer' : 'Full Stack Developer',
+    features: language === 'nl' ? [
+      'Product advertentie systeem',
+      'Gebruiker registratie en profielen',
+      'Zoek en filter functionaliteiten',
+      'Categorie gebaseerde browsen',
+      'Contact tussen kopers en verkopers',
+      'Afbeelding upload systeem',
+      'Responsive design',
+      'Meertalige ondersteuning'
+    ] : [
+      'Product advertisement system',
+      'User registration and profiles',
+      'Search and filter functionalities',
+      'Category-based browsing',
+      'Contact between buyers and sellers',
+      'Image upload system',
+      'Responsive design',
+      'Multilingual support'
+    ],
+    challenges: language === 'nl' ? [
+      'Culturele specificaties integreren',
+      'Vertrouwen opbouwen in online handel',
+      'Gebruiksvriendelijkheid voor diverse leeftijden'
+    ] : [
+      'Integrating cultural specifications',
+      'Building trust in online trading',
+      'User-friendliness for diverse ages'
+    ],
+    solutions: language === 'nl' ? [
+      'Community-gerichte features',
+      'Transparante gebruiker verificatie',
+      'Intuïtieve interface met duidelijke navigatie'
+    ] : [
+      'Community-focused features',
+      'Transparent user verification',
+      'Intuitive interface with clear navigation'
+    ],
+    results: language === 'nl' ? [
+      'Actieve gebruikersbasis opgebouwd',
+      'Positieve community feedback',
+      'Succesvolle handelstransacties'
+    ] : [
+      'Active user base built',
+      'Positive community feedback',
+      'Successful trading transactions'
+    ],
+    images: [
+      `${import.meta.env.BASE_URL}CaboFeira1.png`,
+    ],
+    liveUrl: 'https://cabofeira.com/',
+    githubUrl: '#'
+  },
+
+  '7': {
+    title: 'Space Monkey',
+    subtitle: language === 'nl' ? 'Interactieve terminal game' : 'Interactive terminal game',
+    category: 'school',
+    description: language === 'nl' 
+      ? 'Space Monkey is een interactieve terminal-game geschreven in Python waarin je speelt als Jararis, een hyperintelligente aap op een missie om de mensheid te redden.'
+      : 'Space Monkey is an interactive terminal game written in Python where you play as Jararis, a hyper-intelligent monkey on a mission to save humanity.',
+    longDescription: language === 'nl'
+      ? 'Dit schoolproject combineert programmeervaardigheden met storytelling. De game bevat een uitgebreid verhaal met meerdere paden, puzzels en interactieve elementen, allemaal gespeeld via de terminal met een flinke dosis humor.'
+      : 'This school project combines programming skills with storytelling. The game contains an extensive story with multiple paths, puzzles and interactive elements, all played through the terminal with a good dose of humor.',
+    technologies: ['Python', 'Object-Oriented Programming', 'File I/O', 'Game Logic'],
+    duration: language === 'nl' ? '1 week' : '1 week',
+    teamSize: language === 'nl' ? '3 developers' : '3 developers',
+    myRole: language === 'nl' ? 'Game Developer & Story Writer' : 'Game Developer & Story Writer',
+    features: language === 'nl' ? [
+      'Interactief verhaal met keuzes',
+      'Multiple choice gameplay',
+      'Puzzels en raadsels',
+      'Galgje mini-game',
+      'Character development systeem',
+      'Save/load functionaliteit',
+      'ASCII art en styling',
+      'Humor en satire elementen'
+    ] : [
+      'Interactive story with choices',
+      'Multiple choice gameplay',
+      'Puzzles and riddles',
+      'Hangman mini-game',
+      'Character development system',
+      'Save/load functionality',
+      'ASCII art and styling',
+      'Humor and satire elements'
+    ],
+    challenges: language === 'nl' ? [
+      'Complexe verhaalstructuur programmeren',
+      'User input validatie en error handling',
+      'Game state management'
+    ] : [
+      'Programming complex story structure',
+      'User input validation and error handling',
+      'Game state management'
+    ],
+    solutions: language === 'nl' ? [
+      'Object-oriented design voor game states',
+      'Robuuste input validation functies',
+      'Modulaire verhaal sectie architectuur'
+    ] : [
+      'Object-oriented design for game states',
+      'Robust input validation functions',
+      'Modular story section architecture'
+    ],
+    results: language === 'nl' ? [
+      'Succesvolle combinatie van programmeren en creativiteit',
+      'Positieve feedback op storytelling',
+      'Goede beoordeling voor technische implementatie'
+    ] : [
+      'Successful combination of programming and creativity',
+      'Positive feedback on storytelling',
+      'Good grade for technical implementation'
+    ],
+    images: [
+      `${import.meta.env.BASE_URL}SpaceMonkey1.png`,
+    ],
+    liveUrl: '#',
+    githubUrl: 'https://github.com/Damian5314/Spacemonkey'
+  },
+
+  '8': {
+    title: '2D Battle Game',
+    subtitle: language === 'nl' ? 'Hackathon Pokémon-stijl game' : 'Hackathon Pokémon-style game',
+    category: 'event',
+    description: language === 'nl' 
+      ? 'Een Pokémon-achtige browsergame ontwikkeld tijdens een GitHub Copilot Hackathon op 21 mei 2025, georganiseerd door Xebia in Hilversum.'
+      : 'A Pokémon-like browser game developed during a GitHub Copilot Hackathon on May 21, 2025, organized by Xebia in Hilversum.',
+    longDescription: language === 'nl'
+      ? 'Tijdens deze intensieve hackathon ontwikkelde ons team een werkende Pokémon-achtige game binnen enkele uren met behulp van GitHub Copilot. Het project toonde de kracht van AI-assistentie bij snelle prototyping en game development.'
+      : 'During this intensive hackathon, our team developed a working Pokémon-like game within a few hours using GitHub Copilot. The project demonstrated the power of AI assistance in rapid prototyping and game development.',
+    technologies: ['HTML5', 'JavaScript', 'CSS3', 'GitHub Copilot', 'Canvas API'],
+    duration: language === 'nl' ? '2 uur (hackathon)' : '2 hours (hackathon)',
+    teamSize: language === 'nl' ? '2 developers' : '2 developers',
+    myRole: language === 'nl' ? 'Frontend Developer & Game Logic' : 'Frontend Developer & Game Logic',
+    features: language === 'nl' ? [
+      'Karakter beweging op speelveld',
+      'Wilde Pokémon encounters',
+      'Turn-based battle systeem',
+      'Health en stats tracking',
+      'Multiple Pokémon types',
+      'Attack move systeem',
+      'Victory/defeat conditions',
+      'Responsive controls'
+    ] : [
+      'Character movement on game field',
+      'Wild Pokémon encounters',
+      'Turn-based battle system',
+      'Health and stats tracking',
+      'Multiple Pokémon types',
+      'Attack move system',
+      'Victory/defeat conditions',
+      'Responsive controls'
+    ],
+    challenges: language === 'nl' ? [
+      'Tijdsdruk van hackathon formaat',
+      'Team coördinatie onder druk',
+      'AI tool effectief gebruiken'
+    ] : [
+      'Time pressure of hackathon format',
+      'Team coordination under pressure',
+      'Using AI tools effectively'
+    ],
+    solutions: language === 'nl' ? [
+      'Duidelijke taakverdelingen',
+      'GitHub Copilot voor snelle code generatie',
+      'Focus op core gameplay features'
+    ] : [
+      'Clear task divisions',
+      'GitHub Copilot for rapid code generation',
+      'Focus on core gameplay features'
+    ],
+    results: language === 'nl' ? [
+      'Werkende game binnen deadline',
+      'Eerste ervaring met AI-assisted development',
+      'Goede teamwork onder druk'
+    ] : [
+      'Working game within deadline',
+      'First experience with AI-assisted development',
+      'Good teamwork under pressure'
+    ],
+    images: [
+      `${import.meta.env.BASE_URL}PokemonHackathon1.png`,
+      `${import.meta.env.BASE_URL}PokemonHackathon2.png`,
+      `${import.meta.env.BASE_URL}PokemonHackathon3.png`
+    ],
+    liveUrl: '#',
+    githubUrl: 'https://github.com/Damian5314/Github-Copilot-Hackathon'
+  },
+
+  '9': {
+    title: 'Brick Breaker',
+    subtitle: language === 'nl' ? 'Moderne arcade game remake' : 'Modern arcade game remake',
+    category: 'personal',
+    description: language === 'nl' 
+      ? 'Brick Breaker is een moderne versie van het klassieke arcadespel, gemaakt in Lua met de LÖVE 2D-engine. De game bevat upgrades, meerdere ballen en verschillende soorten blokken.'
+      : 'Brick Breaker is a modern version of the classic arcade game, made in Lua with the LÖVE 2D engine. The game features upgrades, multiple balls and different types of blocks.',
+    longDescription: language === 'nl'
+      ? 'Als persoonlijk project om game development te leren, creëerde ik een moderne interpretatie van het klassieke Brick Breaker spel. Het project focuste op het leren van game physics, collision detection en de LÖVE 2D engine.'
+      : 'As a personal project to learn game development, I created a modern interpretation of the classic Brick Breaker game. The project focused on learning game physics, collision detection and the LÖVE 2D engine.',
+    technologies: ['Lua', 'LÖVE 2D', 'Game Physics', 'Collision Detection'],
+    duration: language === 'nl' ? '3 dagen' : '3 days',
+    teamSize: language === 'nl' ? '1 developer (zelf)' : '1 developer (solo)',
+    myRole: language === 'nl' ? 'Game Developer & Designer' : 'Game Developer & Designer',
+    features: language === 'nl' ? [
+      'Klassieke brick breaking gameplay',
+      'Power-ups en upgrades systeem',
+      'Meerdere ballen tegelijkertijd',
+      'Verschillende blok types',
+      'Score en high score tracking',
+      'Paddle size modificaties',
+      'Particle effects',
+      'Responsive paddle controls'
+    ] : [
+      'Classic brick breaking gameplay',
+      'Power-ups and upgrade system',
+      'Multiple balls simultaneously',
+      'Different block types',
+      'Score and high score tracking',
+      'Paddle size modifications',
+      'Particle effects',
+      'Responsive paddle controls'
+    ],
+    challenges: language === 'nl' ? [
+      'Nauwkeurige collision detection',
+      'Ball physics implementatie',
+      'Game state management'
+    ] : [
+      'Accurate collision detection',
+      'Ball physics implementation',
+      'Game state management'
+    ],
+    solutions: language === 'nl' ? [
+      'LÖVE 2D physics systeem gebruiken',
+      'Optimized collision algorithms',
+      'Clean state machine architectuur'
+    ] : [
+      'Using LÖVE 2D physics system',
+      'Optimized collision algorithms',
+      'Clean state machine architecture'
+    ],
+    results: language === 'nl' ? [
+      'Eerste complete game in Lua',
+      'Leerde game development fundamentals',
+      'Werkende physics-based gameplay'
+    ] : [
+      'First complete game in Lua',
+      'Learned game development fundamentals',
+      'Working physics-based gameplay'
+    ],
+    images: [
+      `${import.meta.env.BASE_URL}brick1.png`,
+      `${import.meta.env.BASE_URL}brick2.png`,
+      `${import.meta.env.BASE_URL}brick3.png`,
+    ],
+    liveUrl: '#',
+    githubUrl: 'https://github.com/Damian5314/brick-breaker'
+  },
+    };
 
   const project = projectData[projectId] || projectData['1'];
 

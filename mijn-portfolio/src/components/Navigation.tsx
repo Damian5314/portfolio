@@ -44,7 +44,7 @@ const Navigation: React.FC<NavigationProps> = ({ language, onLanguageChange }) =
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link to="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-            DW
+            Damian Willemse
           </Link>
 
           {/* Desktop Navigation */}
