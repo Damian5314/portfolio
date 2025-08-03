@@ -12,7 +12,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
   const translations = {
     nl: {
       title: 'Over mij',
-      intro: 'Hallo! Ik ben Damian, een enthousiaste software developer met een passie voor technologie, design en het bouwen van slimme oplossingen. Momenteel studeer ik Informatica aan Hogeschool Rotterdam en werk ik als Full Stack Developer bij 21South.',
+      intro: 'Hallo! Ik ben Damian, een enthousiaste software developer met een passie voor technologie, design en het bouwen van slimme oplossingen. Momenteel studeer ik Informatica aan Hogeschool Rotterdam en werk ik als Junior Support Engineer bij 21South.',
       skillsTitle: 'Vaardigheden',
       skills: {
         technical: 'Technische Vaardigheden',
