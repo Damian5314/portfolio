@@ -1,32 +1,16 @@
-:root {
-  --color-alabaster: #E4E0D7;
-  --color-onyx: #353839;
-  --color-dun: #CBC0AD;
-  --color-picton-blue: #00A6ED;
-  --color-berkeley-blue: #0D2C54;
-}
-
-body {
-  background-color: var(--color-alabaster);
-  color: var(--color-onyx);
-  font-family: 'Satoshi', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  max-width: 900px;
+#root {
+  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: left;
+  text-align: center;
 }
 
 .logo {
-  font-weight: 700;
-  font-size: 1.5rem;
-  letter-spacing: 0.05em;
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
 }
-
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
@@ -55,29 +39,4 @@ body {
 
 .read-the-docs {
   color: #888;
-}
-
-
-a {
-  color: #0056b3;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-h1 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-p, li {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-ul {
-  padding-left: 1.5rem;
 }
