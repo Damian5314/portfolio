@@ -73,7 +73,7 @@ const Projects: React.FC<ProjectsProps> = ({ language, onProjectSelect }) => {
         ? 'Een alles-in-één dashboard voor horecazaken, waarmee personeel menu\'s kan beheren, feedback kan ontvangen en voorraden bijhouden.'
         : 'An all-in-one dashboard for hospitality businesses, allowing staff to manage menus, receive feedback and track inventory.',
       category: 'personal',
-      technologies: ['React', 'Node.js', 'MongoDB'],
+      technologies: ['React', 'Node.js', 'PostgreSQL'],
       image: `${import.meta.env.BASE_URL}TableTech4.png`,
     },
     {
@@ -103,7 +103,7 @@ const Projects: React.FC<ProjectsProps> = ({ language, onProjectSelect }) => {
         ? 'CaboFeira is een online marktplaats speciaal ontwikkeld voor de Kaapverdische gemeenschap om tweedehands spullen te verkopen.'
         : 'CaboFeira is an online marketplace specially developed for the Cape Verdean community to sell second-hand items.',
       category: 'client',
-      technologies: ['HTML', 'CSS', 'JavaScript'],
+      technologies: ['WordPress'],
       image: `${import.meta.env.BASE_URL}CaboFeira1.png`,
     },
     {
