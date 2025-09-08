@@ -81,7 +81,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
       experienceTitle: 'Work Experience',
       experience: [
         {
-          role: 'Full Stack Developer',
+          role: ' Junior Support Engineer',
           company: '21South',
           period: 'October 2024 - Present',
           description: '',
