@@ -21,6 +21,12 @@ const About: React.FC<AboutProps> = ({ language }) => {
       experienceTitle: 'Werkervaring',
       experience: [
         {
+          role: 'AI Development Stagair',
+          company: '21South',
+          period: 'September 2024 - Heden',
+          description: 'Onderzoek en implementatie van AI-oplossingen in het 21QUBZ platform',
+        },
+        {
           role: 'Junior Support Engineer',
           company: '21South',
           period: 'Oktober 2024 - Heden',
@@ -86,7 +92,13 @@ const About: React.FC<AboutProps> = ({ language }) => {
       experienceTitle: 'Work Experience',
       experience: [
         {
-          role: ' Junior Support Engineer',
+          role: 'AI Development Intern',
+          company: '21South',
+          period: 'September 2024 - Present',
+          description: 'Research and implementation of AI solutions in the 21QUBZ platform',
+        },
+        {
+          role: 'Junior Support Engineer',
           company: '21South',
           period: 'October 2024 - Present',
           description: '',
