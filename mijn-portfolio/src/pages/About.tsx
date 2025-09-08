@@ -57,6 +57,11 @@ const About: React.FC<AboutProps> = ({ language }) => {
       certificatesTitle: 'Certificaten & Diploma\'s',
       certificates: [
         {
+          name: 'Mendix Rapid Developer',
+          issuer: 'Mendix',
+          date: 'Sep 2025',
+        },
+        {
           name: 'Propedeuse Bachelor Informatica',
           issuer: 'Hogeschool Rotterdam',
           date: 'Jul 2024',
@@ -116,6 +121,11 @@ const About: React.FC<AboutProps> = ({ language }) => {
       ],
       certificatesTitle: 'Certificates & Diplomas',
       certificates: [
+        {
+          name: 'Mendix Rapid Developer',
+          issuer: 'Mendix',
+          date: 'Sep 2025',
+        },
         {
           name: 'Propaedeutic Bachelor Computer Science',
           issuer: 'Rotterdam University of Applied Sciences',
