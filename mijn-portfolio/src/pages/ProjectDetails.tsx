@@ -686,6 +686,79 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
     liveUrl: '#',
     githubUrl: 'https://github.com/Damian5314/brick-breaker'
   },
+
+  '10': {
+    title: '21Questions Chat Widget',
+    subtitle: language === 'nl' ? 'Mendix AI-geïntegreerde chat widget' : 'Mendix AI-integrated chat widget',
+    category: 'client',
+    description: language === 'nl'
+      ? 'Een intelligente Mendix-geïntegreerde chat widget met Groq/Llama AI en documentzoekfunctionaliteit. Deze React component is specifiek ontworpen als pluggable widget voor Mendix applicaties.'
+      : 'An intelligent Mendix-integrated chat widget with Groq/Llama AI and document search functionality. This React component is specifically designed as a pluggable widget for Mendix applications.',
+    longDescription: language === 'nl'
+      ? 'Deze geavanceerde chat widget werd ontwikkeld voor 21Qubz/21south om bedrijven in staat te stellen een contextuele AI-chatbot te integreren in hun Mendix applicaties. De widget combineert Llama 3.1 AI via Groq met documentzoekfunctionaliteit, waardoor gebruikers intelligente antwoorden krijgen gebaseerd op bedrijfsspecifieke documenten en processen.'
+      : 'This advanced chat widget was developed for 21Qubz/21south to enable companies to integrate a contextual AI chatbot into their Mendix applications. The widget combines Llama 3.1 AI via Groq with document search functionality, providing users with intelligent answers based on company-specific documents and processes.',
+    technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'Groq SDK', 'Llama 3.1', 'Mendix', 'Webpack', 'PDF/Word parsing'],
+    duration: language === 'nl' ? '20 weken' : '20 weeks',
+    teamSize: language === 'nl' ? '1 developer (zelf)' : '1 developer (solo)',
+    myRole: language === 'nl' ? 'Full Stack Developer & Mendix Specialist' : 'Full Stack Developer & Mendix Specialist',
+    features: language === 'nl' ? [
+      'Mendix Pluggable Widget integratie',
+      'Llama 3.1 AI via Groq voor intelligente antwoorden',
+      'Document retrieval voor PDF en TXT bestanden',
+      '21Qubz/21south bedrijfsspecifiek',
+      'Nederlandse interface met context-aware responses',
+      'Real-time messaging met bronvermelding',
+      'Production-ready build voor Mendix deployment',
+      'Framework-agnostieke architectuur'
+    ] : [
+      'Mendix Pluggable Widget integration',
+      'Llama 3.1 AI via Groq for intelligent responses',
+      'Document retrieval for PDF and TXT files',
+      '21Qubz/21south company-specific',
+      'Dutch interface with context-aware responses',
+      'Real-time messaging with source attribution',
+      'Production-ready build for Mendix deployment',
+      'Framework-agnostic architecture'
+    ],
+    challenges: language === 'nl' ? [
+      'Mendix framework integratie complexiteit',
+      'AI model migratie van Gemini naar Groq/Llama',
+      'Bedrijfsspecifieke context implementatie',
+      'Nederlands taalmodel optimalisatie'
+    ] : [
+      'Mendix framework integration complexity',
+      'AI model migration from Gemini to Groq/Llama',
+      'Company-specific context implementation',
+      'Dutch language model optimization'
+    ],
+    solutions: language === 'nl' ? [
+      'Framework-agnostieke pluggable widget architectuur',
+      'Groq SDK integratie voor betere performance',
+      'Document-gebaseerde contextuele antwoorden',
+      'Nederlandse bedrijfscommunicatie optimalisatie'
+    ] : [
+      'Framework-agnostic pluggable widget architecture',
+      'Groq SDK integration for better performance',
+      'Document-based contextual responses',
+      'Dutch business communication optimization'
+    ],
+    results: language === 'nl' ? [
+      'Mendix-ready widget met volledige integratie',
+      'Contextuele AI gespecialiseerd in bedrijfsprocessen',
+      'Schaalbare architectuur voor enterprise deployment',
+      'Nederlandse chatbot voor optimale gebruikservaring'
+    ] : [
+      'Mendix-ready widget with full integration',
+      'Contextual AI specialized in business processes',
+      'Scalable architecture for enterprise deployment',
+      'Dutch chatbot for optimal user experience'
+    ],
+    images: [
+      `${import.meta.env.BASE_URL}21questions.png`,
+    ],
+    liveUrl: '#',
+    githubUrl: '#'
+  },
     };
 
   const project = projectData[projectId] || projectData['1'];

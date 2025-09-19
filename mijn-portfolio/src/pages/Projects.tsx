@@ -129,12 +129,22 @@ const Projects: React.FC<ProjectsProps> = ({ language, onProjectSelect }) => {
     {
       id: '9',
       title: 'Brick Breaker',
-      description: language === 'nl' 
+      description: language === 'nl'
         ? 'Brick Breaker is een moderne versie van het klassieke arcadespel, gemaakt in Lua met de LÖVE 2D-engine.'
         : 'Brick Breaker is a modern version of the classic arcade game, made in Lua with the LÖVE 2D engine.',
       category: 'personal',
       technologies: ['Lua', 'LÖVE 2D'],
       image: `${import.meta.env.BASE_URL}brick1.png`,
+    },
+    {
+      id: '10',
+      title: '21Questions Chat Widget',
+      description: language === 'nl'
+        ? 'Een intelligente Mendix-geïntegreerde chat widget met Groq/Llama AI en documentzoekfunctionaliteit. Deze React component is specifiek ontworpen als pluggable widget voor Mendix applicaties, waarbij bedrijven een geavanceerde chatbot kunnen integreren die documenten kan doorzoeken en contextuele antwoorden geeft.'
+        : 'An intelligent Mendix-integrated chat widget with Groq/Llama AI and document search functionality. This React component is specifically designed as a pluggable widget for Mendix applications, allowing companies to integrate an advanced chatbot that can search documents and provide contextual answers.',
+      category: 'client',
+      technologies: ['React', 'TypeScript', 'Node.js', 'Groq SDK', 'Llama 3.1', 'Mendix', 'Webpack'],
+      image: `${import.meta.env.BASE_URL}21questions.png`,
     },
   ];
 
