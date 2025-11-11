@@ -63,6 +63,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een unieke avond waarbij je achter de schermen kijkt bij 51 creatieve en digitale agencies in Rotterdam. Met talks, exhibitions, workshops en meer over marketing, AI, branding, media en design.'
         : 'A unique evening where you go behind the scenes at 51 creative and digital agencies in Rotterdam. With talks, exhibitions, workshops and more about marketing, AI, branding, media and design.',
+      image: '/events/Agency at night.png',
     },
     {
       id: 'xebia-github-copilot-hackathon',
@@ -75,6 +76,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een game-geïnspireerde hackathon gericht op het verbeteren van GitHub Copilot vaardigheden, met tracks voor zowel beginners als gevorderde gebruikers.'
         : 'A game-inspired hackathon focused on improving GitHub Copilot skills, with tracks for both beginners and advanced users.',
+      image: '/events/Xebia github copilot hackathon.jpeg',
     },
     {
       id: 'hackathon-computational-science',
@@ -87,6 +89,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'De eerste Hackathon van Computational Science NL, waar onderzoekers uit verschillende domeinen samenkomen om een real-world uitdaging te tackelen gepresenteerd door Deltares.'
         : 'The first Hackathon of Computational Science NL, bringing together researchers from various domains to tackle a real-world challenge presented by Deltares.',
+      image: '/events/Computational science NL.jpg',
     },
     {
       id: 'citylab010',
@@ -99,6 +102,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Het jaarlijkse netwerkevent van CityLab010 waar plannenmakers, de Stadsjury, partners en gemeentelijke experts samenkomen. Een inspirerende avond vol ontmoeting met workshops over het CityLab-proces en werken vanuit leefwerelden.'
         : 'The annual networking event of CityLab010 where planners, the City Jury, partners and municipal experts come together. An inspiring evening full of meetings with workshops about the CityLab process and working from living environments.',
+      image: '/events/Netwerkavond Citylab010.jpg',
     },
     {
       id: 'mendix-ctf',
@@ -111,6 +115,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Het Mendix Security Event van het jaar. Twee dagen vol gratis leren en kennisdeling over Mendix security door middel van hacking challenges en workshops door security experts.'
         : 'The Mendix Security Event of the year. Two days of free learning and knowledge sharing about Mendix security through hacking challenges and workshops by security experts.',
+      image: '/events/Mendix CTF 2025.webp',
     },
     {
       id: 'mendix-hack-the-halls',
@@ -123,6 +128,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een feestelijke mini-hackathon waarbij deelnemers digitale kerstballen ontwerpen en stylen in Mendix 11, met alleen Mendix widgets en moderne CSS, ondersteund door AI assistenten.'
         : 'A festive mini-hackathon where participants design and style digital Christmas baubles in Mendix 11, using only Mendix widgets and modern CSS, guided by AI assistants.',
+      image: '/events/mendix hack the halls.jpeg',
     },
     {
       id: 'buildweekend-young-creators',
@@ -135,6 +141,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een weekend hackathon waar young builders (14-30 jaar) hun eigen ideeën kunnen ontwikkelen. Twee dagen vol collaboration, creativity en learning met toegang tot top mentors en powerful tools.'
         : 'A weekend hackathon where young builders (14-30 years) can develop their own ideas. Two days of collaboration, creativity and learning with access to top mentors and powerful tools.',
+      image: '/events/build weekend by young creators.png',
     },
   ];
 
@@ -189,12 +196,22 @@ const Events: React.FC<EventsProps> = ({ language }) => {
             {sortedEvents.map((event, index) => (
               <Link key={index} to={`/events/${event.id}`}>
                 <Card className="shadow-soft hover:shadow-lg transition-shadow overflow-hidden cursor-pointer h-full">
-                  {/* Event Image Placeholder */}
-                  <div className="w-full h-48 bg-muted flex items-center justify-center">
-                    <div className="w-16 h-16 rounded-full bg-background flex items-center justify-center">
-                      <Calendar className="w-8 h-8 text-muted-foreground" />
+                  {/* Event Image */}
+                  {event.image ? (
+                    <div className="w-full h-48 overflow-hidden">
+                      <img
+                        src={event.image}
+                        alt={event.title}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                  </div>
+                  ) : (
+                    <div className="w-full h-48 bg-muted flex items-center justify-center">
+                      <div className="w-16 h-16 rounded-full bg-background flex items-center justify-center">
+                        <Calendar className="w-8 h-8 text-muted-foreground" />
+                      </div>
+                    </div>
+                  )}
 
                   <CardContent className="p-6 space-y-4">
                     {/* Badge */}
