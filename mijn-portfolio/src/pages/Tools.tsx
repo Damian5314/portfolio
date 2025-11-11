@@ -269,15 +269,15 @@ const Tools: React.FC<ToolsProps> = ({ language }) => {
 
     // Camera & Accessories
     {
-      id: 'camera-canon',
-      name: 'Canon EOS R6',
+      id: 'camera-kodak',
+      name: 'Kodak PIXPRO AZ421',
       description: language === 'nl'
-        ? 'Mijn primaire camera voor foto en video projecten.'
-        : 'My primary camera for photo and video projects.',
+        ? 'Bridge camera met 42x optische zoom voor veelzijdige fotografie.'
+        : 'Bridge camera with 42x optical zoom for versatile photography.',
       category: 'camera',
       icon: <Package className="h-6 w-6" />,
-      url: 'https://www.canon.nl/cameras/eos-r6/',
-      tags: ['Camera', 'Full Frame', 'Mirrorless'],
+      url: 'https://kodakpixpro.com/cameras/astro-zoom/az421/',
+      tags: ['Camera', '42x Zoom', 'Bridge Camera'],
       color: 'bg-red-500/10 text-red-500',
     },
     {
