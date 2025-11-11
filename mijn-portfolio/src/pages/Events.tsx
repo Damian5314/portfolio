@@ -55,14 +55,14 @@ const Events: React.FC<EventsProps> = ({ language }) => {
     {
       id: 'agency-at-night',
       type: 'Meetup',
-      title: 'Agency at night',
+      title: 'Agency at Night',
       date: language === 'nl' ? '16 mei 2025' : 'May 16, 2025',
       dateSort: '2025-05-16',
-      location: 'TBD',
+      location: 'Rotterdam (51 agencies)',
       attendees: 'TBD',
       description: language === 'nl'
-        ? 'Informatie wordt later toegevoegd.'
-        : 'Information will be added later.',
+        ? 'Een unieke avond waarbij je achter de schermen kijkt bij 51 creatieve en digitale agencies in Rotterdam. Met talks, exhibitions, workshops en meer over marketing, AI, branding, media en design.'
+        : 'A unique evening where you go behind the scenes at 51 creative and digital agencies in Rotterdam. With talks, exhibitions, workshops and more about marketing, AI, branding, media and design.',
     },
     {
       id: 'xebia-github-copilot-hackathon',
@@ -79,86 +79,62 @@ const Events: React.FC<EventsProps> = ({ language }) => {
     {
       id: 'hackathon-computational-science',
       type: 'Hackathon',
-      title: 'Hackathon computational science',
+      title: 'Hackathon Computational Science',
       date: language === 'nl' ? '14 juni 2025' : 'June 14, 2025',
       dateSort: '2025-06-14',
-      location: 'TBD',
-      attendees: 'TBD',
+      location: 'De Zalen van Zeven, Utrecht',
+      attendees: language === 'nl' ? '~35 deelnemers (7 teams)' : '~35 participants (7 teams)',
       description: language === 'nl'
-        ? 'Informatie wordt later toegevoegd.'
-        : 'Information will be added later.',
+        ? 'De eerste Hackathon van Computational Science NL, waar onderzoekers uit verschillende domeinen samenkomen om een real-world uitdaging te tackelen gepresenteerd door Deltares.'
+        : 'The first Hackathon of Computational Science NL, bringing together researchers from various domains to tackle a real-world challenge presented by Deltares.',
     },
     {
       id: 'citylab010',
       type: 'Workshop',
-      title: 'Citylab010',
+      title: 'CityLab010 Netwerkevent',
       date: language === 'nl' ? '10 september 2025' : 'September 10, 2025',
       dateSort: '2025-09-10',
-      location: 'Rotterdam',
+      location: 'Het Timmerhuis, Rotterdam',
       attendees: 'TBD',
       description: language === 'nl'
-        ? 'Informatie wordt later toegevoegd.'
-        : 'Information will be added later.',
-    },
-    {
-      id: 'citylab010-werk-cafe',
-      type: 'Meetup',
-      title: 'Citylab010 werk cafe',
-      date: language === 'nl' ? '22 september 2025' : 'September 22, 2025',
-      dateSort: '2025-09-22',
-      location: 'Rotterdam',
-      attendees: 'TBD',
-      description: language === 'nl'
-        ? 'Informatie wordt later toegevoegd.'
-        : 'Information will be added later.',
-    },
-    {
-      id: 'citylab010-pitch',
-      type: 'Conference',
-      title: 'Citylab010 pitch',
-      date: language === 'nl' ? '7 oktober 2025' : 'October 7, 2025',
-      dateSort: '2025-10-07',
-      location: 'Rotterdam',
-      attendees: 'TBD',
-      description: language === 'nl'
-        ? 'Informatie wordt later toegevoegd.'
-        : 'Information will be added later.',
+        ? 'Het jaarlijkse netwerkevent van CityLab010 waar plannenmakers, de Stadsjury, partners en gemeentelijke experts samenkomen. Een inspirerende avond vol ontmoeting met workshops over het CityLab-proces en werken vanuit leefwerelden.'
+        : 'The annual networking event of CityLab010 where planners, the City Jury, partners and municipal experts come together. An inspiring evening full of meetings with workshops about the CityLab process and working from living environments.',
     },
     {
       id: 'mendix-ctf',
       type: 'Conference',
-      title: 'Mendix CTF',
+      title: 'Mendix Capture The Flag 2025',
       date: language === 'nl' ? '9-10 oktober 2025' : 'October 9-10, 2025',
       dateSort: '2025-10-09',
-      location: 'TBD',
-      attendees: 'TBD',
+      location: language === 'nl' ? 'Wereldwijd (17 locaties)' : 'Worldwide (17 locations)',
+      attendees: language === 'nl' ? '1.092 hackers wereldwijd' : '1,092 hackers worldwide',
       description: language === 'nl'
-        ? 'Informatie wordt later toegevoegd.'
-        : 'Information will be added later.',
+        ? 'Het Mendix Security Event van het jaar. Twee dagen vol gratis leren en kennisdeling over Mendix security door middel van hacking challenges en workshops door security experts.'
+        : 'The Mendix Security Event of the year. Two days of free learning and knowledge sharing about Mendix security through hacking challenges and workshops by security experts.',
     },
     {
       id: 'mendix-hack-the-halls',
       type: 'Hackathon',
-      title: 'Mendix hack the halls mini-hackathon',
+      title: 'Hack the Halls: A Mendix Christmas Bauble Mini-Hackathon',
       date: language === 'nl' ? '19 november 2025' : 'November 19, 2025',
       dateSort: '2025-11-19',
-      location: 'TBD',
+      location: 'Sopra Steria, Nieuwegein (Utrecht)',
       attendees: 'TBD',
       description: language === 'nl'
-        ? 'Informatie wordt later toegevoegd.'
-        : 'Information will be added later.',
+        ? 'Een feestelijke mini-hackathon waarbij deelnemers digitale kerstballen ontwerpen en stylen in Mendix 11, met alleen Mendix widgets en moderne CSS, ondersteund door AI assistenten.'
+        : 'A festive mini-hackathon where participants design and style digital Christmas baubles in Mendix 11, using only Mendix widgets and modern CSS, guided by AI assistants.',
     },
     {
       id: 'buildweekend-young-creators',
       type: 'Workshop',
-      title: 'buildweekend young creators',
-      date: language === 'nl' ? '29 november - 30 november 2025' : 'November 29 - November 30, 2025',
-      dateSort: '2025-11-30',
-      location: 'TBD',
-      attendees: 'TBD',
+      title: 'Build Weekend by Young Creators & n8n',
+      date: language === 'nl' ? '29-30 november 2025' : 'November 29-30, 2025',
+      dateSort: '2025-11-29',
+      location: 'StartDock, Amsterdam',
+      attendees: language === 'nl' ? '~150 builders (25 teams)' : '~150 builders (25 teams)',
       description: language === 'nl'
-        ? 'Informatie wordt later toegevoegd.'
-        : 'Information will be added later.',
+        ? 'Een weekend hackathon waar young builders (14-30 jaar) hun eigen ideeën kunnen ontwikkelen. Twee dagen vol collaboration, creativity en learning met toegang tot top mentors en powerful tools.'
+        : 'A weekend hackathon where young builders (14-30 years) can develop their own ideas. Two days of collaboration, creativity and learning with access to top mentors and powerful tools.',
     },
   ];
 
