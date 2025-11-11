@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, MapPin, Users } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Calendar, MapPin, Users, ArrowUpDown } from 'lucide-react';
 
 interface EventsProps {
   language: 'nl' | 'en';
@@ -13,6 +14,7 @@ interface Event {
   type: string;
   title: string;
   date: string;
+  dateSort: string; // For sorting purposes (YYYY-MM-DD format)
   location: string;
   attendees: string;
   description: string;
@@ -20,6 +22,8 @@ interface Event {
 }
 
 const Events: React.FC<EventsProps> = ({ language }) => {
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('desc');
+
   const translations = {
     nl: {
       title: 'Evenementen',
@@ -28,6 +32,9 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       meetup: 'Meetup',
       workshop: 'Workshop',
       participants: 'deelnemers',
+      sortByDate: 'Sorteer op datum',
+      newest: 'Nieuwste eerst',
+      oldest: 'Oudste eerst',
     },
     en: {
       title: 'Events',
@@ -36,6 +43,9 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       meetup: 'Meetup',
       workshop: 'Workshop',
       participants: 'participants',
+      sortByDate: 'Sort by date',
+      newest: 'Newest first',
+      oldest: 'Oldest first',
     },
   };
 
@@ -47,6 +57,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       type: 'Meetup',
       title: 'Agency at night',
       date: language === 'nl' ? '16 mei 2025' : 'May 16, 2025',
+      dateSort: '2025-05-16',
       location: 'TBD',
       attendees: 'TBD',
       description: language === 'nl'
@@ -56,19 +67,21 @@ const Events: React.FC<EventsProps> = ({ language }) => {
     {
       id: 'xebia-github-copilot-hackathon',
       type: 'Hackathon',
-      title: 'Xebia GitHub copilot hackathon',
+      title: 'Xebia GitHub Copilot Hackathon',
       date: language === 'nl' ? '21 mei 2025' : 'May 21, 2025',
-      location: 'TBD',
-      attendees: 'TBD',
+      dateSort: '2025-05-21',
+      location: 'Xebia Hilversum, Netherlands',
+      attendees: language === 'nl' ? '~50 deelnemers' : '~50 participants',
       description: language === 'nl'
-        ? 'Informatie wordt later toegevoegd.'
-        : 'Information will be added later.',
+        ? 'Een game-geïnspireerde hackathon gericht op het verbeteren van GitHub Copilot vaardigheden, met tracks voor zowel beginners als gevorderde gebruikers.'
+        : 'A game-inspired hackathon focused on improving GitHub Copilot skills, with tracks for both beginners and advanced users.',
     },
     {
       id: 'hackathon-computational-science',
       type: 'Hackathon',
       title: 'Hackathon computational science',
       date: language === 'nl' ? '14 juni 2025' : 'June 14, 2025',
+      dateSort: '2025-06-14',
       location: 'TBD',
       attendees: 'TBD',
       description: language === 'nl'
@@ -80,6 +93,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       type: 'Workshop',
       title: 'Citylab010',
       date: language === 'nl' ? '10 september 2025' : 'September 10, 2025',
+      dateSort: '2025-09-10',
       location: 'Rotterdam',
       attendees: 'TBD',
       description: language === 'nl'
@@ -91,6 +105,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       type: 'Meetup',
       title: 'Citylab010 werk cafe',
       date: language === 'nl' ? '22 september 2025' : 'September 22, 2025',
+      dateSort: '2025-09-22',
       location: 'Rotterdam',
       attendees: 'TBD',
       description: language === 'nl'
@@ -102,6 +117,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       type: 'Conference',
       title: 'Citylab010 pitch',
       date: language === 'nl' ? '7 oktober 2025' : 'October 7, 2025',
+      dateSort: '2025-10-07',
       location: 'Rotterdam',
       attendees: 'TBD',
       description: language === 'nl'
@@ -113,6 +129,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       type: 'Conference',
       title: 'Mendix CTF',
       date: language === 'nl' ? '9-10 oktober 2025' : 'October 9-10, 2025',
+      dateSort: '2025-10-09',
       location: 'TBD',
       attendees: 'TBD',
       description: language === 'nl'
@@ -124,6 +141,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       type: 'Hackathon',
       title: 'Mendix hack the halls mini-hackathon',
       date: language === 'nl' ? '19 november 2025' : 'November 19, 2025',
+      dateSort: '2025-11-19',
       location: 'TBD',
       attendees: 'TBD',
       description: language === 'nl'
@@ -134,7 +152,8 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       id: 'buildweekend-young-creators',
       type: 'Workshop',
       title: 'buildweekend young creators',
-      date: language === 'nl' ? '30 november - 1 december 2025' : 'November 30 - December 1, 2025',
+      date: language === 'nl' ? '29 november - 30 november 2025' : 'November 29 - November 30, 2025',
+      dateSort: '2025-11-30',
       location: 'TBD',
       attendees: 'TBD',
       description: language === 'nl'
@@ -142,6 +161,16 @@ const Events: React.FC<EventsProps> = ({ language }) => {
         : 'Information will be added later.',
     },
   ];
+
+  const sortedEvents = useMemo(() => {
+    return [...events].sort((a, b) => {
+      if (sortOrder === 'asc') {
+        return a.dateSort.localeCompare(b.dateSort);
+      } else {
+        return b.dateSort.localeCompare(a.dateSort);
+      }
+    });
+  }, [events, sortOrder]);
 
   const getBadgeColor = (type: string) => {
     if (type.toLowerCase().includes('conference')) return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300';
@@ -167,9 +196,21 @@ const Events: React.FC<EventsProps> = ({ language }) => {
             </div>
           </div>
 
+          {/* Sort Button */}
+          <div className="flex justify-end mb-6">
+            <Button
+              variant="outline"
+              onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
+              className="gap-2"
+            >
+              <ArrowUpDown className="w-4 h-4" />
+              {sortOrder === 'desc' ? t.newest : t.oldest}
+            </Button>
+          </div>
+
           {/* Events Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {events.map((event, index) => (
+            {sortedEvents.map((event, index) => (
               <Link key={index} to={`/events/${event.id}`}>
                 <Card className="shadow-soft hover:shadow-lg transition-shadow overflow-hidden cursor-pointer h-full">
                   {/* Event Image Placeholder */}

@@ -49,6 +49,52 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
 
   // Event data
   const eventsData: { [key: string]: EventData } = {
+    'xebia-github-copilot-hackathon': {
+      type: 'Hackathon',
+      title: 'Xebia GitHub Copilot Hackathon',
+      date: language === 'nl' ? '21 mei 2025' : 'May 21, 2025',
+      location: 'Xebia Hilversum, Laapersveld 27, Netherlands',
+      attendees: language === 'nl' ? '~50 deelnemers' : '~50 participants',
+      description: language === 'nl'
+        ? 'Een game-geïnspireerde hackathon gericht op het verbeteren van GitHub Copilot vaardigheden, met tracks voor zowel beginners als gevorderde gebruikers.'
+        : 'A game-inspired hackathon focused on improving GitHub Copilot skills, with tracks for both beginners and advanced users.',
+      experience: language === 'nl'
+        ? 'Ik ben naar deze hackathon gegaan samen met Hicham Tahiri en Wishant Bhajan. We hebben gekozen voor Track 2: Advanced Mode, waarbij we uitleg kregen van Thijs Limmen en Liuba Gonta. Het was een leuke en leerzame ervaring waarbij we in korte tijd een werkend spel hebben kunnen bouwen met behulp van AI prompting.'
+        : 'I attended this hackathon together with Hicham Tahiri and Wishant Bhajan. We chose Track 2: Advanced Mode, where we received instruction from Thijs Limmen and Liuba Gonta. It was a fun and educational experience where we managed to build a working game in a short time using AI prompting.',
+      highlights: language === 'nl'
+        ? [
+            'Kick-off met uitleg over Track 2 (Advanced Mode) door Thijs Limmen en Liuba Gonta',
+            '2 uur durende hackathon om een spel te maken met AI prompting',
+            'Samen met Hicham een Pokemon-achtig spel ontwikkeld',
+            'Hands-on ervaring met geavanceerde GitHub Copilot features',
+            'Wrap-up sessie met drinks en bites waar we onze resultaten deelden',
+          ]
+        : [
+            'Kick-off with explanation of Track 2 (Advanced Mode) by Thijs Limmen and Liuba Gonta',
+            '2-hour hackathon to create a game using AI prompting',
+            'Developed a Pokemon-like game together with Hicham',
+            'Hands-on experience with advanced GitHub Copilot features',
+            'Wrap-up session with drinks and bites where we shared our results',
+          ],
+      learnings: language === 'nl'
+        ? [
+            'Effectieve AI prompting technieken om complexere code te genereren',
+            'Hoe GitHub Copilot te gebruiken voor game development en logica implementatie',
+            'Samenwerken in een team met AI-tools als centrale focus',
+            'Best practices voor het delegeren van repetitieve coding taken aan Copilot',
+            'Inzicht in de geavanceerde features van GitHub Copilot die productiviteit verhogen',
+          ]
+        : [
+            'Effective AI prompting techniques to generate more complex code',
+            'How to use GitHub Copilot for game development and logic implementation',
+            'Collaborating in a team with AI tools as the central focus',
+            'Best practices for delegating repetitive coding tasks to Copilot',
+            'Insights into advanced GitHub Copilot features that increase productivity',
+          ],
+      conclusion: language === 'nl'
+        ? 'Deze hackathon was een geweldige ervaring die mij heeft laten zien hoe krachtig GitHub Copilot kan zijn als je de tool goed beheerst. Het ontwikkelen van een Pokemon-achtig spel in slechts 2 uur was uitdagend maar zeer leerzaam. Ik heb veel inzicht gekregen in effectieve AI prompting en hoe je GitHub Copilot optimaal kunt inzetten in je dagelijkse werk.'
+        : 'This hackathon was a great experience that showed me how powerful GitHub Copilot can be when you master the tool properly. Developing a Pokemon-like game in just 2 hours was challenging but very educational. I gained a lot of insight into effective AI prompting and how to optimally use GitHub Copilot in your daily work.',
+    },
     'react-summit-2024': {
       type: 'Conference',
       title: 'React Summit 2024',
