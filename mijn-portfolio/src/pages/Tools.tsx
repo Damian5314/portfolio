@@ -60,7 +60,7 @@ const Tools: React.FC<ToolsProps> = ({ language }) => {
     },
     {
       id: 'pc-gpu',
-      name: 'GTX 1650/1660',
+      name: 'GTX 1660',
       description: language === 'nl'
         ? 'Graphics card voor gaming en lichte content creation.'
         : 'Graphics card for gaming and light content creation.',
