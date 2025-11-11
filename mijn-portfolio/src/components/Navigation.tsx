@@ -18,6 +18,7 @@ const Navigation: React.FC<NavigationProps> = ({ language, onLanguageChange }) =
       projects: 'Projecten',
       events: 'Evenementen',
       about: 'Over mij',
+      tools: 'Tools',
       contact: 'Contact',
     },
     en: {
@@ -25,6 +26,7 @@ const Navigation: React.FC<NavigationProps> = ({ language, onLanguageChange }) =
       projects: 'Projects',
       events: 'Events',
       about: 'About',
+      tools: 'Tools',
       contact: 'Contact',
     },
   };
@@ -36,6 +38,7 @@ const Navigation: React.FC<NavigationProps> = ({ language, onLanguageChange }) =
     { key: 'projects', label: t.projects, path: '/projects' },
     { key: 'events', label: t.events, path: '/events' },
     { key: 'about', label: t.about, path: '/about' },
+    { key: 'tools', label: t.tools, path: '/tools' },
     { key: 'contact', label: t.contact, path: '/contact' },
   ];
 
