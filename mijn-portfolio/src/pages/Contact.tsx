@@ -71,7 +71,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Simple form validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
@@ -82,14 +82,16 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       return;
     }
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: 'Success',
-        description: t.success,
-      });
-      setFormData({ name: '', email: '', message: '' });
-    }, 1000);
+    // Create mailto link with form data
+    const subject = `Contact from ${formData.name}`;
+    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
+    const mailtoLink = `mailto:damianwillmse@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+    // Open default email client
+    window.location.href = mailtoLink;
+
+    // Clear form
+    setFormData({ name: '', email: '', message: '' });
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
