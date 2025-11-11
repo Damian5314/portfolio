@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import GitHubStats from '@/components/GitHubStats';
 
 interface AboutProps {
   language: 'nl' | 'en';
@@ -273,6 +274,11 @@ const About: React.FC<AboutProps> = ({ language }) => {
               </div>
             </CardContent>
           </Card>
+
+          {/* GitHub Stats Section */}
+          <div className="mb-16">
+            <GitHubStats language={language} />
+          </div>
 
           {/* CTA Section */}
           <section className="bg-dark-section text-dark-section-foreground rounded-2xl p-8 lg:p-12 text-center">
