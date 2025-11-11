@@ -7,6 +7,8 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Home from "./pages/Home";
 import ProjectsApp from './pages/ProjectsApp';  // ← Alleen ProjectsApp importeren
+import Events from "./pages/Events";
+import EventDetail from "./pages/EventDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
@@ -32,6 +34,8 @@ const App = () => {
               <Route path="/" element={<Home language={language} />} />
               <Route path="/projects" element={<ProjectsApp language={language} />} />
               <Route path="/projects/:id" element={<ProjectsApp language={language} />} />
+              <Route path="/events" element={<Events language={language} />} />
+              <Route path="/events/:id" element={<EventDetail language={language} />} />
               <Route path="/about" element={<About language={language} />} />
               <Route path="/contact" element={<Contact language={language} />} />
               <Route path="*" element={<NotFound />} />

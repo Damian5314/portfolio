@@ -16,12 +16,14 @@ const Navigation: React.FC<NavigationProps> = ({ language, onLanguageChange }) =
     nl: {
       home: 'Home',
       projects: 'Projecten',
+      events: 'Evenementen',
       about: 'Over mij',
       contact: 'Contact',
     },
     en: {
       home: 'Home',
       projects: 'Projects',
+      events: 'Events',
       about: 'About',
       contact: 'Contact',
     },
@@ -32,6 +34,7 @@ const Navigation: React.FC<NavigationProps> = ({ language, onLanguageChange }) =
   const navItems = [
     { key: 'home', label: t.home, path: '/' },
     { key: 'projects', label: t.projects, path: '/projects' },
+    { key: 'events', label: t.events, path: '/events' },
     { key: 'about', label: t.about, path: '/about' },
     { key: 'contact', label: t.contact, path: '/contact' },
   ];
