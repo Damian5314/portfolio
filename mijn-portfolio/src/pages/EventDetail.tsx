@@ -19,6 +19,7 @@ interface EventData {
   highlights: string[];
   learnings: string[];
   conclusion: string;
+  image?: string;
 }
 
 const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
@@ -58,6 +59,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Het jaarlijkse netwerkevent van CityLab010 waar plannenmakers, de Stadsjury, partners en gemeentelijke experts samenkomen. Een inspirerende avond vol ontmoeting met workshops over het CityLab-proces en werken vanuit leefwerelden.'
         : 'The annual networking event of CityLab010 where planners, the City Jury, partners and municipal experts come together. An inspiring evening full of meetings with workshops about the CityLab process and working from living environments.',
+      image: '/events/Netwerkavond Citylab010.jpg',
       experience: language === 'nl'
         ? 'Ik kwam naar dit netwerkevent samen met Hicham Tahiri en Wishant Bhajan. We presenteerden ons eigen idee: een app voor toerisme in Rotterdam. Tijdens de avond spraken we met veel verschillende mensen over hun ideeën en plannen voor de stad, en kregen we waardevolle feedback op ons concept.'
         : 'I came to this networking event together with Hicham Tahiri and Wishant Bhajan. We presented our own idea: an app for tourism in Rotterdam. During the evening we spoke with many different people about their ideas and plans for the city, and received valuable feedback on our concept.',
@@ -108,6 +110,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een unieke avond waarbij je achter de schermen kijkt bij 51 creatieve en digitale agencies in Rotterdam. Met talks, exhibitions, workshops en meer over marketing, AI, branding, media en design.'
         : 'A unique evening where you go behind the scenes at 51 creative and digital agencies in Rotterdam. With talks, exhibitions, workshops and more about marketing, AI, branding, media and design.',
+      image: '/events/Agency at night.png',
       experience: language === 'nl'
         ? 'Ik ging naar Agency at Night samen met Hicham Tahiri en Wishant Bhajan. We bezochten 6 verschillende agencies en namen deel aan diverse workshops en activiteiten. Het was een inspirerende avond vol leren over marketing automation, AI, SEO en creatieve challenges.'
         : 'I attended Agency at Night together with Hicham Tahiri and Wishant Bhajan. We visited 6 different agencies and participated in various workshops and activities. It was an inspiring evening full of learning about marketing automation, AI, SEO and creative challenges.',
@@ -158,6 +161,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een weekend hackathon waar young builders (14-30 jaar) hun eigen ideeën kunnen ontwikkelen. Twee dagen in het hart van Amsterdam om te bouwen aan prototypes, designs, automations of nieuwe concepten.'
         : 'A weekend hackathon where young builders (14-30 years) can develop their own ideas. Two days in the heart of Amsterdam to build prototypes, designs, automations or new concepts.',
+      image: '/events/build weekend by young creators.png',
       experience: language === 'nl'
         ? 'Dit evenement staat nog gepland voor 29-30 november 2025. Het belooft een inspirerende ervaring te worden met 150 builders die gedurende het weekend hun ideeën tot leven brengen. Met toegang tot top mentors, powerful tools en unlimited credits, zal dit een unieke kans zijn om te leren, te bouwen en te netwerken met like-minded creatives.'
         : 'This event is still scheduled for November 29-30, 2025. It promises to be an inspiring experience with 150 builders bringing their ideas to life throughout the weekend. With access to top mentors, powerful tools and unlimited credits, this will be a unique opportunity to learn, build and network with like-minded creatives.',
@@ -208,6 +212,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een feestelijke mini-hackathon waarbij deelnemers digitale kerstballen ontwerpen en stylen in Mendix 11, met alleen Mendix widgets en moderne CSS, ondersteund door AI assistenten zoals ChatGPT, Copilot of Claude.'
         : 'A festive mini-hackathon where participants design and style digital Christmas baubles in Mendix 11, using only Mendix widgets and modern CSS, guided by AI assistants like ChatGPT, Copilot or Claude.',
+      image: '/events/mendix hack the halls.jpeg',
       experience: language === 'nl'
         ? 'Dit evenement staat nog gepland voor 19 november 2025. Het belooft een unieke ervaring te worden waarbij ik kan leren hoe ik moderne CSS features kan combineren met Mendix en AI-tools om visueel aantrekkelijke componenten te bouwen.'
         : 'This event is still scheduled for November 19, 2025. It promises to be a unique experience where I can learn how to combine modern CSS features with Mendix and AI tools to build visually appealing components.',
@@ -256,6 +261,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Het Mendix Security Event van het jaar. Twee dagen vol gratis leren en kennisdeling over Mendix security door middel van hacking challenges en workshops door security experts.'
         : 'The Mendix Security Event of the year. Two days of free learning and knowledge sharing about Mendix security through hacking challenges and workshops by security experts.',
+      image: '/events/Mendix CTF 2025.webp',
       experience: language === 'nl'
         ? 'Ik ben naar deze CTF gegaan samen met Hicham Tahiri, Wishant Bhajan en Mohammad Falaha. Het was onze eerste ervaring met een Capture The Flag evenement. Er waren 27 challenges (flags) verdeeld over 3 moeilijkheidsgraden. Ondanks dat het nieuw voor ons was, hebben we toch 12 challenges kunnen voltooien, wat een goede prestatie was voor onze eerste keer.'
         : 'I attended this CTF together with Hicham Tahiri, Wishant Bhajan and Mohammad Falaha. It was our first experience with a Capture The Flag event. There were 27 challenges (flags) divided across 3 difficulty levels. Despite it being new to us, we managed to complete 12 challenges, which was a good achievement for our first time.',
@@ -304,6 +310,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       description: language === 'nl'
         ? 'De eerste Hackathon van Computational Science NL, waar onderzoekers uit verschillende domeinen samenkomen om een real-world uitdaging te tackelen gepresenteerd door Deltares.'
         : 'The first Hackathon of Computational Science NL, bringing together researchers from various domains to tackle a real-world challenge presented by Deltares.',
+      image: '/events/Computational science NL.jpg',
       experience: language === 'nl'
         ? 'Ik ging naar deze hackathon samen met Wishant Bhajan en Hicham Tahiri als Team BBBs. We kregen de uitdaging om de beste solver voor de 1D shallow-water equations te ontwikkelen, geprogrammeerd in Julia - een taal waar we geen ervaring mee hadden. Na meer dan 6 uur intensief coderen en werken aan watervisualisaties, dachten we dat we het niet goed hadden gedaan. Tot onze verbazing kregen we uiteindelijk een Honorable Mention van de jury!'
         : 'I attended this hackathon together with Wishant Bhajan and Hicham Tahiri as Team BBBs. We received the challenge to develop the best solver for the 1D shallow-water equations, programmed in Julia - a language we had no experience with. After more than 6 hours of intensive coding and working on water visualizations, we thought we hadn\'t done well. To our surprise, we ultimately received an Honorable Mention from the jury!',
@@ -350,6 +357,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een game-geïnspireerde hackathon gericht op het verbeteren van GitHub Copilot vaardigheden, met tracks voor zowel beginners als gevorderde gebruikers.'
         : 'A game-inspired hackathon focused on improving GitHub Copilot skills, with tracks for both beginners and advanced users.',
+      image: '/events/Xebia github copilot hackathon.jpeg',
       experience: language === 'nl'
         ? 'Ik ben naar deze hackathon gegaan samen met Hicham Tahiri en Wishant Bhajan. We hebben gekozen voor Track 2: Advanced Mode, waarbij we uitleg kregen van Thijs Limmen en Liuba Gonta. Het was een leuke en leerzame ervaring waarbij we in korte tijd een werkend spel hebben kunnen bouwen met behulp van AI prompting.'
         : 'I attended this hackathon together with Hicham Tahiri and Wishant Bhajan. We chose Track 2: Advanced Mode, where we received instruction from Thijs Limmen and Liuba Gonta. It was a fun and educational experience where we managed to build a working game in a short time using AI prompting.',
@@ -572,11 +580,21 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
           </div>
 
           {/* Hero Image */}
-          <div className="w-full h-96 bg-muted rounded-lg flex items-center justify-center mb-12">
-            <div className="w-20 h-20 rounded-full bg-background flex items-center justify-center">
-              <ImageIcon className="w-10 h-10 text-muted-foreground" />
+          {event.image ? (
+            <div className="w-full h-96 bg-muted rounded-lg overflow-hidden mb-12">
+              <img
+                src={event.image}
+                alt={event.title}
+                className="w-full h-full object-cover"
+              />
             </div>
-          </div>
+          ) : (
+            <div className="w-full h-96 bg-muted rounded-lg flex items-center justify-center mb-12">
+              <div className="w-20 h-20 rounded-full bg-background flex items-center justify-center">
+                <ImageIcon className="w-10 h-10 text-muted-foreground" />
+              </div>
+            </div>
+          )}
 
           {/* My Experience */}
           <section className="mb-12">
