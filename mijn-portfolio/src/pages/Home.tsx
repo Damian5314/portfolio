@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import CTASection from '@/components/CTASection';
 import damianPortrait from '@/assets/DamianWillemse.jpeg';
 
 interface HomeProps {
@@ -104,21 +105,11 @@ const Home: React.FC<HomeProps> = ({ language }) => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-dark-section text-dark-section-foreground py-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto text-center max-w-4xl">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-            {t.ctaTitle}
-          </h2>
-          <Button 
-            asChild 
-            variant="secondary" 
-            size="lg" 
-            className="text-lg px-8 py-3 bg-dark-section-foreground text-dark-section hover:bg-accent"
-          >
-            <Link to="/contact">{t.ctaButton}</Link>
-          </Button>
+      <div className="px-4 sm:px-6 lg:px-8 pb-16">
+        <div className="container mx-auto max-w-6xl">
+          <CTASection language={language} />
         </div>
-      </section>
+      </div>
     </div>
   );
 };

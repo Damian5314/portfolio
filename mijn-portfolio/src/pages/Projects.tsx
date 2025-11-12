@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink } from 'lucide-react';
+import CTASection from '@/components/CTASection';
 
 interface ProjectsProps {
   language: 'nl' | 'en';
@@ -243,19 +244,7 @@ const Projects: React.FC<ProjectsProps> = ({ language, onProjectSelect }) => {
           </div>
 
           {/* CTA Section */}
-          <section className="bg-dark-section text-dark-section-foreground rounded-2xl p-8 lg:p-12 text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              {t.ctaTitle}
-            </h2>
-            <Button 
-              asChild 
-              variant="secondary" 
-              size="lg" 
-              className="text-lg px-8 py-3 bg-dark-section-foreground text-dark-section hover:bg-accent"
-            >
-              <a href="/contact">{t.ctaButton}</a>
-            </Button>
-          </section>
+          <CTASection language={language} />
         </div>
       </div>
     </div>

@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Laptop, Monitor, Keyboard, Mouse, Headphones, Code, Package, Smartphone } from 'lucide-react';
+import CTASection from '@/components/CTASection';
 
 interface ToolsProps {
   language: 'nl' | 'en';
@@ -508,19 +509,7 @@ const Tools: React.FC<ToolsProps> = ({ language }) => {
           </section>
 
           {/* CTA Section */}
-          <section className="bg-dark-section text-dark-section-foreground rounded-2xl p-8 lg:p-12 text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-6">
-              {t.ctaTitle}
-            </h2>
-            <Button
-              asChild
-              variant="secondary"
-              size="lg"
-              className="text-lg px-8 py-3 bg-dark-section-foreground text-dark-section hover:bg-accent"
-            >
-              <Link to="/contact">{t.ctaButton}</Link>
-            </Button>
-          </section>
+          <CTASection language={language} />
         </div>
       </div>
     </div>

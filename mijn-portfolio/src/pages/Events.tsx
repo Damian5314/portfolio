@@ -4,6 +4,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Calendar, MapPin, Users, ArrowUpDown } from 'lucide-react';
+import CTASection from '@/components/CTASection';
 
 interface EventsProps {
   language: 'nl' | 'en';
@@ -192,7 +193,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
           </div>
 
           {/* Events Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
             {sortedEvents.map((event, index) => (
               <Link key={index} to={`/events/${event.id}`}>
                 <Card className="shadow-soft hover:shadow-lg transition-shadow overflow-hidden cursor-pointer h-full">
@@ -249,6 +250,9 @@ const Events: React.FC<EventsProps> = ({ language }) => {
               </Link>
             ))}
           </div>
+
+          {/* CTA Section */}
+          <CTASection language={language} />
         </div>
       </div>
     </div>

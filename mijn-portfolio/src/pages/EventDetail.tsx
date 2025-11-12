@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Calendar, MapPin, Users, ArrowLeft, Image as ImageIcon } from 'lucide-react';
 import { Card } from '@/components/ui/card';
+import CTASection from '@/components/CTASection';
 
 interface EventDetailProps {
   language: 'nl' | 'en';
@@ -655,7 +656,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
           </section>
 
           {/* Back to Events Link */}
-          <div className="border-t border-border pt-8">
+          <div className="border-t border-border pt-8 mb-16">
             <Link
               to="/events"
               className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium"
@@ -664,6 +665,9 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
               <span>{t.viewAllEvents}</span>
             </Link>
           </div>
+
+          {/* CTA Section */}
+          <CTASection language={language} />
         </div>
       </div>
     </div>
