@@ -139,13 +139,13 @@ const Projects: React.FC<ProjectsProps> = ({ language, onProjectSelect }) => {
     },
     {
       id: '10',
-      title: '21Questions Chat Widget',
+      title: '21Questions',
       description: language === 'nl'
-        ? 'Een intelligente Mendix-geïntegreerde chat widget met Groq/Llama AI en documentzoekfunctionaliteit. Deze React component is specifiek ontworpen als pluggable widget voor Mendix applicaties, waarbij bedrijven een geavanceerde chatbot kunnen integreren die documenten kan doorzoeken en contextuele antwoorden geeft.'
-        : 'An intelligent Mendix-integrated chat widget with Groq/Llama AI and document search functionality. This React component is specifically designed as a pluggable widget for Mendix applications, allowing companies to integrate an advanced chatbot that can search documents and provide contextual answers.',
+        ? 'Een intelligente chatbot volledig ontwikkeld in Mendix voor mijn stage bij 21south. De applicatie bevat een custom frontend design en backend, beide gebouwd in Mendix. De chatbot gebruikt Groq/Llama AI om vragen te beantwoorden, groeten te verwerken en ongepaste vragen af te wijzen. Documentzoekfunctionaliteit (text/pdf/doc) wordt momenteel ontwikkeld.'
+        : 'An intelligent chatbot fully developed in Mendix for my internship at 21south. The application features a custom frontend design and backend, both built in Mendix. The chatbot uses Groq/Llama AI to answer questions, handle greetings and reject inappropriate questions. Document search functionality (text/pdf/doc) is currently in development.',
       category: 'client',
-      technologies: ['React', 'TypeScript', 'Node.js', 'Groq SDK', 'Llama 3.1', 'Mendix', 'Webpack'],
-      image: `${import.meta.env.BASE_URL}21questions.png`,
+      technologies: ['Mendix', 'Groq SDK', 'Llama 3.1'],
+      image: `${import.meta.env.BASE_URL}Projects/21Questions/21Questions1.jpeg`,
     },
   ];
 

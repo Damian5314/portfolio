@@ -21,6 +21,7 @@ interface EventData {
   learnings: string[];
   conclusion: string;
   image?: string;
+  additionalImages?: string[];
 }
 
 const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
@@ -61,6 +62,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
         ? 'Het jaarlijkse netwerkevent van CityLab010 waar plannenmakers, de Stadsjury, partners en gemeentelijke experts samenkomen. Een inspirerende avond vol ontmoeting met workshops over het CityLab-proces en werken vanuit leefwerelden.'
         : 'The annual networking event of CityLab010 where planners, the City Jury, partners and municipal experts come together. An inspiring evening full of meetings with workshops about the CityLab process and working from living environments.',
       image: '/events/Netwerkavond Citylab010.jpg',
+      additionalImages: ['/events/Citylab010Netwerkavond2.jpg', '/events/Citylab010Netwerkavond3.jpg'],
       experience: language === 'nl'
         ? 'Ik kwam naar dit netwerkevent samen met Hicham Tahiri en Wishant Bhajan. We presenteerden ons eigen idee: een app voor toerisme in Rotterdam. Tijdens de avond spraken we met veel verschillende mensen over hun ideeën en plannen voor de stad, en kregen we waardevolle feedback op ons concept.'
         : 'I came to this networking event together with Hicham Tahiri and Wishant Bhajan. We presented our own idea: an app for tourism in Rotterdam. During the evening we spoke with many different people about their ideas and plans for the city, and received valuable feedback on our concept.',
@@ -112,6 +114,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
         ? 'Een unieke avond waarbij je achter de schermen kijkt bij 51 creatieve en digitale agencies in Rotterdam. Met talks, exhibitions, workshops en meer over marketing, AI, branding, media en design.'
         : 'A unique evening where you go behind the scenes at 51 creative and digital agencies in Rotterdam. With talks, exhibitions, workshops and more about marketing, AI, branding, media and design.',
       image: '/events/Agency at night.png',
+      additionalImages: ['/events/AgencyAtNight2.jpg', '/events/AgencyAtNight3.jpg'],
       experience: language === 'nl'
         ? 'Ik ging naar Agency at Night samen met Hicham Tahiri en Wishant Bhajan. We bezochten 6 verschillende agencies en namen deel aan diverse workshops en activiteiten. Het was een inspirerende avond vol leren over marketing automation, AI, SEO en creatieve challenges.'
         : 'I attended Agency at Night together with Hicham Tahiri and Wishant Bhajan. We visited 6 different agencies and participated in various workshops and activities. It was an inspiring evening full of learning about marketing automation, AI, SEO and creative challenges.',
@@ -263,6 +266,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
         ? 'Het Mendix Security Event van het jaar. Twee dagen vol gratis leren en kennisdeling over Mendix security door middel van hacking challenges en workshops door security experts.'
         : 'The Mendix Security Event of the year. Two days of free learning and knowledge sharing about Mendix security through hacking challenges and workshops by security experts.',
       image: '/events/Mendix CTF 2025.webp',
+      additionalImages: ['/events/MendixCTF20252.jpg', '/events/MendixCTF20253.jpg'],
       experience: language === 'nl'
         ? 'Ik ben naar deze CTF gegaan samen met Hicham Tahiri, Wishant Bhajan en Mohammad Falaha. Het was onze eerste ervaring met een Capture The Flag evenement. Er waren 27 challenges (flags) verdeeld over 3 moeilijkheidsgraden. Ondanks dat het nieuw voor ons was, hebben we toch 12 challenges kunnen voltooien, wat een goede prestatie was voor onze eerste keer.'
         : 'I attended this CTF together with Hicham Tahiri, Wishant Bhajan and Mohammad Falaha. It was our first experience with a Capture The Flag event. There were 27 challenges (flags) divided across 3 difficulty levels. Despite it being new to us, we managed to complete 12 challenges, which was a good achievement for our first time.',
@@ -312,6 +316,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
         ? 'De eerste Hackathon van Computational Science NL, waar onderzoekers uit verschillende domeinen samenkomen om een real-world uitdaging te tackelen gepresenteerd door Deltares.'
         : 'The first Hackathon of Computational Science NL, bringing together researchers from various domains to tackle a real-world challenge presented by Deltares.',
       image: '/events/Computational science NL.jpg',
+      additionalImages: ['/events/ComputationalScienceNL2.jpeg', '/events/ComputationalScienceNL3.jpeg'],
       experience: language === 'nl'
         ? 'Ik ging naar deze hackathon samen met Wishant Bhajan en Hicham Tahiri als Team BBBs. We kregen de uitdaging om de beste solver voor de 1D shallow-water equations te ontwikkelen, geprogrammeerd in Julia - een taal waar we geen ervaring mee hadden. Na meer dan 6 uur intensief coderen en werken aan watervisualisaties, dachten we dat we het niet goed hadden gedaan. Tot onze verbazing kregen we uiteindelijk een Honorable Mention van de jury!'
         : 'I attended this hackathon together with Wishant Bhajan and Hicham Tahiri as Team BBBs. We received the challenge to develop the best solver for the 1D shallow-water equations, programmed in Julia - a language we had no experience with. After more than 6 hours of intensive coding and working on water visualizations, we thought we hadn\'t done well. To our surprise, we ultimately received an Honorable Mention from the jury!',
@@ -359,6 +364,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
         ? 'Een game-geïnspireerde hackathon gericht op het verbeteren van GitHub Copilot vaardigheden, met tracks voor zowel beginners als gevorderde gebruikers.'
         : 'A game-inspired hackathon focused on improving GitHub Copilot skills, with tracks for both beginners and advanced users.',
       image: '/events/Xebia github copilot hackathon.jpeg',
+      additionalImages: ['/events/XebiaGithubCopilotHackathon2.JPG', '/events/XebiaGithubCopilotHackathon3.JPG'],
       experience: language === 'nl'
         ? 'Ik ben naar deze hackathon gegaan samen met Hicham Tahiri en Wishant Bhajan. We hebben gekozen voor Track 2: Advanced Mode, waarbij we uitleg kregen van Thijs Limmen en Liuba Gonta. Het was een leuke en leerzame ervaring waarbij we in korte tijd een werkend spel hebben kunnen bouwen met behulp van AI prompting.'
         : 'I attended this hackathon together with Hicham Tahiri and Wishant Bhajan. We chose Track 2: Advanced Mode, where we received instruction from Thijs Limmen and Liuba Gonta. It was a fun and educational experience where we managed to build a working game in a short time using AI prompting.',
@@ -619,18 +625,22 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
           </section>
 
           {/* Photos */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-6">{t.photos}</h2>
-            <div className="grid md:grid-cols-2 gap-4">
-              {[1, 2].map((_, index) => (
-                <div key={index} className="w-full h-64 bg-muted rounded-lg flex items-center justify-center">
-                  <div className="w-16 h-16 rounded-full bg-background flex items-center justify-center">
-                    <ImageIcon className="w-8 h-8 text-muted-foreground" />
+          {event.additionalImages && event.additionalImages.length > 0 && (
+            <section className="mb-12">
+              <h2 className="text-3xl font-bold text-foreground mb-6">{t.photos}</h2>
+              <div className="grid md:grid-cols-2 gap-4">
+                {event.additionalImages.map((image, index) => (
+                  <div key={index} className="w-full h-64 bg-muted rounded-lg overflow-hidden">
+                    <img
+                      src={image}
+                      alt={`${event.title} ${index + 2}`}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                </div>
-              ))}
-            </div>
-          </section>
+                ))}
+              </div>
+            </section>
+          )}
 
           {/* What I Learned */}
           <section className="mb-12">

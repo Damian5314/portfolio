@@ -688,73 +688,73 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
   },
 
   '10': {
-    title: '21Questions Chat Widget',
-    subtitle: language === 'nl' ? 'Mendix AI-geïntegreerde chat widget' : 'Mendix AI-integrated chat widget',
+    title: '21Questions',
+    subtitle: language === 'nl' ? 'AI Chatbot voor 21south' : 'AI Chatbot for 21south',
     category: 'client',
     description: language === 'nl'
-      ? 'Een intelligente Mendix-geïntegreerde chat widget met Groq/Llama AI en documentzoekfunctionaliteit. Deze React component is specifiek ontworpen als pluggable widget voor Mendix applicaties.'
-      : 'An intelligent Mendix-integrated chat widget with Groq/Llama AI and document search functionality. This React component is specifically designed as a pluggable widget for Mendix applications.',
+      ? 'Een intelligente chatbot volledig ontwikkeld in Mendix voor mijn stage bij 21south. De applicatie bevat een custom frontend design en backend, beide gebouwd in Mendix. De chatbot gebruikt Groq/Llama AI om vragen te beantwoorden, groeten te verwerken en ongepaste vragen af te wijzen.'
+      : 'An intelligent chatbot fully developed in Mendix for my internship at 21south. The application features a custom frontend design and backend, both built in Mendix. The chatbot uses Groq/Llama AI to answer questions, handle greetings and reject inappropriate questions.',
     longDescription: language === 'nl'
-      ? 'Deze geavanceerde chat widget werd ontwikkeld voor 21Qubz/21south om bedrijven in staat te stellen een contextuele AI-chatbot te integreren in hun Mendix applicaties. De widget combineert Llama 3.1 AI via Groq met documentzoekfunctionaliteit, waardoor gebruikers intelligente antwoorden krijgen gebaseerd op bedrijfsspecifieke documenten en processen.'
-      : 'This advanced chat widget was developed for 21Qubz/21south to enable companies to integrate a contextual AI chatbot into their Mendix applications. The widget combines Llama 3.1 AI via Groq with document search functionality, providing users with intelligent answers based on company-specific documents and processes.',
-    technologies: ['React', 'TypeScript', 'Node.js', 'Express', 'Groq SDK', 'Llama 3.1', 'Mendix', 'Webpack', 'PDF/Word parsing'],
+      ? 'Tijdens mijn stage bij 21south ontwikkelde ik deze complete chatbot applicatie volledig binnen het Mendix low-code platform. Het project omvat een custom-designed frontend, een backend API integratie met Groq voor AI-functionaliteit, en slimme logica voor het afhandelen van verschillende soorten gebruikersinput. Documentzoekfunctionaliteit voor text/pdf/doc bestanden wordt momenteel ontwikkeld en zal de chatbot nog intelligenter maken door antwoorden te baseren op bedrijfsspecifieke documenten.'
+      : 'During my internship at 21south, I developed this complete chatbot application entirely within the Mendix low-code platform. The project includes a custom-designed frontend, a backend API integration with Groq for AI functionality, and smart logic for handling different types of user input. Document search functionality for text/pdf/doc files is currently in development and will make the chatbot even smarter by basing answers on company-specific documents.',
+    technologies: ['Mendix', 'Groq SDK', 'Llama 3.1', 'REST API', 'Microflows'],
     duration: language === 'nl' ? '20 weken' : '20 weeks',
     teamSize: language === 'nl' ? '1 developer (zelf)' : '1 developer (solo)',
-    myRole: language === 'nl' ? 'Full Stack Developer & Mendix Specialist' : 'Full Stack Developer & Mendix Specialist',
+    myRole: language === 'nl' ? 'Mendix Developer & Designer' : 'Mendix Developer & Designer',
     features: language === 'nl' ? [
-      'Mendix Pluggable Widget integratie',
-      'Llama 3.1 AI via Groq voor intelligente antwoorden',
-      'Document retrieval voor PDF en TXT bestanden',
-      '21Qubz/21south bedrijfsspecifiek',
-      'Nederlandse interface met context-aware responses',
-      'Real-time messaging met bronvermelding',
-      'Production-ready build voor Mendix deployment',
-      'Framework-agnostieke architectuur'
+      'Volledig custom Mendix frontend design',
+      'Groq/Llama 3.1 AI integratie via REST API',
+      'Intelligente vraagverwerking',
+      'Groeten en begroetingen handling',
+      'Ongepaste vragen afwijzen',
+      'Real-time chat interface',
+      'Custom backend logica in Mendix',
+      'Documentzoekfunctionaliteit (in ontwikkeling)'
     ] : [
-      'Mendix Pluggable Widget integration',
-      'Llama 3.1 AI via Groq for intelligent responses',
-      'Document retrieval for PDF and TXT files',
-      '21Qubz/21south company-specific',
-      'Dutch interface with context-aware responses',
-      'Real-time messaging with source attribution',
-      'Production-ready build for Mendix deployment',
-      'Framework-agnostic architecture'
+      'Fully custom Mendix frontend design',
+      'Groq/Llama 3.1 AI integration via REST API',
+      'Intelligent question processing',
+      'Greetings and salutations handling',
+      'Inappropriate question rejection',
+      'Real-time chat interface',
+      'Custom backend logic in Mendix',
+      'Document search functionality (in development)'
     ],
     challenges: language === 'nl' ? [
-      'Mendix framework integratie complexiteit',
-      'AI model migratie van Gemini naar Groq/Llama',
-      'Bedrijfsspecifieke context implementatie',
-      'Nederlands taalmodel optimalisatie'
+      'Externe AI API integratie in Mendix',
+      'Custom UI design binnen Mendix constraints',
+      'Input validatie en filtering logica',
+      'Toekomstige document parsing implementatie'
     ] : [
-      'Mendix framework integration complexity',
-      'AI model migration from Gemini to Groq/Llama',
-      'Company-specific context implementation',
-      'Dutch language model optimization'
+      'External AI API integration in Mendix',
+      'Custom UI design within Mendix constraints',
+      'Input validation and filtering logic',
+      'Future document parsing implementation'
     ],
     solutions: language === 'nl' ? [
-      'Framework-agnostieke pluggable widget architectuur',
-      'Groq SDK integratie voor betere performance',
-      'Document-gebaseerde contextuele antwoorden',
-      'Nederlandse bedrijfscommunicatie optimalisatie'
+      'REST service integratie met Groq SDK',
+      'Mendix styling en custom widgets',
+      'Microflow logica voor input filtering',
+      'Modulaire architectuur voor toekomstige features'
     ] : [
-      'Framework-agnostic pluggable widget architecture',
-      'Groq SDK integration for better performance',
-      'Document-based contextual responses',
-      'Dutch business communication optimization'
+      'REST service integration with Groq SDK',
+      'Mendix styling and custom widgets',
+      'Microflow logic for input filtering',
+      'Modular architecture for future features'
     ],
     results: language === 'nl' ? [
-      'Mendix-ready widget met volledige integratie',
-      'Contextuele AI gespecialiseerd in bedrijfsprocessen',
-      'Schaalbare architectuur voor enterprise deployment',
-      'Nederlandse chatbot voor optimale gebruikservaring'
+      'Werkende AI chatbot in Mendix',
+      'Custom design past bij 21south branding',
+      'Basis gelegd voor document search feature',
+      'Succesvolle stage opdracht afgerond'
     ] : [
-      'Mendix-ready widget with full integration',
-      'Contextual AI specialized in business processes',
-      'Scalable architecture for enterprise deployment',
-      'Dutch chatbot for optimal user experience'
+      'Working AI chatbot in Mendix',
+      'Custom design matches 21south branding',
+      'Foundation laid for document search feature',
+      'Successful internship project completed'
     ],
     images: [
-      `${import.meta.env.BASE_URL}21questions.png`,
+      `${import.meta.env.BASE_URL}Projects/21Questions/21Questions1.jpeg`,
     ],
     liveUrl: '#',
     githubUrl: '#'
