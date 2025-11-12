@@ -5,6 +5,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navigation from "./components/Navigation";
+import ScrollToTop from "./components/ScrollToTop";
+import BackToTop from "./components/BackToTop";
 import Home from "./pages/Home";
 import ProjectsApp from './pages/ProjectsApp';  // ← Alleen ProjectsApp importeren
 import Events from "./pages/Events";
@@ -29,6 +31,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTop />
           <div className="min-h-screen bg-background">
             <Navigation language={language} onLanguageChange={handleLanguageChange} />
             <Routes>
@@ -42,6 +45,7 @@ const App = () => {
               <Route path="/tools" element={<Tools language={language} />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            <BackToTop />
           </div>
         </BrowserRouter>
       </TooltipProvider>
