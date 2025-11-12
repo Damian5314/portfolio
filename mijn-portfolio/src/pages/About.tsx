@@ -66,7 +66,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
           status: 'Lopend',
         },
         {
-          degree: 'HAVO',
+          degree: 'HAVO - Economie & Maatschappij',
           school: 'Montfort College Rotterdam',
           period: '2016 - 2023',
           status: 'Afgerond',
@@ -142,7 +142,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
           status: 'Ongoing',
         },
         {
-          degree: 'HAVO',
+          degree: 'HAVO - Economics & Society',
           school: 'Montfort College Rotterdam',
           period: '2016 - 2023',
           status: 'Completed',
@@ -179,7 +179,9 @@ const About: React.FC<AboutProps> = ({ language }) => {
   const t = translations[language];
 
   const technicalSkills = ['HTML', 'CSS', 'JavaScript', 'Python', 'TypeScript', 'React', 'C#'];
-  const languageSkills = language === 'nl' ? ['Nederlands', 'Engels'] : ['Dutch', 'English'];
+  const languageSkills = language === 'nl'
+    ? ['Nederlands (Moedertaal)', 'Engels (Professionele vaardigheden)', 'Frans (Basis)', 'Spaans (Basis)', 'Chinees (Basis)']
+    : ['Dutch (Native)', 'English (Professional proficiency)', 'French (Basic)', 'Spanish (Basic)', 'Chinese (Basic)'];
 
   const handleDownloadCV = (cvLanguage: 'nl' | 'en') => {
     const cvPath = cvLanguage === 'nl' ? '/cv/cv damian willemse.docx' : '/cv/cv damian willemse english.docx';
@@ -273,9 +275,9 @@ const About: React.FC<AboutProps> = ({ language }) => {
                   <h4 className="font-medium text-sm text-muted-foreground mb-3 uppercase tracking-wider">
                     {t.skills.languages}
                   </h4>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-col gap-2">
                     {languageSkills.map((lang) => (
-                      <Badge key={lang} variant="outline" className="text-xs">
+                      <Badge key={lang} variant="outline" className="text-xs w-fit">
                         {lang}
                       </Badge>
                     ))}

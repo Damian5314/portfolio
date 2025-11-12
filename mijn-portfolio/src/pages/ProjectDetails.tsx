@@ -123,12 +123,12 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
         'Positive feedback from industry experts'
       ],
       images: [
-        `${import.meta.env.BASE_URL}QRLogistics1.jpeg`,
-        `${import.meta.env.BASE_URL}QRLogistics2.jpeg`,
-        `${import.meta.env.BASE_URL}QRLogistics3.jpeg`,
-        `${import.meta.env.BASE_URL}QRLogistics4.jpeg`,
-        `${import.meta.env.BASE_URL}QRLogistics5.png`,
-        `${import.meta.env.BASE_URL}QRLogistics6.png`,
+        `${import.meta.env.BASE_URL}Projects/QRLogistics/QRLogistics1.jpeg`,
+        `${import.meta.env.BASE_URL}Projects/QRLogistics/QRLogistics2.jpeg`,
+        `${import.meta.env.BASE_URL}Projects/QRLogistics/QRLogistics3.jpeg`,
+        `${import.meta.env.BASE_URL}Projects/QRLogistics/QRLogistics4.jpeg`,
+        `${import.meta.env.BASE_URL}Projects/QRLogistics/QRLogistics5.png`,
+        `${import.meta.env.BASE_URL}Projects/QRLogistics/QRLogistics6.png`,
       ],
       liveUrl: '#', // Vervang met echte URL indien beschikbaar
       githubUrl: 'https://github.com/Motje3/QR-Scanner-Tracking'
@@ -195,11 +195,11 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
         'Positive feedback from testers'
       ],
       images: [
-        `${import.meta.env.BASE_URL}voetbalbanner.png`,        
-        `${import.meta.env.BASE_URL}voetbal1.jpeg`,
-        `${import.meta.env.BASE_URL}voetbal2.jpeg`,
-        `${import.meta.env.BASE_URL}voetbal3.jpeg`,
-        `${import.meta.env.BASE_URL}voetbal4.jpeg`
+        `${import.meta.env.BASE_URL}Projects/Voetbal/voetbalbanner.png`,
+        `${import.meta.env.BASE_URL}Projects/Voetbal/voetbal1.jpeg`,
+        `${import.meta.env.BASE_URL}Projects/Voetbal/voetbal2.jpeg`,
+        `${import.meta.env.BASE_URL}Projects/Voetbal/voetbal3.jpeg`,
+        `${import.meta.env.BASE_URL}Projects/Voetbal/voetbal4.jpeg`
       ],
       liveUrl: '#',
       githubUrl: '#'
@@ -266,13 +266,13 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
       'Foundation for follow-up projects'
     ],
     images: [
-      `${import.meta.env.BASE_URL}TableTech1.jpeg`,
-      `${import.meta.env.BASE_URL}TableTech2.jpeg`,
-      `${import.meta.env.BASE_URL}TableTech3.png`,
-      `${import.meta.env.BASE_URL}TableTech4.png`,
-      `${import.meta.env.BASE_URL}TableTech5.png`,
-      `${import.meta.env.BASE_URL}TableTech6.png`,
-      `${import.meta.env.BASE_URL}TableTech7.png`
+      `${import.meta.env.BASE_URL}Projects/TableTech/TableTech1.jpeg`,
+      `${import.meta.env.BASE_URL}Projects/TableTech/TableTech2.jpeg`,
+      `${import.meta.env.BASE_URL}Projects/TableTech/TableTech3.png`,
+      `${import.meta.env.BASE_URL}Projects/TableTech/TableTech4.png`,
+      `${import.meta.env.BASE_URL}Projects/TableTech/TableTech5.png`,
+      `${import.meta.env.BASE_URL}Projects/TableTech/TableTech6.png`,
+      `${import.meta.env.BASE_URL}Projects/TableTech/TableTech7.png`
     ],
     liveUrl: '#',
     githubUrl: 'https://github.com/Table-Tech/TableTech-app'
@@ -339,8 +339,8 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
       'Professional brand presentation'
     ],
     images: [
-      `${import.meta.env.BASE_URL}TableTechWeb1.png`,
-      `${import.meta.env.BASE_URL}TableTechWeb2.png`,
+      `${import.meta.env.BASE_URL}Projects/TableTechWeb/TableTechWeb1.png`,
+      `${import.meta.env.BASE_URL}Projects/TableTechWeb/TableTechWeb2.png`,
     ],
     liveUrl: 'https://tabletech.nl/',
     githubUrl: 'https://github.com/Table-Tech/TableTech-website'
@@ -407,9 +407,9 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
       'Professional online presentation'
     ],
     images: [
-      `${import.meta.env.BASE_URL}willes1.png`,
-      `${import.meta.env.BASE_URL}willes2.png`,
-      `${import.meta.env.BASE_URL}willes3.png`
+      `${import.meta.env.BASE_URL}Projects/Willes/willes1.png`,
+      `${import.meta.env.BASE_URL}Projects/Willes/willes2.png`,
+      `${import.meta.env.BASE_URL}Projects/Willes/willes3.png`
     ],
     liveUrl: 'https://willesrijschool.nl/',
     githubUrl: 'https://github.com/Damian5314/v0-remake-willesrijschool'
@@ -476,7 +476,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
       'Successful trading transactions'
     ],
     images: [
-      `${import.meta.env.BASE_URL}CaboFeira1.png`,
+      `${import.meta.env.BASE_URL}Projects/CaboFeira/CaboFeira1.png`,
     ],
     liveUrl: 'https://cabofeira.com/',
     githubUrl: '#'
@@ -543,7 +543,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
       'Good grade for technical implementation'
     ],
     images: [
-      `${import.meta.env.BASE_URL}SpaceMonkey1.png`,
+      `${import.meta.env.BASE_URL}Projects/SpaceMonkey/SpaceMonkey1.png`,
     ],
     liveUrl: '#',
     githubUrl: 'https://github.com/Damian5314/Spacemonkey'
@@ -610,9 +610,9 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
       'Good teamwork under pressure'
     ],
     images: [
-      `${import.meta.env.BASE_URL}PokemonHackathon1.png`,
-      `${import.meta.env.BASE_URL}PokemonHackathon2.png`,
-      `${import.meta.env.BASE_URL}PokemonHackathon3.png`
+      `${import.meta.env.BASE_URL}Projects/PokemonHackathon/PokemonHackathon1.png`,
+      `${import.meta.env.BASE_URL}Projects/PokemonHackathon/PokemonHackathon2.png`,
+      `${import.meta.env.BASE_URL}Projects/PokemonHackathon/PokemonHackathon3.png`
     ],
     liveUrl: '#',
     githubUrl: 'https://github.com/Damian5314/Github-Copilot-Hackathon'
@@ -679,9 +679,9 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
       'Working physics-based gameplay'
     ],
     images: [
-      `${import.meta.env.BASE_URL}brick1.png`,
-      `${import.meta.env.BASE_URL}brick2.png`,
-      `${import.meta.env.BASE_URL}brick3.png`,
+      `${import.meta.env.BASE_URL}Projects/Brick/brick1.png`,
+      `${import.meta.env.BASE_URL}Projects/Brick/brick2.png`,
+      `${import.meta.env.BASE_URL}Projects/Brick/brick3.png`,
     ],
     liveUrl: '#',
     githubUrl: 'https://github.com/Damian5314/brick-breaker'

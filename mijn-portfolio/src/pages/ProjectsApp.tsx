@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import Projects from './Projects';
 import ProjectDetails from './ProjectDetails';
 
@@ -7,31 +8,29 @@ interface ProjectsAppProps {
 }
 
 const ProjectsApp: React.FC<ProjectsAppProps> = ({ language }) => {
-  const [currentView, setCurrentView] = useState('projects');
-  const [selectedProjectId, setSelectedProjectId] = useState<string | null>(null);
+  const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
 
   const handleProjectSelect = (projectId: string) => {
-    setSelectedProjectId(projectId);
-    setCurrentView('detail');
+    navigate(`/projects/${projectId}`);
   };
 
   const handleBackToProjects = () => {
-    setCurrentView('projects');
-    setSelectedProjectId(null);
+    navigate('/projects');
   };
 
   return (
     <div>
-      {currentView === 'projects' && (
-        <Projects 
-          language={language} 
+      {!id && (
+        <Projects
+          language={language}
           onProjectSelect={handleProjectSelect}
         />
       )}
-      {currentView === 'detail' && selectedProjectId && (
-        <ProjectDetails 
-          language={language} 
-          projectId={selectedProjectId}
+      {id && (
+        <ProjectDetails
+          language={language}
+          projectId={id}
           onBack={handleBackToProjects}
         />
       )}
