@@ -35,7 +35,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
         {
           role: 'AI Development Stagair',
           company: '21South',
-          period: 'September 2024 - Heden',
+          period: 'September 2025 - Heden',
           description: 'Onderzoek en implementatie van AI-oplossingen in het 21QUBZ platform',
         },
         {
@@ -111,7 +111,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
         {
           role: 'AI Development Intern',
           company: '21South',
-          period: 'September 2024 - Present',
+          period: 'September 2025 - Present',
           description: 'Research and implementation of AI solutions in the 21QUBZ platform',
         },
         {
