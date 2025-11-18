@@ -8,6 +8,7 @@ import { Label } from '@/components/ui/label';
 import { Mail, MapPin, Linkedin, Github } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import CTASection from '@/components/CTASection';
+import emailjs from '@emailjs/browser';
 
 interface ContactProps {
   language: 'nl' | 'en';
@@ -19,6 +20,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
     email: '',
     message: '',
   });
+  const [isSending, setIsSending] = useState(false);
   const { toast } = useToast();
 
   const translations = {
@@ -43,6 +45,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       ctaButton: 'Laten we praten',
       success: 'Bericht succesvol verzonden!',
       error: 'Er is iets misgegaan. Probeer het opnieuw.',
+      fillAll: 'Vul alle velden in.',
     },
     en: {
       title: 'Contact',
@@ -65,34 +68,53 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       ctaButton: "Let's talk",
       success: 'Message sent successfully!',
       error: 'Something went wrong. Please try again.',
+      fillAll: 'Please fill in all fields.',
     },
   };
 
   const t = translations[language];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Simple form validation
     if (!formData.name || !formData.email || !formData.message) {
       toast({
         title: 'Error',
-        description: language === 'nl' ? 'Vul alle velden in.' : 'Please fill in all fields.',
+        description: t.fillAll,
         variant: 'destructive',
       });
       return;
     }
 
-    // Create mailto link with form data
-    const subject = `Contact from ${formData.name}`;
-    const body = `Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0A%0D%0AMessage:%0D%0A${formData.message}`;
-    const mailtoLink = `mailto:damianwillmse@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+    setIsSending(true);
 
-    // Open default email client
-    window.location.href = mailtoLink;
+    try {
+      await emailjs.send(
+        'service_4u7z1jh',
+        'template_vbotxdr',
+        {
+          from_name: formData.name,
+          reply_to: formData.email,
+          message: formData.message,
+        },
+        'dsG0e8u4lg8i42YLL'
+      );
 
-    // Clear form
-    setFormData({ name: '', email: '', message: '' });
+      toast({
+        title: 'Success',
+        description: t.success,
+      });
+
+      setFormData({ name: '', email: '', message: '' });
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: t.error,
+        variant: 'destructive',
+      });
+    } finally {
+      setIsSending(false);
+    }
   };
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -106,7 +128,6 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
     <div className="min-h-screen bg-background">
       <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto max-w-6xl">
-          {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
               {t.title}
@@ -116,9 +137,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
             </p>
           </div>
 
-          {/* Contact Content */}
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            {/* Contact Information */}
             <div className="space-y-8">
               <Card className="shadow-soft">
                 <CardHeader>
@@ -190,7 +209,6 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
               </Card>
             </div>
 
-            {/* Contact Form */}
             <Card className="shadow-soft">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold">{t.form.title}</CardTitle>
@@ -235,15 +253,14 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                     />
                   </div>
 
-                  <Button type="submit" size="lg" className="w-full">
-                    {t.form.send}
+                  <Button type="submit" size="lg" className="w-full" disabled={isSending}>
+                    {isSending ? (language === 'nl' ? 'Versturen...' : 'Sending...') : t.form.send}
                   </Button>
                 </form>
               </CardContent>
             </Card>
           </div>
 
-          {/* CTA Section */}
           <CTASection language={language} />
         </div>
       </div>
