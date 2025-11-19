@@ -91,7 +91,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
     try {
       await emailjs.send(
         'service_4u7z1jh',
-        'template_vbotxdr',
+        'template_vp5976l',
         {
           from_name: formData.name,
           reply_to: formData.email,
