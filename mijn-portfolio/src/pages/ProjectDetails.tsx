@@ -2,13 +2,23 @@ import React, { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Code, Zap } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, Calendar, Users, Code, Zap, Flag } from 'lucide-react';
 
 interface ProjectDetailProps {
   language: 'nl' | 'en';
   projectId: string;
   onBack: () => void;
 }
+
+type ProjectStatus = 'completed' | 'paused' | 'inProgress' | 'canceled' | 'upcoming';
+
+const statusStyles: Record<ProjectStatus, string> = {
+  completed: 'bg-emerald-100 text-emerald-700 border-transparent dark:bg-emerald-500/20 dark:text-emerald-200',
+  paused: 'bg-amber-100 text-amber-700 border-transparent dark:bg-amber-500/20 dark:text-amber-200',
+  inProgress: 'bg-blue-100 text-blue-700 border-transparent dark:bg-blue-500/20 dark:text-blue-200',
+  canceled: 'bg-rose-100 text-rose-700 border-transparent dark:bg-rose-500/20 dark:text-rose-200',
+  upcoming: 'bg-slate-100 text-slate-700 border-transparent dark:bg-slate-500/20 dark:text-slate-200',
+};
 
 const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onBack }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -31,6 +41,20 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
       viewCode: 'Bekijk code',
       nextProject: 'Volgend project',
       prevProject: 'Vorig project',
+      statusLabel: 'Status',
+      statusValues: {
+        completed: 'Klaar',
+        paused: 'Gepauzeerd',
+        inProgress: 'In ontwikkeling',
+        canceled: 'Geannuleerd',
+        upcoming: 'Toekomstig project',
+      },
+      categoryLabels: {
+        school: 'School project',
+        personal: 'Persoonlijk project',
+        client: 'Klant project',
+        event: 'Event project',
+      },
     },
     en: {
       backToProjects: 'Back to projects',
@@ -49,6 +73,20 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
       viewCode: 'View code',
       nextProject: 'Next project',
       prevProject: 'Previous project',
+      statusLabel: 'Status',
+      statusValues: {
+        completed: 'Completed',
+        paused: 'Paused',
+        inProgress: 'In progress',
+        canceled: 'Canceled',
+        upcoming: 'Upcoming project',
+      },
+      categoryLabels: {
+        school: 'School project',
+        personal: 'Personal project',
+        client: 'Client project',
+        event: 'Event project',
+      },
     },
   };
 
@@ -60,6 +98,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
       title: 'QR Logistics',
       subtitle: language === 'nl' ? 'Logistieke management oplossing' : 'Logistics management solution',
       category: 'school',
+      status: 'completed',
       description: language === 'nl' 
         ? 'Een logistieke webapplicatie waarmee bedrijven hun orders, zendingen en voorraad eenvoudig kunnen beheren via QR-scans. Ontwikkeld met aandacht voor gebruiksgemak, inzicht en procesoptimalisatie.'
         : 'A logistics web application that allows companies to easily manage their orders, shipments and inventory through QR scans. Developed with attention to ease of use, insight and process optimization.',
@@ -138,6 +177,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
       title: 'Voetbal-app',
       subtitle: language === 'nl' ? 'Sociale voetbal voorspelling app' : 'Social football prediction app',
       category: 'personal',
+      status: 'paused',
       description: language === 'nl' 
         ? 'Een sociale voetbal-app waarin gebruikers wedstrijden kunnen voorspellen, vrienden kunnen volgen en coins verdienen voor correcte voorspellingen.'
         : 'A social football app where users can predict matches, follow friends and earn coins for correct predictions.',
@@ -209,6 +249,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
     title: 'TableTech',
     subtitle: language === 'nl' ? 'Horeca management platform' : 'Hospitality management platform',
     category: 'personal',
+    status: 'inProgress',
     description: language === 'nl' 
       ? 'Een alles-in-één dashboard voor horecazaken, waarmee personeel menu\'s kan beheren, feedback kan ontvangen, voorraden bijhouden en klanttevredenheid verhogen.'
       : 'An all-in-one dashboard for hospitality businesses, allowing staff to manage menus, receive feedback, track inventory and increase customer satisfaction.',
@@ -282,6 +323,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
     title: 'TableTech Website',
     subtitle: language === 'nl' ? 'Marketing en landing pagina' : 'Marketing and landing page',
     category: 'personal',
+    status: 'completed',
     description: language === 'nl' 
       ? 'De officiële website van TableTech waarmee horecaondernemers kennismaken met het platform. De site legt de voordelen uit en is geoptimaliseerd voor SEO en conversie.'
       : 'The official TableTech website where hospitality entrepreneurs get acquainted with the platform. The site explains the benefits and is optimized for SEO and conversion.',
@@ -350,6 +392,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
     title: 'Willes Rijschool Website',
     subtitle: language === 'nl' ? 'Rijschool website ontwikkeling' : 'Driving school website development',
     category: 'client',
+    status: 'completed',
     description: language === 'nl' 
       ? 'Een moderne en overzichtelijke website voor Willes Rijschool waarmee bezoekers eenvoudig informatie kunnen vinden over rijlessen, tarieven en contactgegevens.'
       : 'A modern and clear website for Willes Driving School where visitors can easily find information about driving lessons, rates and contact details.',
@@ -419,6 +462,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
     title: 'CaboFeira',
     subtitle: language === 'nl' ? 'Kaapverdische marktplaats' : 'Cape Verdean marketplace',
     category: 'client',
+    status: 'paused',
     description: language === 'nl' 
       ? 'CaboFeira is een online marktplaats speciaal ontwikkeld voor de Kaapverdische gemeenschap om tweedehands spullen te verkopen of producten te zoeken.'
       : 'CaboFeira is an online marketplace specially developed for the Cape Verdean community to sell second-hand items or search for products.',
@@ -486,6 +530,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
     title: 'Space Monkey',
     subtitle: language === 'nl' ? 'Interactieve terminal game' : 'Interactive terminal game',
     category: 'school',
+    status: 'completed',
     description: language === 'nl' 
       ? 'Space Monkey is een interactieve terminal-game geschreven in Python waarin je speelt als Jararis, een hyperintelligente aap op een missie om de mensheid te redden.'
       : 'Space Monkey is an interactive terminal game written in Python where you play as Jararis, a hyper-intelligent monkey on a mission to save humanity.',
@@ -553,6 +598,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
     title: '2D Battle Game',
     subtitle: language === 'nl' ? 'Hackathon Pokémon-stijl game' : 'Hackathon Pokémon-style game',
     category: 'event',
+    status: 'completed',
     description: language === 'nl' 
       ? 'Een Pokémon-achtige browsergame ontwikkeld tijdens een GitHub Copilot Hackathon op 21 mei 2025, georganiseerd door Xebia in Hilversum.'
       : 'A Pokémon-like browser game developed during a GitHub Copilot Hackathon on May 21, 2025, organized by Xebia in Hilversum.',
@@ -622,6 +668,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
     title: 'Brick Breaker',
     subtitle: language === 'nl' ? 'Moderne arcade game remake' : 'Modern arcade game remake',
     category: 'personal',
+    status: 'completed',
     description: language === 'nl' 
       ? 'Brick Breaker is een moderne versie van het klassieke arcadespel, gemaakt in Lua met de LÖVE 2D-engine. De game bevat upgrades, meerdere ballen en verschillende soorten blokken.'
       : 'Brick Breaker is a modern version of the classic arcade game, made in Lua with the LÖVE 2D engine. The game features upgrades, multiple balls and different types of blocks.',
@@ -691,6 +738,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
     title: '21Questions',
     subtitle: language === 'nl' ? 'AI Chatbot voor 21south' : 'AI Chatbot for 21south',
     category: 'client',
+    status: 'inProgress',
     description: language === 'nl'
       ? 'Een intelligente chatbot volledig ontwikkeld in Mendix voor mijn stage bij 21south. De applicatie bevat een custom frontend design en backend, beide gebouwd in Mendix. De chatbot gebruikt Groq/Llama AI om vragen te beantwoorden, groeten te verwerken en ongepaste vragen af te wijzen.'
       : 'An intelligent chatbot fully developed in Mendix for my internship at 21south. The application features a custom frontend design and backend, both built in Mendix. The chatbot uses Groq/Llama AI to answer questions, handle greetings and reject inappropriate questions.',
@@ -759,6 +807,79 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
     liveUrl: '#',
     githubUrl: '#'
   },
+  '11': {
+  title: 'Rijschool Planner SaaS',
+  subtitle: language === 'nl' ? 'Planning- en agenda-app voor rijscholen' : 'Scheduling & management app for driving schools',
+  category: 'personal',
+  status: 'inProgress',
+  description: language === 'nl'
+    ? 'Een moderne SaaS-applicatie voor rijscholen waarmee instructeurs leerlingen kunnen beheren, lessen kunnen inplannen en hun agenda efficiënt kunnen organiseren. Het platform richt zich op eenvoud, snelheid en overzicht.'
+    : 'A modern SaaS platform for driving schools that allows instructors to manage students, schedule lessons, and organize their calendar efficiently. The platform focuses on simplicity, speed, and clarity.',
+  longDescription: language === 'nl'
+    ? 'Deze SaaS-app is ontworpen om kleine en middelgrote rijscholen een professioneel en overzichtelijk plansysteem te bieden. Instructeurs kunnen hun beschikbaarheid instellen, leerlingen toevoegen, lessen plannen en notities bewaren. Het systeem bevat automatische herinneringen, een dashboard met dagoverzicht en een flexibel gebruikersmodel waarbij per instructeur wordt betaald. De app is ontwikkeld als een schaalbaar B2B-product dat geschikt is voor meerdere rijscholen binnen één platform.'
+    : 'This SaaS app is designed to give small and mid-sized driving schools a professional and clear scheduling system. Instructors can set availability, add students, schedule lessons, and store notes. The platform includes automatic reminders, a daily overview dashboard, and a flexible subscription model where schools pay per instructor. It is built as a scalable B2B product suitable for multiple driving schools within one platform.',
+  technologies: ['Next.js', 'Fastify', 'Prisma', 'PostgreSQL', 'TypeScript', 'REST API'],
+  duration: language === 'nl' ? 'Doorlopend project' : 'Ongoing project',
+  teamSize: language === 'nl' ? '1 developer (zelf)' : '1 developer (solo)',
+  myRole: language === 'nl' ? 'Fullstack Developer & SaaS Architect' : 'Fullstack Developer & SaaS Architect',
+  features: language === 'nl' ? [
+    'Leerlingbeheer',
+    'Agenda en lessenplanner',
+    'Instructeurbeschikbaarheid instellen',
+    'Automatische e-mail/push herinneringen',
+    'Dag-, week- en maandoverzichten',
+    'Dashboard voor geplande ritten',
+    'Notities per leerling of rit',
+    'Multi-tenant structuur voor meerdere rijscholen'
+  ] : [
+    'Student management',
+    'Lesson scheduling & calendar',
+    'Instructor availability settings',
+    'Automatic email/push reminders',
+    'Day, week and month views',
+    'Dashboard for upcoming lessons',
+    'Notes per student or lesson',
+    'Multi-tenant structure for multiple schools'
+  ],
+  challenges: language === 'nl' ? [
+    'Multi-tenant database architectuur ontwerpen',
+    'Agenda-logica bouwen zonder conflicten',
+    'Schaalbaar notificatiesysteem ontwikkelen',
+    'UX eenvoudig houden voor niet-tech gebruikers'
+  ] : [
+    'Designing a multi-tenant database architecture',
+    'Building scheduling logic without conflicts',
+    'Developing a scalable notification system',
+    'Maintaining a simple UX for non-technical users'
+  ],
+  solutions: language === 'nl' ? [
+    'Gebruik van Prisma met een multi-tenant datamodel',
+    'Beschikbaarheid + ritvalidatie met server-side checks',
+    'Losse notification service via cron/jobs',
+    'Minimalistische UI met focus op snelheid en overzicht'
+  ] : [
+    'Using Prisma with a multi-tenant data model',
+    'Availability + lesson validation using server-side checks',
+    'Separate notification service via cron/jobs',
+    'Minimalistic UI focused on speed and clarity'
+  ],
+  results: language === 'nl' ? [
+    'Een schaalbare basis voor een professioneel rijschoolproduct',
+    'Instructeurs kunnen makkelijker plannen en organiseren',
+    'Eerste versie van agenda & leerlingenbeheer succesvol ontwikkeld',
+    'SaaS-model klaar voor toekomstige betalingen per instructeur'
+  ] : [
+    'A scalable foundation for a professional driving school product',
+    'Instructors can plan and organize more easily',
+    'First version of the calendar & student management completed',
+    'SaaS model ready for future per-instructor billing'
+  ],
+  images: [
+    `${import.meta.env.BASE_URL}Projects/Rijschool/Rijschool1.jpeg`,
+  ],
+  liveUrl: '#',
+  githubUrl: '#'
+},
     };
 
   const project = projectData[projectId] || projectData['1'];
@@ -783,9 +904,12 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
 
           {/* Project Header */}
           <div className="mb-12">
-            <div className="flex items-center gap-3 mb-4">
-              <Badge variant="secondary">
-                {project.category}
+            <div className="flex flex-wrap items-center gap-3 mb-4">
+              <Badge variant="secondary" className="text-xs">
+                {t.categoryLabels[project.category as keyof typeof t.categoryLabels] ?? project.category}
+              </Badge>
+              <Badge className={`text-xs ${statusStyles[project.status as ProjectStatus]}`}>
+                {t.statusValues[project.status as keyof typeof t.statusValues] ?? project.status}
               </Badge>
               <span className="text-muted-foreground">•</span>
               <span className="text-muted-foreground">{project.duration}</span>
@@ -922,6 +1046,15 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
                 <CardContent className="p-6">
                   <h3 className="text-lg font-semibold mb-4">{t.projectDetails}</h3>
                   <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <Flag className="h-4 w-4 text-muted-foreground" />
+                      <div>
+                        <p className="text-sm text-muted-foreground">{t.statusLabel}</p>
+                        <Badge className={`text-xs ${statusStyles[project.status as ProjectStatus]}`}>
+                          {t.statusValues[project.status as keyof typeof t.statusValues] ?? project.status}
+                        </Badge>
+                      </div>
+                    </div>
                     <div className="flex items-center gap-3">
                       <Calendar className="h-4 w-4 text-muted-foreground" />
                       <div>
