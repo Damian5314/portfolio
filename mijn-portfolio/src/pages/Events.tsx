@@ -119,19 +119,6 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       image: '/events/Mendix CTF 2025.webp',
     },
     {
-      id: 'mendix-hack-the-halls',
-      type: 'Hackathon',
-      title: 'Hack the Halls: A Mendix Christmas Bauble Mini-Hackathon',
-      date: language === 'nl' ? '19 november 2025' : 'November 19, 2025',
-      dateSort: '2025-11-19',
-      location: 'Sopra Steria, Nieuwegein (Utrecht)',
-      attendees: 'TBD',
-      description: language === 'nl'
-        ? 'Een feestelijke mini-hackathon waarbij deelnemers digitale kerstballen ontwerpen en stylen in Mendix 11, met alleen Mendix widgets en moderne CSS, ondersteund door AI assistenten.'
-        : 'A festive mini-hackathon where participants design and style digital Christmas baubles in Mendix 11, using only Mendix widgets and modern CSS, guided by AI assistants.',
-      image: '/events/mendix hack the halls.jpeg',
-    },
-    {
       id: 'buildweekend-young-creators',
       type: 'Workshop',
       title: 'Build Weekend by Young Creators & n8n',

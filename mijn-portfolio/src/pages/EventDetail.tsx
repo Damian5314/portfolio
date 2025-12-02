@@ -207,55 +207,6 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
         ? 'Build Weekend belooft een unieke kans te worden om gedurende één weekend een idee om te zetten naar een werkend prototype. De focus op collaboration, de toegang tot moderne tools en de energie van 150 young builders maken dit een waardevol event voor elke creative builder.'
         : 'Build Weekend promises to be a unique opportunity to turn an idea into a working prototype in one weekend. The focus on collaboration, access to modern tools and the energy of 150 young builders make this a valuable event for any creative builder.',
     },
-    'mendix-hack-the-halls': {
-      type: 'Hackathon',
-      title: 'Hack the Halls: A Mendix Christmas Bauble Mini-Hackathon',
-      date: language === 'nl' ? '19 november 2025' : 'November 19, 2025',
-      location: 'Sopra Steria, Ringwade 1, Nieuwegein (Utrecht)',
-      attendees: 'TBD',
-      description: language === 'nl'
-        ? 'Een feestelijke mini-hackathon waarbij deelnemers digitale kerstballen ontwerpen en stylen in Mendix 11, met alleen Mendix widgets en moderne CSS, ondersteund door AI assistenten zoals ChatGPT, Copilot of Claude.'
-        : 'A festive mini-hackathon where participants design and style digital Christmas baubles in Mendix 11, using only Mendix widgets and modern CSS, guided by AI assistants like ChatGPT, Copilot or Claude.',
-      image: '/events/mendix hack the halls.jpeg',
-      experience: language === 'nl'
-        ? 'Dit evenement staat nog gepland voor 19 november 2025. Het belooft een unieke ervaring te worden waarbij ik kan leren hoe ik moderne CSS features kan combineren met Mendix en AI-tools om visueel aantrekkelijke componenten te bouwen.'
-        : 'This event is still scheduled for November 19, 2025. It promises to be a unique experience where I can learn how to combine modern CSS features with Mendix and AI tools to build visually appealing components.',
-      highlights: language === 'nl'
-        ? [
-            'Ontwerpen van digitale kerstballen met alleen Mendix widgets en CSS (geen JavaScript)',
-            'Vibe coding met AI tools (ChatGPT, Copilot, Claude) voor CSS generatie',
-            'Leren werken met moderne CSS 2025 features zoals :has(), light-dark(), container queries',
-            'Theme-aware componenten bouwen die werken in light en dark mode',
-            'Presentatie en applaus-based voting met decibelmeter',
-            'Meedoen aan de Mendix Community Christmas Tree',
-          ]
-        : [
-            'Designing digital Christmas baubles with only Mendix widgets and CSS (no JavaScript)',
-            'Vibe coding with AI tools (ChatGPT, Copilot, Claude) for CSS generation',
-            'Learning modern CSS 2025 features like :has(), light-dark(), container queries',
-            'Building theme-aware components that work in light and dark mode',
-            'Presentation and applause-based voting with decibel meter',
-            'Participating in the Mendix Community Christmas Tree',
-          ],
-      learnings: language === 'nl'
-        ? [
-            'Moderne CSS technieken zoals gradients, animations, conic patterns en cascade layers',
-            'Effectief gebruik van AI voor CSS magic en feature experimentatie',
-            'Theme switching in Mendix 11 met CSS variables',
-            'Accessibility features zoals focus states en prefers-reduced-motion',
-            'AI prompting strategieën voor front-end development',
-          ]
-        : [
-            'Modern CSS techniques like gradients, animations, conic patterns and cascade layers',
-            'Effective use of AI for CSS magic and feature experimentation',
-            'Theme switching in Mendix 11 with CSS variables',
-            'Accessibility features like focus states and prefers-reduced-motion',
-            'AI prompting strategies for front-end development',
-          ],
-      conclusion: language === 'nl'
-        ? 'Een feestelijk evenement dat CSS creativiteit combineert met AI-assisted development. De focus op moderne CSS features en theme-aware design maakt dit een waardevolle leerervaring voor het stylen van Mendix applicaties.'
-        : 'A festive event that combines CSS creativity with AI-assisted development. The focus on modern CSS features and theme-aware design makes this a valuable learning experience for styling Mendix applications.',
-    },
     'mendix-ctf': {
       type: 'Conference',
       title: 'Mendix Capture The Flag 2025',
