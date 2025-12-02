@@ -172,7 +172,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
         ? 'Een weekend hackathon waar young builders (16-27 jaar) hun eigen ideeën kunnen ontwikkelen. Twee dagen in het hart van Amsterdam om te bouwen aan prototypes, designs, automations of nieuwe concepten.'
         : 'A weekend hackathon where young builders (16-27 years) can develop their own ideas. Two days in the heart of Amsterdam to build prototypes, designs, automations or new concepts.',
       image: '/events/build weekend by young creators.png',
-      additionalImages: ['/events/buildweekendbyyoungcreators2.jpg', '/events/buildweekendbyyoungcreators3.mp4'],
+      additionalImages: ['/events/buildweekendbyyoungcreators2.jpg', '/events/buildweekendbyyoungcreators3.mp4', '/events/buildweekendbyyoungcreators4.jpeg', '/events/buildweekendbyyoungcreators5.jpeg'],
       experience: language === 'nl'
         ? 'Ik ging naar dit hackathon evenement samen met Wishant Bhajan, Mohammad Falaha, Rachid Ouaalit en Hicham Tahiri. In slechts 2 dagen hebben we FoodSwipe gebouwd - een TikTok-achtige app waarin je verschillende restaurants en recepten kunt ontdekken. We hebben ook een AI-functie geïmplementeerd waarmee je je ingrediënten kunt opgeven en daarmee een recept kunt genereren.'
         : 'I attended this hackathon event together with Wishant Bhajan, Mohammad Falaha, Rachid Ouaalit and Hicham Tahiri. In just 2 days we built FoodSwipe - a TikTok-style app where you can discover different restaurants and recipes. We also implemented an AI feature where you can input your ingredients and generate a recipe.',
