@@ -36,6 +36,9 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       whatILearned: 'Wat Ik Heb Geleerd',
       conclusion: 'Conclusie',
       viewAllEvents: 'Bekijk alle evenementen',
+      waitlistTitle: 'Interesse in FoodSwipe?',
+      waitlistDescription: 'Schrijf je in voor de waitlist om op de hoogte te blijven van de lancering van FoodSwipe!',
+      waitlistButton: 'Schrijf je in voor de waitlist',
     },
     en: {
       backToEvents: 'Back to events',
@@ -45,6 +48,9 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       whatILearned: 'What I Learned',
       conclusion: 'Conclusion',
       viewAllEvents: 'View all events',
+      waitlistTitle: 'Interested in FoodSwipe?',
+      waitlistDescription: 'Sign up for the waitlist to stay updated about the FoodSwipe launch!',
+      waitlistButton: 'Join the waitlist',
     },
   };
 
@@ -157,55 +163,56 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
         : 'Agency at Night was a unique opportunity to get to know different creative agencies in Rotterdam in one evening. From marketing automation to AI-driven SEO, and from branding challenges to AI prompting - the diversity of workshops and activities provided a broad perspective on the creative industry. The Das Buro Branding Professional Degree certificate was a nice bonus!',
     },
     'buildweekend-young-creators': {
-      type: 'Workshop',
+      type: 'Hackathon',
       title: 'Build Weekend by Young Creators & n8n',
       date: language === 'nl' ? '29-30 november 2025' : 'November 29-30, 2025',
       location: 'StartDock, Amsterdam',
       attendees: language === 'nl' ? '~150 builders (25 teams van 4-6 personen)' : '~150 builders (25 teams of 4-6 people)',
       description: language === 'nl'
-        ? 'Een weekend hackathon waar young builders (14-30 jaar) hun eigen ideeën kunnen ontwikkelen. Twee dagen in het hart van Amsterdam om te bouwen aan prototypes, designs, automations of nieuwe concepten.'
-        : 'A weekend hackathon where young builders (14-30 years) can develop their own ideas. Two days in the heart of Amsterdam to build prototypes, designs, automations or new concepts.',
+        ? 'Een weekend hackathon waar young builders (16-27 jaar) hun eigen ideeën kunnen ontwikkelen. Twee dagen in het hart van Amsterdam om te bouwen aan prototypes, designs, automations of nieuwe concepten.'
+        : 'A weekend hackathon where young builders (16-27 years) can develop their own ideas. Two days in the heart of Amsterdam to build prototypes, designs, automations or new concepts.',
       image: '/events/build weekend by young creators.png',
+      additionalImages: ['/events/buildweekendbyyoungcreators2.jpg', '/events/buildweekendbyyoungcreators3.mp4'],
       experience: language === 'nl'
-        ? 'Dit evenement staat nog gepland voor 29-30 november 2025. Het belooft een inspirerende ervaring te worden met 150 builders die gedurende het weekend hun ideeën tot leven brengen. Met toegang tot top mentors, powerful tools en unlimited credits, zal dit een unieke kans zijn om te leren, te bouwen en te netwerken met like-minded creatives.'
-        : 'This event is still scheduled for November 29-30, 2025. It promises to be an inspiring experience with 150 builders bringing their ideas to life throughout the weekend. With access to top mentors, powerful tools and unlimited credits, this will be a unique opportunity to learn, build and network with like-minded creatives.',
+        ? 'Ik ging naar dit hackathon evenement samen met Wishant Bhajan, Mohammad Falaha, Rachid Ouaalit en Hicham Tahiri. In slechts 2 dagen hebben we FoodSwipe gebouwd - een TikTok-achtige app waarin je verschillende restaurants en recepten kunt ontdekken. We hebben ook een AI-functie geïmplementeerd waarmee je je ingrediënten kunt opgeven en daarmee een recept kunt genereren.'
+        : 'I attended this hackathon event together with Wishant Bhajan, Mohammad Falaha, Rachid Ouaalit and Hicham Tahiri. In just 2 days we built FoodSwipe - a TikTok-style app where you can discover different restaurants and recipes. We also implemented an AI feature where you can input your ingredients and generate a recipe.',
       highlights: language === 'nl'
         ? [
-            'Twee dagen bouwen aan eigen ideeën in teams van 4-6 personen',
-            'Toegang tot top mentors en powerful tools (n8n, Apify, Lovable, OpenAI, ElevenLabs)',
-            'Unlimited credits voor tools en resources',
-            '€1.000 cash prijs voor het winnende team plus extra prizes',
-            'Workshops, lunch en dinner gedurende het weekend',
-            'Netwerken met 150 builders en de Young Creators community',
-            'Focus op collaboration en creativity boven competitie',
+            'Ontwikkeling van FoodSwipe: een TikTok-achtige app voor restaurants en recepten',
+            'AI-functie voor het genereren van recepten op basis van ingrediënten',
+            'Gebruik van moderne tools: n8n, Apify, Lovable, OpenAI, ElevenLabs',
+            'Samenwerking met event partners voor tool toegang en support',
+            'Gewonnen: 1 jaar n8n Cloud Pro door een challenge (wie een n8n pet droeg)',
+            'Twee dagen intensief bouwen en prototyping met het team',
           ]
         : [
-            'Two days of building own ideas in teams of 4-6 people',
-            'Access to top mentors and powerful tools (n8n, Apify, Lovable, OpenAI, ElevenLabs)',
-            'Unlimited credits for tools and resources',
-            '€1,000 cash prize for winning team plus additional prizes',
-            'Workshops, lunch and dinner throughout the weekend',
-            'Networking with 150 builders and the Young Creators community',
-            'Focus on collaboration and creativity over competition',
+            'Development of FoodSwipe: a TikTok-style app for restaurants and recipes',
+            'AI feature for generating recipes based on ingredients',
+            'Use of modern tools: n8n, Apify, Lovable, OpenAI, ElevenLabs',
+            'Collaboration with event partners for tool access and support',
+            'Won: 1 year n8n Cloud Pro through a challenge (wearing an n8n cap)',
+            'Two days of intensive building and prototyping with the team',
           ],
       learnings: language === 'nl'
         ? [
-            'Hands-on ervaring met workflow automation (n8n), web scraping (Apify) en AI-tools',
-            'Van idee naar MVP in één weekend: rapid prototyping technieken',
-            'Samenwerken in diverse teams van builders, designers en engineers',
-            'Pitching skills en presenteren van technische projecten',
-            'Netwerken binnen de Young Creators community (14-30 jaar)',
+            'Workflow automation met n8n: automatiseren van complexe processen',
+            'Web scraping met Apify voor het verzamelen van restaurant data',
+            'Rapid development met Lovable voor snelle app prototyping',
+            'AI integratie met OpenAI voor recept generatie',
+            'Voice en audio features met ElevenLabs voor marketing',
+            'Van idee naar werkend product in 2 dagen: rapid prototyping skills',
           ]
         : [
-            'Hands-on experience with workflow automation (n8n), web scraping (Apify) and AI tools',
-            'From idea to MVP in one weekend: rapid prototyping techniques',
-            'Collaborating in diverse teams of builders, designers and engineers',
-            'Pitching skills and presenting technical projects',
-            'Networking within the Young Creators community (14-30 years)',
+            'Workflow automation with n8n: automating complex processes',
+            'Web scraping with Apify for collecting restaurant data',
+            'Rapid development with Lovable for fast app prototyping',
+            'AI integration with OpenAI for recipe generation',
+            'Voice and audio features with ElevenLabs for marketing',
+            'From idea to working product in 2 days: rapid prototyping skills',
           ],
       conclusion: language === 'nl'
-        ? 'Build Weekend belooft een unieke kans te worden om gedurende één weekend een idee om te zetten naar een werkend prototype. De focus op collaboration, de toegang tot moderne tools en de energie van 150 young builders maken dit een waardevol event voor elke creative builder.'
-        : 'Build Weekend promises to be a unique opportunity to turn an idea into a working prototype in one weekend. The focus on collaboration, access to modern tools and the energy of 150 young builders make this a valuable event for any creative builder.',
+        ? 'Build Weekend was een intensieve maar zeer leerzame ervaring. Hoewel we geen hoofdprijs hebben gewonnen, was het bouwen van FoodSwipe een groot succes. Ik heb bijzonder veel geleerd over workflow automation met n8n en web scraping met Apify. Als bonus hebben we door een leuke challenge 1 jaar n8n Cloud Pro gewonnen - simpelweg door een n8n pet te dragen! Het was geweldig om te zien hoe we in 2 dagen van idee naar een werkend prototype konden gaan.'
+        : 'Build Weekend was an intensive but very educational experience. Although we didn\'t win a main prize, building FoodSwipe was a great success. I learned a lot about workflow automation with n8n and web scraping with Apify. As a bonus, we won 1 year of n8n Cloud Pro through a fun challenge - simply by wearing an n8n cap! It was amazing to see how we could go from idea to working prototype in 2 days.',
     },
     'mendix-ctf': {
       type: 'Conference',
@@ -582,11 +589,19 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
               <div className="grid md:grid-cols-2 gap-4">
                 {event.additionalImages.map((image, index) => (
                   <div key={index} className="w-full h-64 bg-muted rounded-lg overflow-hidden">
-                    <img
-                      src={image}
-                      alt={`${event.title} ${index + 2}`}
-                      className="w-full h-full object-cover"
-                    />
+                    {image.endsWith('.mp4') || image.endsWith('.webm') || image.endsWith('.mov') ? (
+                      <video
+                        src={image}
+                        controls
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      <img
+                        src={image}
+                        alt={`${event.title} ${index + 2}`}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                   </div>
                 ))}
               </div>
@@ -615,6 +630,26 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
               </p>
             </Card>
           </section>
+
+          {/* Waitlist Section - Only for Build Weekend */}
+          {id === 'buildweekend-young-creators' && (
+            <section className="mb-12">
+              <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20 p-8 text-center">
+                <h2 className="text-3xl font-bold text-foreground mb-4">{t.waitlistTitle}</h2>
+                <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+                  {t.waitlistDescription}
+                </p>
+                <a
+                  href="https://tally.so/r/EkqvxL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                >
+                  {t.waitlistButton}
+                </a>
+              </Card>
+            </section>
+          )}
 
           {/* Back to Events Link */}
           <div className="border-t border-border pt-8 mb-16">

@@ -202,7 +202,18 @@ const Projects: React.FC<ProjectsProps> = ({ language, onProjectSelect }) => {
       status: 'inProgress',
       technologies: ['Next.js', 'Fastify', 'Prisma', 'PostgreSQL', 'TypeScript'],
       image: `${import.meta.env.BASE_URL}Projects/Rijschool/Rijschool1.jpeg`,
-    }    
+    },
+    {
+      id: '12',
+      title: 'FoodSwipe',
+      description: language === 'nl'
+        ? 'Een TikTok-achtige app voor het ontdekken van restaurants en recepten, ontwikkeld tijdens Build Weekend 2024. Met een team van 5 personen (2 frontend, 2 backend, 1 marketing) hebben we in 2 dagen een volledig werkende app gebouwd. Gebruikers kunnen restaurants en recepten doorswepen zoals op TikTok, via AI recepten genereren op basis van ingrediënten, en restaurants in de buurt bekijken op een kaart. Het design is gemaakt met Lovable en daarna zelf verder geprogrammeerd. De AI werkt met OpenAI en n8n, restaurant data wordt gescraped via Apify, en betalingen verlopen via Mollie.'
+        : 'A TikTok-style app for discovering restaurants and recipes, developed during Build Weekend 2024. With a team of 5 people (2 frontend, 2 backend, 1 marketing) we built a fully working app in 2 days. Users can swipe through restaurants and recipes like on TikTok, generate recipes via AI based on ingredients, and view nearby restaurants on a map. The design was created with Lovable and then further programmed. The AI works with OpenAI and n8n, restaurant data is scraped via Apify, and payments are processed via Mollie.',
+      category: 'event',
+      status: 'completed',
+      technologies: ['Lovable', 'n8n', 'Apify', 'OpenAI', 'Mollie'],
+      image: `${import.meta.env.BASE_URL}Projects/FoodSwipe/FoodSwipe1.png`,
+    }
   ];
 
   const filterOptions = [

@@ -880,6 +880,82 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
   liveUrl: '#',
   githubUrl: '#'
 },
+
+'12': {
+  title: 'FoodSwipe',
+  subtitle: language === 'nl' ? 'TikTok-achtige restaurant & recept discovery app' : 'TikTok-style restaurant & recipe discovery app',
+  category: 'event',
+  status: 'completed',
+  description: language === 'nl'
+    ? 'Een TikTok-achtige app voor het ontdekken van restaurants en recepten, ontwikkeld tijdens Build Weekend 2024. Met een team van 5 personen hebben we in 2 dagen een volledig werkende app gebouwd.'
+    : 'A TikTok-style app for discovering restaurants and recipes, developed during Build Weekend 2024. With a team of 5 people we built a fully working app in 2 days.',
+  longDescription: language === 'nl'
+    ? 'FoodSwipe is gebouwd tijdens Build Weekend by Young Creators & n8n in Amsterdam. Ons team bestond uit 2 frontend developers (waaronder ik), 2 backend developers en 1 marketing specialist. In slechts 48 uur hebben we een volledig functionerende app ontwikkeld die de swipe-mechanic van TikTok combineert met food discovery. Het design startte in Lovable en werd daarna verder geprogrammeerd. De app integreert AI voor receptgeneratie, web scraping voor restaurant data, en een interactieve kaart voor lokale restaurants.'
+    : 'FoodSwipe was built during Build Weekend by Young Creators & n8n in Amsterdam. Our team consisted of 2 frontend developers (including me), 2 backend developers and 1 marketing specialist. In just 48 hours we developed a fully functional app that combines TikTok\'s swipe mechanic with food discovery. The design started in Lovable and was then further developed. The app integrates AI for recipe generation, web scraping for restaurant data, and an interactive map for local restaurants.',
+  technologies: ['Lovable', 'n8n', 'Apify', 'OpenAI', 'Mollie', 'JavaScript', 'REST API'],
+  duration: language === 'nl' ? '2 dagen (hackathon)' : '2 days (hackathon)',
+  teamSize: language === 'nl' ? '5 personen (2 frontend, 2 backend, 1 marketing)' : '5 people (2 frontend, 2 backend, 1 marketing)',
+  myRole: language === 'nl' ? 'Frontend Developer' : 'Frontend Developer',
+  features: language === 'nl' ? [
+    'TikTok-achtig swipe systeem voor restaurants en recepten',
+    'AI-powered recept generator op basis van ingrediënten',
+    'Interactieve kaart met restaurants in de buurt',
+    'Restaurant data via Apify web scraping',
+    'Betalingen via Mollie integratie',
+    'OpenAI voor intelligente recept aanbevelingen',
+    'Workflow automation met n8n',
+    'ElevenLabs voor marketing content'
+  ] : [
+    'TikTok-style swipe system for restaurants and recipes',
+    'AI-powered recipe generator based on ingredients',
+    'Interactive map with nearby restaurants',
+    'Restaurant data via Apify web scraping',
+    'Payments via Mollie integration',
+    'OpenAI for intelligent recipe recommendations',
+    'Workflow automation with n8n',
+    'ElevenLabs for marketing content'
+  ],
+  challenges: language === 'nl' ? [
+    '48 uur tijdslimiet voor volledig werkend product',
+    'Integratie van meerdere externe APIs en tools',
+    'Coordination tussen frontend, backend en marketing',
+    'Restaurant data scraping en structurering'
+  ] : [
+    '48-hour time limit for fully working product',
+    'Integration of multiple external APIs and tools',
+    'Coordination between frontend, backend and marketing',
+    'Restaurant data scraping and structuring'
+  ],
+  solutions: language === 'nl' ? [
+    'Rapid prototyping met Lovable voor snelle UI development',
+    'n8n workflows voor API orchestration en automation',
+    'Apify voor gestructureerde restaurant data scraping',
+    'Agile teamwork met duidelijke rolverdeling'
+  ] : [
+    'Rapid prototyping with Lovable for fast UI development',
+    'n8n workflows for API orchestration and automation',
+    'Apify for structured restaurant data scraping',
+    'Agile teamwork with clear role division'
+  ],
+  results: language === 'nl' ? [
+    'Volledig werkende app in 48 uur',
+    '1 jaar n8n Cloud Pro gewonnen (pet challenge)',
+    'Praktische ervaring met workflow automation',
+    'Succesvolle integratie van AI, web scraping en payments',
+    'Waardevolle teamwork ervaring in time-constrained environment'
+  ] : [
+    'Fully working app in 48 hours',
+    'Won 1 year n8n Cloud Pro (cap challenge)',
+    'Practical experience with workflow automation',
+    'Successful integration of AI, web scraping and payments',
+    'Valuable teamwork experience in time-constrained environment'
+  ],
+  images: [
+    `${import.meta.env.BASE_URL}Projects/FoodSwipe/FoodSwipe1.png`,
+  ],
+  liveUrl: 'https://tally.so/r/EkqvxL', // Waitlist link
+  githubUrl: '#'
+},
     };
 
   const project = projectData[projectId] || projectData['1'];

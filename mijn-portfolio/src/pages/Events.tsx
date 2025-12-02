@@ -127,8 +127,8 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       location: 'StartDock, Amsterdam',
       attendees: language === 'nl' ? '~150 builders (25 teams)' : '~150 builders (25 teams)',
       description: language === 'nl'
-        ? 'Een weekend hackathon waar young builders (14-30 jaar) hun eigen ideeën kunnen ontwikkelen. Twee dagen vol collaboration, creativity en learning met toegang tot top mentors en powerful tools.'
-        : 'A weekend hackathon where young builders (14-30 years) can develop their own ideas. Two days of collaboration, creativity and learning with access to top mentors and powerful tools.',
+        ? 'Een weekend hackathon waar young builders (16-27 jaar) hun eigen ideeën kunnen ontwikkelen. Twee dagen vol collaboration, creativity en learning met toegang tot top mentors en powerful tools.'
+        : 'A weekend hackathon where young builders (16-27 years) can develop their own ideas. Two days of collaboration, creativity and learning with access to top mentors and powerful tools.',
       image: '/events/build weekend by young creators.png',
     },
   ];
