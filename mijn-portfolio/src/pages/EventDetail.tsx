@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
-import { Calendar, MapPin, Users, ArrowLeft, Image as ImageIcon } from 'lucide-react';
+import { Calendar, MapPin, Users, ArrowLeft, Image as ImageIcon, X } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 import CTASection from '@/components/CTASection';
 
@@ -26,6 +26,7 @@ interface EventData {
 
 const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
   const { id } = useParams<{ id: string }>();
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const translations = {
     nl: {
@@ -656,7 +657,10 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
 
           {/* Hero Image */}
           {event.image ? (
-            <div className="w-full h-96 bg-muted rounded-lg overflow-hidden mb-12">
+            <div
+              className="w-full h-96 bg-muted rounded-lg overflow-hidden mb-12 cursor-pointer hover:opacity-90 transition-opacity"
+              onClick={() => setSelectedImage(event.image!)}
+            >
               <img
                 src={event.image}
                 alt={event.title}
@@ -709,7 +713,8 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
                       <img
                         src={image}
                         alt={`${event.title} ${index + 2}`}
-                        className="w-full h-full object-cover"
+                        className="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                        onClick={() => setSelectedImage(image)}
                       />
                     )}
                   </div>
@@ -776,6 +781,27 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
           <CTASection language={language} />
         </div>
       </div>
+
+      {/* Image Lightbox */}
+      {selectedImage && (
+        <div
+          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button
+            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            onClick={() => setSelectedImage(null)}
+          >
+            <X className="w-8 h-8" />
+          </button>
+          <img
+            src={selectedImage}
+            alt="Enlarged view"
+            className="max-w-full max-h-full object-contain"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 };
