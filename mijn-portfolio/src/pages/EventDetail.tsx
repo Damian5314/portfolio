@@ -214,6 +214,116 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
         ? 'Build Weekend was een intensieve maar zeer leerzame ervaring. Hoewel we geen hoofdprijs hebben gewonnen, was het bouwen van FoodSwipe een groot succes. Ik heb bijzonder veel geleerd over workflow automation met n8n en web scraping met Apify. Als bonus hebben we door een leuke challenge 1 jaar n8n Cloud Pro gewonnen - simpelweg door een n8n pet te dragen! Het was geweldig om te zien hoe we in 2 dagen van idee naar een werkend prototype konden gaan.'
         : 'Build Weekend was an intensive but very educational experience. Although we didn\'t win a main prize, building FoodSwipe was a great success. I learned a lot about workflow automation with n8n and web scraping with Apify. As a bonus, we won 1 year of n8n Cloud Pro through a fun challenge - simply by wearing an n8n cap! It was amazing to see how we could go from idea to working prototype in 2 days.',
     },
+    'apify-1m-challenge-amsterdam': {
+      type: 'Hackathon',
+      title: 'Apify $1M Challenge: Amsterdam',
+      date: language === 'nl' ? '6 december 2024' : 'December 6, 2024',
+      location: 'Meet Berlage, Amsterdam',
+      attendees: 'TBD',
+      description: language === 'nl'
+        ? 'Een snelle hackathon voor builders, web scraping enthousiastelingen en tinkerers. Powered by Apify – de beste cloud platform voor web scraping en automation oplossingen.'
+        : 'A fast-paced hackathon for builders, web scraping enthusiasts, and tinkerers. Powered by Apify – the world\'s best cloud platform for developing and running web scraping and automation solutions.',
+      image: '/events/ApifyChallenge1.jpeg',
+      experience: language === 'nl'
+        ? 'Dit evenement vindt plaats op 6 december 2024. Het belooft een intensieve dag te worden waarin ik mijn web scraping vaardigheden verder kan ontwikkelen en kan werken aan het bouwen van een Apify Actor. Met hands-on support, real-world use cases en kans op prijzen, wordt dit een uitdagende en leerzame ervaring.'
+        : 'This event takes place on December 6, 2024. It promises to be an intensive day where I can further develop my web scraping skills and work on building an Apify Actor. With hands-on support, real-world use cases and chances to win prizes, this will be a challenging and educational experience.',
+      highlights: language === 'nl'
+        ? [
+            'Één dag hackathon van 10:00 tot 18:00',
+            'Bouw de Apify Actor die je altijd al wilde maken',
+            'Hands-on support van Apify experts',
+            'Real-world web scraping en automation use cases',
+            'Prijzen: 1e plaats €150 + $500 Apify credit, 2e plaats €75 + $250 credit, 3e plaats €50 + $100 credit',
+            'Lunch, snacks en drinks gedurende de dag',
+            'Netwerken met andere web scraping enthousiastelingen',
+            'Pitch je project en compete voor prijzen',
+          ]
+        : [
+            'One day hackathon from 10:00 to 18:00',
+            'Build the Apify Actor you\'ve always wanted',
+            'Hands-on support from Apify experts',
+            'Real-world web scraping and automation use cases',
+            'Prizes: 1st place €150 + $500 Apify credit, 2nd place €75 + $250 credit, 3rd place €50 + $100 credit',
+            'Lunch, snacks and drinks throughout the day',
+            'Network with other web scraping enthusiasts',
+            'Pitch your project and compete for prizes',
+          ],
+      learnings: language === 'nl'
+        ? [
+            'Advanced web scraping technieken met Apify',
+            'Bouwen van Apify Actors voor automation',
+            'Real-world scraping use cases en oplossingen',
+            'Pitching en presenteren van technische projecten',
+            'Netwerken binnen de web scraping community',
+          ]
+        : [
+            'Advanced web scraping techniques with Apify',
+            'Building Apify Actors for automation',
+            'Real-world scraping use cases and solutions',
+            'Pitching and presenting technical projects',
+            'Networking within the web scraping community',
+          ],
+      conclusion: language === 'nl'
+        ? 'De Apify $1M Challenge belooft een geweldige kans te worden om mijn web scraping vaardigheden verder te ontwikkelen. Met de hands-on support van experts, real-world use cases en de kans om te pitchen voor prijzen, wordt dit een dag vol leren en bouwen. De locatie in het historische Meet Berlage (\'s werelds eerste beursvloer) maakt het nog specialer.'
+        : 'The Apify $1M Challenge promises to be a great opportunity to further develop my web scraping skills. With hands-on support from experts, real-world use cases and the chance to pitch for prizes, this will be a day full of learning and building. The location at the historic Meet Berlage (the world\'s first stock exchange) makes it even more special.',
+    },
+    'AI-Fixathon-Amsterdam': {
+      type: 'Hackathon',
+      title: 'AI Fixathon Amsterdam',
+      date: language === 'nl' ? '13-14 december 2024' : 'December 13-14, 2024',
+      location: 'Vandebron, Amsterdam',
+      attendees: language === 'nl' ? 'Max 40 deelnemers' : 'Max 40 participants',
+      description: language === 'nl'
+        ? 'Een 24-uurs AI hackathon gericht op de UN Sustainable Development Goals. Powered by Norrsken x AI for Impact Collective x AI Builders.'
+        : 'A 24-hour AI hackathon focused on the UN Sustainable Development Goals. Powered by Norrsken x AI for Impact Collective x AI Builders.',
+      image: '/events/AIFixathonAmsterdam1.jpg',
+      experience: language === 'nl'
+        ? 'Dit evenement vindt plaats op 13-14 december 2024. Het belooft een intensief weekend te worden waarin ik in een team van max 3 personen aan AI-oplossingen werk voor echte wereldproblemen. Met focus op de UN SDGs en challenges van partners zoals LUMC, wordt dit een kans om technologie in te zetten voor maatschappelijke impact.'
+        : 'This event takes place on December 13-14, 2024. It promises to be an intensive weekend where I will work in a team of max 3 people on AI solutions for real world problems. With focus on the UN SDGs and challenges from partners like LUMC, this will be an opportunity to use technology for social impact.',
+      highlights: language === 'nl'
+        ? [
+            '24-uurs hackathon van zaterdag 10:00 tot zondag 18:00',
+            'Challenges gericht op SDGs: Gezondheid & Welzijn, Duurzaamheid & Circulaire Economie, Schone Energie & Climate Action',
+            'Challenge partner: Leids Universitair Medisch Centrum (LUMC)',
+            'Teams van max 3 personen, solo of met vrienden',
+            'Cloud credits & devtools van GreenPT en ActivePieces',
+            'Eten & drinken voorzien door Vandebron',
+            'Cash prijzen, credits, tool access en unieke gifts',
+            'Kans om prototype door te ontwikkelen tot real-life oplossing',
+            'Alle code moet open-source zijn',
+          ]
+        : [
+            '24-hour hackathon from Saturday 10:00 to Sunday 18:00',
+            'Challenges focused on SDGs: Health & Well-being, Sustainability & Circular Economy, Clean Energy & Climate Action',
+            'Challenge partner: Leiden University Medical Center (LUMC)',
+            'Teams of max 3 people, solo or with friends',
+            'Cloud credits & devtools from GreenPT and ActivePieces',
+            'Food & drinks provided by Vandebron',
+            'Cash prizes, credits, tool access and unique gifts',
+            'Opportunity to develop prototype into real-life solution',
+            'All code must be open-source',
+          ],
+      learnings: language === 'nl'
+        ? [
+            'AI development gericht op maatschappelijke impact en SDGs',
+            'Low-code AI agent building met ActivePieces',
+            'Duurzame LLM implementatie met GreenPT',
+            'Samenwerken met medische sector (LUMC) op real-world challenges',
+            'Open-source development practices',
+            'Van prototype naar productie met challenge partners',
+          ]
+        : [
+            'AI development focused on social impact and SDGs',
+            'Low-code AI agent building with ActivePieces',
+            'Sustainable LLM implementation with GreenPT',
+            'Collaborating with medical sector (LUMC) on real-world challenges',
+            'Open-source development practices',
+            'From prototype to production with challenge partners',
+          ],
+      conclusion: language === 'nl'
+        ? 'De Norrsken AI Fixathon biedt een unieke kans om AI in te zetten voor échte maatschappelijke problemen. Als onderdeel van de wereldwijde Norrsken Fixathon serie, met focus op de UN SDGs en real-world challenges van partners zoals LUMC, wordt dit meer dan een gewone hackathon. De mogelijkheid om je prototype door te ontwikkelen tot een productie-oplossing maakt het extra waardevol.'
+        : 'The Norrsken AI Fixathon offers a unique opportunity to use AI for real societal problems. As part of the global Norrsken Fixathon series, with focus on the UN SDGs and real-world challenges from partners like LUMC, this becomes more than a regular hackathon. The opportunity to develop your prototype into a production solution makes it extra valuable.',
+    },
     'mendix-ctf': {
       type: 'Conference',
       title: 'Mendix Capture The Flag 2025',
