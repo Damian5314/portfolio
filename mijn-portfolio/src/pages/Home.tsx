@@ -12,7 +12,11 @@ interface HomeProps {
 const Home: React.FC<HomeProps> = ({ language }) => {
   const translations = {
     nl: {
-      title: 'Informatica @ Hogeschool Rotterdam | Support Engineer @ 21South | Co-founder @ TableTech',
+      titles: [
+        'Informatica @ Hogeschool Rotterdam',
+        'Support Engineer @ 21South',
+        'Co-founder @ TableTech'
+      ],
       description: 'Gepassioneerd over het creëren van moderne webapplicaties en slimme oplossingen. Ik help bedrijven hun digitale dromen waar te maken.',
       viewProjects: 'Bekijk projecten',
       contact: 'Neem contact op',
@@ -20,7 +24,11 @@ const Home: React.FC<HomeProps> = ({ language }) => {
       ctaButton: 'Laten we praten',
     },
     en: {
-      title: 'Computer Science @ Rotterdam University of Applied Sciences | Support Engineer @ 21South | Co-founder @ TableTech',
+      titles: [
+        'Computer Science @ Rotterdam University of Applied Sciences',
+        'Support Engineer @ 21South',
+        'Co-founder @ TableTech'
+      ],
       description: 'Passionate about creating modern web applications and smart solutions. I help businesses bring their digital dreams to life.',
       viewProjects: 'View projects',
       contact: 'Get in touch',
@@ -53,9 +61,11 @@ const Home: React.FC<HomeProps> = ({ language }) => {
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
                 Damian Willemse
               </h1>
-              <h2 className="text-2xl lg:text-3xl font-semibold text-primary mb-6">
-                {t.title}
-              </h2>
+              <div className="text-2xl lg:text-3xl font-semibold text-primary mb-6 space-y-1">
+                {t.titles.map((title, index) => (
+                  <div key={index}>{title}</div>
+                ))}
+              </div>
               <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-xl">
                 {t.description}
               </p>
