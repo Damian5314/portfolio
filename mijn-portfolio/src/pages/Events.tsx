@@ -64,7 +64,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een unieke avond waarbij je achter de schermen kijkt bij 51 creatieve en digitale agencies in Rotterdam. Met talks, exhibitions, workshops en meer over marketing, AI, branding, media en design.'
         : 'A unique evening where you go behind the scenes at 51 creative and digital agencies in Rotterdam. With talks, exhibitions, workshops and more about marketing, AI, branding, media and design.',
-      image: '/events/Agency at night.png',
+      image: '/events/AgencyAtNight.png',
     },
     {
       id: 'xebia-github-copilot-hackathon',
@@ -77,7 +77,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een game-geïnspireerde hackathon gericht op het verbeteren van GitHub Copilot vaardigheden, met tracks voor zowel beginners als gevorderde gebruikers.'
         : 'A game-inspired hackathon focused on improving GitHub Copilot skills, with tracks for both beginners and advanced users.',
-      image: '/events/Xebia github copilot hackathon.jpeg',
+      image: '/events/XebiaGithubCopilotHackathon.jpeg',
     },
     {
       id: 'hackathon-computational-science',
@@ -90,7 +90,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'De eerste Hackathon van Computational Science NL, waar onderzoekers uit verschillende domeinen samenkomen om een real-world uitdaging te tackelen gepresenteerd door Deltares.'
         : 'The first Hackathon of Computational Science NL, bringing together researchers from various domains to tackle a real-world challenge presented by Deltares.',
-      image: '/events/Computational science NL.jpg',
+      image: '/events/ComputationalScienceNL.jpg',
     },
     {
       id: 'citylab010',
@@ -103,7 +103,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Het jaarlijkse netwerkevent van CityLab010 waar plannenmakers, de Stadsjury, partners en gemeentelijke experts samenkomen. Een inspirerende avond vol ontmoeting met workshops over het CityLab-proces en werken vanuit leefwerelden.'
         : 'The annual networking event of CityLab010 where planners, the City Jury, partners and municipal experts come together. An inspiring evening full of meetings with workshops about the CityLab process and working from living environments.',
-      image: '/events/Netwerkavond Citylab010.jpg',
+      image: '/events/Citylab010Netwerkavond.jpg',
     },
     {
       id: 'mendix-ctf',
@@ -116,11 +116,11 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Het Mendix Security Event van het jaar. Twee dagen vol gratis leren en kennisdeling over Mendix security door middel van hacking challenges en workshops door security experts.'
         : 'The Mendix Security Event of the year. Two days of free learning and knowledge sharing about Mendix security through hacking challenges and workshops by security experts.',
-      image: '/events/Mendix CTF 2025.webp',
+      image: '/events/MendixCTF2025.webp',
     },
     {
       id: 'buildweekend-young-creators',
-      type: 'Workshop',
+      type: 'Hackathon',
       title: 'Build Weekend by Young Creators & n8n',
       date: language === 'nl' ? '29-30 november 2025' : 'November 29-30, 2025',
       dateSort: '2025-11-29',
@@ -129,7 +129,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een weekend hackathon waar young builders (16-27 jaar) hun eigen ideeën kunnen ontwikkelen. Twee dagen vol collaboration, creativity en learning met toegang tot top mentors en powerful tools.'
         : 'A weekend hackathon where young builders (16-27 years) can develop their own ideas. Two days of collaboration, creativity and learning with access to top mentors and powerful tools.',
-      image: '/events/build weekend by young creators.png',
+      image: '/events/buildweekendbyyoungcreators.png',
     },
     {
       id: 'apify-1m-challenge-amsterdam',
@@ -138,11 +138,11 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       date: language === 'nl' ? '6 december 2025' : 'December 6, 2025',
       dateSort: '2025-12-06',
       location: 'Meet Berlage, Amsterdam',
-      attendees: 'TBD',
+      attendees: language === 'nl' ? '~13 deelnemers' : '~13 participants',
       description: language === 'nl'
-        ? 'Een snelle hackathon voor builders, web scraping enthousiastelingen en tinkerers. Bouw de Actor die je altijd al wilde maken met hands-on support, real-world scraping use cases, en kans op prijzen tot €150 + Apify credits.'
-        : 'A fast-paced hackathon for builders, web scraping enthusiasts, and tinkerers. Build the Actor you\'ve always wanted with hands-on support, real-world scraping use cases, and chances to win prizes up to €150 + Apify credits.',
-      image: '/events/ApifyChallenge1.jpeg',
+        ? 'Een dag-lange hackathon voor builders en web scraping enthousiastelingen. Tijdens dit event heb ik met mijn team een woningenscraper gebouwd en de 3e plaats behaald.'
+        : 'A day-long hackathon for builders and web scraping enthusiasts. During this event, I built a housing scraper with my team and achieved 3rd place.',
+      image: '/events/ApifyChallenge.jpeg',
     },
     {
       id: 'AI-Fixathon-Amsterdam',
@@ -155,7 +155,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een 24-uurs AI hackathon gericht op de UN Sustainable Development Goals. Bouw AI apps/tools die echte impact maken op gebieden als gezondheid, duurzaamheid en schone energie. Deel van de wereldwijde Norrsken Fixathon serie.'
         : 'A 24-hour AI hackathon focused on the UN Sustainable Development Goals. Build AI apps/tools that make real impact in areas like health, sustainability and clean energy. Part of the global Norrsken Fixathon series.',
-      image: '/events/AIFixathonAmsterdam1.jpg',
+      image: '/events/AIFixathonAmsterdam.jpg',
     },
   ];
 

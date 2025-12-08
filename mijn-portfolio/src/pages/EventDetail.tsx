@@ -59,58 +59,6 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
 
   // Event data
   const eventsData: { [key: string]: EventData } = {
-    'citylab010': {
-      type: 'Workshop',
-      title: 'CityLab010 Netwerkevent',
-      date: language === 'nl' ? '10 september 2025' : 'September 10, 2025',
-      location: 'Het Timmerhuis, Rotterdam',
-      attendees: 'TBD',
-      description: language === 'nl'
-        ? 'Het jaarlijkse netwerkevent van CityLab010 waar plannenmakers, de Stadsjury, partners en gemeentelijke experts samenkomen. Een inspirerende avond vol ontmoeting met workshops over het CityLab-proces en werken vanuit leefwerelden.'
-        : 'The annual networking event of CityLab010 where planners, the City Jury, partners and municipal experts come together. An inspiring evening full of meetings with workshops about the CityLab process and working from living environments.',
-      image: '/events/Netwerkavond Citylab010.jpg',
-      additionalImages: ['/events/Citylab010Netwerkavond2.jpg', '/events/Citylab010Netwerkavond3.jpg'],
-      experience: language === 'nl'
-        ? 'Ik kwam naar dit netwerkevent samen met Hicham Tahiri en Wishant Bhajan. We presenteerden ons eigen idee: een app voor toerisme in Rotterdam. Tijdens de avond spraken we met veel verschillende mensen over hun ideeën en plannen voor de stad, en kregen we waardevolle feedback op ons concept.'
-        : 'I came to this networking event together with Hicham Tahiri and Wishant Bhajan. We presented our own idea: an app for tourism in Rotterdam. During the evening we spoke with many different people about their ideas and plans for the city, and received valuable feedback on our concept.',
-      highlights: language === 'nl'
-        ? [
-            'Presentatie van ons Rotterdam toerisme app concept aan eigen tafel',
-            'Gesprekken met plannenmakers, Stadsjury en gemeentelijke experts',
-            'Workshop over het CityLab-proces en wat je kunt verwachten',
-            'Workshop door Concrete Blossom over werken vanuit leefwerelden',
-            'Inzicht in cultureel erfgoed en leefwerelden in sociaal ondernemerschap',
-            'Gesprekken met oud-deelnemers over hun ervaringen binnen CityLab010',
-          ]
-        : [
-            'Presentation of our Rotterdam tourism app concept at own table',
-            'Conversations with planners, City Jury and municipal experts',
-            'Workshop about the CityLab process and what to expect',
-            'Workshop by Concrete Blossom about working from living environments',
-            'Insights into cultural heritage and living environments in social entrepreneurship',
-            'Conversations with former participants about their experiences within CityLab010',
-          ],
-      learnings: language === 'nl'
-        ? [
-            'Het CityLab010 proces en ondersteuningsprogramma voor plannenmakers',
-            'Hoe je authentiek kunt werken vanuit je eigen context',
-            'Slim inspelen op mogelijkheden binnen het gemeentelijk systeem',
-            'Waarde van cultureel erfgoed in sociaal ondernemerschap',
-            'Feedback verzamelen en netwerken met stakeholders',
-            'Criteria waar de Stadsjury op let bij het beoordelen van plannen',
-          ]
-        : [
-            'The CityLab010 process and support program for planners',
-            'How to work authentically from your own context',
-            'Smartly responding to opportunities within the municipal system',
-            'Value of cultural heritage in social entrepreneurship',
-            'Gathering feedback and networking with stakeholders',
-            'Criteria that the City Jury considers when evaluating plans',
-          ],
-      conclusion: language === 'nl'
-        ? 'CityLab010 Netwerkevent was een waardevolle ervaring om ons Rotterdam toerisme app idee te pitchen en te valideren. De gesprekken met experts en andere plannenmakers gaven ons inzicht in hoe we ons concept kunnen verbeteren en hoe het gemeentelijk ondersteuningsprogramma werkt. De workshops over werken vanuit leefwerelden en het CityLab-proces waren zeer informatief.'
-        : 'CityLab010 Networking event was a valuable experience to pitch and validate our Rotterdam tourism app idea. The conversations with experts and other planners gave us insights into how we can improve our concept and how the municipal support program works. The workshops about working from living environments and the CityLab process were very informative.',
-    },
     'agency-at-night': {
       type: 'Meetup',
       title: 'Agency at Night',
@@ -120,7 +68,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een unieke avond waarbij je achter de schermen kijkt bij 51 creatieve en digitale agencies in Rotterdam. Met talks, exhibitions, workshops en meer over marketing, AI, branding, media en design.'
         : 'A unique evening where you go behind the scenes at 51 creative and digital agencies in Rotterdam. With talks, exhibitions, workshops and more about marketing, AI, branding, media and design.',
-      image: '/events/Agency at night.png',
+      image: '/events/AgencyAtNight.png',
       additionalImages: ['/events/AgencyAtNight2.jpg', '/events/AgencyAtNight3.jpg'],
       experience: language === 'nl'
         ? 'Ik ging naar Agency at Night samen met Hicham Tahiri en Wishant Bhajan. We bezochten 6 verschillende agencies en namen deel aan diverse workshops en activiteiten. Het was een inspirerende avond vol leren over marketing automation, AI, SEO en creatieve challenges.'
@@ -163,6 +111,204 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
         ? 'Agency at Night was een unieke kans om in één avond kennis te maken met verschillende creative agencies in Rotterdam. Van marketing automation tot AI-gedreven SEO, en van branding challenges tot AI prompting - de diversiteit aan workshops en activiteiten gaf een breed perspectief op de creative industry. Het Das Buro Branding Professional Degree certificate was een leuke bonus!'
         : 'Agency at Night was a unique opportunity to get to know different creative agencies in Rotterdam in one evening. From marketing automation to AI-driven SEO, and from branding challenges to AI prompting - the diversity of workshops and activities provided a broad perspective on the creative industry. The Das Buro Branding Professional Degree certificate was a nice bonus!',
     },
+    'xebia-github-copilot-hackathon': {
+      type: 'Hackathon',
+      title: 'Xebia GitHub Copilot Hackathon',
+      date: language === 'nl' ? '21 mei 2025' : 'May 21, 2025',
+      location: 'Xebia Hilversum, Laapersveld 27, Netherlands',
+      attendees: language === 'nl' ? '~50 deelnemers' : '~50 participants',
+      description: language === 'nl'
+        ? 'Een game-geïnspireerde hackathon gericht op het verbeteren van GitHub Copilot vaardigheden, met tracks voor zowel beginners als gevorderde gebruikers.'
+        : 'A game-inspired hackathon focused on improving GitHub Copilot skills, with tracks for both beginners and advanced users.',
+      image: '/events/XebiaGithubCopilotHackathon.jpeg',
+      additionalImages: ['/events/XebiaGithubCopilotHackathon2.JPG', '/events/XebiaGithubCopilotHackathon3.JPG'],
+      experience: language === 'nl'
+        ? 'Ik ben naar deze hackathon gegaan samen met Hicham Tahiri en Wishant Bhajan. We hebben gekozen voor Track 2: Advanced Mode, waarbij we uitleg kregen van Thijs Limmen en Liuba Gonta. Het was een leuke en leerzame ervaring waarbij we in korte tijd een werkend spel hebben kunnen bouwen met behulp van AI prompting.'
+        : 'I attended this hackathon together with Hicham Tahiri and Wishant Bhajan. We chose Track 2: Advanced Mode, where we received instruction from Thijs Limmen and Liuba Gonta. It was a fun and educational experience where we managed to build a working game in a short time using AI prompting.',
+      highlights: language === 'nl'
+        ? [
+            'Kick-off met uitleg over Track 2 (Advanced Mode) door Thijs Limmen en Liuba Gonta',
+            '2 uur durende hackathon om een spel te maken met AI prompting',
+            'Samen met Hicham een Pokemon-achtig spel ontwikkeld',
+            'Hands-on ervaring met geavanceerde GitHub Copilot features',
+            'Wrap-up sessie met drinks en bites waar we onze resultaten deelden',
+          ]
+        : [
+            'Kick-off with explanation of Track 2 (Advanced Mode) by Thijs Limmen and Liuba Gonta',
+            '2-hour hackathon to create a game using AI prompting',
+            'Developed a Pokemon-like game together with Hicham',
+            'Hands-on experience with advanced GitHub Copilot features',
+            'Wrap-up session with drinks and bites where we shared our results',
+          ],
+      learnings: language === 'nl'
+        ? [
+            'Effectieve AI prompting technieken om complexere code te genereren',
+            'Hoe GitHub Copilot te gebruiken voor game development en logica implementatie',
+            'Samenwerken in een team met AI-tools als centrale focus',
+            'Best practices voor het delegeren van repetitieve coding taken aan Copilot',
+            'Inzicht in de geavanceerde features van GitHub Copilot die productiviteit verhogen',
+          ]
+        : [
+            'Effective AI prompting techniques to generate more complex code',
+            'How to use GitHub Copilot for game development and logic implementation',
+            'Collaborating in a team with AI tools as the central focus',
+            'Best practices for delegating repetitive coding tasks to Copilot',
+            'Insights into advanced GitHub Copilot features that increase productivity',
+          ],
+      conclusion: language === 'nl'
+        ? 'Deze hackathon was een geweldige ervaring die mij heeft laten zien hoe krachtig GitHub Copilot kan zijn als je de tool goed beheerst. Het ontwikkelen van een Pokemon-achtig spel in slechts 2 uur was uitdagend maar zeer leerzaam. Ik heb veel inzicht gekregen in effectieve AI prompting en hoe je GitHub Copilot optimaal kunt inzetten in je dagelijkse werk.'
+        : 'This hackathon was a great experience that showed me how powerful GitHub Copilot can be when you master the tool properly. Developing a Pokemon-like game in just 2 hours was challenging but very educational. I gained a lot of insight into effective AI prompting and how to optimally use GitHub Copilot in your daily work.',
+    },
+    'hackathon-computational-science': {
+      type: 'Hackathon',
+      title: 'Hackathon Computational Science',
+      date: language === 'nl' ? '14 juni 2025' : 'June 14, 2025',
+      location: 'De Zalen van Zeven, Utrecht, Netherlands',
+      attendees: language === 'nl' ? '~35 deelnemers (7 teams)' : '~35 participants (7 teams)',
+      description: language === 'nl'
+        ? 'De eerste Hackathon van Computational Science NL, waar onderzoekers uit verschillende domeinen samenkomen om een real-world uitdaging te tackelen gepresenteerd door Deltares.'
+        : 'The first Hackathon of Computational Science NL, bringing together researchers from various domains to tackle a real-world challenge presented by Deltares.',
+      image: '/events/ComputationalScienceNL.jpg',
+      additionalImages: ['/events/ComputationalScienceNL2.jpeg', '/events/ComputationalScienceNL3.jpeg'],
+      experience: language === 'nl'
+        ? 'Ik ging naar deze hackathon samen met Wishant Bhajan en Hicham Tahiri als Team BBBs. We kregen de uitdaging om de beste solver voor de 1D shallow-water equations te ontwikkelen, geprogrammeerd in Julia - een taal waar we geen ervaring mee hadden. Na meer dan 6 uur intensief coderen en werken aan watervisualisaties, dachten we dat we het niet goed hadden gedaan. Tot onze verbazing kregen we uiteindelijk een Honorable Mention van de jury!'
+        : 'I attended this hackathon together with Wishant Bhajan and Hicham Tahiri as Team BBBs. We received the challenge to develop the best solver for the 1D shallow-water equations, programmed in Julia - a language we had no experience with. After more than 6 hours of intensive coding and working on water visualizations, we thought we hadn\'t done well. To our surprise, we ultimately received an Honorable Mention from the jury!',
+      highlights: language === 'nl'
+        ? [
+            'Ontwikkeling van een solver voor 1D shallow-water equations met Julia',
+            'Werken in de unieke setting van een oude kerk (De Zalen van Zeven)',
+            'Pitch voor een review panel bestaande uit experts van Deltares, VORtech BV en externe reviewers',
+            'Team BBBs ontving een Honorable Mention voor hun oplossing',
+            'Netwerken met onderzoekers uit de Nederlandse computational science community',
+          ]
+        : [
+            'Development of a solver for 1D shallow-water equations using Julia',
+            'Working in the unique setting of an old church (De Zalen van Zeven)',
+            'Pitch to a review panel consisting of experts from Deltares, VORtech BV and external reviewers',
+            'Team BBBs received an Honorable Mention for their solution',
+            'Networking with researchers from the Dutch computational science community',
+          ],
+      learnings: language === 'nl'
+        ? [
+            'Introductie in Julia programmeren en numerieke methoden voor partiële differentiaalvergelijkingen',
+            'Begrip van shallow-water equations en hun toepassing in wateronderzoek',
+            'Samenwerken onder tijdsdruk met een onbekende programmeertaal',
+            'Effectief communiceren van technische oplossingen in een pitch-format',
+            'Doorzettingsvermogen: ondanks twijfels toch een prijs behalen',
+          ]
+        : [
+            'Introduction to Julia programming and numerical methods for partial differential equations',
+            'Understanding of shallow-water equations and their application in water research',
+            'Collaborating under time pressure with an unfamiliar programming language',
+            'Effectively communicating technical solutions in a pitch format',
+            'Perseverance: achieving recognition despite doubts',
+          ],
+      conclusion: language === 'nl'
+        ? 'Deze hackathon was een onverwacht succes. Ondanks dat we geen voorkennis hadden van Julia, hebben we als Team BBBs een werkende solver kunnen ontwikkelen die de jury overtuigde. De Honorable Mention was een geweldige verrassing en bewees dat met teamwork en doorzettingsvermogen je complexe uitdagingen kunt aanpakken, zelfs in een nieuwe programmeertaal. Het was een leerzame ervaring over watermodellering en numerieke methoden.'
+        : 'This hackathon was an unexpected success. Despite having no prior knowledge of Julia, Team BBBs managed to develop a working solver that convinced the jury. The Honorable Mention was a great surprise and proved that with teamwork and perseverance you can tackle complex challenges, even in a new programming language. It was an educational experience about water modeling and numerical methods.',
+    },
+    'citylab010': {
+      type: 'Workshop',
+      title: 'CityLab010 Netwerkevent',
+      date: language === 'nl' ? '10 september 2025' : 'September 10, 2025',
+      location: 'Het Timmerhuis, Rotterdam',
+      attendees: 'TBD',
+      description: language === 'nl'
+        ? 'Het jaarlijkse netwerkevent van CityLab010 waar plannenmakers, de Stadsjury, partners en gemeentelijke experts samenkomen. Een inspirerende avond vol ontmoeting met workshops over het CityLab-proces en werken vanuit leefwerelden.'
+        : 'The annual networking event of CityLab010 where planners, the City Jury, partners and municipal experts come together. An inspiring evening full of meetings with workshops about the CityLab process and working from living environments.',
+      image: '/events/Citylab010Netwerkavond.jpg',
+      additionalImages: ['/events/Citylab010Netwerkavond2.jpg', '/events/Citylab010Netwerkavond3.jpg'],
+      experience: language === 'nl'
+        ? 'Ik kwam naar dit netwerkevent samen met Hicham Tahiri en Wishant Bhajan. We presenteerden ons eigen idee: een app voor toerisme in Rotterdam. Tijdens de avond spraken we met veel verschillende mensen over hun ideeën en plannen voor de stad, en kregen we waardevolle feedback op ons concept.'
+        : 'I came to this networking event together with Hicham Tahiri and Wishant Bhajan. We presented our own idea: an app for tourism in Rotterdam. During the evening we spoke with many different people about their ideas and plans for the city, and received valuable feedback on our concept.',
+      highlights: language === 'nl'
+        ? [
+            'Presentatie van ons Rotterdam toerisme app concept aan eigen tafel',
+            'Gesprekken met plannenmakers, Stadsjury en gemeentelijke experts',
+            'Workshop over het CityLab-proces en wat je kunt verwachten',
+            'Workshop door Concrete Blossom over werken vanuit leefwerelden',
+            'Inzicht in cultureel erfgoed en leefwerelden in sociaal ondernemerschap',
+            'Gesprekken met oud-deelnemers over hun ervaringen binnen CityLab010',
+          ]
+        : [
+            'Presentation of our Rotterdam tourism app concept at own table',
+            'Conversations with planners, City Jury and municipal experts',
+            'Workshop about the CityLab process and what to expect',
+            'Workshop by Concrete Blossom about working from living environments',
+            'Insights into cultural heritage and living environments in social entrepreneurship',
+            'Conversations with former participants about their experiences within CityLab010',
+          ],
+      learnings: language === 'nl'
+        ? [
+            'Het CityLab010 proces en ondersteuningsprogramma voor plannenmakers',
+            'Hoe je authentiek kunt werken vanuit je eigen context',
+            'Slim inspelen op mogelijkheden binnen het gemeentelijk systeem',
+            'Waarde van cultureel erfgoed in sociaal ondernemerschap',
+            'Feedback verzamelen en netwerken met stakeholders',
+            'Criteria waar de Stadsjury op let bij het beoordelen van plannen',
+          ]
+        : [
+            'The CityLab010 process and support program for planners',
+            'How to work authentically from your own context',
+            'Smartly responding to opportunities within the municipal system',
+            'Value of cultural heritage in social entrepreneurship',
+            'Gathering feedback and networking with stakeholders',
+            'Criteria that the City Jury considers when evaluating plans',
+          ],
+      conclusion: language === 'nl'
+        ? 'CityLab010 Netwerkevent was een waardevolle ervaring om ons Rotterdam toerisme app idee te pitchen en te valideren. De gesprekken met experts en andere plannenmakers gaven ons inzicht in hoe we ons concept kunnen verbeteren en hoe het gemeentelijk ondersteuningsprogramma werkt. De workshops over werken vanuit leefwerelden en het CityLab-proces waren zeer informatief.'
+        : 'CityLab010 Networking event was a valuable experience to pitch and validate our Rotterdam tourism app idea. The conversations with experts and other planners gave us insights into how we can improve our concept and how the municipal support program works. The workshops about working from living environments and the CityLab process were very informative.',
+    },
+    'mendix-ctf': {
+      type: 'Conference',
+      title: 'Mendix Capture The Flag 2025',
+      date: language === 'nl' ? '9-10 oktober 2025' : 'October 9-10, 2025',
+      location: language === 'nl' ? 'Wereldwijd (17 locaties)' : 'Worldwide (17 locations)',
+      attendees: language === 'nl' ? '1.092 hackers wereldwijd' : '1,092 hackers worldwide',
+      description: language === 'nl'
+        ? 'Het Mendix Security Event van het jaar. Twee dagen vol gratis leren en kennisdeling over Mendix security door middel van hacking challenges en workshops door security experts.'
+        : 'The Mendix Security Event of the year. Two days of free learning and knowledge sharing about Mendix security through hacking challenges and workshops by security experts.',
+      image: '/events/MendixCTF2025.webp',
+      additionalImages: ['/events/MendixCTF20252.jpg', '/events/MendixCTF20253.jpg'],
+      experience: language === 'nl'
+        ? 'Ik ben naar deze CTF gegaan samen met Hicham Tahiri, Wishant Bhajan en Mohammad Falaha. Het was onze eerste ervaring met een Capture The Flag evenement. Er waren 27 challenges (flags) verdeeld over 3 moeilijkheidsgraden. Ondanks dat het nieuw voor ons was, hebben we toch 12 challenges kunnen voltooien, wat een goede prestatie was voor onze eerste keer.'
+        : 'I attended this CTF together with Hicham Tahiri, Wishant Bhajan and Mohammad Falaha. It was our first experience with a Capture The Flag event. There were 27 challenges (flags) divided across 3 difficulty levels. Despite it being new to us, we managed to complete 12 challenges, which was a good achievement for our first time.',
+      highlights: language === 'nl'
+        ? [
+            '27 security challenges verdeeld over 3 moeilijkheidsgraden',
+            '12 flags succesvol gecaptured als team',
+            '15+ expert-led workshops en sessies over Mendix security',
+            'Deel van een wereldwijd evenement met 1.092 hackers op 17 locaties',
+            'On-site coaching door security experts',
+            'Exclusieve in-person merchandise',
+          ]
+        : [
+            '27 security challenges divided across 3 difficulty levels',
+            '12 flags successfully captured as a team',
+            '15+ expert-led workshops and sessions about Mendix security',
+            'Part of a global event with 1,092 hackers at 17 locations',
+            'On-site coaching by security experts',
+            'Exclusive in-person merchandise',
+          ],
+      learnings: language === 'nl'
+        ? [
+            'Introductie in Capture The Flag competities en security hacking',
+            'Mendix security best practices en kwetsbaarheden identificeren',
+            'Verschillende security attack vectors en defense mechanismen',
+            'Samenwerken in een team om complexe security challenges op te lossen',
+            'Hands-on ervaring met security testing tools en methodologieën',
+          ]
+        : [
+            'Introduction to Capture The Flag competitions and security hacking',
+            'Mendix security best practices and identifying vulnerabilities',
+            'Various security attack vectors and defense mechanisms',
+            'Collaborating in a team to solve complex security challenges',
+            'Hands-on experience with security testing tools and methodologies',
+          ],
+      conclusion: language === 'nl'
+        ? 'Deze CTF was een geweldige introductie in de wereld van security hacking en Capture The Flag competities. Ondanks dat het onze eerste ervaring was, hebben we als team 12 van de 27 challenges kunnen voltooien. Het was leerzaam om te zien hoe security vulnerabilities kunnen worden geïdentificeerd en geëxploiteerd in een veilige omgeving. De combinatie van competitie, workshops en networking maakte dit tot een onvergetelijke ervaring.'
+        : 'This CTF was a great introduction to the world of security hacking and Capture The Flag competitions. Despite it being our first experience, we managed to complete 12 of the 27 challenges as a team. It was educational to see how security vulnerabilities can be identified and exploited in a safe environment. The combination of competition, workshops and networking made this an unforgettable experience.',
+    },
     'buildweekend-young-creators': {
       type: 'Hackathon',
       title: 'Build Weekend by Young Creators & n8n',
@@ -172,7 +318,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een weekend hackathon waar young builders (16-27 jaar) hun eigen ideeën kunnen ontwikkelen. Twee dagen in het hart van Amsterdam om te bouwen aan prototypes, designs, automations of nieuwe concepten.'
         : 'A weekend hackathon where young builders (16-27 years) can develop their own ideas. Two days in the heart of Amsterdam to build prototypes, designs, automations or new concepts.',
-      image: '/events/build weekend by young creators.png',
+      image: '/events/buildweekendbyyoungcreators.png',
       additionalImages: ['/events/buildweekendbyyoungcreators2.jpg', '/events/buildweekendbyyoungcreators3.mp4', '/events/buildweekendbyyoungcreators4.jpeg', '/events/buildweekendbyyoungcreators5.jpeg'],
       experience: language === 'nl'
         ? 'Ik ging naar dit hackathon evenement samen met Wishant Bhajan, Mohammad Falaha, Rachid Ouaalit en Hicham Tahiri. In slechts 2 dagen hebben we FoodSwipe gebouwd - een TikTok-achtige app waarin je verschillende restaurants en recepten kunt ontdekken. We hebben ook een AI-functie geïmplementeerd waarmee je je ingrediënten kunt opgeven en daarmee een recept kunt genereren.'
@@ -218,55 +364,62 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
     'apify-1m-challenge-amsterdam': {
       type: 'Hackathon',
       title: 'Apify $1M Challenge: Amsterdam',
-      date: language === 'nl' ? '6 december 2024' : 'December 6, 2024',
+      date: language === 'nl' ? '6 december 2025' : 'December 6, 2025',
       location: 'Meet Berlage, Amsterdam',
-      attendees: 'TBD',
+      attendees: language === 'nl' ? '~13 deelnemers' : '~13 participants',
       description: language === 'nl'
-        ? 'Een snelle hackathon voor builders, web scraping enthousiastelingen en tinkerers. Powered by Apify – de beste cloud platform voor web scraping en automation oplossingen.'
-        : 'A fast-paced hackathon for builders, web scraping enthusiasts, and tinkerers. Powered by Apify – the world\'s best cloud platform for developing and running web scraping and automation solutions.',
-      image: '/events/ApifyChallenge1.jpeg',
+        ? 'Een dag-lange hackathon voor builders en web scraping enthousiastelingen. Tijdens dit event heb ik met mijn team WoningSpotters gebouwd - een platform dat woningdata scrapet - en de 3e plaats behaald.'
+        : 'A day-long hackathon for builders and web scraping enthusiasts. During this event, I built WoningSpotters with my team - a platform that scrapes housing data - and achieved 3rd place.',
+      image: '/events/ApifyChallenge.jpeg',
+      additionalImages: ['/events/ApifyChallenge1.JPG', '/events/ApifyChallenge2.jpg'],
       experience: language === 'nl'
-        ? 'Dit evenement vindt plaats op 6 december 2024. Het belooft een intensieve dag te worden waarin ik mijn web scraping vaardigheden verder kan ontwikkelen en kan werken aan het bouwen van een Apify Actor. Met hands-on support, real-world use cases en kans op prijzen, wordt dit een uitdagende en leerzame ervaring.'
-        : 'This event takes place on December 6, 2024. It promises to be an intensive day where I can further develop my web scraping skills and work on building an Apify Actor. With hands-on support, real-world use cases and chances to win prizes, this will be a challenging and educational experience.',
+        ? 'Tijdens de Apify $1M Challenge op 6 december 2024 heb ik met een team van 4 personen binnen één dag een volledig werkend woningscraping platform gebouwd. We hebben WoningSpotters gemaakt - een platform dat data scrapet van de meeste Nederlandse woningwebsites voor zowel koop- als huurwoningen. De frontend is gebouwd in React en het scrape-gedeelte in Python gecombineerd met Apify. Het was een intense maar zeer leerzame dag waarbij we de kracht van web scraping hebben toegepast op een real-world probleem.'
+        : 'During the Apify $1M Challenge on December 6, 2024, I built a fully working housing scraping platform with a team of 4 people within one day. We created WoningSpotters - a platform that scrapes data from most Dutch housing websites for both sale and rental properties. The frontend is built in React and the scraping part in Python combined with Apify. It was an intense but very educational day where we applied the power of web scraping to a real-world problem.',
       highlights: language === 'nl'
         ? [
-            'Één dag hackathon van 10:00 tot 18:00',
-            'Bouw de Apify Actor die je altijd al wilde maken',
+            'Één dag hackathon van 10:00 tot 18:00 in het historische Meet Berlage',
+            'Gebouwd: WoningSpotters - een woningscraping platform voor koop en huur',
+            '3e plaats behaald met ons team van 4 personen!',
+            'React frontend gecombineerd met Python + Apify scraping',
+            'Data van meerdere Nederlandse woningwebsites gescraped',
             'Hands-on support van Apify experts',
-            'Real-world web scraping en automation use cases',
-            'Prijzen: 1e plaats €150 + $500 Apify credit, 2e plaats €75 + $250 credit, 3e plaats €50 + $100 credit',
+            'Prijzen: €50 + $100 Apify credit voor 3e plaats',
             'Lunch, snacks en drinks gedurende de dag',
-            'Netwerken met andere web scraping enthousiastelingen',
-            'Pitch je project en compete voor prijzen',
+            'Netwerken met ~13 andere web scraping enthousiastelingen',
           ]
         : [
-            'One day hackathon from 10:00 to 18:00',
-            'Build the Apify Actor you\'ve always wanted',
+            'One day hackathon from 10:00 to 18:00 at the historic Meet Berlage',
+            'Built: WoningSpotters - a housing scraping platform for sale and rent',
+            'Achieved 3rd place with our team of 4 people!',
+            'React frontend combined with Python + Apify scraping',
+            'Scraped data from multiple Dutch housing websites',
             'Hands-on support from Apify experts',
-            'Real-world web scraping and automation use cases',
-            'Prizes: 1st place €150 + $500 Apify credit, 2nd place €75 + $250 credit, 3rd place €50 + $100 credit',
+            'Prizes: €50 + $100 Apify credit for 3rd place',
             'Lunch, snacks and drinks throughout the day',
-            'Network with other web scraping enthusiasts',
-            'Pitch your project and compete for prizes',
+            'Networked with ~13 other web scraping enthusiasts',
           ],
       learnings: language === 'nl'
         ? [
-            'Advanced web scraping technieken met Apify',
-            'Bouwen van Apify Actors voor automation',
-            'Real-world scraping use cases en oplossingen',
+            'Web scraping van meerdere woningwebsites met verschillende structuren',
+            'Apify gebruiken voor robuuste en schaalbare web scraping',
+            'Python voor efficiënte data processing en transformatie',
+            'React voor snelle en responsive frontend development',
+            'Binnen zeer korte tijd (1 dag) een werkend product bouwen',
             'Pitching en presenteren van technische projecten',
             'Netwerken binnen de web scraping community',
           ]
         : [
-            'Advanced web scraping techniques with Apify',
-            'Building Apify Actors for automation',
-            'Real-world scraping use cases and solutions',
+            'Web scraping from multiple housing websites with different structures',
+            'Using Apify for robust and scalable web scraping',
+            'Python for efficient data processing and transformation',
+            'React for fast and responsive frontend development',
+            'Building a working product within a very short time (1 day)',
             'Pitching and presenting technical projects',
             'Networking within the web scraping community',
           ],
       conclusion: language === 'nl'
-        ? 'De Apify $1M Challenge belooft een geweldige kans te worden om mijn web scraping vaardigheden verder te ontwikkelen. Met de hands-on support van experts, real-world use cases en de kans om te pitchen voor prijzen, wordt dit een dag vol leren en bouwen. De locatie in het historische Meet Berlage (\'s werelds eerste beursvloer) maakt het nog specialer.'
-        : 'The Apify $1M Challenge promises to be a great opportunity to further develop my web scraping skills. With hands-on support from experts, real-world use cases and the chance to pitch for prizes, this will be a day full of learning and building. The location at the historic Meet Berlage (the world\'s first stock exchange) makes it even more special.',
+        ? 'De Apify $1M Challenge was een geweldige ervaring! Met mijn team hebben we binnen één dag WoningSpotters gebouwd - een platform dat woningzoekers helpt door data te scrapen van meerdere woningwebsites. Het behalen van de 3e plaats met ~13 deelnemers was een mooie beloning voor onze harde werk. Ik heb enorm veel geleerd over web scraping, Apify, en het bouwen van een product onder tijdsdruk. De combinatie van React voor de frontend en Python + Apify voor de scraping werkte perfect samen. Dit project heeft me laten zien hoe krachtig web scraping kan zijn voor het oplossen van real-world problemen.'
+        : 'The Apify $1M Challenge was a great experience! With my team, we built WoningSpotters within one day - a platform that helps home seekers by scraping data from multiple housing websites. Achieving 3rd place with ~13 participants was a nice reward for our hard work. I learned a lot about web scraping, Apify, and building a product under time pressure. The combination of React for the frontend and Python + Apify for scraping worked perfectly together. This project showed me how powerful web scraping can be for solving real-world problems.',
     },
     'AI-Fixathon-Amsterdam': {
       type: 'Hackathon',
@@ -277,7 +430,7 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       description: language === 'nl'
         ? 'Een 24-uurs AI hackathon gericht op de UN Sustainable Development Goals. Powered by Norrsken x AI for Impact Collective x AI Builders.'
         : 'A 24-hour AI hackathon focused on the UN Sustainable Development Goals. Powered by Norrsken x AI for Impact Collective x AI Builders.',
-      image: '/events/AIFixathonAmsterdam1.jpg',
+      image: '/events/AIFixathonAmsterdam.jpg',
       experience: language === 'nl'
         ? 'Dit evenement vindt plaats op 13-14 december 2024. Het belooft een intensief weekend te worden waarin ik in een team van max 3 personen aan AI-oplossingen werk voor echte wereldproblemen. Met focus op de UN SDGs en challenges van partners zoals LUMC, wordt dit een kans om technologie in te zetten voor maatschappelijke impact.'
         : 'This event takes place on December 13-14, 2024. It promises to be an intensive weekend where I will work in a team of max 3 people on AI solutions for real world problems. With focus on the UN SDGs and challenges from partners like LUMC, this will be an opportunity to use technology for social impact.',
@@ -324,270 +477,6 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       conclusion: language === 'nl'
         ? 'De Norrsken AI Fixathon biedt een unieke kans om AI in te zetten voor échte maatschappelijke problemen. Als onderdeel van de wereldwijde Norrsken Fixathon serie, met focus op de UN SDGs en real-world challenges van partners zoals LUMC, wordt dit meer dan een gewone hackathon. De mogelijkheid om je prototype door te ontwikkelen tot een productie-oplossing maakt het extra waardevol.'
         : 'The Norrsken AI Fixathon offers a unique opportunity to use AI for real societal problems. As part of the global Norrsken Fixathon series, with focus on the UN SDGs and real-world challenges from partners like LUMC, this becomes more than a regular hackathon. The opportunity to develop your prototype into a production solution makes it extra valuable.',
-    },
-    'mendix-ctf': {
-      type: 'Conference',
-      title: 'Mendix Capture The Flag 2025',
-      date: language === 'nl' ? '9-10 oktober 2025' : 'October 9-10, 2025',
-      location: language === 'nl' ? 'Wereldwijd (17 locaties)' : 'Worldwide (17 locations)',
-      attendees: language === 'nl' ? '1.092 hackers wereldwijd' : '1,092 hackers worldwide',
-      description: language === 'nl'
-        ? 'Het Mendix Security Event van het jaar. Twee dagen vol gratis leren en kennisdeling over Mendix security door middel van hacking challenges en workshops door security experts.'
-        : 'The Mendix Security Event of the year. Two days of free learning and knowledge sharing about Mendix security through hacking challenges and workshops by security experts.',
-      image: '/events/Mendix CTF 2025.webp',
-      additionalImages: ['/events/MendixCTF20252.jpg', '/events/MendixCTF20253.jpg'],
-      experience: language === 'nl'
-        ? 'Ik ben naar deze CTF gegaan samen met Hicham Tahiri, Wishant Bhajan en Mohammad Falaha. Het was onze eerste ervaring met een Capture The Flag evenement. Er waren 27 challenges (flags) verdeeld over 3 moeilijkheidsgraden. Ondanks dat het nieuw voor ons was, hebben we toch 12 challenges kunnen voltooien, wat een goede prestatie was voor onze eerste keer.'
-        : 'I attended this CTF together with Hicham Tahiri, Wishant Bhajan and Mohammad Falaha. It was our first experience with a Capture The Flag event. There were 27 challenges (flags) divided across 3 difficulty levels. Despite it being new to us, we managed to complete 12 challenges, which was a good achievement for our first time.',
-      highlights: language === 'nl'
-        ? [
-            '27 security challenges verdeeld over 3 moeilijkheidsgraden',
-            '12 flags succesvol gecaptured als team',
-            '15+ expert-led workshops en sessies over Mendix security',
-            'Deel van een wereldwijd evenement met 1.092 hackers op 17 locaties',
-            'On-site coaching door security experts',
-            'Exclusieve in-person merchandise',
-          ]
-        : [
-            '27 security challenges divided across 3 difficulty levels',
-            '12 flags successfully captured as a team',
-            '15+ expert-led workshops and sessions about Mendix security',
-            'Part of a global event with 1,092 hackers at 17 locations',
-            'On-site coaching by security experts',
-            'Exclusive in-person merchandise',
-          ],
-      learnings: language === 'nl'
-        ? [
-            'Introductie in Capture The Flag competities en security hacking',
-            'Mendix security best practices en kwetsbaarheden identificeren',
-            'Verschillende security attack vectors en defense mechanismen',
-            'Samenwerken in een team om complexe security challenges op te lossen',
-            'Hands-on ervaring met security testing tools en methodologieën',
-          ]
-        : [
-            'Introduction to Capture The Flag competitions and security hacking',
-            'Mendix security best practices and identifying vulnerabilities',
-            'Various security attack vectors and defense mechanisms',
-            'Collaborating in a team to solve complex security challenges',
-            'Hands-on experience with security testing tools and methodologies',
-          ],
-      conclusion: language === 'nl'
-        ? 'Deze CTF was een geweldige introductie in de wereld van security hacking en Capture The Flag competities. Ondanks dat het onze eerste ervaring was, hebben we als team 12 van de 27 challenges kunnen voltooien. Het was leerzaam om te zien hoe security vulnerabilities kunnen worden geïdentificeerd en geëxploiteerd in een veilige omgeving. De combinatie van competitie, workshops en networking maakte dit tot een onvergetelijke ervaring.'
-        : 'This CTF was a great introduction to the world of security hacking and Capture The Flag competitions. Despite it being our first experience, we managed to complete 12 of the 27 challenges as a team. It was educational to see how security vulnerabilities can be identified and exploited in a safe environment. The combination of competition, workshops and networking made this an unforgettable experience.',
-    },
-    'hackathon-computational-science': {
-      type: 'Hackathon',
-      title: 'Hackathon Computational Science',
-      date: language === 'nl' ? '14 juni 2025' : 'June 14, 2025',
-      location: 'De Zalen van Zeven, Utrecht, Netherlands',
-      attendees: language === 'nl' ? '~35 deelnemers (7 teams)' : '~35 participants (7 teams)',
-      description: language === 'nl'
-        ? 'De eerste Hackathon van Computational Science NL, waar onderzoekers uit verschillende domeinen samenkomen om een real-world uitdaging te tackelen gepresenteerd door Deltares.'
-        : 'The first Hackathon of Computational Science NL, bringing together researchers from various domains to tackle a real-world challenge presented by Deltares.',
-      image: '/events/Computational science NL.jpg',
-      additionalImages: ['/events/ComputationalScienceNL2.jpeg', '/events/ComputationalScienceNL3.jpeg'],
-      experience: language === 'nl'
-        ? 'Ik ging naar deze hackathon samen met Wishant Bhajan en Hicham Tahiri als Team BBBs. We kregen de uitdaging om de beste solver voor de 1D shallow-water equations te ontwikkelen, geprogrammeerd in Julia - een taal waar we geen ervaring mee hadden. Na meer dan 6 uur intensief coderen en werken aan watervisualisaties, dachten we dat we het niet goed hadden gedaan. Tot onze verbazing kregen we uiteindelijk een Honorable Mention van de jury!'
-        : 'I attended this hackathon together with Wishant Bhajan and Hicham Tahiri as Team BBBs. We received the challenge to develop the best solver for the 1D shallow-water equations, programmed in Julia - a language we had no experience with. After more than 6 hours of intensive coding and working on water visualizations, we thought we hadn\'t done well. To our surprise, we ultimately received an Honorable Mention from the jury!',
-      highlights: language === 'nl'
-        ? [
-            'Ontwikkeling van een solver voor 1D shallow-water equations met Julia',
-            'Werken in de unieke setting van een oude kerk (De Zalen van Zeven)',
-            'Pitch voor een review panel bestaande uit experts van Deltares, VORtech BV en externe reviewers',
-            'Team BBBs ontving een Honorable Mention voor hun oplossing',
-            'Netwerken met onderzoekers uit de Nederlandse computational science community',
-          ]
-        : [
-            'Development of a solver for 1D shallow-water equations using Julia',
-            'Working in the unique setting of an old church (De Zalen van Zeven)',
-            'Pitch to a review panel consisting of experts from Deltares, VORtech BV and external reviewers',
-            'Team BBBs received an Honorable Mention for their solution',
-            'Networking with researchers from the Dutch computational science community',
-          ],
-      learnings: language === 'nl'
-        ? [
-            'Introductie in Julia programmeren en numerieke methoden voor partiële differentiaalvergelijkingen',
-            'Begrip van shallow-water equations en hun toepassing in wateronderzoek',
-            'Samenwerken onder tijdsdruk met een onbekende programmeertaal',
-            'Effectief communiceren van technische oplossingen in een pitch-format',
-            'Doorzettingsvermogen: ondanks twijfels toch een prijs behalen',
-          ]
-        : [
-            'Introduction to Julia programming and numerical methods for partial differential equations',
-            'Understanding of shallow-water equations and their application in water research',
-            'Collaborating under time pressure with an unfamiliar programming language',
-            'Effectively communicating technical solutions in a pitch format',
-            'Perseverance: achieving recognition despite doubts',
-          ],
-      conclusion: language === 'nl'
-        ? 'Deze hackathon was een onverwacht succes. Ondanks dat we geen voorkennis hadden van Julia, hebben we als Team BBBs een werkende solver kunnen ontwikkelen die de jury overtuigde. De Honorable Mention was een geweldige verrassing en bewees dat met teamwork en doorzettingsvermogen je complexe uitdagingen kunt aanpakken, zelfs in een nieuwe programmeertaal. Het was een leerzame ervaring over watermodellering en numerieke methoden.'
-        : 'This hackathon was an unexpected success. Despite having no prior knowledge of Julia, Team BBBs managed to develop a working solver that convinced the jury. The Honorable Mention was a great surprise and proved that with teamwork and perseverance you can tackle complex challenges, even in a new programming language. It was an educational experience about water modeling and numerical methods.',
-    },
-    'xebia-github-copilot-hackathon': {
-      type: 'Hackathon',
-      title: 'Xebia GitHub Copilot Hackathon',
-      date: language === 'nl' ? '21 mei 2025' : 'May 21, 2025',
-      location: 'Xebia Hilversum, Laapersveld 27, Netherlands',
-      attendees: language === 'nl' ? '~50 deelnemers' : '~50 participants',
-      description: language === 'nl'
-        ? 'Een game-geïnspireerde hackathon gericht op het verbeteren van GitHub Copilot vaardigheden, met tracks voor zowel beginners als gevorderde gebruikers.'
-        : 'A game-inspired hackathon focused on improving GitHub Copilot skills, with tracks for both beginners and advanced users.',
-      image: '/events/Xebia github copilot hackathon.jpeg',
-      additionalImages: ['/events/XebiaGithubCopilotHackathon2.JPG', '/events/XebiaGithubCopilotHackathon3.JPG'],
-      experience: language === 'nl'
-        ? 'Ik ben naar deze hackathon gegaan samen met Hicham Tahiri en Wishant Bhajan. We hebben gekozen voor Track 2: Advanced Mode, waarbij we uitleg kregen van Thijs Limmen en Liuba Gonta. Het was een leuke en leerzame ervaring waarbij we in korte tijd een werkend spel hebben kunnen bouwen met behulp van AI prompting.'
-        : 'I attended this hackathon together with Hicham Tahiri and Wishant Bhajan. We chose Track 2: Advanced Mode, where we received instruction from Thijs Limmen and Liuba Gonta. It was a fun and educational experience where we managed to build a working game in a short time using AI prompting.',
-      highlights: language === 'nl'
-        ? [
-            'Kick-off met uitleg over Track 2 (Advanced Mode) door Thijs Limmen en Liuba Gonta',
-            '2 uur durende hackathon om een spel te maken met AI prompting',
-            'Samen met Hicham een Pokemon-achtig spel ontwikkeld',
-            'Hands-on ervaring met geavanceerde GitHub Copilot features',
-            'Wrap-up sessie met drinks en bites waar we onze resultaten deelden',
-          ]
-        : [
-            'Kick-off with explanation of Track 2 (Advanced Mode) by Thijs Limmen and Liuba Gonta',
-            '2-hour hackathon to create a game using AI prompting',
-            'Developed a Pokemon-like game together with Hicham',
-            'Hands-on experience with advanced GitHub Copilot features',
-            'Wrap-up session with drinks and bites where we shared our results',
-          ],
-      learnings: language === 'nl'
-        ? [
-            'Effectieve AI prompting technieken om complexere code te genereren',
-            'Hoe GitHub Copilot te gebruiken voor game development en logica implementatie',
-            'Samenwerken in een team met AI-tools als centrale focus',
-            'Best practices voor het delegeren van repetitieve coding taken aan Copilot',
-            'Inzicht in de geavanceerde features van GitHub Copilot die productiviteit verhogen',
-          ]
-        : [
-            'Effective AI prompting techniques to generate more complex code',
-            'How to use GitHub Copilot for game development and logic implementation',
-            'Collaborating in a team with AI tools as the central focus',
-            'Best practices for delegating repetitive coding tasks to Copilot',
-            'Insights into advanced GitHub Copilot features that increase productivity',
-          ],
-      conclusion: language === 'nl'
-        ? 'Deze hackathon was een geweldige ervaring die mij heeft laten zien hoe krachtig GitHub Copilot kan zijn als je de tool goed beheerst. Het ontwikkelen van een Pokemon-achtig spel in slechts 2 uur was uitdagend maar zeer leerzaam. Ik heb veel inzicht gekregen in effectieve AI prompting en hoe je GitHub Copilot optimaal kunt inzetten in je dagelijkse werk.'
-        : 'This hackathon was a great experience that showed me how powerful GitHub Copilot can be when you master the tool properly. Developing a Pokemon-like game in just 2 hours was challenging but very educational. I gained a lot of insight into effective AI prompting and how to optimally use GitHub Copilot in your daily work.',
-    },
-    'react-summit-2024': {
-      type: 'Conference',
-      title: 'React Summit 2024',
-      date: language === 'nl' ? '15 Maart 2024' : 'March 15, 2024',
-      location: 'Amsterdam, Netherlands',
-      attendees: language === 'nl' ? '1200 deelnemers' : '1200 participants',
-      description: language === 'nl'
-        ? 'Een inspirerende conferentie over de nieuwste ontwikkelingen in React en moderne frontend development.'
-        : 'An inspiring conference about the latest developments in React and modern frontend development.',
-      experience: language === 'nl'
-        ? 'React Summit 2024 was een onvergetelijke ervaring. Als frontend developer was dit de perfecte gelegenheid om te leren over de nieuwste trends en best practices in het React ecosysteem.'
-        : 'React Summit 2024 was an unforgettable experience. As a frontend developer, this was the perfect opportunity to learn about the latest trends and best practices in the React ecosystem.',
-      highlights: language === 'nl'
-        ? [
-            'Keynote van Dan Abramov over React Server Components',
-            'Workshop over performance optimalisatie met React 18',
-            'Networking sessie met developers van grote tech bedrijven',
-            'Lightning talks over innovatieve use cases van React',
-          ]
-        : [
-            'Keynote by Dan Abramov about React Server Components',
-            'Workshop on performance optimization with React 18',
-            'Networking session with developers from major tech companies',
-            'Lightning talks about innovative React use cases',
-          ],
-      learnings: language === 'nl'
-        ? [
-            'Diepgaande kennis over Server Components en hoe deze de architectuur van React applicaties veranderen',
-            'Praktische technieken voor het optimaliseren van bundle sizes en runtime performance',
-            'Nieuwe patterns voor state management in moderne React applicaties',
-            'Best practices voor toegankelijkheid in complexe UI componenten',
-          ]
-        : [
-            'In-depth knowledge about Server Components and how they change React application architecture',
-            'Practical techniques for optimizing bundle sizes and runtime performance',
-            'New patterns for state management in modern React applications',
-            'Best practices for accessibility in complex UI components',
-          ],
-      conclusion: language === 'nl'
-        ? 'Deze conferentie heeft mijn perspectief op moderne frontend development verrijkt. De combinatie van technische diepgang en praktische voorbeelden maakt dat ik direct aan de slag kan met de nieuwe kennis in mijn projecten.'
-        : 'This conference enriched my perspective on modern frontend development. The combination of technical depth and practical examples allows me to immediately apply the new knowledge in my projects.',
-    },
-    'dutch-tech-meetup': {
-      type: 'Meetup',
-      title: 'Dutch Tech Meetup',
-      date: language === 'nl' ? '8 Februari 2024' : 'February 8, 2024',
-      location: 'Rotterdam, Netherlands',
-      attendees: language === 'nl' ? '85 deelnemers' : '85 participants',
-      description: language === 'nl'
-        ? 'Maandelijkse meetup voor tech enthusiasts om kennis te delen en te netwerken.'
-        : 'Monthly meetup for tech enthusiasts to share knowledge and network.',
-      experience: language === 'nl'
-        ? 'De Dutch Tech Meetup was een geweldige kans om lokale developers te ontmoeten en kennis uit te wisselen over verschillende technologieën.'
-        : 'The Dutch Tech Meetup was a great opportunity to meet local developers and exchange knowledge about various technologies.',
-      highlights: language === 'nl'
-        ? [
-            'Presentaties over AI en machine learning',
-            'Discussies over cloud architectuur',
-            'Netwerken met lokale tech community',
-          ]
-        : [
-            'Presentations on AI and machine learning',
-            'Discussions about cloud architecture',
-            'Networking with local tech community',
-          ],
-      learnings: language === 'nl'
-        ? [
-            'Nieuwe inzichten in AI implementaties',
-            'Best practices voor cloud-native applicaties',
-            'Community driven development approaches',
-          ]
-        : [
-            'New insights into AI implementations',
-            'Best practices for cloud-native applications',
-            'Community driven development approaches',
-          ],
-      conclusion: language === 'nl'
-        ? 'Een waardevolle ervaring die mij heeft geholpen om mijn netwerk uit te breiden en nieuwe perspectieven te krijgen op moderne technologieën.'
-        : 'A valuable experience that helped me expand my network and gain new perspectives on modern technologies.',
-    },
-    'ai-innovation-day': {
-      type: 'Workshop',
-      title: 'AI Innovation Day',
-      date: language === 'nl' ? '22 Januari 2024' : 'January 22, 2024',
-      location: 'Utrecht, Netherlands',
-      attendees: language === 'nl' ? '50 deelnemers' : '50 participants',
-      description: language === 'nl'
-        ? 'Hands-on workshop over AI implementaties in moderne webapplicaties.'
-        : 'Hands-on workshop about AI implementations in modern web applications.',
-      experience: language === 'nl'
-        ? 'AI Innovation Day bood een praktische hands-on ervaring met de nieuwste AI technologieën en hoe deze te integreren in webapplicaties.'
-        : 'AI Innovation Day offered a practical hands-on experience with the latest AI technologies and how to integrate them into web applications.',
-      highlights: language === 'nl'
-        ? [
-            'Praktische workshops met GPT-4 en Claude AI',
-            'Use cases van AI in productiegerichte applicaties',
-            'Ethical AI en responsible development',
-          ]
-        : [
-            'Practical workshops with GPT-4 and Claude AI',
-            'AI use cases in production applications',
-            'Ethical AI and responsible development',
-          ],
-      learnings: language === 'nl'
-        ? [
-            'Implementatie van AI APIs in webapplicaties',
-            'Prompting technieken voor betere AI responses',
-            'Privacy en security considerations bij AI gebruik',
-          ]
-        : [
-            'Implementation of AI APIs in web applications',
-            'Prompting techniques for better AI responses',
-            'Privacy and security considerations when using AI',
-          ],
-      conclusion: language === 'nl'
-        ? 'Deze workshop heeft mij de tools en kennis gegeven om AI effectief te integreren in mijn projecten, met een focus op praktische toepassingen en ethische overwegingen.'
-        : 'This workshop gave me the tools and knowledge to effectively integrate AI into my projects, with a focus on practical applications and ethical considerations.',
     },
   };
 

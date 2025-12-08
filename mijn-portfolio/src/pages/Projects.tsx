@@ -213,7 +213,18 @@ const Projects: React.FC<ProjectsProps> = ({ language, onProjectSelect }) => {
       status: 'completed',
       technologies: ['Lovable', 'n8n', 'Apify', 'OpenAI', 'Mollie'],
       image: `${import.meta.env.BASE_URL}Projects/FoodSwipe/FoodSwipe1.png`,
-    }
+    },
+    {
+      id: '13',
+      title: 'WoningSpotters',
+      description: language === 'nl'
+        ? 'Een platform dat data scrapet van de meeste woningwebsites voor koop en huur. De frontend is in React en de scrape is Python gecombineerd met Apify. Het platform zorgt voor een overzichtelijk systeem voor woningzoekers om al hun zoekopdrachten te beheren. Binnen 1 dag gemaakt tijdens het Apify $1M Challenge.'
+        : 'A platform that scrapes data from most housing websites for sale and rent. The frontend is in React and the scraping is Python combined with Apify. The platform provides a clear system for home seekers to manage all their searches. Built within 1 day during the Apify $1M Challenge.',
+      category: 'event',
+      status: 'completed',
+      technologies: ['React', 'Python', 'Apify'],
+      image: `${import.meta.env.BASE_URL}Projects/Woningspotters/WoningSpotters1.png`,
+    },
   ];
 
   const filterOptions = [

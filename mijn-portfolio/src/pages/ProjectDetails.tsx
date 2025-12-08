@@ -952,8 +952,83 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
   ],
   images: [
     `${import.meta.env.BASE_URL}Projects/FoodSwipe/FoodSwipe1.png`,
+    `${import.meta.env.BASE_URL}Projects/FoodSwipe/FoodSwipe2.mp4`,
   ],
   liveUrl: 'https://tally.so/r/EkqvxL', // Waitlist link
+  githubUrl: '#'
+},
+'13': {
+  title: 'WoningSpotters',
+  subtitle: language === 'nl' ? 'Woning scraping & zoekplatform' : 'Housing scraping & search platform',
+  category: 'event',
+  status: 'completed',
+  description: language === 'nl'
+    ? 'Een platform dat data scrapet van de meeste woningwebsites voor koop en huur. Met een team van 4 personen hebben we in 1 dag een volledig werkend platform gebouwd voor woningzoekers tijdens het Apify $1M Challenge.'
+    : 'A platform that scrapes data from most housing websites for sale and rent. With a team of 4 people we built a fully working platform in 1 day for home seekers during the Apify $1M Challenge.',
+  longDescription: language === 'nl'
+    ? 'WoningSpotters is gebouwd tijdens het Apify $1M Challenge om mensen die op zoek zijn naar een woning een overzichtelijk platform te bieden voor al hun zoekopdrachten. Het platform scrapet data van de meeste Nederlandse woningwebsites voor zowel koop- als huurwoningen. De frontend is gebouwd in React voor een snelle en gebruiksvriendelijke interface, terwijl het scrape-gedeelte is ontwikkeld in Python en gecombineerd met Apify voor betrouwbare data-extractie. Dit project is binnen 1 dag volledig gerealiseerd tijdens deze challenge.'
+    : 'WoningSpotters was built during the Apify $1M Challenge to provide people looking for housing with a clear platform for all their search queries. The platform scrapes data from most Dutch housing websites for both sale and rental properties. The frontend is built in React for a fast and user-friendly interface, while the scraping part is developed in Python and combined with Apify for reliable data extraction. This project was fully realized within 1 day during this challenge.',
+  technologies: ['React', 'Python', 'Apify', 'Web Scraping'],
+  duration: language === 'nl' ? '1 dag (Apify $1M Challenge)' : '1 day (Apify $1M Challenge)',
+  teamSize: language === 'nl' ? '4 personen' : '4 people',
+  myRole: language === 'nl' ? 'Frontend Developer' : 'Frontend Developer',
+  features: language === 'nl' ? [
+    'Data scraping van meeste Nederlandse woningwebsites',
+    'Koop- en huurwoningen in één platform',
+    'Overzichtelijk zoekinterface',
+    'React frontend voor snelle performance',
+    'Python scraping engine met Apify',
+    'Real-time woningdata',
+    'Zoekopdrachten beheren',
+    'Gebruiksvriendelijk dashboard'
+  ] : [
+    'Data scraping from most Dutch housing websites',
+    'Sale and rental properties in one platform',
+    'Clear search interface',
+    'React frontend for fast performance',
+    'Python scraping engine with Apify',
+    'Real-time housing data',
+    'Manage search queries',
+    'User-friendly dashboard'
+  ],
+  challenges: language === 'nl' ? [
+    'Binnen 1 dag een werkend platform bouwen',
+    'Data scrapen van meerdere woningwebsites',
+    'Verschillende data formats combineren',
+    'Snelle en overzichtelijke UI ontwikkelen'
+  ] : [
+    'Building a working platform within 1 day',
+    'Scraping data from multiple housing websites',
+    'Combining different data formats',
+    'Developing a fast and clear UI'
+  ],
+  solutions: language === 'nl' ? [
+    'Apify voor robuuste web scraping',
+    'Python voor efficiënte data processing',
+    'React voor responsive en snelle interface',
+    'Focus op core functionaliteit voor snelle delivery'
+  ] : [
+    'Apify for robust web scraping',
+    'Python for efficient data processing',
+    'React for responsive and fast interface',
+    'Focus on core functionality for fast delivery'
+  ],
+  results: language === 'nl' ? [
+    'Volledig werkend platform binnen 1 dag',
+    '3e plaats behaald bij Apify $1M Challenge',
+    'Succesvolle data scraping van meerdere websites',
+    'Overzichtelijk platform voor woningzoekers'
+  ] : [
+    'Fully working platform within 1 day',
+    'Achieved 3rd place at Apify $1M Challenge',
+    'Successful data scraping from multiple websites',
+    'Clear platform for home seekers'
+  ],
+  images: [
+    `${import.meta.env.BASE_URL}Projects/Woningspotters/WoningSpotters1.png`,
+    `${import.meta.env.BASE_URL}Projects/Woningspotters/WoningSpotters2.MP4`,
+  ],
+  liveUrl: 'https://www.woningspotter.com/',
   githubUrl: '#'
 },
     };
@@ -1020,11 +1095,22 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
                 <h2 className="text-2xl font-bold mb-6">{t.screenshots}</h2>
                 <div className="relative">
                   <div className="aspect-video bg-muted rounded-lg overflow-hidden mb-4">
-                    <img
-                      src={project.images[currentImageIndex]}
-                      alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-                      className="w-full h-full object-cover"
-                    />
+                    {project.images[currentImageIndex]?.toLowerCase().endsWith('.mp4') ? (
+                      <video
+                        src={project.images[currentImageIndex]}
+                        className="w-full h-full object-cover"
+                        controls
+                        autoPlay
+                        loop
+                        muted
+                      />
+                    ) : (
+                      <img
+                        src={project.images[currentImageIndex]}
+                        alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                        className="w-full h-full object-cover"
+                      />
+                    )}
                   </div>
                   <div className="flex justify-center gap-2 mb-4">
                     {project.images.map((_: any, index: number) => (
