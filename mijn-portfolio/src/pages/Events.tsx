@@ -145,6 +145,19 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       image: '/events/ApifyChallenge.jpeg',
     },
     {
+      id: 'elevenlabs-worldwide-hackathon',
+      type: 'Hackathon',
+      title: language === 'nl' ? 'ElevenLabs Worldwide Hackathon' : 'ElevenLabs Worldwide Hackathon',
+      date: language === 'nl' ? '11 december 2025' : 'December 11, 2025',
+      dateSort: '2025-12-11',
+      location: language === 'nl' ? 'Wereldwijd (30 steden)' : 'Worldwide (30 cities)',
+      attendees: language === 'nl' ? 'TBD (teams van 2-4)' : 'TBD (teams of 2-4)',
+      description: language === 'nl'
+        ? 'De grootste wereldwijde hackathon van ElevenLabs gericht op Conversational Agents. Een avond vol innovatie en samenwerking met de beste builders, ontwerpers en AI engineers, met meer dan $200K aan prijzen.'
+        : 'ElevenLabs\' largest ever worldwide hackathon focused on Conversational Agents. An evening of innovation and collaboration with the world\'s best builders, designers and AI engineers, featuring over $200K in prizes.',
+      image: '/events/ElevenLabsHackathon.jpg',
+    },
+    {
       id: 'AI-Fixathon-Amsterdam',
       type: 'Hackathon',
       title: language === 'nl' ? 'AI Fixathon Amsterdam' : 'AI Fixathon Amsterdam',

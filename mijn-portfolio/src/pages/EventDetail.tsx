@@ -421,6 +421,70 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
         ? 'De Apify $1M Challenge was een geweldige ervaring! Met mijn team hebben we binnen één dag WoningSpotters gebouwd - een platform dat woningzoekers helpt door data te scrapen van meerdere woningwebsites. Het behalen van de 3e plaats met ~13 deelnemers was een mooie beloning voor onze harde werk. Ik heb enorm veel geleerd over web scraping, Apify, en het bouwen van een product onder tijdsdruk. De combinatie van React voor de frontend en Python + Apify voor de scraping werkte perfect samen. Dit project heeft me laten zien hoe krachtig web scraping kan zijn voor het oplossen van real-world problemen.'
         : 'The Apify $1M Challenge was a great experience! With my team, we built WoningSpotters within one day - a platform that helps home seekers by scraping data from multiple housing websites. Achieving 3rd place with ~13 participants was a nice reward for our hard work. I learned a lot about web scraping, Apify, and building a product under time pressure. The combination of React for the frontend and Python + Apify for scraping worked perfectly together. This project showed me how powerful web scraping can be for solving real-world problems.',
     },
+    'elevenlabs-worldwide-hackathon': {
+      type: 'Hackathon',
+      title: 'ElevenLabs Worldwide Hackathon',
+      date: language === 'nl' ? '11 december 2025' : 'December 11, 2025',
+      location: language === 'nl' ? 'Wereldwijd (30 steden)' : 'Worldwide (30 cities)',
+      attendees: language === 'nl' ? 'TBD (teams van 2-4)' : 'TBD (teams of 2-4)',
+      description: language === 'nl'
+        ? 'De grootste wereldwijde hackathon van ElevenLabs gericht op Conversational Agents. Een avond vol innovatie en samenwerking met de beste builders, ontwerpers en AI engineers, met meer dan $200K aan prijzen.'
+        : 'ElevenLabs\' largest ever worldwide hackathon focused on Conversational Agents. An evening of innovation and collaboration with the world\'s best builders, designers and AI engineers, featuring over $200K in prizes.',
+      image: '/events/ElevenLabsHackathon.jpg',
+      additionalImages: [],
+      experience: language === 'nl'
+        ? 'Op 11 december 2025 neem ik deel aan de ElevenLabs Worldwide Hackathon - het grootste hackathon evenement van ElevenLabs dat simultaan plaatsvindt in 30 steden wereldwijd. Deze avond staat in het teken van Conversational Agents, waarbij ik samen met andere builders, designers en AI engineers werk aan cutting-edge AI systemen die kunnen communiceren, samenwerken en co-creëren. Het belooft een intense en inspirerende avond te worden vol innovatie en real-world problem-solving.'
+        : 'On December 11, 2025, I\'m participating in the ElevenLabs Worldwide Hackathon - ElevenLabs\' largest hackathon event taking place simultaneously across 30 cities worldwide. This evening focuses on Conversational Agents, where I\'ll work alongside other builders, designers and AI engineers on cutting-edge AI systems that can communicate, collaborate and co-create. It promises to be an intense and inspiring evening full of innovation and real-world problem-solving.',
+      highlights: language === 'nl'
+        ? [
+            'Grootste ElevenLabs hackathon ooit - simultaan in 30 steden wereldwijd',
+            'Focus op Conversational Agents en cutting-edge AI communicatiesystemen',
+            'Totale prijzenpot van meer dan $200K',
+            'Global Winner krijgt: Diner met ElevenLabs Founding Team in Londen, presentatie op ElevenLabs Summit, 111 miljoen ElevenLabs credits',
+            '1e plaats (alle locaties): Apple AirPods, $6k in Stripe Credits, ElevenLabs Swag',
+            'Speciale Awards: Best Product met n8n, Bolt, BlackBox, CodeRabbit, Clerk',
+            'Samenwerking met top sponsors: Miro, Bolt, Clerk, n8n, BlackBox AI, CodeRabbit, Stripe, AI Tinkerers, &Open, Anthropic',
+            'Avondevenement van 18:00 tot 22:30',
+            'Team formation, kickoff talk en 3 uur intensive building',
+          ]
+        : [
+            'Largest ElevenLabs hackathon ever - simultaneously across 30 cities worldwide',
+            'Focus on Conversational Agents and cutting-edge AI communication systems',
+            'Total prize pool of over $200K',
+            'Global Winner receives: Dinner with ElevenLabs Founding Team in London, presentation at ElevenLabs Summit, 111 million ElevenLabs credits',
+            '1st place (all locations): Apple AirPods, $6k in Stripe Credits, ElevenLabs Swag',
+            'Special Awards: Best Product with n8n, Bolt, BlackBox, CodeRabbit, Clerk',
+            'Collaboration with top sponsors: Miro, Bolt, Clerk, n8n, BlackBox AI, CodeRabbit, Stripe, AI Tinkerers, &Open, Anthropic',
+            'Evening event from 18:00 to 22:30',
+            'Team formation, kickoff talk and 3 hours of intensive building',
+          ],
+      learnings: language === 'nl'
+        ? [
+            'Bouwen van Conversational AI Agents met state-of-the-art technieken',
+            'ElevenLabs API en voice/audio AI technologie voor realistische spraak',
+            'Miro gebruiken voor real-time collaborative design en system mapping',
+            'n8n voor workflow automation in AI agent systemen',
+            'Bolt voor snelle AI-driven development',
+            'BlackBox AI en CodeRabbit voor geoptimaliseerde code development',
+            'Clerk voor secure authentication in conversational apps',
+            'Rapid prototyping van AI systemen in een competitieve setting',
+            'Samenwerken met wereldwijde community van AI builders',
+          ]
+        : [
+            'Building Conversational AI Agents with state-of-the-art techniques',
+            'ElevenLabs API and voice/audio AI technology for realistic speech',
+            'Using Miro for real-time collaborative design and system mapping',
+            'n8n for workflow automation in AI agent systems',
+            'Bolt for rapid AI-driven development',
+            'BlackBox AI and CodeRabbit for optimized code development',
+            'Clerk for secure authentication in conversational apps',
+            'Rapid prototyping of AI systems in a competitive setting',
+            'Collaborating with global community of AI builders',
+          ],
+      conclusion: language === 'nl'
+        ? 'De ElevenLabs Worldwide Hackathon belooft een unieke ervaring te worden waarbij ik deel uitmaak van een wereldwijde beweging van builders die werken aan de toekomst van conversational AI. Met toegang tot cutting-edge tools van sponsors zoals n8n, Bolt, BlackBox AI en natuurlijk ElevenLabs zelf, krijg ik de kans om in één avond een werkend conversational agent prototype te bouwen. De combinatie van een competitieve omgeving, top-tier tooling en een wereldwijde community maakt dit evenement perfect om mijn AI development skills naar een hoger niveau te tillen.'
+        : 'The ElevenLabs Worldwide Hackathon promises to be a unique experience where I\'m part of a global movement of builders working on the future of conversational AI. With access to cutting-edge tools from sponsors like n8n, Bolt, BlackBox AI and of course ElevenLabs itself, I get the opportunity to build a working conversational agent prototype in one evening. The combination of a competitive environment, top-tier tooling and a global community makes this event perfect for taking my AI development skills to the next level.',
+    },
     'AI-Fixathon-Amsterdam': {
       type: 'Hackathon',
       title: 'AI Fixathon Amsterdam',
