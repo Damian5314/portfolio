@@ -224,6 +224,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                       onChange={handleInputChange}
                       placeholder={t.form.namePlaceholder}
                       required
+                      style={{ backgroundColor: 'hsl(var(--header-footer))' }}
                     />
                   </div>
 
@@ -237,6 +238,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                       onChange={handleInputChange}
                       placeholder={t.form.emailPlaceholder}
                       required
+                      style={{ backgroundColor: 'hsl(var(--header-footer))' }}
                     />
                   </div>
 
@@ -250,6 +252,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
                       placeholder={t.form.messagePlaceholder}
                       rows={6}
                       required
+                      style={{ backgroundColor: 'hsl(var(--header-footer))' }}
                     />
                   </div>
 

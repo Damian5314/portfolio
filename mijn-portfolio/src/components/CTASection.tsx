@@ -20,7 +20,7 @@ const CTASection: React.FC<CTASectionProps> = ({ language }) => {
   const t = translations[language];
 
   return (
-    <footer className="border-t border-border mt-16">
+    <footer className="border-t border-border mt-16" style={{ backgroundColor: 'hsl(45, 46%, 94%)' }}>
       <div className="py-6 text-center text-sm text-muted-foreground">
         <p>
           © 2025-{currentYear} Damian Willemse •{' '}

@@ -212,6 +212,7 @@ const Events: React.FC<EventsProps> = ({ language }) => {
               variant="outline"
               onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
               className="gap-2"
+              style={{ backgroundColor: 'hsl(var(--header-footer))' }}
             >
               <ArrowUpDown className="w-4 h-4" />
               {sortOrder === 'desc' ? t.newest : t.oldest}

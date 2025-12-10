@@ -45,7 +45,7 @@ const Navigation: React.FC<NavigationProps> = ({ language, onLanguageChange }) =
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-border" style={{ backgroundColor: 'hsl(var(--header-footer) / 0.95)' }}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}

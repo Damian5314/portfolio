@@ -40,7 +40,7 @@ const Home: React.FC<HomeProps> = ({ language }) => {
   const t = translations[language];
 
   return (
-    <div className="min-h-screen bg-hero-gradient">
+    <div className="min-h-screen bg-background">
       {/* Hero Section */}
       <section className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="container mx-auto">
@@ -74,7 +74,7 @@ const Home: React.FC<HomeProps> = ({ language }) => {
                 <Button asChild size="lg" className="text-lg px-8 py-3">
                   <Link to="/projects">{t.viewProjects}</Link>
                 </Button>
-                <Button asChild variant="outline" size="lg" className="text-lg px-8 py-3">
+                <Button asChild variant="outline" size="lg" className="text-lg px-8 py-3" style={{ backgroundColor: 'hsl(var(--header-footer))' }}>
                   <Link to="/contact">{t.contact}</Link>
                 </Button>
               </div>

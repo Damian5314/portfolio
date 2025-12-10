@@ -270,6 +270,7 @@ const Projects: React.FC<ProjectsProps> = ({ language, onProjectSelect }) => {
                 variant={activeFilter === filter.key ? 'default' : 'outline'}
                 onClick={() => setActiveFilter(filter.key)}
                 className="text-sm"
+                style={activeFilter !== filter.key ? { backgroundColor: 'hsl(var(--header-footer))' } : undefined}
               >
                 {filter.label}
               </Button>

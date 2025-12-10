@@ -211,6 +211,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
                 variant="outline"
                 size="lg"
                 className="text-lg px-8 py-3"
+                style={{ backgroundColor: 'hsl(var(--header-footer))' }}
                 onClick={() => setShowCVDialog(true)}
               >
                 <Download className="h-5 w-5 mr-2" />
