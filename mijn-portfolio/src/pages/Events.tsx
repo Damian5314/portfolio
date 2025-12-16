@@ -150,11 +150,11 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       title: language === 'nl' ? 'ElevenLabs Worldwide Hackathon' : 'ElevenLabs Worldwide Hackathon',
       date: language === 'nl' ? '11 december 2025' : 'December 11, 2025',
       dateSort: '2025-12-11',
-      location: language === 'nl' ? 'Wereldwijd (30 steden)' : 'Worldwide (30 cities)',
-      attendees: language === 'nl' ? 'TBD (teams van 2-4)' : 'TBD (teams of 2-4)',
+      location: language === 'nl' ? 'Amsterdam, Nederland (deel van 30 steden wereldwijd)' : 'Amsterdam, Netherlands (part of 30 cities worldwide)',
+      attendees: language === 'nl' ? 'Teams van 2-4 personen' : 'Teams of 2-4 people',
       description: language === 'nl'
-        ? 'De grootste wereldwijde hackathon van ElevenLabs gericht op Conversational Agents. Een avond vol innovatie en samenwerking met de beste builders, ontwerpers en AI engineers, met meer dan $200K aan prijzen.'
-        : 'ElevenLabs\' largest ever worldwide hackathon focused on Conversational Agents. An evening of innovation and collaboration with the world\'s best builders, designers and AI engineers, featuring over $200K in prizes.',
+        ? 'De grootste wereldwijde hackathon van ElevenLabs gericht op Conversational Agents. We hebben LifeAdmin gebouwd - een AI assistent voor automatische afspraakplanning - en de 2e plaats behaald!'
+        : 'ElevenLabs\' largest ever worldwide hackathon focused on Conversational Agents. We built LifeAdmin - an AI assistant for automatic appointment scheduling - and achieved 2nd place!',
       image: '/events/ElevenLabsHackathon.jpg',
     },
     {
@@ -166,8 +166,8 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       location: 'Vandebron, Amsterdam',
       attendees: language === 'nl' ? 'Max 40 deelnemers' : 'Max 40 participants',
       description: language === 'nl'
-        ? 'Een 24-uurs AI hackathon gericht op de UN Sustainable Development Goals. Bouw AI apps/tools die echte impact maken op gebieden als gezondheid, duurzaamheid en schone energie. Deel van de wereldwijde Norrsken Fixathon serie.'
-        : 'A 24-hour AI hackathon focused on the UN Sustainable Development Goals. Build AI apps/tools that make real impact in areas like health, sustainability and clean energy. Part of the global Norrsken Fixathon series.',
+        ? 'Een 24-uurs AI hackathon gericht op de UN Sustainable Development Goals. We hebben WorkRight Navigator gebouwd - een AI-tool die kwetsbare werknemers helpt na ontslag.'
+        : 'A 24-hour AI hackathon focused on the UN Sustainable Development Goals. We built WorkRight Navigator - an AI tool that helps vulnerable employees after dismissal.',
       image: '/events/AIFixathonAmsterdam.jpg',
     },
   ];

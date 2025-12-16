@@ -373,8 +373,8 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       image: '/events/ApifyChallenge.jpeg',
       additionalImages: ['/events/ApifyChallenge1.JPG', '/events/ApifyChallenge2.jpg'],
       experience: language === 'nl'
-        ? 'Tijdens de Apify $1M Challenge op 6 december 2024 heb ik met een team van 4 personen binnen één dag een volledig werkend woningscraping platform gebouwd. We hebben WoningSpotters gemaakt - een platform dat data scrapet van de meeste Nederlandse woningwebsites voor zowel koop- als huurwoningen. De frontend is gebouwd in React en het scrape-gedeelte in Python gecombineerd met Apify. Het was een intense maar zeer leerzame dag waarbij we de kracht van web scraping hebben toegepast op een real-world probleem.'
-        : 'During the Apify $1M Challenge on December 6, 2024, I built a fully working housing scraping platform with a team of 4 people within one day. We created WoningSpotters - a platform that scrapes data from most Dutch housing websites for both sale and rental properties. The frontend is built in React and the scraping part in Python combined with Apify. It was an intense but very educational day where we applied the power of web scraping to a real-world problem.',
+        ? 'Tijdens de Apify $1M Challenge op 6 december 2025 heb ik met een team van 4 personen binnen één dag een volledig werkend woningscraping platform gebouwd. We hebben WoningSpotters gemaakt - een platform dat data scrapet van de meeste Nederlandse woningwebsites voor zowel koop- als huurwoningen. De frontend is gebouwd in React en het scrape-gedeelte in Python gecombineerd met Apify. Het was een intense maar zeer leerzame dag waarbij we de kracht van web scraping hebben toegepast op een real-world probleem.'
+        : 'During the Apify $1M Challenge on December 6, 2025, I built a fully working housing scraping platform with a team of 4 people within one day. We created WoningSpotters - a platform that scrapes data from most Dutch housing websites for both sale and rental properties. The frontend is built in React and the scraping part in Python combined with Apify. It was an intense but very educational day where we applied the power of web scraping to a real-world problem.',
       highlights: language === 'nl'
         ? [
             'Één dag hackathon van 10:00 tot 18:00 in het historische Meet Berlage',
@@ -425,122 +425,125 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
       type: 'Hackathon',
       title: 'ElevenLabs Worldwide Hackathon',
       date: language === 'nl' ? '11 december 2025' : 'December 11, 2025',
-      location: language === 'nl' ? 'Wereldwijd (30 steden)' : 'Worldwide (30 cities)',
-      attendees: language === 'nl' ? 'TBD (teams van 2-4)' : 'TBD (teams of 2-4)',
+      location: language === 'nl' ? 'Amsterdam, Nederland (deel van 30 steden wereldwijd)' : 'Amsterdam, Netherlands (part of 30 cities worldwide)',
+      attendees: language === 'nl' ? 'Teams van 2-4 personen' : 'Teams of 2-4 people',
       description: language === 'nl'
         ? 'De grootste wereldwijde hackathon van ElevenLabs gericht op Conversational Agents. Een avond vol innovatie en samenwerking met de beste builders, ontwerpers en AI engineers, met meer dan $200K aan prijzen.'
         : 'ElevenLabs\' largest ever worldwide hackathon focused on Conversational Agents. An evening of innovation and collaboration with the world\'s best builders, designers and AI engineers, featuring over $200K in prizes.',
       image: '/events/ElevenLabsHackathon.jpg',
-      additionalImages: [],
+      additionalImages: ['/events/ElevenLabsHackathon1.jpeg', '/events/ElevenLabsHackathon2.jpeg'],
       experience: language === 'nl'
-        ? 'Op 11 december 2025 neem ik deel aan de ElevenLabs Worldwide Hackathon - het grootste hackathon evenement van ElevenLabs dat simultaan plaatsvindt in 30 steden wereldwijd. Deze avond staat in het teken van Conversational Agents, waarbij ik samen met andere builders, designers en AI engineers werk aan cutting-edge AI systemen die kunnen communiceren, samenwerken en co-creëren. Het belooft een intense en inspirerende avond te worden vol innovatie en real-world problem-solving.'
-        : 'On December 11, 2025, I\'m participating in the ElevenLabs Worldwide Hackathon - ElevenLabs\' largest hackathon event taking place simultaneously across 30 cities worldwide. This evening focuses on Conversational Agents, where I\'ll work alongside other builders, designers and AI engineers on cutting-edge AI systems that can communicate, collaborate and co-create. It promises to be an intense and inspiring evening full of innovation and real-world problem-solving.',
+        ? 'Ik ging naar de ElevenLabs Worldwide Hackathon samen met Hicham Tahiri, Wishant Bhajan en Rachid Ouaalit. In een paar uur tijd hebben we LifeAdmin ontwikkeld: een persoonlijke AI assistent die met ElevenLabs, n8n en bolt.new automatisch afspraken voor je plant. Je vraagt iets aan de chatbot en LifeAdmin regelt het volledig zelfstandig, inclusief het toevoegen aan je agenda. Een kleine demo, maar met grote potentie om het dagelijks leven makkelijker te maken. We zijn tweede plaats geworden en hebben daarmee leuke prijzen gewonnen!'
+        : 'I attended the ElevenLabs Worldwide Hackathon together with Hicham Tahiri, Wishant Bhajan and Rachid Ouaalit. In just a few hours, we developed LifeAdmin: a personal AI assistant that automatically schedules appointments for you using ElevenLabs, n8n and bolt.new. You ask the chatbot something and LifeAdmin handles it completely autonomously, including adding it to your calendar. A small demo, but with great potential to make daily life easier. We achieved 2nd place and won some nice prizes!',
       highlights: language === 'nl'
         ? [
-            'Grootste ElevenLabs hackathon ooit - simultaan in 30 steden wereldwijd',
-            'Focus op Conversational Agents en cutting-edge AI communicatiesystemen',
-            'Totale prijzenpot van meer dan $200K',
-            'Global Winner krijgt: Diner met ElevenLabs Founding Team in Londen, presentatie op ElevenLabs Summit, 111 miljoen ElevenLabs credits',
-            '1e plaats (alle locaties): Apple AirPods, $6k in Stripe Credits, ElevenLabs Swag',
-            'Speciale Awards: Best Product met n8n, Bolt, BlackBox, CodeRabbit, Clerk',
-            'Samenwerking met top sponsors: Miro, Bolt, Clerk, n8n, BlackBox AI, CodeRabbit, Stripe, AI Tinkerers, &Open, Anthropic',
-            'Avondevenement van 18:00 tot 22:30',
-            'Team formation, kickoff talk en 3 uur intensive building',
+            'Ontwikkeling van LifeAdmin: een AI assistent voor automatische afspraakplanning',
+            '2e plaats behaald met ons team van 4 personen!',
+            'Volledige integratie van ElevenLabs voor conversational AI',
+            'n8n workflow automation voor agenda synchronisatie',
+            'Rapid prototyping met bolt.new voor snelle ontwikkeling',
+            'Autonome AI agent die zelfstandig afspraken plant en toevoegt aan agenda',
+            'Deel van wereldwijd evenement met 30 steden simultaan',
+            'Gezellige avond met inspirerende builders en creatieve projecten',
+            'Prijzen gewonnen voor 2e plaats',
           ]
         : [
-            'Largest ElevenLabs hackathon ever - simultaneously across 30 cities worldwide',
-            'Focus on Conversational Agents and cutting-edge AI communication systems',
-            'Total prize pool of over $200K',
-            'Global Winner receives: Dinner with ElevenLabs Founding Team in London, presentation at ElevenLabs Summit, 111 million ElevenLabs credits',
-            '1st place (all locations): Apple AirPods, $6k in Stripe Credits, ElevenLabs Swag',
-            'Special Awards: Best Product with n8n, Bolt, BlackBox, CodeRabbit, Clerk',
-            'Collaboration with top sponsors: Miro, Bolt, Clerk, n8n, BlackBox AI, CodeRabbit, Stripe, AI Tinkerers, &Open, Anthropic',
-            'Evening event from 18:00 to 22:30',
-            'Team formation, kickoff talk and 3 hours of intensive building',
+            'Development of LifeAdmin: an AI assistant for automatic appointment scheduling',
+            'Achieved 2nd place with our team of 4 people!',
+            'Full integration of ElevenLabs for conversational AI',
+            'n8n workflow automation for calendar synchronization',
+            'Rapid prototyping with bolt.new for fast development',
+            'Autonomous AI agent that independently schedules and adds appointments to calendar',
+            'Part of global event with 30 cities simultaneously',
+            'Fun evening with inspiring builders and creative projects',
+            'Won prizes for 2nd place',
           ],
       learnings: language === 'nl'
         ? [
-            'Bouwen van Conversational AI Agents met state-of-the-art technieken',
-            'ElevenLabs API en voice/audio AI technologie voor realistische spraak',
-            'Miro gebruiken voor real-time collaborative design en system mapping',
-            'n8n voor workflow automation in AI agent systemen',
-            'Bolt voor snelle AI-driven development',
-            'BlackBox AI en CodeRabbit voor geoptimaliseerde code development',
-            'Clerk voor secure authentication in conversational apps',
-            'Rapid prototyping van AI systemen in een competitieve setting',
-            'Samenwerken met wereldwijde community van AI builders',
+            'ElevenLabs API integratie voor natuurlijke conversational AI',
+            'n8n workflow automation voor complexe agenda synchronisatie',
+            'Bolt.new voor rapid AI-driven development en prototyping',
+            'Bouwen van autonome AI agents die zelfstandig taken uitvoeren',
+            'Conversational interface design voor intuïtieve gebruikerservaringen',
+            'Van idee naar werkend product in slechts een paar uur',
+            'Effectief samenwerken in een team onder tijdsdruk',
+            'Kracht van AI automation voor dagelijkse taken',
           ]
         : [
-            'Building Conversational AI Agents with state-of-the-art techniques',
-            'ElevenLabs API and voice/audio AI technology for realistic speech',
-            'Using Miro for real-time collaborative design and system mapping',
-            'n8n for workflow automation in AI agent systems',
-            'Bolt for rapid AI-driven development',
-            'BlackBox AI and CodeRabbit for optimized code development',
-            'Clerk for secure authentication in conversational apps',
-            'Rapid prototyping of AI systems in a competitive setting',
-            'Collaborating with global community of AI builders',
+            'ElevenLabs API integration for natural conversational AI',
+            'n8n workflow automation for complex calendar synchronization',
+            'Bolt.new for rapid AI-driven development and prototyping',
+            'Building autonomous AI agents that independently execute tasks',
+            'Conversational interface design for intuitive user experiences',
+            'From idea to working product in just a few hours',
+            'Effective team collaboration under time pressure',
+            'Power of AI automation for daily tasks',
           ],
       conclusion: language === 'nl'
-        ? 'De ElevenLabs Worldwide Hackathon belooft een unieke ervaring te worden waarbij ik deel uitmaak van een wereldwijde beweging van builders die werken aan de toekomst van conversational AI. Met toegang tot cutting-edge tools van sponsors zoals n8n, Bolt, BlackBox AI en natuurlijk ElevenLabs zelf, krijg ik de kans om in één avond een werkend conversational agent prototype te bouwen. De combinatie van een competitieve omgeving, top-tier tooling en een wereldwijde community maakt dit evenement perfect om mijn AI development skills naar een hoger niveau te tillen.'
-        : 'The ElevenLabs Worldwide Hackathon promises to be a unique experience where I\'m part of a global movement of builders working on the future of conversational AI. With access to cutting-edge tools from sponsors like n8n, Bolt, BlackBox AI and of course ElevenLabs itself, I get the opportunity to build a working conversational agent prototype in one evening. The combination of a competitive environment, top-tier tooling and a global community makes this event perfect for taking my AI development skills to the next level.',
+        ? 'De ElevenLabs Worldwide Hackathon was een geweldige ervaring! Het was inspirerend om te zien wat mensen en wijzelf in zo een korte tijd konden maken. Ons project LifeAdmin was een mooie demonstratie van hoe conversational AI het dagelijks leven kan vereenvoudigen. Het behalen van de 2e plaats was een leuke verrassing en een bevestiging dat ons concept potentie heeft. De combinatie van ElevenLabs, n8n en bolt.new bleek perfect te werken voor het bouwen van een autonome AI assistent. Het was een gezellige avond vol innovatie en creativiteit.'
+        : 'The ElevenLabs Worldwide Hackathon was a great experience! It was inspiring to see what people and we ourselves could create in such a short time. Our project LifeAdmin was a nice demonstration of how conversational AI can simplify daily life. Achieving 2nd place was a nice surprise and confirmation that our concept has potential. The combination of ElevenLabs, n8n and bolt.new proved perfect for building an autonomous AI assistant. It was a fun evening full of innovation and creativity.',
     },
     'AI-Fixathon-Amsterdam': {
       type: 'Hackathon',
       title: 'AI Fixathon Amsterdam',
-      date: language === 'nl' ? '13-14 december 2024' : 'December 13-14, 2024',
+      date: language === 'nl' ? '13-14 december 2025' : 'December 13-14, 2025',
       location: 'Vandebron, Amsterdam',
       attendees: language === 'nl' ? 'Max 40 deelnemers' : 'Max 40 participants',
       description: language === 'nl'
         ? 'Een 24-uurs AI hackathon gericht op de UN Sustainable Development Goals. Powered by Norrsken x AI for Impact Collective x AI Builders.'
         : 'A 24-hour AI hackathon focused on the UN Sustainable Development Goals. Powered by Norrsken x AI for Impact Collective x AI Builders.',
       image: '/events/AIFixathonAmsterdam.jpg',
+      additionalImages: ['/events/AIFixathonAmsterdam1.jpeg', '/events/AIFixathonAmsterdam2.jpeg', '/events/AIFixathonAmsterdam3.jpeg', '/events/AIFixathonAmsterdam4.mp4'],
       experience: language === 'nl'
-        ? 'Dit evenement vindt plaats op 13-14 december 2024. Het belooft een intensief weekend te worden waarin ik in een team van max 3 personen aan AI-oplossingen werk voor echte wereldproblemen. Met focus op de UN SDGs en challenges van partners zoals LUMC, wordt dit een kans om technologie in te zetten voor maatschappelijke impact.'
-        : 'This event takes place on December 13-14, 2024. It promises to be an intensive weekend where I will work in a team of max 3 people on AI solutions for real world problems. With focus on the UN SDGs and challenges from partners like LUMC, this will be an opportunity to use technology for social impact.',
+        ? 'Ik ging naar de AI Fixathon Amsterdam samen met Hicham Tahiri, Wishant Bhajan, Rachid Ouaalit, Mohammad Falaha en Elfarouq Bakr. We waren in 2 teams gesplitst en ik heb samen met Wishant en Elfarouq de casus WorkRight behandeld. WorkRight Navigator is een AI-concept dat kwetsbare werknemers helpt om na ontslag beter te begrijpen welke stappen er zijn, wat er gebeurt, en hoe zij zich kunnen voorbereiden voordat ze met een juridisch loket of adviseur praten. Het was een gezellige sfeer waarin ik veel slimme en interessante mensen heb ontmoet en ook veel nieuwe tools heb geleerd zoals GreenPT en ActivePieces.'
+        : 'I attended the AI Fixathon Amsterdam together with Hicham Tahiri, Wishant Bhajan, Rachid Ouaalit, Mohammad Falaha and Elfarouq Bakr. We were split into 2 teams and I worked with Wishant and Elfarouq on the WorkRight case. WorkRight Navigator is an AI concept that helps vulnerable employees better understand what steps are involved after dismissal, what happens, and how they can prepare before speaking with a legal desk or advisor. It was a friendly atmosphere where I met many smart and interesting people and also learned many new tools like GreenPT and ActivePieces.',
       highlights: language === 'nl'
         ? [
             '24-uurs hackathon van zaterdag 10:00 tot zondag 18:00',
-            'Challenges gericht op SDGs: Gezondheid & Welzijn, Duurzaamheid & Circulaire Economie, Schone Energie & Climate Action',
-            'Challenge partner: Leids Universitair Medisch Centrum (LUMC)',
-            'Teams van max 3 personen, solo of met vrienden',
-            'Cloud credits & devtools van GreenPT en ActivePieces',
-            'Eten & drinken voorzien door Vandebron',
-            'Cash prijzen, credits, tool access en unieke gifts',
-            'Kans om prototype door te ontwikkelen tot real-life oplossing',
-            'Alle code moet open-source zijn',
+            'Ontwikkeling van WorkRight Navigator: AI-hulp voor kwetsbare werknemers na ontslag',
+            'SDG focus op Gezondheid & Welzijn - werknemersrechten en juridische toegang',
+            'Team van 3 personen: Wishant Bhajan, Elfarouq Bakr en mijzelf',
+            'Introductie tot GreenPT voor duurzame LLM implementatie',
+            'Hands-on ervaring met ActivePieces voor low-code AI agent building',
+            'Eten & drinken voorzien door Vandebron gedurende de 24 uur',
+            'Gezellige sfeer met slimme en interessante mensen uit de AI community',
+            'Netwerken met builders gericht op social impact en SDGs',
           ]
         : [
             '24-hour hackathon from Saturday 10:00 to Sunday 18:00',
-            'Challenges focused on SDGs: Health & Well-being, Sustainability & Circular Economy, Clean Energy & Climate Action',
-            'Challenge partner: Leiden University Medical Center (LUMC)',
-            'Teams of max 3 people, solo or with friends',
-            'Cloud credits & devtools from GreenPT and ActivePieces',
-            'Food & drinks provided by Vandebron',
-            'Cash prizes, credits, tool access and unique gifts',
-            'Opportunity to develop prototype into real-life solution',
-            'All code must be open-source',
+            'Development of WorkRight Navigator: AI assistance for vulnerable employees after dismissal',
+            'SDG focus on Health & Well-being - employee rights and legal access',
+            'Team of 3 people: Wishant Bhajan, Elfarouq Bakr and myself',
+            'Introduction to GreenPT for sustainable LLM implementation',
+            'Hands-on experience with ActivePieces for low-code AI agent building',
+            'Food & drinks provided by Vandebron throughout the 24 hours',
+            'Friendly atmosphere with smart and interesting people from the AI community',
+            'Networking with builders focused on social impact and SDGs',
           ],
       learnings: language === 'nl'
         ? [
-            'AI development gericht op maatschappelijke impact en SDGs',
-            'Low-code AI agent building met ActivePieces',
-            'Duurzame LLM implementatie met GreenPT',
-            'Samenwerken met medische sector (LUMC) op real-world challenges',
-            'Open-source development practices',
-            'Van prototype naar productie met challenge partners',
+            'AI development gericht op maatschappelijke impact en werknemersrechten',
+            'GreenPT voor duurzame en energie-efficiënte LLM implementatie',
+            'ActivePieces voor low-code AI agent building en workflow automation',
+            'Begrijpen van juridische processen en ondersteuning voor kwetsbare werknemers',
+            'Ontwerpen van toegankelijke AI-tools voor niet-technische gebruikers',
+            'Samenwerken aan social impact projecten binnen SDG framework',
+            'Open-source development practices voor maatschappelijke tools',
+            '24-uurs hackathon stamina en timemanagement',
           ]
         : [
-            'AI development focused on social impact and SDGs',
-            'Low-code AI agent building with ActivePieces',
-            'Sustainable LLM implementation with GreenPT',
-            'Collaborating with medical sector (LUMC) on real-world challenges',
-            'Open-source development practices',
-            'From prototype to production with challenge partners',
+            'AI development focused on social impact and employee rights',
+            'GreenPT for sustainable and energy-efficient LLM implementation',
+            'ActivePieces for low-code AI agent building and workflow automation',
+            'Understanding legal processes and support for vulnerable employees',
+            'Designing accessible AI tools for non-technical users',
+            'Collaborating on social impact projects within SDG framework',
+            'Open-source development practices for societal tools',
+            '24-hour hackathon stamina and time management',
           ],
       conclusion: language === 'nl'
-        ? 'De Norrsken AI Fixathon biedt een unieke kans om AI in te zetten voor échte maatschappelijke problemen. Als onderdeel van de wereldwijde Norrsken Fixathon serie, met focus op de UN SDGs en real-world challenges van partners zoals LUMC, wordt dit meer dan een gewone hackathon. De mogelijkheid om je prototype door te ontwikkelen tot een productie-oplossing maakt het extra waardevol.'
-        : 'The Norrsken AI Fixathon offers a unique opportunity to use AI for real societal problems. As part of the global Norrsken Fixathon series, with focus on the UN SDGs and real-world challenges from partners like LUMC, this becomes more than a regular hackathon. The opportunity to develop your prototype into a production solution makes it extra valuable.',
+        ? 'De AI Fixathon Amsterdam was een waardevolle ervaring waarin we AI konden inzetten voor een echt maatschappelijk probleem. Met WorkRight Navigator hebben we een concept ontwikkeld dat kwetsbare werknemers kan helpen navigeren door complexe juridische processen na ontslag. Het was bijzonder leerzaam om te werken met nieuwe tools zoals GreenPT voor duurzame AI en ActivePieces voor low-code development. De gezellige sfeer en het netwerken met slimme mensen uit de AI community maakte deze 24-uurs hackathon tot een memorabele ervaring. Het liet zien hoe krachtig AI kan zijn wanneer het wordt ingezet voor social impact en de UN Sustainable Development Goals.'
+        : 'The AI Fixathon Amsterdam was a valuable experience where we could deploy AI for a real societal problem. With WorkRight Navigator, we developed a concept that can help vulnerable employees navigate complex legal processes after dismissal. It was particularly educational to work with new tools like GreenPT for sustainable AI and ActivePieces for low-code development. The friendly atmosphere and networking with smart people from the AI community made this 24-hour hackathon a memorable experience. It showed how powerful AI can be when deployed for social impact and the UN Sustainable Development Goals.',
     },
   };
 
