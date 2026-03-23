@@ -13,6 +13,7 @@ import ProjectsApp from './pages/ProjectsApp';  // ← Alleen ProjectsApp import
 import Events from "./pages/Events";
 import EventDetail from "./pages/EventDetail";
 import About from "./pages/About";
+import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import Tools from "./pages/Tools";
 import NotFound from "./pages/NotFound";
@@ -42,6 +43,7 @@ const App = () => {
               <Route path="/events" element={<Events language={language} />} />
               <Route path="/events/:id" element={<EventDetail language={language} />} />
               <Route path="/about" element={<About language={language} />} />
+              <Route path="/experience" element={<Experience language={language} />} />
               <Route path="/contact" element={<Contact language={language} />} />
               <Route path="/tools" element={<Tools language={language} />} />
               <Route path="*" element={<NotFound />} />

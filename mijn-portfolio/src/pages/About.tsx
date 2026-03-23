@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Download } from 'lucide-react';
+import { Download, ArrowRight } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -31,6 +31,12 @@ const About: React.FC<AboutProps> = ({ language }) => {
         languages: 'Talen',
       },
       experienceTitle: 'Werkervaring',
+      experienceLink: 'Bekijk volledige werkervaring',
+      experienceHighlights: [
+        { role: 'Software Developer', company: '21South', period: 'Feb 2026 - Heden', logo: `${import.meta.env.BASE_URL}Work/21South_logo.png` },
+        { role: 'AI Development Stagiair', company: '21South', period: 'Sep 2025 - Jan 2026', logo: `${import.meta.env.BASE_URL}Work/21South_logo.png` },
+        { role: 'Logistiek Medewerker', company: 'MediaMarkt', period: 'Jul 2021 - Sep 2024', logo: `${import.meta.env.BASE_URL}Work/mediamarkt_logo.svg` },
+      ],
       experience: [
         {
           role: 'Software Developer',
@@ -119,6 +125,12 @@ const About: React.FC<AboutProps> = ({ language }) => {
         languages: 'Languages',
       },
       experienceTitle: 'Work Experience',
+      experienceLink: 'View full work experience',
+      experienceHighlights: [
+        { role: 'Software Developer', company: '21South', period: 'Feb 2026 - Present', logo: `${import.meta.env.BASE_URL}Work/21South_logo.png` },
+        { role: 'AI Development Intern', company: '21South', period: 'Sep 2025 - Jan 2026', logo: `${import.meta.env.BASE_URL}Work/21South_logo.png` },
+        { role: 'Logistics Associate', company: 'MediaMarkt', period: 'Jul 2021 - Sep 2024', logo: `${import.meta.env.BASE_URL}Work/mediamarkt_logo.svg` },
+      ],
       experience: [
         {
           role: 'Software Developer',
@@ -317,43 +329,27 @@ const About: React.FC<AboutProps> = ({ language }) => {
                 <CardTitle className="text-xl font-semibold">{t.experienceTitle}</CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-6">
-                  {t.experience.map((exp, index) => {
-                    const getCompanyLogo = (company: string) => {
-                      const baseUrl = import.meta.env.BASE_URL;
-                      if (company.toLowerCase().includes('21south')) {
-                        return `${baseUrl}Work/21South_logo.png`;
-                      } else if (company.toLowerCase().includes('mediamarkt')) {
-                        return `${baseUrl}Work/mediamarkt_logo.svg`;
-                      } else if (company.toLowerCase().includes('dirk')) {
-                        return `${baseUrl}Work/Dirk_logo.png`;
-                      }
-                      return '';
-                    };
-
-                    const logoPath = getCompanyLogo(exp.company);
-
-                    return (
-                      <div key={index} className="flex items-start space-x-3">
-                        {logoPath && (
-                          <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
-                            <img
-                              src={logoPath}
-                              alt={`${exp.company} logo`}
-                              className="w-full h-full object-contain p-1"
-                            />
-                          </div>
-                        )}
-                        <div className="border-l-2 border-accent pl-4 flex-1">
-                          <h4 className="font-semibold text-foreground">{exp.role}</h4>
-                          <p className="text-primary font-medium text-sm">{exp.company}</p>
-                          <p className="text-xs text-muted-foreground mb-2">{exp.period}</p>
-                          <p className="text-sm text-muted-foreground">{exp.description}</p>
-                        </div>
+                <div className="space-y-4">
+                  {t.experienceHighlights.map((item, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm">
+                        <img
+                          src={item.logo}
+                          alt={item.company}
+                          className="w-full h-full object-contain p-1"
+                        />
                       </div>
-                    );
-                  })}
+                      <div className="flex-1 min-w-0">
+                        <p className="font-medium text-sm text-foreground truncate">{item.role}</p>
+                        <p className="text-xs text-muted-foreground">{item.company} · {item.period}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
+                <Link to="/experience" className="mt-6 flex items-center gap-2 text-sm font-medium text-primary hover:underline">
+                  {t.experienceLink}
+                  <ArrowRight className="h-4 w-4" />
+                </Link>
               </CardContent>
             </Card>
 
