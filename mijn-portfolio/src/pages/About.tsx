@@ -33,7 +33,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
       experienceTitle: 'Werkervaring',
       experience: [
         {
-          role: 'Developer',
+          role: 'Software Developer',
           company: '21South',
           period: 'Februari 2026 - Heden',
           description: '',
@@ -115,7 +115,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
       experienceTitle: 'Work Experience',
       experience: [
         {
-          role: 'Developer',
+          role: 'Software Developer',
           company: '21South',
           period: 'February 2026 - Present',
           description: '',

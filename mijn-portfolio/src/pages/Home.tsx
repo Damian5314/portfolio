@@ -26,7 +26,7 @@ const Home: React.FC<HomeProps> = ({ language }) => {
     en: {
       titles: [
         'Computer Science @ Rotterdam University of Applied Sciences',
-        'Support Engineer @ 21South',
+        'Software Developer @ 21South',
         'Co-founder @ TableTech'
       ],
       description: 'Passionate about creating modern web applications and smart solutions. I help businesses bring their digital dreams to life.',
