@@ -66,6 +66,12 @@ const About: React.FC<AboutProps> = ({ language }) => {
       educationTitle: 'Opleiding',
       education: [
         {
+          degree: 'Minor Software Reversing and Exploitation',
+          school: 'De Haagse Hogeschool',
+          period: 'September 2026 - Januari 2027',
+          status: 'Aankomend',
+        },
+        {
           degree: 'HBO Bachelor Informatica',
           school: 'Hogeschool Rotterdam',
           period: '2023 - Heden',
@@ -147,6 +153,12 @@ const About: React.FC<AboutProps> = ({ language }) => {
       ],
       educationTitle: 'Education',
       education: [
+        {
+          degree: 'Minor Software Reversing and Exploitation',
+          school: 'The Hague University of Applied Sciences',
+          period: 'September 2026 - January 2027',
+          status: 'Upcoming',
+        },
         {
           degree: 'HBO Bachelor Computer Science',
           school: 'Rotterdam University of Applied Sciences',
@@ -359,6 +371,8 @@ const About: React.FC<AboutProps> = ({ language }) => {
                         return `${baseUrl}School/hogeschool_rotterdam_logo.png`;
                       } else if (school.toLowerCase().includes('montfort')) {
                         return `${baseUrl}School/montfortcollege_logo.jpg`;
+                      } else if (school.toLowerCase().includes('haagse') || school.toLowerCase().includes('hague')) {
+                        return `${baseUrl}School/overdehaagse-mediakit-hhsnlgroenhexpng.png`;
                       }
                       return '';
                     };
