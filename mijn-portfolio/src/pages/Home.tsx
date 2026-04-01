@@ -14,7 +14,7 @@ const Home: React.FC<HomeProps> = ({ language }) => {
     nl: {
       titles: [
         'Informatica @ Hogeschool Rotterdam',
-        'Support Engineer @ 21South',
+        'Software Developer @ 21South',
         'Co-founder @ TableTech'
       ],
       description: 'Gepassioneerd over het creëren van moderne webapplicaties en slimme oplossingen. Ik help bedrijven hun digitale dromen waar te maken.',
