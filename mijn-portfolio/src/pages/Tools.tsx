@@ -1,9 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { ExternalLink, Laptop, Monitor, Keyboard, Mouse, Headphones, Code, Package, Smartphone } from 'lucide-react';
+import React from 'react';
+import { Laptop, Monitor, Keyboard, Mouse, Headphones, Code, Package, Smartphone } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 
 interface ToolsProps {
@@ -14,8 +10,9 @@ const Tools: React.FC<ToolsProps> = ({ language }) => {
 
   const translations = {
     nl: {
+      eyebrow: 'Setup',
       title: 'Mijn Setup',
-      subtitle: 'De hardware en software die ik dagelijks gebruik',
+      subtitle: 'De hardware en software die ik dagelijks gebruik.',
       categories: {
         pcbuild: 'PC Build',
         desktech: 'Desk Tech',
@@ -28,8 +25,9 @@ const Tools: React.FC<ToolsProps> = ({ language }) => {
       ctaButton: 'Laten we praten',
     },
     en: {
+      eyebrow: 'Setup',
       title: 'My Setup',
-      subtitle: 'The hardware and software I use daily',
+      subtitle: 'The hardware and software I use daily.',
       categories: {
         pcbuild: 'PC Build',
         desktech: 'Desk Tech',
@@ -310,208 +308,84 @@ const Tools: React.FC<ToolsProps> = ({ language }) => {
   ];
 
 
-  // Group tools by category
-  const groupedTools = {
-    pcbuild: tools.filter(t => t.category === 'pcbuild'),
-    desktech: tools.filter(t => t.category === 'desktech'),
-    everyday: tools.filter(t => t.category === 'everyday'),
-    camera: tools.filter(t => t.category === 'camera'),
-    software: tools.filter(t => t.category === 'software'),
-  };
+  // Group tools by category, in display order
+  const categoryOrder: Array<keyof typeof t.categories> = [
+    'pcbuild',
+    'desktech',
+    'everyday',
+    'camera',
+    'software',
+  ];
+  const sections = categoryOrder
+    .map((key) => ({ key, items: tools.filter((tool) => tool.category === key) }))
+    .filter((section) => section.items.length > 0);
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
+      <div className="px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-32">
+        <div className="mx-auto max-w-5xl">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <div className="mb-12">
+            <span className="font-mono text-xs uppercase tracking-[0.22em] text-gold-ink">
+              {t.eyebrow}
+            </span>
+            <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight text-foreground lg:text-6xl">
               {t.title}
             </h1>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              {t.subtitle}
-            </p>
+            <p className="mt-4 max-w-xl font-mono text-sm text-info">{t.subtitle}</p>
           </div>
 
-          {/* PC Build Section */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              {t.categories.pcbuild}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {groupedTools.pcbuild.map((tool) => (
-                <Card key={tool.id} className="group shadow-soft hover:shadow-card transition-all duration-300">
-                  <CardContent className="p-6">
+          {/* Sections */}
+          {sections.map((section) => (
+            <section key={section.key} className="mb-12">
+              <div className="mb-6 flex items-center gap-4">
+                <h2 className="font-serif text-2xl text-foreground">{t.categories[section.key]}</h2>
+                <span className="font-mono text-xs text-info">
+                  {String(section.items.length).padStart(2, '0')}
+                </span>
+                <div className="h-px flex-1 bg-border" />
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-2">
+                {section.items.map((tool) => (
+                  <div
+                    key={tool.id}
+                    className="group rounded-2xl border border-border bg-card p-5 transition-colors hover:border-gold/60"
+                  >
                     <div className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${tool.color}`}>
+                      <div
+                        className={`flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl ${tool.color}`}
+                      >
                         {tool.icon}
                       </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
+                      <div className="min-w-0 flex-1">
+                        <h3 className="font-semibold text-foreground transition-colors group-hover:text-gold-ink">
                           {tool.name}
                         </h3>
-                        <p className="text-muted-foreground text-sm mb-3">
+                        <p className="mt-1 font-mono text-xs leading-relaxed text-info">
                           {tool.description}
                         </p>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="mt-3 flex flex-wrap gap-1.5">
                           {tool.tags.map((tag) => (
-                            <Badge key={tag} variant="outline" className="text-xs">
+                            <span
+                              key={tag}
+                              className="rounded-md border border-border px-2 py-0.5 font-mono text-[11px] text-info"
+                            >
                               {tag}
-                            </Badge>
+                            </span>
                           ))}
                         </div>
                       </div>
                     </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          {/* Desk Tech Section */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              {t.categories.desktech}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {groupedTools.desktech.map((tool) => (
-                <Card key={tool.id} className="group shadow-soft hover:shadow-card transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${tool.color}`}>
-                        {tool.icon}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                          {tool.name}
-                        </h3>
-                        <p className="text-muted-foreground text-sm mb-3">
-                          {tool.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {tool.tags.map((tag) => (
-                            <Badge key={tag} variant="outline" className="text-xs">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          {/* Everyday Carry Section */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              {t.categories.everyday}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {groupedTools.everyday.map((tool) => (
-                <Card key={tool.id} className="group shadow-soft hover:shadow-card transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${tool.color}`}>
-                        {tool.icon}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                          {tool.name}
-                        </h3>
-                        <p className="text-muted-foreground text-sm mb-3">
-                          {tool.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {tool.tags.map((tag) => (
-                            <Badge key={tag} variant="outline" className="text-xs">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          {/* Camera Section */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              {t.categories.camera}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {groupedTools.camera.map((tool) => (
-                <Card key={tool.id} className="group shadow-soft hover:shadow-card transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${tool.color}`}>
-                        {tool.icon}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                          {tool.name}
-                        </h3>
-                        <p className="text-muted-foreground text-sm mb-3">
-                          {tool.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {tool.tags.map((tag) => (
-                            <Badge key={tag} variant="outline" className="text-xs">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          {/* Software Section */}
-          <section className="mb-16">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              {t.categories.software}
-            </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              {groupedTools.software.map((tool) => (
-                <Card key={tool.id} className="group shadow-soft hover:shadow-card transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0 ${tool.color}`}>
-                        {tool.icon}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">
-                          {tool.name}
-                        </h3>
-                        <p className="text-muted-foreground text-sm mb-3">
-                          {tool.description}
-                        </p>
-                        <div className="flex flex-wrap gap-2">
-                          {tool.tags.map((tag) => (
-                            <Badge key={tag} variant="outline" className="text-xs">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </section>
-
-          {/* CTA Section */}
-          <CTASection language={language} />
+                  </div>
+                ))}
+              </div>
+            </section>
+          ))}
         </div>
       </div>
+
+      <CTASection language={language} />
     </div>
   );
 };

@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { Globe } from 'lucide-react';
 
 interface NavigationProps {
   language: 'nl' | 'en';
@@ -45,105 +43,100 @@ const Navigation: React.FC<NavigationProps> = ({ language, onLanguageChange }) =
     { key: 'contact', label: t.contact, path: '/contact' },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) =>
+    path === '/' ? location.pathname === '/' : location.pathname.startsWith(path);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm border-b border-border" style={{ backgroundColor: 'hsl(var(--header-footer) / 0.95)' }}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50 border-b border-border bg-background/85 backdrop-blur-md">
+      <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-            Damian Willemse
+          <Link to="/" className="group flex items-center gap-2.5">
+            <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-foreground font-serif text-sm font-semibold text-background">
+              D
+            </span>
+            <span className="text-sm font-semibold tracking-tight text-foreground">
+              Damian Willemse
+            </span>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden items-center gap-7 md:flex">
             {navItems.map((item) => (
               <Link
                 key={item.key}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-primary ${
-                  isActive(item.path)
-                    ? 'text-primary border-b-2 border-primary pb-1'
-                    : 'text-muted-foreground'
+                className={`font-mono text-[13px] transition-colors hover:text-foreground ${
+                  isActive(item.path) ? 'text-foreground' : 'text-info'
                 }`}
               >
                 {item.label}
               </Link>
             ))}
-            
+
             {/* Language Switcher */}
-            <div className="flex items-center space-x-2 ml-4">
-              <Globe className="h-4 w-4 text-muted-foreground" />
-              <Button
-                variant={language === 'nl' ? 'default' : 'ghost'}
-                size="sm"
-                onClick={() => onLanguageChange('nl')}
-                className="text-xs px-2 py-1 h-7"
-              >
-                NL
-              </Button>
-              <Button
-                variant={language === 'en' ? 'default' : 'ghost'}
-                size="sm"
-                onClick={() => onLanguageChange('en')}
-                className="text-xs px-2 py-1 h-7"
-              >
-                EN
-              </Button>
+            <div className="ml-2 flex items-center rounded-lg border border-border bg-card p-0.5">
+              {(['nl', 'en'] as const).map((lang) => (
+                <button
+                  key={lang}
+                  onClick={() => onLanguageChange(lang)}
+                  className={`rounded-md px-2 py-1 font-mono text-[11px] uppercase transition-colors ${
+                    language === lang
+                      ? 'bg-foreground text-background'
+                      : 'text-info hover:text-foreground'
+                  }`}
+                >
+                  {lang}
+                </button>
+              ))}
             </div>
           </div>
 
           {/* Mobile menu button */}
           <button
-            className="md:hidden flex items-center justify-center w-8 h-8 text-foreground"
+            className="flex h-8 w-8 items-center justify-center text-foreground md:hidden"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Menu"
           >
             <div className="flex flex-col space-y-1">
-              <span className={`block w-5 h-0.5 bg-current transition-transform ${isMenuOpen ? 'rotate-45 translate-y-1.5' : ''}`} />
-              <span className={`block w-5 h-0.5 bg-current transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`} />
-              <span className={`block w-5 h-0.5 bg-current transition-transform ${isMenuOpen ? '-rotate-45 -translate-y-1.5' : ''}`} />
+              <span className={`block h-0.5 w-5 bg-current transition-transform ${isMenuOpen ? 'translate-y-1.5 rotate-45' : ''}`} />
+              <span className={`block h-0.5 w-5 bg-current transition-opacity ${isMenuOpen ? 'opacity-0' : ''}`} />
+              <span className={`block h-0.5 w-5 bg-current transition-transform ${isMenuOpen ? '-translate-y-1.5 -rotate-45' : ''}`} />
             </div>
           </button>
         </div>
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border">
-            <div className="flex flex-col space-y-4">
+          <div className="border-t border-border py-4 md:hidden">
+            <div className="flex flex-col space-y-3">
               {navItems.map((item) => (
                 <Link
                   key={item.key}
                   to={item.path}
-                  className={`text-sm font-medium transition-colors hover:text-primary ${
-                    isActive(item.path) ? 'text-primary' : 'text-muted-foreground'
+                  className={`font-mono text-sm transition-colors hover:text-foreground ${
+                    isActive(item.path) ? 'text-foreground' : 'text-info'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
-              
-              {/* Mobile Language Switcher */}
-              <div className="flex items-center space-x-2 pt-2 border-t border-border">
-                <Globe className="h-4 w-4 text-muted-foreground" />
-                <span className="text-sm text-muted-foreground mr-2">Language:</span>
-                <Button
-                  variant={language === 'nl' ? 'default' : 'ghost'}
-                  size="sm"
-                  onClick={() => onLanguageChange('nl')}
-                  className="text-xs px-2 py-1 h-7"
-                >
-                  NL
-                </Button>
-                <Button
-                  variant={language === 'en' ? 'default' : 'ghost'}
-                  size="sm"
-                  onClick={() => onLanguageChange('en')}
-                  className="text-xs px-2 py-1 h-7"
-                >
-                  EN
-                </Button>
+
+              <div className="flex items-center gap-2 border-t border-border pt-3">
+                {(['nl', 'en'] as const).map((lang) => (
+                  <button
+                    key={lang}
+                    onClick={() => onLanguageChange(lang)}
+                    className={`rounded-md px-2.5 py-1 font-mono text-[11px] uppercase transition-colors ${
+                      language === lang
+                        ? 'bg-foreground text-background'
+                        : 'border border-border text-info'
+                    }`}
+                  >
+                    {lang}
+                  </button>
+                ))}
               </div>
             </div>
           </div>

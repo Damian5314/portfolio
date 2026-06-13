@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { ArrowLeft, ExternalLink, Github, Calendar, Users, Code, Zap, Flag } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Github, Check, Play, ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface ProjectDetailProps {
   language: 'nl' | 'en';
@@ -12,13 +9,46 @@ interface ProjectDetailProps {
 
 type ProjectStatus = 'completed' | 'paused' | 'inProgress' | 'canceled' | 'upcoming';
 
-const statusStyles: Record<ProjectStatus, string> = {
-  completed: 'bg-emerald-100 text-emerald-700 border-transparent dark:bg-emerald-500/20 dark:text-emerald-200',
-  paused: 'bg-amber-100 text-amber-700 border-transparent dark:bg-amber-500/20 dark:text-amber-200',
-  inProgress: 'bg-blue-100 text-blue-700 border-transparent dark:bg-blue-500/20 dark:text-blue-200',
-  canceled: 'bg-rose-100 text-rose-700 border-transparent dark:bg-rose-500/20 dark:text-rose-200',
-  upcoming: 'bg-slate-100 text-slate-700 border-transparent dark:bg-slate-500/20 dark:text-slate-200',
+interface ProjectData {
+  title: string;
+  subtitle: string;
+  category: string;
+  status: ProjectStatus;
+  description: string;
+  longDescription: string;
+  technologies: string[];
+  duration: string;
+  teamSize: string;
+  myRole: string;
+  features: string[];
+  challenges: string[];
+  solutions: string[];
+  results: string[];
+  images: string[];
+  liveUrl: string;
+  githubUrl: string;
+}
+
+const statusDot: Record<ProjectStatus, string> = {
+  completed: 'bg-emerald-500',
+  paused: 'bg-amber-500',
+  inProgress: 'bg-blue-500',
+  canceled: 'bg-rose-500',
+  upcoming: 'bg-slate-400',
 };
+
+const SectionLabel: React.FC<{ children: React.ReactNode; tone?: 'gold' | 'goldOnDark' }> = ({
+  children,
+  tone = 'gold',
+}) => (
+  <span
+    className={`font-mono text-xs uppercase tracking-[0.2em] ${
+      tone === 'goldOnDark' ? 'text-gold' : 'text-gold-ink'
+    }`}
+  >
+    {children}
+  </span>
+);
 
 const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onBack }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -50,10 +80,10 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
         upcoming: 'Toekomstig project',
       },
       categoryLabels: {
-        school: 'School project',
-        personal: 'Persoonlijk project',
-        client: 'Klant project',
-        event: 'Event project',
+        school: 'School',
+        personal: 'Persoonlijk',
+        client: 'Klant',
+        event: 'Event',
       },
     },
     en: {
@@ -82,10 +112,10 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
         upcoming: 'Upcoming project',
       },
       categoryLabels: {
-        school: 'School project',
-        personal: 'Personal project',
-        client: 'Client project',
-        event: 'Event project',
+        school: 'School',
+        personal: 'Personal',
+        client: 'Client',
+        event: 'Event',
       },
     },
   };
@@ -93,7 +123,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
   const t = translations[language];
 
   // Uitgebreide project data
-  const projectData: Record<string, any> = {
+  const projectData: Record<string, ProjectData> = {
     '1': {
       title: 'QR Logistics',
       subtitle: language === 'nl' ? 'Logistieke management oplossing' : 'Logistics management solution',
@@ -1043,220 +1073,232 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ language, projectId, onB
     setCurrentImageIndex((prev) => (prev - 1 + project.images.length) % project.images.length);
   };
 
+  const isVideo = (src: string) => src.toLowerCase().endsWith('.mp4');
+  const number = String(projectId).padStart(2, '0');
+  const categoryLabel =
+    t.categoryLabels[project.category as keyof typeof t.categoryLabels] ?? project.category;
+  const statusLabel =
+    t.statusValues[project.status as keyof typeof t.statusValues] ?? project.status;
+  const currentMedia = project.images[currentImageIndex];
+
   return (
     <div className="min-h-screen bg-background">
-      <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
+      <div className="px-4 pb-20 pt-28 sm:px-6 lg:px-8 lg:pt-32">
+        <div className="mx-auto max-w-3xl">
           {/* Back Button */}
-          <Button variant="ghost" className="mb-8 group" onClick={onBack}>
-            <ArrowLeft className="h-4 w-4 mr-2 group-hover:-translate-x-1 transition-transform" />
+          <button
+            onClick={onBack}
+            className="group mb-8 inline-flex items-center gap-2 font-mono text-xs text-info transition-colors hover:text-foreground"
+          >
+            <ArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-1" />
             {t.backToProjects}
-          </Button>
+          </button>
 
-          {/* Project Header */}
-          <div className="mb-12">
-            <div className="flex flex-wrap items-center gap-3 mb-4">
-              <Badge variant="secondary" className="text-xs">
-                {t.categoryLabels[project.category as keyof typeof t.categoryLabels] ?? project.category}
-              </Badge>
-              <Badge className={`text-xs ${statusStyles[project.status as ProjectStatus]}`}>
-                {t.statusValues[project.status as keyof typeof t.statusValues] ?? project.status}
-              </Badge>
-              <span className="text-muted-foreground">•</span>
-              <span className="text-muted-foreground">{project.duration}</span>
+          {/* Hero block */}
+          <div className="relative overflow-hidden rounded-2xl bg-dark px-7 py-8 sm:px-10 sm:py-10">
+            <span className="pointer-events-none absolute -top-2 right-3 font-serif text-8xl font-semibold leading-none text-white/[0.05] sm:text-9xl">
+              {number}
+            </span>
+            <div className="relative">
+              <div className="mb-4 flex flex-wrap items-center gap-3 font-mono text-[11px]">
+                <span className="uppercase tracking-wide text-gold">{categoryLabel}</span>
+                <span className="flex items-center gap-1.5 text-dark-foreground/70">
+                  <span className={`h-1.5 w-1.5 rounded-full ${statusDot[project.status as ProjectStatus]}`} />
+                  {statusLabel}
+                </span>
+              </div>
+              <h1 className="font-serif text-4xl text-gold sm:text-5xl">{project.title}</h1>
+              <p className="mt-2 font-mono text-sm text-dark-foreground/70">{project.subtitle}</p>
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
-              {project.title}
-            </h1>
-            <p className="text-xl text-muted-foreground mb-6">
-              {project.subtitle}
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button asChild>
-                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+          </div>
+
+          {/* Info cards */}
+          <div className="mt-5 grid gap-4 sm:grid-cols-3">
+            {[
+              { label: t.duration, value: project.duration },
+              { label: t.teamSize, value: project.teamSize },
+              { label: t.myRole, value: project.myRole },
+            ].map((item) => (
+              <div key={item.label} className="rounded-xl border border-border bg-card p-4">
+                <p className="font-mono text-[10px] uppercase tracking-wider text-info">{item.label}</p>
+                <p className="mt-1.5 text-sm font-medium text-foreground">{item.value}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Links */}
+          {(project.liveUrl !== '#' || project.githubUrl !== '#') && (
+            <div className="mt-5 flex flex-wrap gap-3">
+              {project.liveUrl !== '#' && (
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl bg-foreground px-5 py-2.5 font-mono text-sm text-background transition-transform hover:-translate-y-0.5"
+                >
                   <ExternalLink className="h-4 w-4" />
                   {t.viewLive}
                 </a>
-              </Button>
-              <Button variant="outline" asChild>
-                <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
+              )}
+              {project.githubUrl !== '#' && (
+                <a
+                  href={project.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-xl border border-foreground/15 bg-card px-5 py-2.5 font-mono text-sm text-foreground transition-colors hover:border-foreground/40"
+                >
                   <Github className="h-4 w-4" />
                   {t.viewCode}
                 </a>
-              </Button>
+              )}
             </div>
-          </div>
+          )}
 
-          <div className="grid lg:grid-cols-3 gap-12">
-            {/* Main Content */}
-            <div className="lg:col-span-2 space-y-12">
-              {/* Screenshots */}
-              <section>
-                <h2 className="text-2xl font-bold mb-6">{t.screenshots}</h2>
-                <div className="relative">
-                  <div className="aspect-video bg-muted rounded-lg overflow-hidden mb-4">
-                    {project.images[currentImageIndex]?.toLowerCase().endsWith('.mp4') ? (
-                      <video
-                        src={project.images[currentImageIndex]}
-                        className="w-full h-full object-cover"
-                        controls
-                        autoPlay
-                        loop
-                        muted
-                      />
-                    ) : (
-                      <img
-                        src={project.images[currentImageIndex]}
-                        alt={`${project.title} screenshot ${currentImageIndex + 1}`}
-                        className="w-full h-full object-cover"
-                      />
-                    )}
-                  </div>
-                  <div className="flex justify-center gap-2 mb-4">
-                    {project.images.map((_: any, index: number) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentImageIndex(index)}
-                        className={`w-3 h-3 rounded-full transition-colors ${
-                          index === currentImageIndex ? 'bg-primary' : 'bg-muted-foreground/30'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <div className="flex justify-center gap-4">
-                    <Button variant="outline" size="sm" onClick={prevImage}>
-                      ←
-                    </Button>
-                    <Button variant="outline" size="sm" onClick={nextImage}>
-                      →
-                    </Button>
-                  </div>
-                </div>
-              </section>
-
-              {/* Overview */}
-              <section>
-                <h2 className="text-2xl font-bold mb-6">{t.overview}</h2>
-                <div className="prose prose-gray max-w-none">
-                  <p className="text-lg leading-relaxed mb-4">{project.description}</p>
-                  <p className="leading-relaxed">{project.longDescription}</p>
-                </div>
-              </section>
-
-              {/* Features */}
-              <section>
-                <h2 className="text-2xl font-bold mb-6">{t.features}</h2>
-                <div className="grid md:grid-cols-2 gap-4">
-                  {project.features.map((feature: string, index: number) => (
-                    <div key={index} className="flex items-start gap-3 p-4 bg-muted/50 rounded-lg">
-                      <Zap className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                      <span>{feature}</span>
-                    </div>
-                  ))}
-                </div>
-              </section>
-
-              {/* Challenges & Solutions */}
-              <div className="grid md:grid-cols-2 gap-8">
-                <section>
-                  <h2 className="text-2xl font-bold mb-6">{t.challenges}</h2>
-                  <ul className="space-y-3">
-                    {project.challenges.map((challenge: string, index: number) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-red-500 rounded-full mt-3 flex-shrink-0" />
-                        <span>{challenge}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-
-                <section>
-                  <h2 className="text-2xl font-bold mb-6">{t.solutions}</h2>
-                  <ul className="space-y-3">
-                    {project.solutions.map((solution: string, index: number) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-green-500 rounded-full mt-3 flex-shrink-0" />
-                        <span>{solution}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
+          {/* Screenshots */}
+          <section className="mt-14">
+            <SectionLabel>{t.screenshots}</SectionLabel>
+            <div className="relative mt-4 overflow-hidden rounded-2xl border border-border bg-muted">
+              <div className="aspect-video">
+                {isVideo(currentMedia) ? (
+                  <video
+                    src={currentMedia}
+                    className="h-full w-full object-cover"
+                    controls
+                    autoPlay
+                    loop
+                    muted
+                  />
+                ) : (
+                  <img
+                    src={currentMedia}
+                    alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                    className="h-full w-full object-cover"
+                  />
+                )}
               </div>
 
-              {/* Results */}
-              <section>
-                <h2 className="text-2xl font-bold mb-6">{t.results}</h2>
-                <div className="grid md:grid-cols-3 gap-6">
-                  {project.results.map((result: string, index: number) => (
-                    <Card key={index}>
-                      <CardContent className="p-6 text-center">
-                        <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                          <Zap className="h-6 w-6 text-primary" />
-                        </div>
-                        <p className="font-medium">{result}</p>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </section>
+              {project.images.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    aria-label="Vorige"
+                    className="absolute left-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-foreground/80 text-background backdrop-blur-sm transition-colors hover:bg-foreground"
+                  >
+                    <ChevronLeft className="h-5 w-5" />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    aria-label="Volgende"
+                    className="absolute right-3 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-foreground/80 text-background backdrop-blur-sm transition-colors hover:bg-foreground"
+                  >
+                    <ChevronRight className="h-5 w-5" />
+                  </button>
+                </>
+              )}
             </div>
 
-            {/* Sidebar */}
-            <div className="space-y-8">
-              {/* Project Details */}
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold mb-4">{t.projectDetails}</h3>
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3">
-                      <Flag className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <p className="text-sm text-muted-foreground">{t.statusLabel}</p>
-                        <Badge className={`text-xs ${statusStyles[project.status as ProjectStatus]}`}>
-                          {t.statusValues[project.status as keyof typeof t.statusValues] ?? project.status}
-                        </Badge>
+            {project.images.length > 1 && (
+              <div className="mt-3 flex gap-2 overflow-x-auto pb-1">
+                {project.images.map((src: string, index: number) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`relative h-14 w-20 flex-shrink-0 overflow-hidden rounded-lg border-2 transition-colors ${
+                      index === currentImageIndex ? 'border-gold' : 'border-transparent opacity-60 hover:opacity-100'
+                    }`}
+                  >
+                    {isVideo(src) ? (
+                      <div className="flex h-full w-full items-center justify-center bg-dark">
+                        <Play className="h-4 w-4 text-gold" />
                       </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Calendar className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <p className="text-sm text-muted-foreground">{t.duration}</p>
-                        <p className="font-medium">{project.duration}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Users className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <p className="text-sm text-muted-foreground">{t.teamSize}</p>
-                        <p className="font-medium">{project.teamSize}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Code className="h-4 w-4 text-muted-foreground" />
-                      <div>
-                        <p className="text-sm text-muted-foreground">{t.myRole}</p>
-                        <p className="font-medium">{project.myRole}</p>
-                      </div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                    ) : (
+                      <img src={src} alt="" className="h-full w-full object-cover" />
+                    )}
+                  </button>
+                ))}
+              </div>
+            )}
+          </section>
 
-              {/* Technologies */}
-              <Card>
-                <CardContent className="p-6">
-                  <h3 className="text-lg font-semibold mb-4">{t.technologies}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {project.technologies.map((tech: string) => (
-                      <Badge key={tech} variant="outline">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-              </Card>
+          {/* Overview */}
+          <section className="mt-14">
+            <h2 className="font-serif text-2xl text-foreground">{t.overview}</h2>
+            <p className="mt-4 text-sm leading-relaxed text-info">{project.description}</p>
+            <p className="mt-3 text-sm leading-relaxed text-info">{project.longDescription}</p>
+          </section>
+
+          {/* Technologies */}
+          <section className="mt-12">
+            <SectionLabel>{t.technologies}</SectionLabel>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {project.technologies.map((tech: string) => (
+                <span
+                  key={tech}
+                  className="rounded-md border border-border bg-card px-2.5 py-1 font-mono text-xs text-info"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </section>
+
+          {/* Features */}
+          <section className="mt-12">
+            <SectionLabel>{t.features}</SectionLabel>
+            <div className="mt-4 grid gap-3 sm:grid-cols-2">
+              {project.features.map((feature: string, index: number) => (
+                <div
+                  key={index}
+                  className="flex items-start gap-2.5 rounded-xl border border-border bg-card px-4 py-3"
+                >
+                  <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-500" />
+                  <span className="font-mono text-xs leading-relaxed text-foreground/80">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Challenges & Solutions */}
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
+            <div className="rounded-2xl border border-border bg-card p-5">
+              <h3 className="mb-4 font-serif text-xl text-foreground">{t.challenges}</h3>
+              <ul className="space-y-3">
+                {project.challenges.map((challenge: string, index: number) => (
+                  <li key={index} className="flex items-start gap-2.5 font-mono text-xs leading-relaxed text-info">
+                    <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-rose-500" />
+                    {challenge}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-card p-5">
+              <h3 className="mb-4 font-serif text-xl text-foreground">{t.solutions}</h3>
+              <ul className="space-y-3">
+                {project.solutions.map((solution: string, index: number) => (
+                  <li key={index} className="flex items-start gap-2.5 font-mono text-xs leading-relaxed text-info">
+                    <span className="mt-1 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-emerald-500" />
+                    {solution}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
+
+          {/* Results */}
+          <section className="mt-12">
+            <div className="rounded-2xl bg-dark p-7 sm:p-9">
+              <SectionLabel tone="goldOnDark">{t.results}</SectionLabel>
+              <div className="mt-5 grid gap-x-8 gap-y-3.5 sm:grid-cols-2">
+                {project.results.map((result: string, index: number) => (
+                  <div key={index} className="flex items-start gap-2.5">
+                    <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-gold" />
+                    <span className="font-mono text-xs leading-relaxed text-dark-foreground/80">{result}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </div>

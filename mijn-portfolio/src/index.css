@@ -2,53 +2,65 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Portfolio Design System - Soft beige with dark grey accents */
+/* Portfolio Design System - Warm editorial cream + ink with gold accent */
 
 @layer base {
   :root {
-    --background: 45 46% 94%;
-    --foreground: 220 13% 18%;
+    --background: 44 42% 90%;          /* warm cream */
+    --foreground: 220 16% 15%;         /* ink */
 
-    --header-footer: 39 12% 95%;
+    --header-footer: 44 42% 90%;
 
-    --card: 43 20% 97%;
-    --card-foreground: 220 13% 18%;
+    --card: 44 48% 96%;                /* near-white cream cards */
+    --card-foreground: 220 16% 15%;
 
-    --popover: 43 20% 97%;
-    --popover-foreground: 220 13% 18%;
+    --popover: 44 48% 96%;
+    --popover-foreground: 220 16% 15%;
 
-    --primary: 220 13% 18%;
-    --primary-foreground: 43 20% 97%;
+    --primary: 220 16% 15%;            /* ink */
+    --primary-foreground: 44 48% 96%;
 
-    --secondary: 42 8% 88%;
-    --secondary-foreground: 220 13% 18%;
+    --secondary: 42 24% 84%;
+    --secondary-foreground: 220 16% 15%;
 
-    --muted: 42 8% 88%;
-    --muted-foreground: 220 8% 46%;
+    --muted: 42 22% 85%;
+    --muted-foreground: 221 14% 45%;   /* slate */
 
-    --accent: 39 100% 85%;
-    --accent-foreground: 220 13% 18%;
+    --accent: 40 66% 70%;              /* gold */
+    --accent-foreground: 28 45% 20%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 43 20% 97%;
+    /* Gold accent system */
+    --gold: 40 66% 70%;
+    --gold-foreground: 28 50% 18%;
+    --gold-ink: 36 48% 44%;            /* legible gold text on cream */
 
-    --border: 42 12% 90%;
-    --input: 42 12% 90%;
-    --ring: 220 13% 18%;
+    /* Slate-blue informational text */
+    --info: 221 22% 42%;
+
+    /* Dark section */
+    --dark: 220 16% 17%;
+    --dark-foreground: 44 44% 94%;
+
+    --destructive: 0 70% 52%;
+    --destructive-foreground: 44 48% 96%;
+
+    --border: 42 20% 80%;
+    --input: 42 20% 80%;
+    --ring: 220 16% 15%;
 
     /* Portfolio specific colors */
     --hero-gradient: linear-gradient(135deg, hsl(42 15% 95%), hsl(39 100% 95%));
-    --dark-section: 220 13% 18%;
-    --dark-section-foreground: 43 20% 97%;
-    
+    --dark-section: 220 16% 17%;
+    --dark-section-foreground: 44 44% 94%;
+
     /* Shadows */
-    --shadow-soft: 0 4px 20px -4px hsl(220 13% 18% / 0.1);
-    --shadow-card: 0 8px 32px -8px hsl(220 13% 18% / 0.12);
-    
+    --shadow-soft: 0 4px 20px -4px hsl(220 16% 15% / 0.1);
+    --shadow-card: 0 14px 40px -12px hsl(220 16% 15% / 0.18);
+
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    --radius: 0.5rem;
+    --radius: 0.85rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -111,7 +123,13 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
 }

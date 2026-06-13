@@ -1,10 +1,20 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardContent } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 import { Calendar, MapPin, Users, ArrowUpDown } from 'lucide-react';
 import CTASection from '@/components/CTASection';
+
+// Accent colours per event type (top bar + label dot)
+const typeStyles: Record<string, { bar: string; dot: string }> = {
+  hackathon: { bar: 'bg-foreground', dot: 'bg-gold' },
+  conference: { bar: 'bg-rose-500', dot: 'bg-rose-500' },
+  workshop: { bar: 'bg-amber-500', dot: 'bg-amber-500' },
+  meetup: { bar: 'bg-gold', dot: 'bg-gold' },
+};
+
+const getTypeStyle = (type: string) => {
+  const key = type.toLowerCase();
+  return typeStyles[key] ?? typeStyles.hackathon;
+};
 
 interface EventsProps {
   language: 'nl' | 'en';
@@ -27,8 +37,9 @@ const Events: React.FC<EventsProps> = ({ language }) => {
 
   const translations = {
     nl: {
+      eyebrow: 'Community',
       title: 'Evenementen',
-      description: 'Hier vind je een overzicht van evenementen waar ik aan heb deelgenomen of waar ik bij betrokken ben geweest.',
+      description: 'Een overzicht van hackathons, meetups en events waar ik aan heb deelgenomen of bij betrokken ben geweest.',
       conference: 'Conference',
       meetup: 'Meetup',
       workshop: 'Workshop',
@@ -38,8 +49,9 @@ const Events: React.FC<EventsProps> = ({ language }) => {
       oldest: 'Oudste eerst',
     },
     en: {
+      eyebrow: 'Community',
       title: 'Events',
-      description: 'Here you can find an overview of events I have participated in or been involved with.',
+      description: 'An overview of hackathons, meetups and events I have participated in or been involved with.',
       conference: 'Conference',
       meetup: 'Meetup',
       workshop: 'Workshop',
@@ -172,116 +184,104 @@ const Events: React.FC<EventsProps> = ({ language }) => {
     },
   ];
 
-  const sortedEvents = useMemo(() => {
-    return [...events].sort((a, b) => {
-      if (sortOrder === 'asc') {
-        return a.dateSort.localeCompare(b.dateSort);
-      } else {
-        return b.dateSort.localeCompare(a.dateSort);
-      }
-    });
-  }, [events, sortOrder]);
-
-  const getBadgeColor = (type: string) => {
-    if (type.toLowerCase().includes('conference')) return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300';
-    if (type.toLowerCase().includes('meetup')) return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300';
-    if (type.toLowerCase().includes('workshop')) return 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300';
-    if (type.toLowerCase().includes('hackathon')) return 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300';
-    return 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300';
-  };
+  const sortedEvents = [...events].sort((a, b) =>
+    sortOrder === 'asc'
+      ? a.dateSort.localeCompare(b.dateSort)
+      : b.dateSort.localeCompare(a.dateSort)
+  );
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
+      <div className="px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-32">
+        <div className="mx-auto max-w-6xl">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <div className="mb-8">
+            <span className="font-mono text-xs uppercase tracking-[0.22em] text-gold-ink">
+              {t.eyebrow}
+            </span>
+            <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight text-foreground lg:text-6xl">
               {t.title}
             </h1>
-            <div className="max-w-3xl mx-auto">
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                {t.description}
-              </p>
-            </div>
+            <p className="mt-4 max-w-2xl font-mono text-sm leading-relaxed text-info">
+              {t.description}
+            </p>
           </div>
 
           {/* Sort Button */}
-          <div className="flex justify-end mb-6">
-            <Button
-              variant="outline"
+          <div className="mb-8 flex justify-end">
+            <button
               onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}
-              className="gap-2"
-              style={{ backgroundColor: 'hsl(var(--header-footer))' }}
+              className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-1.5 font-mono text-xs text-info transition-colors hover:border-foreground/40 hover:text-foreground"
             >
-              <ArrowUpDown className="w-4 h-4" />
+              <ArrowUpDown className="h-3.5 w-3.5" />
               {sortOrder === 'desc' ? t.newest : t.oldest}
-            </Button>
+            </button>
           </div>
 
           {/* Events Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {sortedEvents.map((event, index) => (
-              <Link key={index} to={`/events/${event.id}`}>
-                <Card className="shadow-soft hover:shadow-lg transition-shadow overflow-hidden cursor-pointer h-full">
-                  {/* Event Image */}
-                  {event.image ? (
-                    <div className="w-full h-48 overflow-hidden">
-                      <img
-                        src={event.image}
-                        alt={event.title}
-                        className="w-full h-full object-cover"
-                      />
+          <div className="mb-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {sortedEvents.map((event) => {
+              const style = getTypeStyle(event.type);
+              return (
+                <Link key={event.id} to={`/events/${event.id}`} className="group">
+                  <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
+                    {/* Coloured top accent */}
+                    <div className={`h-1 w-full ${style.bar}`} />
+
+                    {/* Event Image */}
+                    {event.image ? (
+                      <div className="h-44 w-full overflow-hidden">
+                        <img
+                          src={event.image}
+                          alt={event.title}
+                          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                      </div>
+                    ) : (
+                      <div className="flex h-44 w-full items-center justify-center bg-muted">
+                        <Calendar className="h-8 w-8 text-info/50" />
+                      </div>
+                    )}
+
+                    {/* Content */}
+                    <div className="flex flex-1 flex-col p-5">
+                      <div className="mb-2.5 flex items-center gap-2 font-mono text-[11px] uppercase tracking-wide text-info">
+                        <span className={`h-1.5 w-1.5 rounded-full ${style.dot}`} />
+                        {event.type}
+                      </div>
+
+                      <h3 className="mb-3 font-serif text-xl leading-snug text-foreground">
+                        {event.title}
+                      </h3>
+
+                      <div className="mb-3 space-y-1.5 font-mono text-xs text-info">
+                        <div className="flex items-center gap-2">
+                          <Calendar className="h-3.5 w-3.5 flex-shrink-0 text-gold-ink" />
+                          <span>{event.date}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <MapPin className="h-3.5 w-3.5 flex-shrink-0 text-gold-ink" />
+                          <span>{event.location}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                          <Users className="h-3.5 w-3.5 flex-shrink-0 text-gold-ink" />
+                          <span>{event.attendees}</span>
+                        </div>
+                      </div>
+
+                      <p className="font-mono text-xs leading-relaxed text-info/90 line-clamp-4">
+                        {event.description}
+                      </p>
                     </div>
-                  ) : (
-                    <div className="w-full h-48 bg-muted flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-background flex items-center justify-center">
-                        <Calendar className="w-8 h-8 text-muted-foreground" />
-                      </div>
-                    </div>
-                  )}
-
-                  <CardContent className="p-6 space-y-4">
-                    {/* Badge */}
-                    <Badge className={`${getBadgeColor(event.type)} border-0`}>
-                      {event.type}
-                    </Badge>
-
-                    {/* Event Title */}
-                    <h3 className="text-xl font-bold text-foreground">
-                      {event.title}
-                    </h3>
-
-                    {/* Event Details */}
-                    <div className="space-y-2 text-sm text-muted-foreground">
-                      <div className="flex items-center gap-2">
-                        <Calendar className="w-4 h-4" />
-                        <span>{event.date}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <MapPin className="w-4 h-4" />
-                        <span>{event.location}</span>
-                      </div>
-                      <div className="flex items-center gap-2">
-                        <Users className="w-4 h-4" />
-                        <span>{event.attendees}</span>
-                      </div>
-                    </div>
-
-                    {/* Description */}
-                    <p className="text-sm text-muted-foreground leading-relaxed">
-                      {event.description}
-                    </p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+                  </article>
+                </Link>
+              );
+            })}
           </div>
-
-          {/* CTA Section */}
-          <CTASection language={language} />
         </div>
       </div>
+
+      <CTASection language={language} />
     </div>
   );
 };

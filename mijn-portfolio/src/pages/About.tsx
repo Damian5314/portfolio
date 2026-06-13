@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Download, ArrowRight } from 'lucide-react';
 import {
@@ -13,6 +11,7 @@ import {
 } from '@/components/ui/dialog';
 import GitHubStats from '@/components/GitHubStats';
 import CTASection from '@/components/CTASection';
+import damianPortrait from '@/assets/DamianWillemse.jpeg';
 
 interface AboutProps {
   language: 'nl' | 'en';
@@ -24,7 +23,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
   const translations = {
     nl: {
       title: 'Over mij',
-      intro: 'Hallo! Ik ben Damian, een enthousiaste software developer met een passie voor technologie, design en het bouwen van slimme oplossingen. Momenteel studeer ik Informatica aan Hogeschool Rotterdam en werk ik als Junior Support Engineer bij 21South.',
+      intro: 'Hallo! Ik ben Damian, een enthousiaste software developer met een passie voor technologie, design en het bouwen van slimme oplossingen. Ik studeer Informatica aan Hogeschool Rotterdam en werk als developer bij 21South.',
       skillsTitle: 'Vaardigheden',
       skills: {
         technical: 'Technische Vaardigheden',
@@ -118,7 +117,7 @@ const About: React.FC<AboutProps> = ({ language }) => {
     },
     en: {
       title: 'About me',
-      intro: 'Hello! I am Damian, an enthusiastic software developer with a passion for technology, design and building smart solutions. I am currently studying Computer Science at Rotterdam University of Applied Sciences and work as a Junior Support Engineer at 21South.',
+      intro: 'Hello! I am Damian, an enthusiastic software developer with a passion for technology, design and building smart solutions. I study Computer Science at Rotterdam University of Applied Sciences and work as a developer at 21South.',
       skillsTitle: 'Skills',
       skills: {
         technical: 'Technical Skills',
@@ -214,10 +213,22 @@ const About: React.FC<AboutProps> = ({ language }) => {
 
   const t = translations[language];
 
-  const technicalSkills = ['HTML', 'CSS', 'JavaScript', 'Python', 'TypeScript', 'React', 'C#'];
+  const technicalSkills = ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Python', 'C#'];
   const languageSkills = language === 'nl'
-    ? ['Nederlands (Moedertaal)', 'Engels (Professionele vaardigheden)', 'Frans (Basis)', 'Spaans (Basis)', 'Chinees (Basis)']
-    : ['Dutch (Native)', 'English (Professional proficiency)', 'French (Basic)', 'Spanish (Basic)', 'Chinese (Basic)'];
+    ? [
+        { name: 'Nederlands', level: 'Moedertaal' },
+        { name: 'Engels', level: 'Professioneel' },
+        { name: 'Frans', level: 'Basis' },
+        { name: 'Spaans', level: 'Basis' },
+        { name: 'Chinees', level: 'Basis' },
+      ]
+    : [
+        { name: 'Dutch', level: 'Native' },
+        { name: 'English', level: 'Professional' },
+        { name: 'French', level: 'Basic' },
+        { name: 'Spanish', level: 'Basic' },
+        { name: 'Chinese', level: 'Basic' },
+      ];
 
   const handleDownloadCV = (cvLanguage: 'nl' | 'en') => {
     const cvPath = cvLanguage === 'nl' ? '/cv/cv damian willemse.docx' : '/cv/cv damian willemse english.docx';
@@ -230,58 +241,79 @@ const About: React.FC<AboutProps> = ({ language }) => {
     setShowCVDialog(false);
   };
 
+  const getSchoolLogo = (school: string) => {
+    const baseUrl = import.meta.env.BASE_URL;
+    if (school.toLowerCase().includes('hogeschool rotterdam') || school.toLowerCase().includes('rotterdam university')) {
+      return `${baseUrl}School/hogeschool_rotterdam_logo.png`;
+    } else if (school.toLowerCase().includes('montfort')) {
+      return `${baseUrl}School/montfortcollege_logo.jpg`;
+    } else if (school.toLowerCase().includes('haagse') || school.toLowerCase().includes('hague')) {
+      return `${baseUrl}School/overdehaagse-mediakit-hhsnlgroenhexpng.png`;
+    }
+    return '';
+  };
+
+  const getCertLogo = (issuer: string) => {
+    const baseUrl = import.meta.env.BASE_URL;
+    if (issuer.toLowerCase().includes('mendix')) {
+      return `${baseUrl}Certificates/Mendix_logo.jpeg`;
+    } else if (issuer.toLowerCase().includes('hogeschool rotterdam') || issuer.toLowerCase().includes('rotterdam university')) {
+      return `${baseUrl}Certificates/hogeschool_rotterdam_logo.png`;
+    } else if (issuer.toLowerCase().includes('cambridge')) {
+      return `${baseUrl}Certificates/Cambridge_Logo.png`;
+    }
+    return '';
+  };
+
+  const sectionLabel = 'font-mono text-xs uppercase tracking-[0.2em] text-gold-ink';
+  const cardClass = 'rounded-2xl border border-border bg-card p-6';
+
   return (
     <div className="min-h-screen bg-background">
-      <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
-              {t.title}
-            </h1>
-            <div className="max-w-3xl mx-auto">
-              <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+      <div className="px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-32">
+        <div className="mx-auto max-w-6xl">
+          {/* Hero */}
+          <section className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="order-1 flex justify-center lg:justify-start">
+              <img
+                src={damianPortrait}
+                alt="Damian Willemse"
+                className="aspect-[4/5] w-full max-w-sm rounded-2xl object-cover shadow-card"
+              />
+            </div>
+
+            <div className="order-2">
+              <span className={sectionLabel}>{t.title}</span>
+              <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight text-foreground lg:text-6xl">
+                {t.title}
+              </h1>
+              <p className="mt-5 max-w-lg font-mono text-sm leading-relaxed text-info">
                 {t.intro}
               </p>
-              <Button
-                variant="outline"
-                size="lg"
-                className="text-lg px-8 py-3"
-                style={{ backgroundColor: 'hsl(var(--header-footer))' }}
+              <button
                 onClick={() => setShowCVDialog(true)}
+                className="mt-7 inline-flex items-center gap-2 rounded-xl bg-foreground px-6 py-3 font-mono text-sm text-background transition-transform hover:-translate-y-0.5"
               >
-                <Download className="h-5 w-5 mr-2" />
+                <Download className="h-4 w-4" />
                 {t.downloadCV}
-              </Button>
+              </button>
             </div>
-          </div>
+          </section>
 
           {/* CV Download Dialog */}
           <Dialog open={showCVDialog} onOpenChange={setShowCVDialog}>
             <DialogContent className="sm:max-w-md">
               <DialogHeader>
                 <DialogTitle>{t.cvDialogTitle}</DialogTitle>
-                <DialogDescription>
-                  {t.cvDialogDescription}
-                </DialogDescription>
+                <DialogDescription>{t.cvDialogDescription}</DialogDescription>
               </DialogHeader>
-              <div className="flex flex-col gap-3 mt-4">
-                <Button
-                  variant="default"
-                  size="lg"
-                  onClick={() => handleDownloadCV('nl')}
-                  className="w-full"
-                >
-                  <Download className="h-4 w-4 mr-2" />
+              <div className="mt-4 flex flex-col gap-3">
+                <Button variant="default" size="lg" onClick={() => handleDownloadCV('nl')} className="w-full">
+                  <Download className="mr-2 h-4 w-4" />
                   {t.cvNederlands}
                 </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => handleDownloadCV('en')}
-                  className="w-full"
-                >
-                  <Download className="h-4 w-4 mr-2" />
+                <Button variant="outline" size="lg" onClick={() => handleDownloadCV('en')} className="w-full">
+                  <Download className="mr-2 h-4 w-4" />
                   {t.cvEnglish}
                 </Button>
               </div>
@@ -289,173 +321,120 @@ const About: React.FC<AboutProps> = ({ language }) => {
           </Dialog>
 
           {/* Three Column Section */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+          <div className="mt-16 grid gap-6 lg:grid-cols-3">
             {/* Skills */}
-            <Card className="shadow-soft">
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold">{t.skillsTitle}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div>
-                  <h4 className="font-medium text-sm text-muted-foreground mb-3 uppercase tracking-wider">
-                    {t.skills.technical}
-                  </h4>
-                  <div className="flex flex-wrap gap-2">
-                    {technicalSkills.map((skill) => (
-                      <Badge key={skill} variant="secondary" className="text-xs">
-                        {skill}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-                <div>
-                  <h4 className="font-medium text-sm text-muted-foreground mb-3 uppercase tracking-wider">
-                    {t.skills.languages}
-                  </h4>
-                  <div className="flex flex-col gap-2">
-                    {languageSkills.map((lang) => (
-                      <Badge key={lang} variant="outline" className="text-xs w-fit">
-                        {lang}
-                      </Badge>
-                    ))}
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
+            <div className={cardClass}>
+              <h2 className="mb-5 font-semibold text-foreground">{t.skillsTitle}</h2>
+
+              <p className={`${sectionLabel} mb-3 block`}>{t.skills.technical}</p>
+              <div className="mb-6 flex flex-wrap gap-1.5">
+                {technicalSkills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="rounded-md border border-border px-2 py-0.5 font-mono text-[11px] text-info"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+
+              <p className={`${sectionLabel} mb-3 block`}>{t.skills.languages}</p>
+              <ul className="space-y-2">
+                {languageSkills.map((lang) => (
+                  <li key={lang.name} className="flex items-center gap-2.5 font-mono text-xs">
+                    <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-gold" />
+                    <span className="text-foreground">{lang.name}</span>
+                    <span className="text-info">— {lang.level}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
             {/* Work Experience */}
-            <Card className="shadow-soft">
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold">{t.experienceTitle}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-4">
-                  {t.experienceHighlights.map((item, index) => (
-                    <div key={index} className="flex items-center gap-3">
-                      <div className="w-8 h-8 bg-white rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm">
-                        <img
-                          src={item.logo}
-                          alt={item.company}
-                          className="w-full h-full object-contain p-1"
-                        />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="font-medium text-sm text-foreground truncate">{item.role}</p>
-                        <p className="text-xs text-muted-foreground">{item.company} · {item.period}</p>
-                      </div>
+            <div className={cardClass}>
+              <h2 className="mb-5 font-semibold text-foreground">{t.experienceTitle}</h2>
+              <div className="space-y-4">
+                {t.experienceHighlights.map((item, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-white">
+                      <img src={item.logo} alt={item.company} className="h-full w-full object-contain p-1" />
                     </div>
-                  ))}
-                </div>
-                <Link to="/experience" className="mt-6 flex items-center gap-2 text-sm font-medium text-primary hover:underline">
-                  {t.experienceLink}
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </CardContent>
-            </Card>
+                    <div className="min-w-0 flex-1">
+                      <p className="truncate text-sm font-medium text-foreground">{item.role}</p>
+                      <p className="font-mono text-[11px] text-info">{item.company} · {item.period}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <Link
+                to="/experience"
+                className="group mt-6 inline-flex items-center gap-2 font-mono text-xs text-gold-ink transition-colors hover:text-foreground"
+              >
+                {t.experienceLink}
+                <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </div>
 
             {/* Education */}
-            <Card className="shadow-soft">
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold">{t.educationTitle}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-6">
-                  {t.education.map((edu, index) => {
-                    const getSchoolLogo = (school: string) => {
-                      const baseUrl = import.meta.env.BASE_URL;
-                      if (school.toLowerCase().includes('hogeschool rotterdam') || school.toLowerCase().includes('rotterdam university')) {
-                        return `${baseUrl}School/hogeschool_rotterdam_logo.png`;
-                      } else if (school.toLowerCase().includes('montfort')) {
-                        return `${baseUrl}School/montfortcollege_logo.jpg`;
-                      } else if (school.toLowerCase().includes('haagse') || school.toLowerCase().includes('hague')) {
-                        return `${baseUrl}School/overdehaagse-mediakit-hhsnlgroenhexpng.png`;
-                      }
-                      return '';
-                    };
-
-                    const logoPath = getSchoolLogo(edu.school);
-
-                    return (
-                      <div key={index} className="flex items-start space-x-3">
-                        {logoPath && (
-                          <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
-                            <img
-                              src={logoPath}
-                              alt={`${edu.school} logo`}
-                              className="w-full h-full object-contain p-1"
-                            />
-                          </div>
-                        )}
-                        <div className="border-l-2 border-accent pl-4 flex-1">
-                          <h4 className="font-semibold text-foreground">{edu.degree}</h4>
-                          <p className="text-primary font-medium text-sm">{edu.school}</p>
-                          <p className="text-xs text-muted-foreground mb-2">{edu.period}</p>
-                          <Badge variant="outline" className="text-xs">
-                            {edu.status}
-                          </Badge>
-                        </div>
-                      </div>
-                    );
-                  })}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Certificates Section */}
-          <Card className="shadow-soft mb-16">
-            <CardHeader>
-              <CardTitle className="text-xl font-semibold">{t.certificatesTitle}</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                {t.certificates.map((cert, index) => {
-                  const getLogoPath = (issuer: string) => {
-                    const baseUrl = import.meta.env.BASE_URL;
-                    if (issuer.toLowerCase().includes('mendix')) {
-                      return `${baseUrl}Certificates/Mendix_logo.jpeg`;
-                    } else if (issuer.toLowerCase().includes('hogeschool rotterdam') || issuer.toLowerCase().includes('rotterdam university')) {
-                      return `${baseUrl}Certificates/hogeschool_rotterdam_logo.png`;
-                    } else if (issuer.toLowerCase().includes('cambridge')) {
-                      return `${baseUrl}Certificates/Cambridge_Logo.png`;
-                    }
-                    return '';
-                  };
-
-                  const logoPath = getLogoPath(cert.issuer);
-
+            <div className={cardClass}>
+              <h2 className="mb-5 font-semibold text-foreground">{t.educationTitle}</h2>
+              <div className="space-y-5">
+                {t.education.map((edu, index) => {
+                  const logoPath = getSchoolLogo(edu.school);
                   return (
-                    <div key={index} className="flex items-start space-x-4 p-4 rounded-lg bg-muted/50">
-                      <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden">
-                        {logoPath && (
-                          <img
-                            src={logoPath}
-                            alt={`${cert.issuer} logo`}
-                            className="w-full h-full object-contain p-1"
-                          />
-                        )}
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground">{cert.name}</h4>
-                        <p className="text-sm text-primary font-medium">{cert.issuer}</p>
-                        <p className="text-xs text-muted-foreground">{cert.date}</p>
+                    <div key={index} className="flex items-start gap-3">
+                      {logoPath && (
+                        <div className="mt-0.5 flex h-9 w-9 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-white">
+                          <img src={logoPath} alt={`${edu.school} logo`} className="h-full w-full object-contain p-1" />
+                        </div>
+                      )}
+                      <div className="min-w-0 flex-1">
+                        <h4 className="text-sm font-semibold leading-snug text-foreground">{edu.degree}</h4>
+                        <p className="font-mono text-[11px] text-gold-ink">{edu.school}</p>
+                        <p className="font-mono text-[11px] text-info">{edu.period}</p>
+                        <span className="mt-1.5 inline-block rounded-md border border-border px-2 py-0.5 font-mono text-[10px] text-info">
+                          {edu.status}
+                        </span>
                       </div>
                     </div>
                   );
                 })}
               </div>
-            </CardContent>
-          </Card>
-
-          {/* GitHub Stats Section */}
-          <div className="mb-16">
-            <GitHubStats language={language} />
+            </div>
           </div>
 
-          {/* CTA Section */}
-          <CTASection language={language} />
+          {/* Certificates Section */}
+          <div className={`mt-6 ${cardClass}`}>
+            <h2 className="mb-5 font-semibold text-foreground">{t.certificatesTitle}</h2>
+            <div className="grid gap-4 md:grid-cols-3">
+              {t.certificates.map((cert, index) => {
+                const logoPath = getCertLogo(cert.issuer);
+                return (
+                  <div key={index} className="flex items-start gap-3 rounded-xl border border-border bg-background/40 p-4">
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center overflow-hidden rounded-lg border border-border bg-white">
+                      {logoPath && (
+                        <img src={logoPath} alt={`${cert.issuer} logo`} className="h-full w-full object-contain p-1" />
+                      )}
+                    </div>
+                    <div className="min-w-0">
+                      <h4 className="text-sm font-semibold leading-snug text-foreground">{cert.name}</h4>
+                      <p className="font-mono text-[11px] text-gold-ink">{cert.issuer}</p>
+                      <p className="font-mono text-[11px] text-info">{cert.date}</p>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* GitHub Stats Section */}
+          <div className="mt-16">
+            <GitHubStats language={language} />
+          </div>
         </div>
       </div>
+
+      <CTASection language={language} />
     </div>
   );
 };

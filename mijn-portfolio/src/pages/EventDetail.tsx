@@ -1,9 +1,32 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Badge } from '@/components/ui/badge';
-import { Calendar, MapPin, Users, ArrowLeft, Image as ImageIcon, X } from 'lucide-react';
-import { Card } from '@/components/ui/card';
+import { MapPin, Users, ArrowLeft, Image as ImageIcon, X, Sparkles, Check } from 'lucide-react';
 import CTASection from '@/components/CTASection';
+
+// Accent dot colour per event type
+const typeDot: Record<string, string> = {
+  hackathon: 'bg-gold',
+  conference: 'bg-rose-500',
+  workshop: 'bg-amber-500',
+  meetup: 'bg-gold',
+};
+const getTypeDot = (type: string) => typeDot[type.toLowerCase()] ?? typeDot.hackathon;
+
+const SectionLabel: React.FC<{ children: React.ReactNode; tone?: 'gold' | 'goldOnDark' }> = ({
+  children,
+  tone = 'gold',
+}) => (
+  <span
+    className={`font-mono text-xs uppercase tracking-[0.2em] ${
+      tone === 'goldOnDark' ? 'text-gold' : 'text-gold-ink'
+    }`}
+  >
+    {children}
+  </span>
+);
+
+const isVideo = (src: string) =>
+  src.toLowerCase().endsWith('.mp4') || src.toLowerCase().endsWith('.webm') || src.toLowerCase().endsWith('.mov');
 
 interface EventDetailProps {
   language: 'nl' | 'en';
@@ -31,10 +54,10 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
   const translations = {
     nl: {
       backToEvents: 'Terug naar evenementen',
-      myExperience: 'Mijn Ervaring',
+      myExperience: 'Mijn ervaring',
       highlights: 'Hoogtepunten',
       photos: "Foto's",
-      whatILearned: 'Wat Ik Heb Geleerd',
+      whatILearned: 'Wat ik heb geleerd',
       conclusion: 'Conclusie',
       viewAllEvents: 'Bekijk alle evenementen',
       waitlistTitle: 'Interesse in FoodSwipe?',
@@ -551,12 +574,15 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
 
   if (!event) {
     return (
-      <div className="min-h-screen bg-background pt-24 pb-16 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h1 className="text-3xl font-bold mb-4">
+      <div className="min-h-screen bg-background px-4 pb-16 pt-32">
+        <div className="mx-auto max-w-3xl text-center">
+          <h1 className="mb-4 font-serif text-3xl text-foreground">
             {language === 'nl' ? 'Evenement niet gevonden' : 'Event not found'}
           </h1>
-          <Link to="/events" className="text-primary hover:underline">
+          <Link
+            to="/events"
+            className="font-mono text-sm text-gold-ink transition-colors hover:text-foreground"
+          >
             {t.backToEvents}
           </Link>
         </div>
@@ -564,112 +590,89 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
     );
   }
 
-  const getBadgeColor = (type: string) => {
-    if (type.toLowerCase().includes('conference')) return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300';
-    if (type.toLowerCase().includes('meetup')) return 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300';
-    if (type.toLowerCase().includes('workshop')) return 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300';
-    return 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-300';
-  };
-
   return (
     <div className="min-h-screen bg-background">
-      <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-4xl">
+      <div className="px-4 pb-20 pt-28 sm:px-6 lg:px-8 lg:pt-32">
+        <div className="mx-auto max-w-3xl">
           {/* Back Button */}
           <Link
             to="/events"
-            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground transition-colors mb-8"
+            className="group mb-8 inline-flex items-center gap-2 font-mono text-xs text-info transition-colors hover:text-foreground"
           >
-            <ArrowLeft className="w-4 h-4" />
-            <span>{t.backToEvents}</span>
+            <ArrowLeft className="h-3.5 w-3.5 transition-transform group-hover:-translate-x-1" />
+            {t.backToEvents}
           </Link>
 
           {/* Header */}
-          <div className="mb-8">
-            <div className="flex items-center gap-3 mb-4">
-              <Badge className={`${getBadgeColor(event.type)} border-0`}>
+          <div className="mb-6">
+            <div className="mb-4 flex flex-wrap items-center gap-3 font-mono text-[11px]">
+              <span className="flex items-center gap-1.5 uppercase tracking-wide text-info">
+                <span className={`h-1.5 w-1.5 rounded-full ${getTypeDot(event.type)}`} />
                 {event.type}
-              </Badge>
-              <span className="text-muted-foreground">{event.date}</span>
+              </span>
+              <span className="text-gold-ink">{event.date}</span>
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+            <h1 className="font-serif text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
               {event.title}
             </h1>
-            <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
+            <div className="mt-4 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs text-info">
               <div className="flex items-center gap-2">
-                <MapPin className="w-4 h-4" />
+                <MapPin className="h-3.5 w-3.5 text-gold-ink" />
                 <span>{event.location}</span>
               </div>
               <div className="flex items-center gap-2">
-                <Users className="w-4 h-4" />
+                <Users className="h-3.5 w-3.5 text-gold-ink" />
                 <span>{event.attendees}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Calendar className="w-4 h-4" />
-                <span>{event.date}</span>
               </div>
             </div>
           </div>
 
           {/* Hero Image */}
           {event.image ? (
-            <div
-              className="w-full h-96 bg-muted rounded-lg overflow-hidden mb-12 cursor-pointer hover:opacity-90 transition-opacity"
+            <button
+              className="group mb-6 block w-full overflow-hidden rounded-2xl"
               onClick={() => setSelectedImage(event.image!)}
             >
               <img
                 src={event.image}
                 alt={event.title}
-                className="w-full h-full object-cover"
+                className="h-64 w-full object-cover transition-transform duration-300 group-hover:scale-105 sm:h-80"
               />
-            </div>
+            </button>
           ) : (
-            <div className="w-full h-96 bg-muted rounded-lg flex items-center justify-center mb-12">
-              <div className="w-20 h-20 rounded-full bg-background flex items-center justify-center">
-                <ImageIcon className="w-10 h-10 text-muted-foreground" />
-              </div>
+            <div className="mb-6 flex h-64 w-full items-center justify-center rounded-2xl bg-muted sm:h-80">
+              <ImageIcon className="h-10 w-10 text-info/50" />
             </div>
           )}
 
-          {/* My Experience */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">{t.myExperience}</h2>
-            <p className="text-muted-foreground leading-relaxed text-lg">
-              {event.experience}
-            </p>
-          </section>
+          {/* Intro summary */}
+          <div className="rounded-2xl border border-border bg-card p-6">
+            <p className="font-mono text-sm leading-relaxed text-info">{event.description}</p>
+          </div>
 
-          {/* Highlights */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-6">{t.highlights}</h2>
-            <ul className="space-y-3">
-              {event.highlights.map((highlight, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span className="text-muted-foreground leading-relaxed">{highlight}</span>
-                </li>
-              ))}
-            </ul>
+          {/* My Experience */}
+          <section className="mt-14">
+            <h2 className="font-serif text-2xl text-foreground">{t.myExperience}</h2>
+            <p className="mt-4 text-sm leading-relaxed text-info">{event.experience}</p>
           </section>
 
           {/* Photos */}
           {event.additionalImages && event.additionalImages.length > 0 && (
-            <section className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-6">{t.photos}</h2>
-              <div className="grid md:grid-cols-2 gap-4">
+            <section className="mt-12">
+              <SectionLabel>{t.photos}</SectionLabel>
+              <div className="mt-4 grid gap-4 sm:grid-cols-2">
                 {event.additionalImages.map((image, index) => (
-                  <div key={index} className="w-full h-64 bg-muted rounded-lg overflow-hidden">
-                    {image.endsWith('.mp4') || image.endsWith('.webm') || image.endsWith('.mov') ? (
-                      <video
-                        src={image}
-                        controls
-                        className="w-full h-full object-cover"
-                      />
+                  <div
+                    key={index}
+                    className="h-56 w-full overflow-hidden rounded-2xl border border-border bg-muted"
+                  >
+                    {isVideo(image) ? (
+                      <video src={image} controls className="h-full w-full object-cover" />
                     ) : (
                       <img
                         src={image}
                         alt={`${event.title} ${index + 2}`}
-                        className="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity"
+                        className="h-full w-full cursor-pointer object-cover transition-transform duration-300 hover:scale-105"
                         onClick={() => setSelectedImage(image)}
                       />
                     )}
@@ -679,81 +682,96 @@ const EventDetail: React.FC<EventDetailProps> = ({ language }) => {
             </section>
           )}
 
-          {/* What I Learned */}
-          <section className="mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-6">{t.whatILearned}</h2>
-            <ul className="space-y-3">
-              {event.learnings.map((learning, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <span className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
-                  <span className="text-muted-foreground leading-relaxed">{learning}</span>
+          {/* Highlights */}
+          <section className="mt-12">
+            <SectionLabel>{t.highlights}</SectionLabel>
+            <ul className="mt-4 space-y-2.5">
+              {event.highlights.map((highlight, index) => (
+                <li
+                  key={index}
+                  className="flex items-start gap-3 rounded-xl border border-border bg-card px-4 py-3"
+                >
+                  <Sparkles className="mt-0.5 h-3.5 w-3.5 flex-shrink-0 text-gold-ink" />
+                  <span className="font-mono text-xs leading-relaxed text-info">{highlight}</span>
                 </li>
               ))}
             </ul>
           </section>
 
+          {/* What I Learned */}
+          <section className="mt-12">
+            <SectionLabel>{t.whatILearned}</SectionLabel>
+            <div className="mt-4 grid gap-x-8 gap-y-3 sm:grid-cols-2">
+              {event.learnings.map((learning, index) => (
+                <div key={index} className="flex items-start gap-2.5">
+                  <Check className="mt-0.5 h-4 w-4 flex-shrink-0 text-emerald-500" />
+                  <span className="font-mono text-xs leading-relaxed text-info">{learning}</span>
+                </div>
+              ))}
+            </div>
+          </section>
+
           {/* Conclusion */}
-          <section className="mb-12">
-            <Card className="bg-muted/50 border-0 p-8">
-              <h2 className="text-3xl font-bold text-foreground mb-4">{t.conclusion}</h2>
-              <p className="text-muted-foreground leading-relaxed text-lg">
+          <section className="mt-12">
+            <div className="rounded-2xl bg-dark p-7 sm:p-9">
+              <SectionLabel tone="goldOnDark">{t.conclusion}</SectionLabel>
+              <p className="mt-4 text-sm leading-relaxed text-dark-foreground/80">
                 {event.conclusion}
               </p>
-            </Card>
+            </div>
           </section>
 
           {/* Waitlist Section - Only for Build Weekend */}
           {id === 'buildweekend-young-creators' && (
-            <section className="mb-12">
-              <Card className="bg-gradient-to-br from-primary/10 to-primary/5 border-primary/20 p-8 text-center">
-                <h2 className="text-3xl font-bold text-foreground mb-4">{t.waitlistTitle}</h2>
-                <p className="text-muted-foreground leading-relaxed text-lg mb-6">
+            <section className="mt-8">
+              <div className="rounded-2xl border border-gold/40 bg-gold/10 p-8 text-center">
+                <h2 className="font-serif text-2xl text-foreground">{t.waitlistTitle}</h2>
+                <p className="mx-auto mt-3 max-w-md font-mono text-sm leading-relaxed text-info">
                   {t.waitlistDescription}
                 </p>
                 <a
                   href="https://tally.so/r/EkqvxL"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block bg-primary text-primary-foreground px-6 py-3 rounded-lg font-medium hover:bg-primary/90 transition-colors"
+                  className="mt-6 inline-block rounded-xl bg-gold px-6 py-3 font-mono text-sm text-gold-foreground transition-transform hover:-translate-y-0.5"
                 >
                   {t.waitlistButton}
                 </a>
-              </Card>
+              </div>
             </section>
           )}
 
           {/* Back to Events Link */}
-          <div className="border-t border-border pt-8 mb-16">
+          <div className="mt-12 border-t border-border pt-8">
             <Link
               to="/events"
-              className="inline-flex items-center gap-2 text-foreground hover:text-primary transition-colors font-medium"
+              className="group inline-flex items-center gap-2 font-mono text-sm text-foreground transition-colors hover:text-gold-ink"
             >
-              <ArrowLeft className="w-4 h-4" />
-              <span>{t.viewAllEvents}</span>
+              <ArrowLeft className="h-4 w-4 transition-transform group-hover:-translate-x-1" />
+              {t.viewAllEvents}
             </Link>
           </div>
-
-          {/* CTA Section */}
-          <CTASection language={language} />
         </div>
       </div>
+
+      <CTASection language={language} />
 
       {/* Image Lightbox */}
       {selectedImage && (
         <div
-          className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4"
           onClick={() => setSelectedImage(null)}
         >
           <button
-            className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors"
+            className="absolute right-4 top-4 text-white transition-colors hover:text-gray-300"
             onClick={() => setSelectedImage(null)}
           >
-            <X className="w-8 h-8" />
+            <X className="h-8 w-8" />
           </button>
           <img
             src={selectedImage}
             alt="Enlarged view"
-            className="max-w-full max-h-full object-contain"
+            className="max-h-full max-w-full object-contain"
             onClick={(e) => e.stopPropagation()}
           />
         </div>

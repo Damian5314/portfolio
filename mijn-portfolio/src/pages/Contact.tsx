@@ -1,10 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
 import { Mail, MapPin, Linkedin, Github } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import CTASection from '@/components/CTASection';
@@ -25,6 +19,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
 
   const translations = {
     nl: {
+      eyebrow: 'Contact',
       title: 'Contact',
       subtitle: 'Laten we in contact komen! Ik sta klaar om je volgende project te bespreken.',
       contactInfo: 'Contactinformatie',
@@ -48,6 +43,7 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
       fillAll: 'Vul alle velden in.',
     },
     en: {
+      eyebrow: 'Contact',
       title: 'Contact',
       subtitle: "Let's get in touch! I'm ready to discuss your next project.",
       contactInfo: 'Contact Information',
@@ -124,149 +120,161 @@ const Contact: React.FC<ContactProps> = ({ language }) => {
     });
   };
 
+  const inputClass =
+    'w-full rounded-xl border border-border bg-card px-4 py-2.5 font-mono text-sm text-foreground placeholder:text-info/50 transition-colors focus:border-foreground/40 focus:outline-none focus:ring-2 focus:ring-foreground/10';
+  const labelClass = 'mb-1.5 block font-mono text-[11px] uppercase tracking-wider text-info';
+
   return (
     <div className="min-h-screen bg-background">
-      <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
+      <div className="px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-32">
+        <div className="mx-auto max-w-5xl">
+          {/* Header */}
+          <div className="mb-10">
+            <span className="font-mono text-xs uppercase tracking-[0.22em] text-gold-ink">
+              {t.eyebrow}
+            </span>
+            <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight text-foreground lg:text-6xl">
               {t.title}
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="mt-4 max-w-xl font-mono text-sm leading-relaxed text-info">
               {t.subtitle}
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            <div className="space-y-8">
-              <Card className="shadow-soft">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold">{t.contactInfo}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                      <Mail className="h-5 w-5 text-foreground" />
+          <div className="mb-16 grid gap-6 lg:grid-cols-2">
+            {/* Left: info */}
+            <div className="space-y-6">
+              {/* Contact info */}
+              <div className="rounded-2xl border border-border bg-card p-6">
+                <h2 className="mb-5 font-semibold text-foreground">{t.contactInfo}</h2>
+                <div className="space-y-4">
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold/80">
+                      <Mail className="h-5 w-5 text-gold-foreground" />
                     </div>
-                    <div>
-                      <p className="font-medium text-foreground">{t.email}</p>
-                      <a 
-                        href="mailto:damianwillmse@gmail.com" 
-                        className="text-primary hover:underline"
+                    <div className="min-w-0">
+                      <p className="font-mono text-[10px] uppercase tracking-wider text-info">{t.email}</p>
+                      <a
+                        href="mailto:damianwillmse@gmail.com"
+                        className="font-mono text-sm text-foreground transition-colors hover:text-gold-ink"
                       >
                         damianwillmse@gmail.com
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-center space-x-4">
-                    <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
-                      <MapPin className="h-5 w-5 text-foreground" />
+                  <div className="flex items-center gap-4">
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-gold/80">
+                      <MapPin className="h-5 w-5 text-gold-foreground" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">{t.location}</p>
-                      <p className="text-muted-foreground">Rotterdam, Netherlands</p>
+                      <p className="font-mono text-[10px] uppercase tracking-wider text-info">{t.location}</p>
+                      <p className="font-mono text-sm text-foreground">Rotterdam, Netherlands</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
 
-              <Card className="shadow-soft">
-                <CardHeader>
-                  <CardTitle className="text-xl font-semibold">{t.socialLinks}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <a 
-                    href="https://linkedin.com/in/damianwillemse" 
-                    target="_blank" 
+              {/* Social links */}
+              <div className="rounded-2xl border border-border bg-card p-6">
+                <h2 className="mb-5 font-semibold text-foreground">{t.socialLinks}</h2>
+                <div className="space-y-2">
+                  <a
+                    href="https://linkedin.com/in/damianwillemse"
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-4 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                    className="group flex items-center gap-4 rounded-xl p-2 transition-colors hover:bg-muted/60"
                   >
-                    <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                      <Linkedin className="h-5 w-5 text-blue-600" />
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-foreground">
+                      <Linkedin className="h-5 w-5 text-background" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">LinkedIn</p>
-                      <p className="text-sm text-muted-foreground">Professional profile</p>
+                      <p className="text-sm font-medium text-foreground transition-colors group-hover:text-gold-ink">
+                        LinkedIn
+                      </p>
+                      <p className="font-mono text-[11px] text-info">Professioneel profiel</p>
                     </div>
                   </a>
 
-                  <a 
-                    href="https://github.com/damian5314" 
-                    target="_blank" 
+                  <a
+                    href="https://github.com/damian5314"
+                    target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center space-x-4 p-3 rounded-lg hover:bg-muted/50 transition-colors group"
+                    className="group flex items-center gap-4 rounded-xl p-2 transition-colors hover:bg-muted/60"
                   >
-                    <div className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center group-hover:bg-gray-200 transition-colors">
-                      <Github className="h-5 w-5 text-gray-600" />
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-foreground">
+                      <Github className="h-5 w-5 text-background" />
                     </div>
                     <div>
-                      <p className="font-medium text-foreground">GitHub</p>
-                      <p className="text-sm text-muted-foreground">Code repositories</p>
+                      <p className="text-sm font-medium text-foreground transition-colors group-hover:text-gold-ink">
+                        GitHub
+                      </p>
+                      <p className="font-mono text-[11px] text-info">Code repositories</p>
                     </div>
                   </a>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             </div>
 
-            <Card className="shadow-soft">
-              <CardHeader>
-                <CardTitle className="text-xl font-semibold">{t.form.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="space-y-2">
-                    <Label htmlFor="name">{t.form.name}</Label>
-                    <Input
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      placeholder={t.form.namePlaceholder}
-                      required
-                      style={{ backgroundColor: 'hsl(var(--header-footer))' }}
-                    />
-                  </div>
+            {/* Right: form */}
+            <div className="rounded-2xl border border-border bg-card p-6 sm:p-7">
+              <h2 className="mb-5 font-semibold text-foreground">{t.form.title}</h2>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <div>
+                  <label htmlFor="name" className={labelClass}>{t.form.name}</label>
+                  <input
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    placeholder={t.form.namePlaceholder}
+                    required
+                    className={inputClass}
+                  />
+                </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="email">{t.form.email}</Label>
-                    <Input
-                      id="email"
-                      name="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder={t.form.emailPlaceholder}
-                      required
-                      style={{ backgroundColor: 'hsl(var(--header-footer))' }}
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="email" className={labelClass}>{t.form.email}</label>
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    placeholder={t.form.emailPlaceholder}
+                    required
+                    className={inputClass}
+                  />
+                </div>
 
-                  <div className="space-y-2">
-                    <Label htmlFor="message">{t.form.message}</Label>
-                    <Textarea
-                      id="message"
-                      name="message"
-                      value={formData.message}
-                      onChange={handleInputChange}
-                      placeholder={t.form.messagePlaceholder}
-                      rows={6}
-                      required
-                      style={{ backgroundColor: 'hsl(var(--header-footer))' }}
-                    />
-                  </div>
+                <div>
+                  <label htmlFor="message" className={labelClass}>{t.form.message}</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    placeholder={t.form.messagePlaceholder}
+                    rows={6}
+                    required
+                    className={`${inputClass} resize-y`}
+                  />
+                </div>
 
-                  <Button type="submit" size="lg" className="w-full" disabled={isSending}>
-                    {isSending ? (language === 'nl' ? 'Versturen...' : 'Sending...') : t.form.send}
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+                <button
+                  type="submit"
+                  disabled={isSending}
+                  className="w-full rounded-xl bg-foreground px-6 py-3 font-mono text-sm text-background transition-transform hover:-translate-y-0.5 disabled:cursor-not-allowed disabled:opacity-60 disabled:hover:translate-y-0"
+                >
+                  {isSending ? (language === 'nl' ? 'Versturen...' : 'Sending...') : t.form.send}
+                </button>
+              </form>
+            </div>
           </div>
-
-          <CTASection language={language} />
         </div>
       </div>
+
+      <CTASection language={language} />
     </div>
   );
 };

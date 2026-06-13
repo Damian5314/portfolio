@@ -18,6 +18,11 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				serif: ['Fraunces', 'Georgia', 'serif'],
+				mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -64,6 +69,17 @@ export default {
 				},
 				'dark-section': 'hsl(var(--dark-section))',
 				'dark-section-foreground': 'hsl(var(--dark-section-foreground))',
+				gold: {
+					DEFAULT: 'hsl(var(--gold))',
+					foreground: 'hsl(var(--gold-foreground))',
+					ink: 'hsl(var(--gold-ink))',
+				},
+				info: 'hsl(var(--info))',
+				ink: 'hsl(var(--foreground))',
+				dark: {
+					DEFAULT: 'hsl(var(--dark))',
+					foreground: 'hsl(var(--dark-foreground))',
+				},
 			},
 			backgroundImage: {
 				'hero-gradient': 'var(--hero-gradient)',

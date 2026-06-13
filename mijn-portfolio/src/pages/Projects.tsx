@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Badge } from '@/components/ui/badge';
-import { ExternalLink } from 'lucide-react';
 import CTASection from '@/components/CTASection';
 
 interface ProjectsProps {
@@ -23,27 +19,35 @@ interface Project {
   image: string;
 }
 
-const statusStyles: Record<ProjectStatus, string> = {
-  completed: 'bg-emerald-100 text-emerald-700 border-transparent dark:bg-emerald-500/20 dark:text-emerald-200',
-  paused: 'bg-amber-100 text-amber-700 border-transparent dark:bg-amber-500/20 dark:text-amber-200',
-  inProgress: 'bg-blue-100 text-blue-700 border-transparent dark:bg-blue-500/20 dark:text-blue-200',
-  canceled: 'bg-rose-100 text-rose-700 border-transparent dark:bg-rose-500/20 dark:text-rose-200',
-  upcoming: 'bg-slate-100 text-slate-700 border-transparent dark:bg-slate-500/20 dark:text-slate-200',
+const statusDot: Record<ProjectStatus, string> = {
+  completed: 'bg-emerald-500',
+  paused: 'bg-amber-500',
+  inProgress: 'bg-blue-500',
+  canceled: 'bg-rose-500',
+  upcoming: 'bg-slate-400',
 };
+
+// Header style cycles per card position: ink → gold → light
+const headerStyles = [
+  { bg: 'bg-dark', number: 'text-white/[0.06]', title: 'text-dark-foreground' },
+  { bg: 'bg-gold', number: 'text-foreground/[0.08]', title: 'text-gold-foreground' },
+  { bg: 'bg-muted', number: 'text-foreground/[0.07]', title: 'text-foreground' },
+];
 
 const Projects: React.FC<ProjectsProps> = ({ language, onProjectSelect }) => {
   const [activeFilter, setActiveFilter] = useState('all');
 
   const translations = {
     nl: {
+      eyebrow: 'Werk',
       title: 'Projecten',
-      subtitle: 'Projecten waar ik trots op ben',
+      subtitle: 'Een selectie van projecten waar ik trots op ben.',
       filters: {
         all: 'Alle',
-        school: 'School project',
-        personal: 'Persoonlijk project',
-        client: 'Klant project',
-        event: 'Event project',
+        school: 'School',
+        personal: 'Persoonlijk',
+        client: 'Klant',
+        event: 'Event',
       },
       viewProject: 'Bekijk project',
       ctaTitle: 'Laten we samen beginnen met creëren',
@@ -57,14 +61,15 @@ const Projects: React.FC<ProjectsProps> = ({ language, onProjectSelect }) => {
       },
     },
     en: {
+      eyebrow: 'Work',
       title: 'Projects',
-      subtitle: 'Projects I am proud of',
+      subtitle: 'A selection of projects I am proud of.',
       filters: {
         all: 'All',
-        school: 'School project',
-        personal: 'Personal project',
-        client: 'Client project',
-        event: 'Event project',
+        school: 'School',
+        personal: 'Personal',
+        client: 'Client',
+        event: 'Event',
       },
       viewProject: 'View project',
       ctaTitle: "Let's start creating together",
@@ -250,85 +255,95 @@ const Projects: React.FC<ProjectsProps> = ({ language, onProjectSelect }) => {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="pt-24 pb-16 px-4 sm:px-6 lg:px-8">
-        <div className="container mx-auto max-w-6xl">
+      <div className="px-4 pb-16 pt-28 sm:px-6 lg:px-8 lg:pt-32">
+        <div className="mx-auto max-w-6xl">
           {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <div className="mb-10">
+            <span className="font-mono text-xs uppercase tracking-[0.22em] text-gold-ink">
+              {t.eyebrow}
+            </span>
+            <h1 className="mt-3 font-serif text-5xl font-semibold tracking-tight text-foreground lg:text-6xl">
               {t.title}
             </h1>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="mt-4 max-w-xl font-mono text-sm text-info">
               {t.subtitle}
             </p>
           </div>
 
           {/* Filter Tabs */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
+          <div className="mb-10 flex flex-wrap gap-2">
             {filterOptions.map((filter) => (
-              <Button
+              <button
                 key={filter.key}
-                variant={activeFilter === filter.key ? 'default' : 'outline'}
                 onClick={() => setActiveFilter(filter.key)}
-                className="text-sm"
-                style={activeFilter !== filter.key ? { backgroundColor: 'hsl(var(--header-footer))' } : undefined}
+                className={`rounded-full border px-4 py-1.5 font-mono text-xs transition-colors ${
+                  activeFilter === filter.key
+                    ? 'border-foreground bg-foreground text-background'
+                    : 'border-border bg-card text-info hover:border-foreground/40 hover:text-foreground'
+                }`}
               >
                 {filter.label}
-              </Button>
+              </button>
             ))}
           </div>
 
           {/* Projects Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {filteredProjects.map((project) => (
-              <Card key={project.id} className="group shadow-soft hover:shadow-card transition-all duration-300 hover:-translate-y-1">
-                <div className="aspect-video bg-muted rounded-t-lg overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex flex-wrap items-center gap-2 mb-3">
-                    <Badge variant="secondary" className="text-xs">
-                      {t.filters[project.category]}
-                    </Badge>
-                    <Badge className={`text-xs ${statusStyles[project.status]}`}>
-                      {t.statuses[project.status]}
-                    </Badge>
-                  </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.technologies.map((tech) => (
-                      <Badge key={tech} variant="outline" className="text-xs">
-                        {tech}
-                      </Badge>
-                    ))}
-                  </div>
-                  <Button 
-                    variant="ghost" 
-                    className="w-full group/button"
-                    onClick={() => handleProjectClick(project.id)}
-                  >
-                    <span className="flex items-center justify-center gap-2">
-                      {t.viewProject}
-                      <ExternalLink className="h-4 w-4 group-hover/button:translate-x-1 transition-transform" />
-                    </span>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <div className="mb-16 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {filteredProjects.map((project, index) => {
+              const header = headerStyles[index % headerStyles.length];
+              return (
+                <button
+                  key={project.id}
+                  onClick={() => handleProjectClick(project.id)}
+                  className="group text-left"
+                >
+                  <article className="h-full overflow-hidden rounded-2xl border border-border bg-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card">
+                    {/* Colored header with number watermark */}
+                    <div className={`relative h-40 overflow-hidden ${header.bg}`}>
+                      <span
+                        className={`pointer-events-none absolute -top-3 right-2 font-serif text-[7rem] font-semibold leading-none ${header.number}`}
+                      >
+                        {String(index + 1).padStart(2, '0')}
+                      </span>
+                      <h3 className={`absolute bottom-4 left-5 right-5 font-serif text-2xl ${header.title}`}>
+                        {project.title}
+                      </h3>
+                    </div>
 
-          {/* CTA Section */}
-          <CTASection language={language} />
+                    {/* Body */}
+                    <div className="p-5">
+                      <div className="mb-3 flex flex-wrap items-center gap-x-3 gap-y-1 font-mono text-[11px]">
+                        <span className="uppercase tracking-wide text-gold-ink">
+                          {t.filters[project.category]}
+                        </span>
+                        <span className="flex items-center gap-1.5 text-info">
+                          <span className={`h-1.5 w-1.5 rounded-full ${statusDot[project.status]}`} />
+                          {t.statuses[project.status]}
+                        </span>
+                      </div>
+                      <p className="mb-4 font-mono text-xs leading-relaxed text-info line-clamp-3">
+                        {project.description}
+                      </p>
+                      <div className="flex flex-wrap gap-1.5">
+                        {project.technologies.map((tech) => (
+                          <span
+                            key={tech}
+                            className="rounded-md border border-border px-2 py-0.5 font-mono text-[11px] text-info"
+                          >
+                            {tech}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  </article>
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
+
+      <CTASection language={language} />
     </div>
   );
 };
