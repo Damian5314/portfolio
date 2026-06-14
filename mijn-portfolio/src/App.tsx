@@ -16,6 +16,7 @@ import About from "./pages/About";
 import Experience from "./pages/Experience";
 import Contact from "./pages/Contact";
 import Tools from "./pages/Tools";
+import Bedrijf from "./pages/Bedrijf";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -46,6 +47,7 @@ const App = () => {
               <Route path="/experience" element={<Experience language={language} />} />
               <Route path="/contact" element={<Contact language={language} />} />
               <Route path="/tools" element={<Tools language={language} />} />
+              <Route path="/bedrijf" element={<Bedrijf language={language} />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <BackToTop />

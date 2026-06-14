@@ -18,6 +18,7 @@ const Navigation: React.FC<NavigationProps> = ({ language, onLanguageChange }) =
       experience: 'Werkervaring',
       about: 'Over mij',
       tools: 'Tools',
+      bedrijf: 'Bedrijf',
       contact: 'Contact',
     },
     en: {
@@ -27,6 +28,7 @@ const Navigation: React.FC<NavigationProps> = ({ language, onLanguageChange }) =
       experience: 'Experience',
       about: 'About',
       tools: 'Tools',
+      bedrijf: 'Company',
       contact: 'Contact',
     },
   };
@@ -40,6 +42,7 @@ const Navigation: React.FC<NavigationProps> = ({ language, onLanguageChange }) =
     { key: 'experience', label: t.experience, path: '/experience' },
     { key: 'about', label: t.about, path: '/about' },
     { key: 'tools', label: t.tools, path: '/tools' },
+    { key: 'bedrijf', label: t.bedrijf, path: '/bedrijf' },
     { key: 'contact', label: t.contact, path: '/contact' },
   ];
 
