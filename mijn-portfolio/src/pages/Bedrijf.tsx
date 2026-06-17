@@ -29,10 +29,21 @@ const features = [
   },
 ];
 
-const screenshots = [
-  'Dashboard-overzicht',
-  'Bestel-flow',
-  'Website / team',
+const clients = [
+  {
+    type: 'Restaurant',
+    name: 'Restaurantklant',
+    description: 'Voor een lokaal restaurant bouwden we een online bestelwebsite waarmee klanten eten kunnen bestellen voor afhaal. De keuken heeft een eigen dashboard waar bestellingen realtime binnenkomen en statistieken worden bijgehouden.',
+    deliverables: ['Bestelwebsite', 'Keuken dashboard', 'Statistieken'],
+    screenshot: 'Screenshot bestelwebsite / dashboard',
+  },
+  {
+    type: 'Stichting',
+    name: 'Stichtingsklant',
+    description: 'Voor een stichting ontwikkelden we een informatieve website waarop zij laten zien wie ze zijn, wat ze doen en welke projecten er lopen. Bezoekers kunnen via de website ook direct doneren.',
+    deliverables: ['Informatieve website', 'Lopende projecten', 'Donatiefunctie'],
+    screenshot: 'Screenshot stichtingswebsite',
+  },
 ];
 
 const Bedrijf: React.FC<BedrijfProps> = ({ language }) => {
@@ -198,19 +209,45 @@ const Bedrijf: React.FC<BedrijfProps> = ({ language }) => {
             </div>
           </div>
 
-          {/* ── Product in beeld ── */}
+          {/* ── Klanten portfolio ── */}
           <div className="mb-20">
             <span className="font-mono text-xs uppercase tracking-[0.22em] text-info">
-              Het product in beeld
+              Onze klanten
             </span>
-            <div className="mt-6 grid gap-4 sm:grid-cols-3">
-              {screenshots.map((label) => (
-                <div key={label}>
-                  <div className="flex flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-border bg-muted p-12 text-center">
-                    <Image className="h-6 w-6 text-info/30" />
-                    <p className="font-mono text-xs text-info">{label}</p>
+            <div className="mt-6 space-y-6">
+              {clients.map((client) => (
+                <div
+                  key={client.type}
+                  className="grid grid-cols-1 gap-8 rounded-2xl border border-border bg-card p-8 lg:grid-cols-2 lg:items-center"
+                >
+                  {/* Left – info */}
+                  <div>
+                    <span className="font-mono text-xs uppercase tracking-[0.22em] text-info">
+                      {client.type}
+                    </span>
+                    <h3 className="mt-2 font-serif text-xl font-bold text-foreground">
+                      {client.name}
+                    </h3>
+                    <p className="mt-3 text-sm leading-relaxed text-info">
+                      {client.description}
+                    </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {client.deliverables.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-lg border border-border px-3 py-1 font-mono text-xs text-foreground"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                  <p className="mt-2 font-mono text-xs text-info">{label}</p>
+
+                  {/* Right – screenshot placeholder */}
+                  <div className="flex flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-border bg-muted py-16 text-center">
+                    <Image className="h-6 w-6 text-info/30" />
+                    <p className="font-mono text-xs text-info">{client.screenshot}</p>
+                  </div>
                 </div>
               ))}
             </div>
